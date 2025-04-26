@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+
+  --color-pixel-1:#feffff;
+  --color-pixel-2:##a0a0a0;
+  --color-pixel-3:#525252;
+  --color-pixel-4:##bed6fd;
+  --color-pixel-5:#699efc;
+  --color-pixel-6:#1e4a9d;
+  --color-pixel-7:#011a51;
+  --color-pixel-8:#ccccff;
+  --color-pixel-9:#8987ff;
+  --color-pixel-10:#3837bc;
+  --color-pixel-11:#0f0f65;
+  --color-pixel-12:#ddc4ff;
+  --color-pixel-13:#ae76ff;
+  --color-pixel-14:#5828b8;
+  --color-pixel-15:#230663;
+  --color-pixel-16:#eac0f9;
+  --color-pixel-17:#ce6df1;
+  --color-pixel-18:#752194;
+  --color-pixel-19:#36034b;
+  --color-pixel-20:#f2c1df;
+  --color-pixel-21:#e070b2;
+  --color-pixel-22:#84235c;
+  --color-pixel-23:#400426;
+  --color-pixel-24:#f1c7c2;
+  --color-pixel-25:#de7c70;
+  --color-pixel-26:#822e24;
+  --color-pixel-27:#3f0904;
+  --color-pixel-28:#e8d0aa;
+  --color-pixel-29:#c8913e;
+  --color-pixel-30:#6f3f00;
+  --color-pixel-31:#321300;
+  --color-pixel-32:#d9da9d;
+  --color-pixel-33:#a6a725;
+  --color-pixel-34:#515200;
+  --color-pixel-35:#1f2000;
+  --color-pixel-36:#c9e29e;
+  --color-pixel-37:#81ba28;
+  --color-pixel-38:#316300;
+  --color-pixel-39:#0b2a00;
+  --color-pixel-40:#bce6ae;
+  --color-pixel-41:#63c446;
+  --color-pixel-42:#1a6b05;
+  --color-pixel-43:#002f00;
+  --color-pixel-44:#b4e5c7;
+  --color-pixel-45:#54c17d;
+  --color-pixel-46:#0e692e;
+  --color-pixel-47:#002e0a;
+  --color-pixel-48:#b5dfe4;
+  --color-pixel-49:#56b3c0;
+  --color-pixel-50:#105c68;
+  --color-pixel-51:#00262d;
+  --color-pixel-52:#a9a9a9;
+  --color-pixel-53:#3c3c3c;
+  --color-pixel-54:#000000;
+  /* ... */
+
+  /*
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Gotham', sans-serif;
+
+  */
+
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
