@@ -1,6 +1,6 @@
 <div kll-t="basicLayout">
-  <section
-    class="h-full w-full gap-3 p-4 grid grid-rows-[auto_1fr_auto_1fr_auto]"
+  <div
+    class="h-full gap-3 p-4 grid grid-rows-[auto_1fr_auto_1fr_auto] max-w-[400px] mx-auto"
   >
     <header>Composant niveau</header>
     <section>
@@ -8,13 +8,11 @@
     </section>
     <section>
       <div>Les choix</div>
-    <div class="overflow-x-scroll flex gap-1" kll-ctrl="baseChoices">
-
-  </div>
-  </section>
+      <div class="overflow-x-scroll flex gap-1" kll-ctrl="baseChoices"></div>
+    </section>
+    <section>
       <div>Les ingredients</div>
-    </div>
     </section>
     <footer>Les contrôles</footer>
-  </section>
+  </div>
 </div>
