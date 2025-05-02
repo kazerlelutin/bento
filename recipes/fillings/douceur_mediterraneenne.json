@@ -1,0 +1,37 @@
+{
+  "id": "filling.douceur_mediterraneenne",
+  "nameKey": "filling.douceur_mediterraneenne.title",
+  "ingredients": [
+    {
+      "id": "ingredient.feta",
+      "mandatory": true,
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.olives_noires",
+      "mandatory": true,
+      "quantity": 30,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.tomates_sechees",
+      "mandatory": true,
+      "quantity": 20,
+      "unit": "g"
+    }
+  ],
+  "steps": [
+    {
+      "templateKey": "step.chop_and_mix",
+      "ingredients": [
+        "ingredient.feta",
+        "ingredient.olives_noires",
+        "ingredient.tomates_sechees"
+      ],
+      "duration": 5,
+      "difficulty": 1,
+      "type": "preparation"
+    }
+  ]
+}

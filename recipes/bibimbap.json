@@ -1,0 +1,113 @@
+{
+  "id": "recipe.bibimbap",
+  "nameKey": "recipe.bibimbap.name",
+  "category": "base",
+  "tags": ["🔥", "🍲"],
+  "requiresFilling": false,
+  "ingredients": [
+    {
+      "id": "ingredient.rice_cooked",
+      "mandatory": true,
+      "addable": false,
+      "priority": 1,
+      "quantity": 150,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.spinach",
+      "mandatory": true,
+      "addable": false,
+      "priority": 2,
+      "quantity": 50,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.carrot",
+      "mandatory": true,
+      "addable": false,
+      "priority": 3,
+      "quantity": 40,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.zucchini",
+      "mandatory": true,
+      "addable": false,
+      "priority": 4,
+      "quantity": 40,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.gochujang",
+      "mandatory": true,
+      "addable": false,
+      "priority": 5,
+      "quantity": 15,
+      "unit": "g"
+    },
+    {
+      "id": "ingredient.fried_egg",
+      "mandatory": false,
+      "addable": true,
+      "priority": 6,
+      "quantity": 1,
+      "unit": "pcs"
+    },
+    {
+      "id": "ingredient.sesame_oil",
+      "mandatory": false,
+      "addable": true,
+      "priority": 7,
+      "quantity": 5,
+      "unit": "ml"
+    }
+  ],
+  "steps": [
+    {
+      "templateKey": "step.cook_rice",
+      "ingredients": ["ingredient.rice_cooked"],
+      "duration": 15,
+      "difficulty": 2,
+      "type": "cuisson"
+    },
+    {
+      "templateKey": "step.slice_and_stirfry",
+      "ingredients": [
+        "ingredient.spinach",
+        "ingredient.carrot",
+        "ingredient.zucchini"
+      ],
+      "duration": 10,
+      "difficulty": 2,
+      "type": "preparation",
+      "repeatForIngredients": [
+        "ingredient.spinach",
+        "ingredient.carrot",
+        "ingredient.zucchini"
+      ]
+    },
+    {
+      "templateKey": "step.fry_egg",
+      "ingredients": ["ingredient.fried_egg"],
+      "duration": 3,
+      "difficulty": 1,
+      "type": "cuisson"
+    },
+    {
+      "templateKey": "step.assemble_bibimbap",
+      "ingredients": [
+        "ingredient.rice_cooked",
+        "ingredient.gochujang",
+        "ingredient.spinach",
+        "ingredient.carrot",
+        "ingredient.zucchini",
+        "ingredient.fried_egg",
+        "ingredient.sesame_oil"
+      ],
+      "duration": 2,
+      "difficulty": 1,
+      "type": "assemblage"
+    }
+  ],
+  "notesKey": "recipe.bibimbap.notes"
+}
