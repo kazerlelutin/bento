@@ -1,0 +1,6 @@
+/* Import TailwindCSS in your CSS */
+@import "tailwindcss";
+
+::root {
+  --color-primary: #000;
+}
