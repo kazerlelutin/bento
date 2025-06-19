@@ -1,0 +1,4 @@
+[test]
+preload = "./preload.ts"
+coverageThreshold = 0.8
+coverageReporter  = ["text", "lcov"]

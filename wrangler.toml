@@ -1,5 +1,0 @@
-name="kazerlelutin"
-pages_build_output_dir='dist'
-kv_namespaces = [
-  { binding = "next_track", id = "e221478c3f304fdc8d050d8454985587",preview_id ="e630b5d070dc43f5ad95fee697dcdd72" }
-]

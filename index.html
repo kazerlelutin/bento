@@ -1,50 +1,46 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/icon" href="/public/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <meta
-      name="description"
-      content="Bienvenue sur Next Track de Kazerlelutin, un univers transmédia ouvert qui
-    inclut une bande dessinée, des animations, des jeux vidéo et des applications."
-    />
-
-    <meta property=" og:title" content="Kazerletutin's space" />
-    <meta name="twitter:title" content="Kazerletutin's space" />
-
-    <meta property="og:type" content="siteweb" />
-    <meta
-      property="og:image"
-      content="https://kazerlelutin.space/preview.webp"
-    />
-
-    <meta name="twitter:card" content="photo" />
-    <meta name="twitter:site" content="https://kazerlelutin.space/" />
-
-    <meta
-      name="og:description"
-      content="Bienvenue sur Next Track de Kazerlelutin, un univers transmédia ouvert qui
-        inclut une bande dessinée, des animations, des jeux vidéo et des applications."
-    />
-    <meta
-      name="twitter:description"
-      content="Bienvenue sur Next Track de Kazerlelutin, un univers transmédia ouvert qui
-    inclut une bande dessinée, des animations, des jeux vidéo et des applications."
-    />
-
-    <meta
-      name="twitter:image"
-      content="https://kazerlelutin.space/preview.webp"
-    />
-
-    <meta name="twitter:url" content="https://kazerlelutin.space/" />
-    <title>BENTO</title>
+    <title>Mon Application</title>
   </head>
-
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <nav>
+      <a href="/" data-internal>Accueil</a>
+      <a href="/about" data-internal>À propos</a>
+    </nav>
+
+    <main></main>
+
+    <!-- Templates -->
+    <template id="home-template">
+      <div class="home-page">
+        <h1>Bienvenue</h1>
+        <p>Contenu de la page d'accueil</p>
+
+        <div id="counter">0</div>
+        <button
+          id="increment"
+          class="text-3xl font-bold bg-blue-500 text-white p-2 rounded-md"
+        >
+          +
+        </button>
+        <button
+          id="decrement"
+          class="text-3xl font-bold bg-red-500 text-white p-2 rounded-md"
+        >
+          -
+        </button>
+      </div>
+    </template>
+
+    <template id="about-template">
+      <div class="about-page">
+        <h1>À propos</h1>
+
+        <p>Contenu de la page À propos</p>
+      </div>
+    </template>
+
+    <script type="module" src="app.ts"></script>
   </body>
 </html>

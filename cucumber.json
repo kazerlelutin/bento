@@ -1,0 +1,12 @@
+{
+  "default": {
+    "import": ["features/**/*.steps.ts", "utils/tests/integration/*.utils.ts"],
+    "paths": ["features/**/*.feature"],
+
+    "format": [
+      "progress-bar",
+      "html:reports-integration/integration/cucumber-report.html",
+      "json:reports-integration/integration/cucumber-report.json"
+    ]
+  }
+}
