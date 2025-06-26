@@ -29,7 +29,8 @@
     "dev": "bun ./**/*.html",
     "coverage": "bun test --coverage",
     "test:integration": "bunx --bun cucumber-js",
-    "build": "bun build ./**/*.html --minify --outdir=dist"
+    "build": "bun build ./**/*.html --minify --outdir=dist",
+    "docs:features": "bun scripts/generate-feature-docs.ts"
   },
   "update": "2025-04-26",
   "devDependencies": {
