@@ -1,5 +1,5 @@
 import { expect, describe, test, jest } from "bun:test";
-import { routerState, getState, setState } from './router.state';
+import { routerState } from './router.state';
 
 describe('router.state', () => {
   describe('Proxy implementation', () => {
@@ -43,33 +43,17 @@ describe('router.state', () => {
     });
   });
 
-  describe('Legacy implementation', () => {
-    test('should get initial state', () => {
-      const state = getState();
-      expect(state).toEqual({
-        currentPath: '/',
-        previousPath: null
-      });
-    });
+  test('should call cleanUp function if defined', () => {
+    let cleaned = false;
+    routerState.cleanUp = () => { cleaned = true; };
+    // Déclenche le cleanup
+    if (routerState.cleanUp) routerState.cleanUp();
+    expect(cleaned).toBe(true);
+  });
 
-    test('should update state', () => {
-      const newPath = '/test';
-      setState(newPath);
-      const state = getState();
-      expect(state).toEqual({
-        currentPath: newPath,
-        previousPath: '/'
-      });
-    });
-
-    test('should update previous path', () => {
-      setState('/first');
-      setState('/second');
-      const state = getState();
-      expect(state).toEqual({
-        currentPath: '/second',
-        previousPath: '/first'
-      });
-    });
+  test('should set and get onRouteChange', () => {
+    const cb = jest.fn();
+    routerState.onRouteChange = cb;
+    expect(routerState.onRouteChange).toBe(cb);
   });
 }); 

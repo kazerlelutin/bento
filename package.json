@@ -26,16 +26,22 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "bun ./**/*.html",
+    "dev": "bun --hot index.html --spa",
+    "test": "bun test",
     "coverage": "bun test --coverage",
     "test:integration": "bunx --bun cucumber-js",
-    "build": "bun build ./**/*.html --minify --outdir=dist",
-    "docs:features": "bun scripts/generate-feature-docs.ts"
+    "build": "bun build ./index.html --minify  --outdir=dist",
+    "docs:features": "bun scripts/generate-feature-docs.ts",
+    "badge:coverage": "bun scripts/generate-coverage-badge.ts",
+    "sitemap": "bun scripts/generate-sitemap.ts",
+    "seo": "bun scripts/generate-sitemap.ts",
+    "validate:seo": "bun scripts/validate-sitemap.ts"
   },
   "update": "2025-04-26",
   "devDependencies": {
     "@cucumber/cucumber": "^11.3.0",
     "@happy-dom/global-registrator": "^17.6.3",
+    "@types/bun": "^1.2.18",
     "bun-types": "^1.2.15",
     "ts-node": "^10.9.2"
   }

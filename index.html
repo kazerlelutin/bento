@@ -1,44 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <title>BENTO</title>
     <link rel="stylesheet" href="public/style.css" />
+    <link rel="alternate" type="application/xml" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BENTO propose des recettes de bento personnalisables avec des visuels en pixel art. Créez et partagez vos compositions culinaires artistiques."
+    />
+    <meta
+      name="keywords"
+      content="bento, recettes bento, art pixel, cuisine japonaise, pixel art, compositions culinaires, repas personnalisés, lunch box, art culinaire"
+    />
+    <meta name="author" content="BENTO" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="notranslate" />
+    <meta name="google" content="notranslate" />
+
+    <meta http-equiv="content-language" content="fr" />
+
+    <meta charset="UTF-8" />
+
+    <meta
+      property="og:title"
+      content="BENTO - Recettes de Bento en Pixel Art"
+    />
+    <meta
+      property="og:description"
+      content="BENTO propose des recettes de bento personnalisables avec des visuels en pixel art. Créez et partagez vos compositions culinaires artistiques."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="BENTO - Recettes de Bento en Pixel Art"
+    />
+    <meta
+      name="twitter:description"
+      content="BENTO propose des recettes de bento personnalisables avec des visuels en pixel art. Créez et partagez vos compositions culinaires artistiques."
+    />
   </head>
-  <body>
-    <nav>
-      <a href="/" data-internal>Accueil</a>
-      <a href="/about" data-internal>À propos</a>
-    </nav>
 
-    <main></main>
+  <body class="app">
+    <header>
+      <h1 class="app-name">BEN<span class="app-name-accent">TO</span></h1>
+    </header>
 
+    <main class="app-main"></main>
+
+    <footer class="app-footer">
+      <nav>
+        <a href="/" data-internal>Accueil</a>
+        <a href="/about" data-internal>À propos</a>
+      </nav>
+    </footer>
     <!-- Templates -->
-    <template id="home-template">
-      <div class="home-page">
-        <h1>Bienvenue</h1>
-        <p>Contenu de la page d'accueil</p>
-
-        <div id="counter">0</div>
-        <button
-          id="increment"
-          class="text-3xl font-bold bg-blue-500 text-white p-2 rounded-md"
-        >
-          +
-        </button>
-        <button
-          id="decrement"
-          class="text-3xl font-bold bg-red-500 text-white p-2 rounded-md"
-        >
-          -
-        </button>
+    <template id="crafter-template">
+      <div class="crafter-page">
+        <div class="crafter-canvas-container">
+          <canvas id="crafter-canvas" class="crafter-canvas"></canvas>
+        </div>
+        <div class="crafter-stepper" id="stepper">
+          Les différentes étapes du crafter
+        </div>
+        <div class="crafter-controls" id="crafter-controls"></div>
       </div>
     </template>
 
     <template id="about-template">
       <div class="about-page">
         <h1>À propos</h1>
-
         <p>Contenu de la page À propos</p>
       </div>
     </template>

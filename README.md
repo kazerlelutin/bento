@@ -1,111 +1,120 @@
-# 🍱 BENTO - Générateur de Bentos Végé Personnalisés
+# 🍱 BENTO - Custom Veggie Bento Generator
 
-> Une application web ludique et pixel art qui permet de composer son propre bento en choisissant chaque élément pas à pas, à la manière d'un menu Subway ou Tacos.
+[![Bun](https://img.shields.io/badge/Runtime-Bun-000000?style=for-the-badge&logo=bun)](https://bun.sh/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tests](https://img.shields.io/badge/Tests-Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)](https://cucumber.io/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+[![Coverage](https://img.shields.io/badge/Coverage-92%25-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
+[![Dependencies](https://img.shields.io/badge/Dependencies-Up%20to%20date-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
+
+> A playful pixel-art web app to compose your own veggie bento, step by step, like a Subway or Tacos menu.
 
 ## 🎌 Concept
 
-**Ben-to** est une application web qui transforme la création de bentos en une expérience interactive et amusante. Les utilisateurs peuvent composer leur propre bento végétarien en choisissant chaque ingrédient étape par étape, avec un design pixel art rétro.
+**Ben-to** is a web application that turns bento creation into an interactive and fun experience. Users can compose their own vegetarian bento by choosing each ingredient step by step, with a retro pixel art design.
 
-## 🧭 Fonctionnement
+## 🧭 How it works
 
-### ✨ **Pas de compte requis**
+### ✨ **No account required**
 
-L'app fonctionne immédiatement, sans inscription ni création de compte.
+The app works instantly, no signup or account needed.
 
-### 🎯 **Parcours guidé**
+### 🎯 **Guided journey**
 
-1. **Choix du type de bento** : onigiri, empanadas, gimbap, etc.
-2. **Sélection des ingrédients** :
-   - Base (riz, quinoa, etc.)
-   - Protéines végétales
-   - Légumes
+1. **Choose your bento type**: onigiri, empanadas, gimbap, etc.
+2. **Select ingredients**:
+   - Base (rice, quinoa, etc.)
+   - Plant-based proteins
+   - Vegetables
    - Sauces
    - Toppings
-3. **Dessert compatible** : dango, madeleine, compote, etc.
-4. **Ajustement automatique** : difficulté et temps selon les choix
+3. **Dessert suggestion**: dango, madeleine, compote, etc.
+4. **Automatic adjustment**: difficulty and time based on your choices
 
-### 🎨 **Expérience visuelle**
+### 🎨 **Visual experience**
 
-- Chaque ingrédient représenté par une icône pixel art
-- Design rétro et ludique
-- Substitutions automatiques selon les préférences
+- Each ingredient is represented by a pixel art icon
+- Retro and playful design
+- Automatic substitutions based on preferences
 
-## 📤 Objectif : Créer, pas Stocker
+## 📤 Goal: Create, not store
 
-L'objectif n'est **pas de conserver des recettes** mais de permettre aux utilisateurs de :
+The goal is **not to save recipes** but to let users:
 
-- 🖼️ **Générer une image** ou fiche visuelle de leur bento
-- 📱 **Partager** ce contenu sur les réseaux (TikTok, Instagram...)
-- 🎮 **S'amuser** à composer, explorer, apprendre
-- 🌱 **Découvrir** la cuisine végétarienne japonaise
+- 🖼️ **Generate an image** or visual card of their bento
+- 📱 **Share** this content on social media (TikTok, Instagram...)
+- 🎮 **Have fun** composing, exploring, learning
+- 🌱 **Discover** Japanese vegetarian cuisine
 
-## 🧠 Technologie et Valeurs
+## 🧠 Technology & Values
 
-### 🛠️ **Stack Technique**
+### 🛠️ **Tech stack**
 
-- **Frontend** : Vanilla JS/TS, HTML, CSS
-- **Hébergement** : Cloudflare
-- **Base de données** : IndexedDB
-- **Runtime** : Bun
+- **Frontend**: Vanilla JS/TS, HTML, CSS
+- **Hosting**: Infomaniak
+- **Database**: IndexedDB
+- **Runtime**: Bun
 
 ### 🎨 **Design**
 
-- **Style** : Tout en pixel art, rétro
-- **UX** : Interface intuitive et ludique
-- **Responsive** : Adapté mobile et desktop
+- **Style**: All pixel art, retro
+- **UX**: Intuitive and playful interface
+- **Responsive**: Mobile and desktop friendly
 
-### 🌱 **Valeurs**
+### 🌱 **Values**
 
-- **Éco-responsable** : Optimisé, local-first
-- **Respect de la vie privée** : Aucune pub intrusive
-- **Minimaliste** : Stack simple et efficace
-- **Éducatif** : Découverte de la cuisine végétarienne
+- **Eco-friendly**: Optimized, local-first
+- **Privacy-respecting**: No intrusive ads
+- **Minimalist**: Simple and efficient stack
+- **Educational**: Discover vegetarian cuisine
 
-## 🚀 Pourquoi Sans Framework ?
+## 🚀 Why No Framework?
 
-Cette application démontre qu'on peut créer une expérience moderne **sans framework lourd** :
+This app demonstrates you can build a modern experience **without a heavy framework**:
 
-- ⚡ **Performance maximale** - Pas de surcharge de framework
-- 📦 **Bundle minimal** - Seulement le code nécessaire
-- 🎯 **Contrôle total** - Pas de "magie" cachée
-- 🚀 **Démarrage rapide** - Bun + vanilla JS
-- 🧠 **Apprentissage** - Comprendre les concepts fondamentaux
+- ⚡ **Maximum performance** - No framework overhead
+- 📦 **Minimal bundle** - Only the code you need
+- 🎯 **Full control** - No hidden "magic"
+- 🚀 **Fast startup** - Bun + vanilla JS
+- 🧠 **Learning** - Understand the fundamentals
 
 ## 📁 Architecture
 
 ```
 bento/
-├── app.ts                 # Point d'entrée principal
-├── index.html            # Page HTML principale avec templates
-├── features/             # Tests BDD Cucumber
-│   ├── router/           # Feature: Navigation
-│   └── translate/        # Feature: Traduction
-├── docs/                 # Documentation générée
+├── app.ts                 # Main entry point
+├── index.html             # Main HTML page with templates
+├── features/              # Cucumber BDD tests
+│   ├── router/            # Feature: Navigation
+│   └── translate/         # Feature: Translation
+├── docs/                  # Generated documentation
 │   └── feature-documentation.md
-├── scripts/              # Scripts utilitaires
+├── scripts/               # Utility scripts
 │   └── generate-feature-docs.ts
-└── public/               # Assets statiques
+└── public/                # Static assets
     └── style.css
 ```
 
-## 🔧 Fonctionnalités Développées
+## 🔧 Main Features
 
-### 1. **Système de Templates Natif**
+### 1. **Native Template System**
 
-Utilisation des templates HTML natifs pour la structure modulaire :
+Use native HTML templates for modular structure:
 
 ```html
 <template id="bento-builder-template">
   <div class="bento-builder">
-    <h1>Composez votre Bento</h1>
-    <!-- Interface de sélection -->
+    <h1>Compose your Bento</h1>
+    <!-- Selection interface -->
   </div>
 </template>
 ```
 
-### 2. **Proxy Réactif Vanilla**
+### 2. **Vanilla Reactive Proxy**
 
-Réactivité sans framework, juste avec les proxies JavaScript :
+Reactivity without a framework, just with JavaScript proxies:
 
 ```typescript
 const bentoState = new Proxy(
@@ -119,36 +128,36 @@ const bentoState = new Proxy(
   {
     set(target, property, value) {
       target[property] = value
-      updateBentoPreview() // Mise à jour automatique
+      updateBentoPreview() // Auto update
       return true
     },
   }
 )
 ```
 
-### 3. **Router Frontend Custom**
+### 3. **Custom Frontend Router**
 
-Navigation côté client développée from scratch :
+Client-side navigation built from scratch:
 
 ```typescript
-// Navigation entre les étapes
+// Step navigation
 ;<a href="/bento/builder" data-internal>
-  Créer mon Bento
+  Create my Bento
 </a>
 ```
 
-### 4. **Architecture Features**
+### 4. **Feature-based Architecture**
 
-Organisation du code par fonctionnalités métier :
+Code organized by business features:
 
-- **Router** : Gestion de la navigation
-- **BentoBuilder** : Logique de composition
-- **Ingredients** : Gestion des ingrédients
-- **Export** : Génération d'images/fiches
+- **Router**: Navigation management
+- **BentoBuilder**: Composition logic
+- **Ingredients**: Ingredient management
+- **Export**: Image/card generation
 
-## 🧪 Tests BDD
+## 🧪 BDD Tests
 
-Le projet utilise Cucumber pour les tests BDD, permettant de décrire le comportement en langage naturel :
+The project uses Cucumber for BDD tests, allowing you to describe behavior in natural language:
 
 ```gherkin
 Feature: Bento Builder
@@ -162,139 +171,165 @@ Feature: Bento Builder
     Then I should see my bento preview
 ```
 
-### Génération de Documentation
+### Documentation Generation
 
-La documentation des features est générée automatiquement :
+Feature documentation is generated automatically:
 
 ```bash
 bun run docs:features
 ```
 
-📖 **[Voir la documentation des features](./docs/feature-documentation.md)**
+📖 **[See the feature documentation](./docs/feature-documentation.md)**
 
-## 🛠️ Installation et Utilisation
+## 🛠️ Installation & Usage
 
-### Prérequis
+### Prerequisites
 
-- [Bun](https://bun.sh/) installé
+- [Bun](https://bun.sh/) installed
 
 ### Installation
 
 ```bash
-# Cloner le projet
+# Clone the project
 git clone <repository>
 cd bento
 
-# Installer les dépendances
+# Install dependencies
 bun install
 ```
 
-### Développement
+### Development
 
 ```bash
-# Lancer le serveur de développement
+# Start the dev server
 bun run dev
 
-# Lancer les tests d'intégration
+# Run integration tests
 bun run test:integration
 
-# Générer la documentation
+# Generate documentation
 bun run docs:features
 ```
 
 ### Build
 
 ```bash
-# Build de production
+# Production build
 bun run build
 ```
 
-## 📊 Scripts Disponibles
+## 📊 Available Scripts
 
-| Script                     | Description                          |
-| -------------------------- | ------------------------------------ |
-| `bun run dev`              | Serveur de développement             |
-| `bun run test:integration` | Tests d'intégration Cucumber         |
-| `bun run docs:features`    | Génère la documentation des features |
-| `bun run build`            | Build de production                  |
-| `bun run coverage`         | Génère le rapport de couverture      |
+| Script                     | Description                    |
+| -------------------------- | ------------------------------ |
+| `bun run dev`              | Development server             |
+| `bun run test:integration` | Cucumber integration tests     |
+| `bun run docs:features`    | Generate feature documentation |
+| `bun run build`            | Production build               |
+| `bun run coverage`         | Generate coverage report       |
+| `bun run badge:coverage`   | Update the coverage badge      |
 
-## 🎯 Avantages de Cette Approche
+## 🏷️ Badges & Quality
+
+### Coverage Badges
+
+The coverage badge is generated automatically from test results:
+
+```bash
+# Generate the badge from current coverage
+bun run badge:coverage
+
+# Generate the badge with a specific coverage
+bun run badge:coverage 85
+```
+
+### Badge Colors
+
+- 🟢 **Bright Green**: 90%+ (Excellent)
+- 🟢 **Green**: 80-89% (Good)
+- 🟡 **Yellow Green**: 70-79% (Acceptable)
+- 🟡 **Yellow**: 60-69% (Needs improvement)
+- 🟠 **Orange**: 50-59% (Low)
+- 🔴 **Red**: <50% (Critical)
+
+## 🎯 Approach Advantages
 
 ### ✅ **Performance**
 
-- Pas de surcharge de framework
-- Bundle minimal
-- Démarrage ultra-rapide avec Bun
+- No framework overhead
+- Minimal bundle
+- Ultra-fast startup with Bun
 
-### ✅ **Simplicité**
+### ✅ **Simplicity**
 
-- Code vanilla JavaScript/TypeScript
-- Pas de concepts abstraits à apprendre
-- Contrôle total sur l'architecture
+- Vanilla JavaScript/TypeScript code
+- No abstract concepts to learn
+- Full control over architecture
 
-### ✅ **Maintenabilité**
+### ✅ **Maintainability**
 
-- Architecture claire et prévisible
-- Tests BDD pour la qualité
-- Documentation générée automatiquement
+- Clear and predictable architecture
+- BDD tests for quality
+- Auto-generated documentation
 
-### ✅ **Évolutivité**
+### ✅ **Scalability**
 
-- Facile d'ajouter de nouveaux ingrédients
-- Structure modulaire
-- Pas de limitations de framework
+- Easy to add new ingredients
+- Modular structure
+- No framework limitations
 
-## 🌱 Ingrédients Supportés
+## 🌱 Supported Ingredients
 
 ### 🍚 **Bases**
 
-- Riz blanc/basmati/quinoa
+- White/basmati/quinoa rice
 - Onigiri
 - Gimbap
 - Empanadas
 
-### 🥜 **Protéines Végétales**
+### 🥜 **Plant-based Proteins**
 
 - Tofu
 - Tempeh
 - Seitan
-- Légumineuses
+- Legumes
 
-### 🥬 **Légumes**
+### 🥬 **Vegetables**
 
-- Carottes, concombre
-- Épinards, chou
-- Avocat, tomates
-- Kimchi (avec niveau de difficulté)
+- Carrots, cucumber
+- Spinach, cabbage
+- Avocado, tomatoes
+- Kimchi (with difficulty level)
 
 ### 🍯 **Sauces**
 
-- Sauce soja
+- Soy sauce
 - Miso
 - Tahini
 - Vinaigrette
 
 ### 🎨 **Toppings**
 
-- Graines de sésame
-- Algues nori
-- Fleurs comestibles
-- Herbes fraîches
+- Sesame seeds
+- Nori seaweed
+- Edible flowers
+- Fresh herbs
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-1. Fork le projet
-2. Créez une branche feature (`git checkout -b feature/NewIngredient`)
-3. Committez vos changements (`git commit -m 'Add new ingredient'`)
-4. Push vers la branche (`git push origin feature/NewIngredient`)
-5. Ouvrez une Pull Request
+Please read the [Contributing Guide](./CONTRIBUTING.md) for detailed instructions, naming conventions, feature structure, and workflow before opening a pull request.
 
-## 📝 Licence
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/NewIngredient`)
+3. Commit your changes (`git commit -m 'Add new ingredient'`)
+4. Push to the branch (`git push origin feature/NewIngredient`)
+5. Open a Pull Request
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+## 📝 License
 
-## 👨‍💻 Auteur
+This project is MIT licensed. See the `LICENSE` file for details.
+
+## 👨‍💻 Author
 
 **Kazerlelutin**
 

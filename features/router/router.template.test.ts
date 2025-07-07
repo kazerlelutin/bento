@@ -1,7 +1,6 @@
 import { expect, describe, test, beforeEach } from "bun:test";
 import { getMainContent, getTemplate, renderTemplate, cloneTemplate } from "./router.template";
 
-
 describe('router.template', () => {
 
   beforeEach(() => {

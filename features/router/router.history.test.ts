@@ -1,4 +1,4 @@
-import { expect, describe, test, jest, beforeEach } from "bun:test";
+import { expect, describe, test, jest } from "bun:test";
 import { updateDocumentTitle, updateHistory } from './router.history';
 
 describe('router.history', () => {

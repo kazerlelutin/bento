@@ -1,20 +1,20 @@
 [
   {
-    "description": "  As a user\n  I want to navigate through the application\n  So that I can access different pages",
+    "description": "  As a user\n  I want to navigate through the application\n  So that I can access different pages with proper state management",
     "elements": [
       {
         "description": "",
-        "id": "front-end-router;basic-navigation",
+        "id": "front-end-router;basic-navigation-with-template-rendering",
         "keyword": "Scenario",
-        "line": 10,
-        "name": "Basic navigation",
+        "line": 11,
+        "name": "Basic navigation with template rendering",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1253499
+              "duration": 1270199
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 461000
+              "duration": 707400
             }
           },
           {
@@ -40,43 +40,39 @@
             },
             "result": {
               "status": "passed",
-              "duration": 341600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 11,
-            "name": "I visit the home page",
-            "match": {
-              "location": "features\\router\\router.steps.ts:18"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 167799
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 12,
-            "name": "I should see the home page content",
-            "match": {
-              "location": "features\\router\\router.steps.ts:22"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 398500,
-              "error_message": "ReferenceError: document is not defined\n    at <anonymous> (F:\\www\\bento\\features\\router\\router.steps.ts:23:20)\n    at <anonymous> (F:\\www\\bento\\features\\router\\router.steps.ts:22:59)"
+              "duration": 587199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 13,
-            "name": "the page title should be \"Home\"",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I visit the home page",
             "match": {
-              "location": "features\\router\\router.steps.ts:27"
+              "location": "features\\router\\router.steps.ts:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should see the home page content",
+            "match": {
+              "location": "features\\router\\router.steps.ts:22"
             },
             "result": {
               "status": "skipped",
@@ -87,6 +83,19 @@
             "arguments": [],
             "keyword": "And ",
             "line": 14,
+            "name": "the page title should be \"Accueil\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
             "name": "the URL should be \"/\"",
             "match": {
               "location": "features\\router\\router.steps.ts:31"
@@ -97,11 +106,21 @@
             }
           },
           {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the home template should be rendered",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
             "keyword": "After",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 89599
+              "duration": 140199
             }
           }
         ],
@@ -110,17 +129,17 @@
       },
       {
         "description": "",
-        "id": "front-end-router;navigation-to-another-page",
+        "id": "front-end-router;navigation-to-page-with-script",
         "keyword": "Scenario",
-        "line": 16,
-        "name": "Navigation to another page",
+        "line": 18,
+        "name": "Navigation to page with script",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 141500
+              "duration": 118700
             }
           },
           {
@@ -133,7 +152,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 210399
+              "duration": 158599
             }
           },
           {
@@ -146,27 +165,36 @@
             },
             "result": {
               "status": "passed",
-              "duration": 212700
+              "duration": 180999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 17,
+            "line": 19,
             "name": "I click on the \"About\" link",
             "match": {
               "location": "features\\router\\router.steps.ts:35"
             },
             "result": {
-              "status": "failed",
-              "duration": 473799,
-              "error_message": "ReferenceError: document is not defined\n    at <anonymous> (F:\\www\\bento\\features\\router\\router.steps.ts:36:16)\n    at <anonymous> (F:\\www\\bento\\features\\router\\router.steps.ts:35:54)"
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 18,
+            "line": 20,
             "name": "I should see the About page content",
             "result": {
               "status": "undefined",
@@ -176,8 +204,8 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 19,
-            "name": "the page title should be \"About\"",
+            "line": 21,
+            "name": "the page title should be \"À propos\"",
             "match": {
               "location": "features\\router\\router.steps.ts:27"
             },
@@ -189,7 +217,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 20,
+            "line": 22,
             "name": "the URL should be \"/about\"",
             "match": {
               "location": "features\\router\\router.steps.ts:31"
@@ -202,13 +230,30 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
-            "name": "the history should be updated",
-            "match": {
-              "location": "features\\router\\router.steps.ts:41"
-            },
+            "line": 23,
+            "name": "the about template should be rendered",
             "result": {
-              "status": "skipped",
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "the about page script should be initialized",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "the previous page cleanup should be executed",
+            "result": {
+              "status": "undefined",
               "duration": 0
             }
           },
@@ -217,7 +262,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 38999
+              "duration": 113199
             }
           }
         ],
@@ -228,7 +273,7 @@
         "description": "",
         "id": "front-end-router;navigation-with-dynamic-parameters",
         "keyword": "Scenario",
-        "line": 23,
+        "line": 27,
         "name": "Navigation with dynamic parameters",
         "steps": [
           {
@@ -236,7 +281,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 136099
+              "duration": 121900
             }
           },
           {
@@ -249,7 +294,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 245699
+              "duration": 177700
             }
           },
           {
@@ -262,13 +307,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 345599
+              "duration": 256200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 24,
+            "line": 28,
             "name": "I visit the page \"/users/123\"",
             "result": {
               "status": "undefined",
@@ -278,7 +333,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 25,
+            "line": 29,
             "name": "I should see the user profile for 123",
             "result": {
               "status": "undefined",
@@ -288,7 +343,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 26,
+            "line": 30,
             "name": "the page title should be \"User Profile\"",
             "match": {
               "location": "features\\router\\router.steps.ts:27"
@@ -301,7 +356,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 27,
+            "line": 31,
             "name": "the URL should be \"/users/123\"",
             "match": {
               "location": "features\\router\\router.steps.ts:31"
@@ -312,11 +367,21 @@
             }
           },
           {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "the user template should be rendered",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
             "keyword": "After",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 370200
+              "duration": 90899
             }
           }
         ],
@@ -327,7 +392,7 @@
         "description": "",
         "id": "front-end-router;navigation-with-query-parameters",
         "keyword": "Scenario",
-        "line": 29,
+        "line": 34,
         "name": "Navigation with query parameters",
         "steps": [
           {
@@ -335,7 +400,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 106700
+              "duration": 174599
             }
           },
           {
@@ -348,7 +413,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 963700
+              "duration": 224000
             }
           },
           {
@@ -361,13 +426,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 279999
+              "duration": 279300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 30,
+            "line": 35,
             "name": "I visit the page \"/search?q=test\"",
             "result": {
               "status": "undefined",
@@ -377,7 +452,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 31,
+            "line": 36,
             "name": "I should see search results for \"test\"",
             "result": {
               "status": "undefined",
@@ -387,7 +462,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 32,
+            "line": 37,
             "name": "the URL should be \"/search?q=test\"",
             "match": {
               "location": "features\\router\\router.steps.ts:31"
@@ -398,11 +473,21 @@
             }
           },
           {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "the search template should be rendered",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
             "keyword": "After",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 77099
+              "duration": 91000
             }
           }
         ],
@@ -413,7 +498,7 @@
         "description": "",
         "id": "front-end-router;page-not-found",
         "keyword": "Scenario",
-        "line": 34,
+        "line": 40,
         "name": "Page not found",
         "steps": [
           {
@@ -421,7 +506,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 115400
+              "duration": 371900
             }
           },
           {
@@ -434,7 +519,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 180700
+              "duration": 303299
             }
           },
           {
@@ -447,13 +532,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 223000
+              "duration": 387399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 35,
+            "line": 41,
             "name": "I visit a non-existent page",
             "result": {
               "status": "undefined",
@@ -463,7 +558,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 36,
+            "line": 42,
             "name": "I should see the 404 page",
             "result": {
               "status": "undefined",
@@ -473,7 +568,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 37,
+            "line": 43,
             "name": "the page title should be \"Page Not Found\"",
             "match": {
               "location": "features\\router\\router.steps.ts:27"
@@ -486,8 +581,18 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 38,
+            "line": 44,
             "name": "the URL should remain unchanged",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "the 404 template should be rendered",
             "result": {
               "status": "undefined",
               "duration": 0
@@ -498,7 +603,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 58300
+              "duration": 60199
             }
           }
         ],
@@ -509,7 +614,7 @@
         "description": "",
         "id": "front-end-router;navigation-with-authentication",
         "keyword": "Scenario",
-        "line": 40,
+        "line": 47,
         "name": "Navigation with authentication",
         "steps": [
           {
@@ -517,7 +622,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 181100
+              "duration": 75999
             }
           },
           {
@@ -530,7 +635,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 296600
+              "duration": 179900
             }
           },
           {
@@ -543,13 +648,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 213700
+              "duration": 151400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 41,
+            "line": 48,
             "name": "I am not logged in",
             "result": {
               "status": "undefined",
@@ -559,7 +674,7 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 42,
+            "line": 49,
             "name": "I try to access a protected page",
             "result": {
               "status": "undefined",
@@ -569,7 +684,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 43,
+            "line": 50,
             "name": "I should be redirected to the login page",
             "result": {
               "status": "undefined",
@@ -579,7 +694,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 44,
+            "line": 51,
             "name": "the URL should be \"/login\"",
             "match": {
               "location": "features\\router\\router.steps.ts:31"
@@ -590,11 +705,21 @@
             }
           },
           {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "the login template should be rendered",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
             "keyword": "After",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 57700
+              "duration": 49399
             }
           }
         ],
@@ -603,17 +728,17 @@
       },
       {
         "description": "",
-        "id": "front-end-router;navigation-with-transition",
+        "id": "front-end-router;navigation-with-transition-and-cleanup",
         "keyword": "Scenario",
-        "line": 46,
-        "name": "Navigation with transition",
+        "line": 54,
+        "name": "Navigation with transition and cleanup",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 56999
+              "duration": 89700
             }
           },
           {
@@ -626,7 +751,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 167300
+              "duration": 172300
             }
           },
           {
@@ -639,13 +764,33 @@
             },
             "result": {
               "status": "passed",
-              "duration": 173099
+              "duration": 301699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "I am on a page with active scripts",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 47,
+            "line": 56,
             "name": "I navigate to a new page",
             "result": {
               "status": "undefined",
@@ -655,8 +800,8 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 48,
-            "name": "a transition animation should be played",
+            "line": 57,
+            "name": "the previous page cleanup should be executed",
             "result": {
               "status": "undefined",
               "duration": 0
@@ -665,7 +810,17 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 49,
+            "line": 58,
+            "name": "the new page script should be initialized",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
             "name": "the content should be updated after the transition",
             "result": {
               "status": "undefined",
@@ -677,7 +832,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 67299
+              "duration": 55899
             }
           }
         ],
@@ -686,17 +841,17 @@
       },
       {
         "description": "",
-        "id": "front-end-router;link-handling",
+        "id": "front-end-router;link-handling-with-internal-navigation",
         "keyword": "Scenario",
-        "line": 51,
-        "name": "Link handling",
+        "line": 61,
+        "name": "Link handling with internal navigation",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 92100
+              "duration": 153500
             }
           },
           {
@@ -709,7 +864,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 209999
+              "duration": 220599
             }
           },
           {
@@ -722,13 +877,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 284899
+              "duration": 263500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 52,
+            "line": 62,
             "name": "I click on an internal link",
             "result": {
               "status": "undefined",
@@ -738,7 +903,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 53,
+            "line": 63,
             "name": "the navigation should be handled by the router",
             "result": {
               "status": "undefined",
@@ -748,8 +913,18 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 54,
+            "line": 64,
             "name": "the page should not be reloaded",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "the browser history should be updated",
             "result": {
               "status": "undefined",
               "duration": 0
@@ -760,7 +935,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 36200
+              "duration": 80399
             }
           }
         ],
@@ -771,7 +946,7 @@
         "description": "",
         "id": "front-end-router;back-button-handling",
         "keyword": "Scenario",
-        "line": 56,
+        "line": 67,
         "name": "Back button handling",
         "steps": [
           {
@@ -779,7 +954,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 148700
+              "duration": 126800
             }
           },
           {
@@ -792,7 +967,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 197299
+              "duration": 388600
             }
           },
           {
@@ -805,13 +980,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 296600
+              "duration": 158600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 57,
+            "line": 68,
             "name": "I am on the \"/about\" page",
             "result": {
               "status": "undefined",
@@ -821,7 +1006,7 @@
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 58,
+            "line": 69,
             "name": "I click the back button",
             "result": {
               "status": "undefined",
@@ -831,7 +1016,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 59,
+            "line": 70,
             "name": "I should go back to the previous page",
             "result": {
               "status": "undefined",
@@ -841,7 +1026,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 60,
+            "line": 71,
             "name": "the URL should be updated",
             "result": {
               "status": "undefined",
@@ -851,8 +1036,18 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 61,
+            "line": 72,
             "name": "the content should be updated",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "the page cleanup should be executed",
             "result": {
               "status": "undefined",
               "duration": 0
@@ -863,7 +1058,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 62500
+              "duration": 179700
             }
           }
         ],
@@ -874,7 +1069,7 @@
         "description": "",
         "id": "front-end-router;external-link-handling",
         "keyword": "Scenario",
-        "line": 63,
+        "line": 75,
         "name": "External link handling",
         "steps": [
           {
@@ -882,7 +1077,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 72900
+              "duration": 103199
             }
           },
           {
@@ -895,7 +1090,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 193199
+              "duration": 214299
             }
           },
           {
@@ -908,13 +1103,23 @@
             },
             "result": {
               "status": "passed",
-              "duration": 194500
+              "duration": 204100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 64,
+            "line": 76,
             "name": "I click on an external link",
             "result": {
               "status": "undefined",
@@ -924,7 +1129,7 @@
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 65,
+            "line": 77,
             "name": "the navigation should be handled by the browser",
             "result": {
               "status": "undefined",
@@ -934,7 +1139,7 @@
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 66,
+            "line": 78,
             "name": "the page should be reloaded",
             "result": {
               "status": "undefined",
@@ -946,7 +1151,469 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 37199
+              "duration": 50900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "front-end-router;template-rendering-with-state-management",
+        "keyword": "Scenario",
+        "line": 80,
+        "name": "Template rendering with state management",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is loaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 172799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 169599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 81,
+            "name": "I visit a page with reactive state",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 82,
+            "name": "the template should be rendered",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "the page script should be initialized",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "the reactive state should be set up",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "the UI should respond to state changes",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 40499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "front-end-router;script-cleanup-on-navigation",
+        "keyword": "Scenario",
+        "line": 87,
+        "name": "Script cleanup on navigation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 70299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is loaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 189899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 226300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 88,
+            "name": "I am on a page with active event listeners",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "I navigate to another page",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 90,
+            "name": "the previous page event listeners should be removed",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "the previous page timers should be cleared",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "the previous page state should be cleaned up",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "the new page should be properly initialized",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 50500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "front-end-router;multiple-rapid-navigation",
+        "keyword": "Scenario",
+        "line": 95,
+        "name": "Multiple rapid navigation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 108299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is loaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 201299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 278200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 96,
+            "name": "I navigate quickly between multiple pages",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 97,
+            "name": "each page should render correctly",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 98,
+            "name": "each page cleanup should execute properly",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "no memory leaks should occur",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "the final page should be active",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "front-end-router;browser-refresh-handling",
+        "keyword": "Scenario",
+        "line": 102,
+        "name": "Browser refresh handling",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 96100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is loaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 202199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 167899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the templates are available",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 103,
+            "name": "I am on a specific page",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 104,
+            "name": "I refresh the browser",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 105,
+            "name": "the current page should be rendered correctly",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 106,
+            "name": "the page script should be initialized",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 107,
+            "name": "the URL should remain the same",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 61900
             }
           }
         ],
