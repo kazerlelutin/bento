@@ -15,8 +15,7 @@ export const router = {
   init: (): void => {
     setupRouteChangeListener();
     setupNavigation();
-
-    const currentRoute = routerState.routes.get(routerState.currentPage);
+    const currentRoute = routerState.routes.get(window.location.pathname);
     if (currentRoute) {
       handleRouteChange(currentRoute);
     }

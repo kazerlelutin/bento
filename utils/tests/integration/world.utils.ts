@@ -1,6 +1,5 @@
 import { World } from "@cucumber/cucumber"
 
-
 export class BentoWorld extends World {
   private context: {
     apiUrl: string
@@ -12,7 +11,7 @@ export class BentoWorld extends World {
   }) {
     super(props as any);
     this.context = {
-      apiUrl: 'test'
+      apiUrl: 'URL_API'
     }
 
     console.log('BentoWorld constructor');

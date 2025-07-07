@@ -5,8 +5,8 @@
 
     "format": [
       "progress-bar",
-      "html:reports-integration/integration/cucumber-report.html",
-      "json:reports-integration/integration/cucumber-report.json"
+      "html:reports-integration/cucumber-report.html",
+      "json:reports-integration/cucumber-report.json"
     ]
   }
 }

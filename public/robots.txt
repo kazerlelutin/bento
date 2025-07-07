@@ -1,0 +1,46 @@
+# BENTO - Robots.txt
+  # File
+User-agent: *
+Allow: /
+
+# Allow indexing of main pages
+Allow: /
+Allow: /about
+
+# Allow indexing of CSS and JS resources
+Allow: /public/style.css
+Allow: /public/theme.js
+Allow: /app.ts
+
+# Prevent indexing of development and test files
+Disallow: /node_modules/
+Disallow: /coverage/
+Disallow: /reports-integration/
+Disallow: /features/
+Disallow: /utils/tests/
+Disallow: /scripts/
+Disallow: /docs/
+Disallow: /bun.lock
+Disallow: /pnpm-lock.yaml
+Disallow: /package.json
+Disallow: /bunfig.toml
+Disallow: /cucumber.json
+Disallow: /Dockerfile
+Disallow: /README.md
+Disallow: /CONTRIBUTING.md
+Disallow: /matcher.d.ts
+Disallow: /preload.ts
+
+# Prevent indexing of temporary and cache files
+Disallow: /.*\.tmp$
+Disallow: /.*\.cache$
+Disallow: /.*\.log$
+
+# Sitemap
+Sitemap: https://ben-to.fr/sitemap.xml
+# Recommended crawl delay (in seconds)
+Crawl-delay: 1
+
+# Site information
+# BENTO - Pixel art creation and sharing platform
+# Last update: 09/07/2025

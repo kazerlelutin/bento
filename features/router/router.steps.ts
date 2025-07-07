@@ -3,14 +3,13 @@ import { expect } from 'bun:test';
 import { routerState } from './router.state';
 
 Given('the application is loaded', async function () {
-  console.log("the application is loaded ====================================================");
 
+  // test for pass in context
   this.apiUrl = 'test444'
   // Application is already loaded in the browser
 });
 
 Given('the router is initialized', async function () {
-  console.log("the router is initialized ====================================================", this.apiUrl);
   expect(routerState).toBeDefined();
   expect(routerState.currentPage).toBe('/');
 });

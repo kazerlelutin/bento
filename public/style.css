@@ -1,7 +1,5 @@
-
-
 :root {
-
+  /* Palette Pixel Art Originale */
   --color-pixel-1:#feffff;
   --color-pixel-2:#a0a0a0;
   --color-pixel-3:#525252;
@@ -57,8 +55,27 @@
   --color-pixel-53:#3c3c3c;
   --color-pixel-54:#000000;
 
-}
 
+  --bg-primary: var(--color-pixel-28);
+  --text-primary: var(--color-pixel-54);
+  --text-secondary: var(--color-pixel-39);
+  --text-accent: var(--color-pixel-41);
+  --text-accent-secondary: var(--color-pixel-41);
+  --link-color: var(--color-pixel-31);
+  --link-hover: var(--color-pixel-30);
+  --success-color: var(--color-pixel-42);
+  --warning-color: var(--color-pixel-29);
+  --error-color: var(--color-pixel-26);
+
+  --font-size: 16px;
+  --font-size-small: calc(var(--font-size) * 0.8);
+  --font-size-medium: calc(var(--font-size) * 1.2);
+  --font-size-l: calc(var(--font-size) * 1.5);
+  --font-size-xl: calc(var(--font-size) * 2);
+  --font-size-2xl: calc(var(--font-size) * 3);
+  --font-size-3xl: calc(var(--font-size) * 4);
+  
+}
 
 body {
   margin: 0;
@@ -67,7 +84,8 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-pixel-28);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 code {
@@ -75,8 +93,122 @@ code {
     monospace;
 }
 
+/* ==== ELEMENTS ==== */
 
 h1 {
-  color: var(--color-pixel-39);
-  font-size: 2rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-2xl);
 }
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+
+/* ==== COMPONENTS ==== */
+
+.btn {
+  background-color: var(--color-pixel-10);
+  color: var(--color-pixel-1);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--color-pixel-14);
+}
+
+/* ==== APP ==== */
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  overflow: hidden;
+}
+
+.app-main {
+  position: relative;
+  height: 100%;
+}
+
+.app-main > * {
+  position: absolute;
+  inset: 0;
+}
+
+.app-header {
+  grid-area: header;
+}
+
+.app-main {
+  grid-area: main;
+}
+
+.app-footer {
+  grid-area: footer;
+  padding: 1rem;
+  text-align: center;
+}
+
+.app-name {
+  font-size: var(--font-size-l);
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: var(--color-pixel-19);
+}
+
+.app-name-accent {
+  color: var(--color-pixel-18);
+}
+
+
+/* ==== PAGES ==== */
+
+
+
+/* ==== @crafter ==== */
+
+.crafter-page {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 2fr auto;
+  grid-template-areas:
+    "canvas"
+    "stepper"
+    "controls";
+  gap: 1rem;
+}
+
+.crafter-canvas {
+  grid-area: canvas;
+  width: 100%;
+  height: 100%;
+}
+
+.crafter-controls {
+  grid-area: controls;
+}
+
+.crafter-stepper {
+  grid-area: stepper;
+}
+
+.crafter-stepper-button { 
+  background-color: var(--color-pixel-10);
+  color: var(--color-pixel-1);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--color-pixel-14);
+}
+
+.crafter-stepper-button-icon {
+  font-size: var(--font-size-l);
+} 
