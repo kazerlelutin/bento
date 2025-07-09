@@ -195,6 +195,10 @@ a:hover {
 
 .crafter-controls {
   grid-area: controls;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .crafter-stepper {
@@ -207,6 +211,10 @@ a:hover {
   padding: 0.5rem 1rem;
   text-decoration: none;
   border: 1px solid var(--color-pixel-14);
+} 
+
+.crafter-stepper-button[aria-current="true"] {
+  background-color: var(--color-pixel-41);
 }
 
 .crafter-stepper-button-icon {
