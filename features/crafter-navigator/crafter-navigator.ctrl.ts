@@ -1,0 +1,43 @@
+import { crafterNavigatorStore } from "./crafter-navigator.store";
+import type { Step } from "./crafter-navigator.types";
+import { createButton, getCrafterNavigatorContainer } from "./crafter-navigator.utils";
+import { steps } from "./crafter.navigator.const";
+
+export default {
+  init() {
+    const container = getCrafterNavigatorContainer()
+    steps.forEach(step => {
+      const button = createButton(step);
+      if (button) container.appendChild(button);
+      if (step.name === crafterNavigatorStore.currentStep.name) button.setAttribute('aria-current', 'true');
+    });
+
+    container.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target instanceof HTMLElement && 'stepName' in target.dataset) {
+        const stepName = target.dataset.stepName;
+        if (stepName) crafterNavigatorStore.setCurrentStep(stepName);
+      }
+    });
+
+    this.unsubscribe = crafterNavigatorStore.subscribe((step) => {
+      this.updateUI(step);
+    });
+  },
+
+  updateUI(step: Step) {
+    const container = getCrafterNavigatorContainer();
+
+    const buttons = container.querySelectorAll('.crafter-stepper-button') as NodeListOf<HTMLButtonElement>;
+    buttons.forEach(button => {
+      const isActive = step.name === button.dataset.stepName;
+      button.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  },
+
+  cleanup() {
+    if (this.unsubscribe) {
+      this.unsubscribe();
+    }
+  }
+}

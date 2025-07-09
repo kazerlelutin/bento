@@ -55,7 +55,6 @@
   --color-pixel-53:#3c3c3c;
   --color-pixel-54:#000000;
 
-
   --bg-primary: var(--color-pixel-28);
   --text-primary: var(--color-pixel-54);
   --text-secondary: var(--color-pixel-39);
@@ -74,6 +73,12 @@
   --font-size-xl: calc(var(--font-size) * 2);
   --font-size-2xl: calc(var(--font-size) * 3);
   --font-size-3xl: calc(var(--font-size) * 4);
+
+  --pixel-icon-size: 32px;
+
+  --gap-small: 0.5rem;
+  --gap-medium: 1rem;
+  --gap-large: 2rem;
   
 }
 
@@ -109,6 +114,10 @@ a:hover {
   color: var(--link-hover);
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
 
 /* ==== COMPONENTS ==== */
 
@@ -170,10 +179,6 @@ a:hover {
 }
 
 
-/* ==== PAGES ==== */
-
-
-
 /* ==== @crafter ==== */
 
 .crafter-page {
@@ -195,6 +200,10 @@ a:hover {
 
 .crafter-controls {
   grid-area: controls;
+  display: flex;
+  gap: var(--gap-large);
+  justify-content: center;
+  align-items: center;
 }
 
 .crafter-stepper {
@@ -202,13 +211,18 @@ a:hover {
 }
 
 .crafter-stepper-button { 
-  background-color: var(--color-pixel-10);
-  color: var(--color-pixel-1);
-  padding: 0.5rem 1rem;
+  position: relative;
   text-decoration: none;
-  border: 1px solid var(--color-pixel-14);
-}
-
-.crafter-stepper-button-icon {
-  font-size: var(--font-size-l);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  width: var(--pixel-icon-size);
+  height: var(--pixel-icon-size);
+  object-fit: contain;
+  transition: all 0.3s ease;
 } 
+
+.crafter-stepper-button[aria-current="true"]{
+  transform: translateY(-5px);
+  filter: grayscale(100%);
+  opacity: 0.7;
+}

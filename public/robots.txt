@@ -43,4 +43,4 @@ Crawl-delay: 1
 
 # Site information
 # BENTO - Pixel art creation and sharing platform
-# Last update: 09/07/2025
+# Last update: 12/07/2025

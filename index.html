@@ -3,6 +3,7 @@
   <head>
     <title>BENTO</title>
     <link rel="stylesheet" href="public/style.css" />
+    <link rel="alternate" type="application/xml" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -18,13 +19,10 @@
     <meta name="google" content="notranslate" />
     <meta name="google" content="notranslate" />
 
-    <!-- Balise meta pour la langue -->
     <meta http-equiv="content-language" content="fr" />
 
-    <!-- Balise meta pour l'encodage des caractères -->
     <meta charset="UTF-8" />
 
-    <!-- Balise meta pour les réseaux sociaux -->
     <meta
       property="og:title"
       content="BENTO - Recettes de Bento en Pixel Art"
@@ -36,7 +34,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Balise meta pour Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta
       name="twitter:title"
@@ -47,6 +44,7 @@
       content="BENTO propose des recettes de bento personnalisables avec des visuels en pixel art. Créez et partagez vos compositions culinaires artistiques."
     />
   </head>
+
   <body class="app">
     <header>
       <h1 class="app-name">BEN<span class="app-name-accent">TO</span></h1>
@@ -67,9 +65,7 @@
         <div class="crafter-stepper" id="stepper">
           Les différentes étapes du crafter
         </div>
-        <div class="crafter-controls" id="controls">
-          Les différentes options du crafter
-        </div>
+        <div class="crafter-controls" id="crafter-controls"></div>
       </div>
     </template>
 
