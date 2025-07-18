@@ -46,7 +46,6 @@ describe('router.state', () => {
   test('should call cleanUp function if defined', () => {
     let cleaned = false;
     routerState.cleanUp = () => { cleaned = true; };
-    // Déclenche le cleanup
     if (routerState.cleanUp) routerState.cleanUp();
     expect(cleaned).toBe(true);
   });

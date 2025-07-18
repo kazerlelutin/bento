@@ -79,6 +79,14 @@
   --gap-small: 0.5rem;
   --gap-medium: 1rem;
   --gap-large: 2rem;
+
+  --padding-small: 0.5rem;
+  --padding-medium: 1rem;
+  --padding-large: 2rem;
+
+  --margin-small: 0.5rem;
+  --margin-medium: 1rem;
+  --margin-large: 2rem;
   
 }
 
@@ -215,6 +223,7 @@ img {
 
 .crafter-stepper {
   grid-area: stepper;
+  padding: var(--padding-medium);
 }
 
 .crafter-stepper-button { 

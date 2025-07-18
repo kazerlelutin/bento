@@ -1,13 +1,21 @@
 // @crafter-navigator
 import crafterNavigatorCtrl from '../../crafter-navigator/crafter-navigator.ctrl';
+import crafterStepperCtrl from '../../crafter-stepper/crafter-stepper.ctrl';
+import type { Ctrl } from '../routes.type';
 
-export default {
+const homeCtrl: Ctrl = {
   init() {
     // @crafter-navigator
-    crafterNavigatorCtrl.init();
+    crafterNavigatorCtrl.init?.();
+    // @crafter-stepper
+    crafterStepperCtrl.init?.();
   },
-  cleanup() {
+  cleanUp() {
     // @crafter-navigator
-    crafterNavigatorCtrl.cleanup();
+    crafterNavigatorCtrl.cleanUp?.();
+    // @crafter-stepper
+    crafterStepperCtrl.cleanUp?.();
   }
 }
+
+export default homeCtrl;

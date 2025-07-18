@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'bun:test';
+import { beforeEach, describe, expect, it, jest } from 'bun:test';
 import crafterNavigatorCtrl from './crafter-navigator.ctrl';
 import { crafterNavigatorStore } from './crafter-navigator.store';
 import { steps } from './crafter.navigator.const';
@@ -19,7 +19,7 @@ describe('crafterNavigatorCtrl', () => {
 
   it('adds buttons to the container', () => {
     const container = document.getElementById('crafter-controls') as HTMLElement;
-    crafterNavigatorCtrl.init();
+    crafterNavigatorCtrl.init?.();
     const buttons = container.querySelectorAll('.crafter-stepper-button');
     expect(buttons.length).toBe(steps.length);
 
@@ -31,7 +31,7 @@ describe('crafterNavigatorCtrl', () => {
   });
 
   it('updates aria-current on buttons', () => {
-    crafterNavigatorCtrl.init();
+    crafterNavigatorCtrl.init?.();
     const container = document.getElementById('crafter-controls') as HTMLElement;
     const buttons = container.querySelectorAll('.crafter-stepper-button');
     crafterNavigatorCtrl.updateUI(steps[1]);
@@ -42,12 +42,12 @@ describe('crafterNavigatorCtrl', () => {
   });
 
   it('unsubscribes from the store', () => {
-    const spy = vi.fn();
+    const spy = jest.fn();
     const originalSubscribe = crafterNavigatorStore.subscribe;
     crafterNavigatorStore.subscribe = () => spy;
 
-    crafterNavigatorCtrl.init();
-    crafterNavigatorCtrl.cleanup();
+    crafterNavigatorCtrl.init?.();
+    crafterNavigatorCtrl.cleanUp?.();
 
     expect(spy).toHaveBeenCalled();
 
@@ -55,7 +55,7 @@ describe('crafterNavigatorCtrl', () => {
   });
 
   it('clicking on a button changes the current step', () => {
-    crafterNavigatorCtrl.init();
+    crafterNavigatorCtrl.init?.();
     const container = document.getElementById('crafter-controls') as HTMLElement;
     const button = container.querySelector('.crafter-stepper-button') as HTMLButtonElement;
     button.dispatchEvent(new MouseEvent('click', { bubbles: true }));
