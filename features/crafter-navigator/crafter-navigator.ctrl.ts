@@ -1,9 +1,11 @@
 import { crafterNavigatorStore } from "./crafter-navigator.store";
-import type { Step } from "./crafter-navigator.types";
+import type { CrafterNavigatorCtrl, Step } from "./crafter-navigator.types";
 import { createButton, getCrafterNavigatorContainer, handleEventCallback } from "./crafter-navigator.utils";
 import { steps } from "./crafter.navigator.const";
 
-export default {
+
+const crafterNavigatorCtrl: CrafterNavigatorCtrl = {
+
   init() {
     const container = getCrafterNavigatorContainer()
     steps.forEach(step => {
@@ -29,9 +31,9 @@ export default {
     });
   },
 
-  cleanup() {
-    if (this.unsubscribe) {
-      this.unsubscribe();
-    }
+  cleanUp() {
+    this.unsubscribe?.();
   }
 }
+
+export default crafterNavigatorCtrl;

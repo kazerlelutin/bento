@@ -12,24 +12,39 @@
    1.5. [UI updates when step changes via the store](#navigation-between-crafter-steps-ui-updates-when-step-changes-via-the-store)<br/>
    1.6. [Cleanup subscriptions on destruction](#navigation-between-crafter-steps-cleanup-subscriptions-on-destruction)<br/>
    1.7. [Accessibility of step buttons](#navigation-between-crafter-steps-accessibility-of-step-buttons)<br/>
-2. [Front-end Router](#front-end-router)<br/>
-   2.1. [Basic navigation with template rendering](#front-end-router-basic-navigation-with-template-rendering)<br/>
-   2.2. [Navigation to page with script](#front-end-router-navigation-to-page-with-script)<br/>
-   2.3. [Navigation with dynamic parameters](#front-end-router-navigation-with-dynamic-parameters)<br/>
-   2.4. [Navigation with query parameters](#front-end-router-navigation-with-query-parameters)<br/>
-   2.5. [Page not found](#front-end-router-page-not-found)<br/>
-   2.6. [Navigation with authentication](#front-end-router-navigation-with-authentication)<br/>
-   2.7. [Navigation with transition and cleanup](#front-end-router-navigation-with-transition-and-cleanup)<br/>
-   2.8. [Link handling with internal navigation](#front-end-router-link-handling-with-internal-navigation)<br/>
-   2.9. [Back button handling](#front-end-router-back-button-handling)<br/>
-   2.10. [External link handling](#front-end-router-external-link-handling)<br/>
-   2.11. [Template rendering with state management](#front-end-router-template-rendering-with-state-management)<br/>
-   2.12. [Script cleanup on navigation](#front-end-router-script-cleanup-on-navigation)<br/>
-   2.13. [Multiple rapid navigation](#front-end-router-multiple-rapid-navigation)<br/>
-   2.14. [Browser refresh handling](#front-end-router-browser-refresh-handling)<br/>
-3. [Routes](#routes)<br/>
-   3.1. [Basic navigation with template rendering](#routes-basic-navigation-with-template-rendering)<br/>
-   3.2. [Navigation to page with script](#routes-navigation-to-page-with-script)<br/>
+2. [Crafter Stepper](#crafter-stepper)<br/>
+   2.1. [Stepper initialization](#crafter-stepper-stepper-initialization)<br/>
+   2.2. [Step content changes when navigator step changes](#crafter-stepper-step-content-changes-when-navigator-step-changes)<br/>
+   2.3. [Step content changes when navigator step changes to composer](#crafter-stepper-step-content-changes-when-navigator-step-changes-to-composer)<br/>
+   2.4. [Step content changes when navigator step changes to export](#crafter-stepper-step-content-changes-when-navigator-step-changes-to-export)<br/>
+   2.5. [Error handling when step is not found](#crafter-stepper-error-handling-when-step-is-not-found)<br/>
+   2.6. [Error handling when stepper container is missing](#crafter-stepper-error-handling-when-stepper-container-is-missing)<br/>
+   2.7. [Error handling when step template is missing](#crafter-stepper-error-handling-when-step-template-is-missing)<br/>
+   2.8. [Stepper cleanup](#crafter-stepper-stepper-cleanup)<br/>
+   2.9. [Step controller execution](#crafter-stepper-step-controller-execution)<br/>
+   2.10. [Step controller execution for base step](#crafter-stepper-step-controller-execution-for-base-step)<br/>
+   2.11. [Step controller execution for composer step](#crafter-stepper-step-controller-execution-for-composer-step)<br/>
+   2.12. [Step controller execution for export step](#crafter-stepper-step-controller-execution-for-export-step)<br/>
+   2.13. [Content replacement between steps](#crafter-stepper-content-replacement-between-steps)<br/>
+   2.14. [Integration with crafter navigator store](#crafter-stepper-integration-with-crafter-navigator-store)<br/>
+3. [Front-end Router](#front-end-router)<br/>
+   3.1. [Basic navigation with template rendering](#front-end-router-basic-navigation-with-template-rendering)<br/>
+   3.2. [Navigation to page with script](#front-end-router-navigation-to-page-with-script)<br/>
+   3.3. [Navigation with dynamic parameters](#front-end-router-navigation-with-dynamic-parameters)<br/>
+   3.4. [Navigation with query parameters](#front-end-router-navigation-with-query-parameters)<br/>
+   3.5. [Page not found](#front-end-router-page-not-found)<br/>
+   3.6. [Navigation with authentication](#front-end-router-navigation-with-authentication)<br/>
+   3.7. [Navigation with transition and cleanup](#front-end-router-navigation-with-transition-and-cleanup)<br/>
+   3.8. [Link handling with internal navigation](#front-end-router-link-handling-with-internal-navigation)<br/>
+   3.9. [Back button handling](#front-end-router-back-button-handling)<br/>
+   3.10. [External link handling](#front-end-router-external-link-handling)<br/>
+   3.11. [Template rendering with state management](#front-end-router-template-rendering-with-state-management)<br/>
+   3.12. [Script cleanup on navigation](#front-end-router-script-cleanup-on-navigation)<br/>
+   3.13. [Multiple rapid navigation](#front-end-router-multiple-rapid-navigation)<br/>
+   3.14. [Browser refresh handling](#front-end-router-browser-refresh-handling)<br/>
+4. [Routes](#routes)<br/>
+   4.1. [Basic navigation with template rendering](#routes-basic-navigation-with-template-rendering)<br/>
+   4.2. [Navigation to page with script](#routes-navigation-to-page-with-script)<br/>
 
 
 ---
@@ -98,7 +113,125 @@
 
 ---
 
-## 2. Front-end Router {#front-end-router}
+## 2. Crafter Stepper {#crafter-stepper}
+
+**File:** `features\crafter-stepper\crafter-stepper.feature`
+
+### 🎯 Scenarios
+
+#### 2.1. Stepper initialization {#crafter-stepper-stepper-initialization}
+
+🔧 **GIVEN** the DOM contains an element with id "stepper"<br>
+➕ **AND** the DOM contains templates for all stepper steps<br>
+🎯 **WHEN** I initialize the Crafter Stepper<br>
+✅ **THEN** the stepper should subscribe to the crafter navigator store<br>
+➕ **AND** the stepper should display the current step content<br>
+➕ **AND** the stepper should call the current step controller<br>
+
+#### 2.2. Step content changes when navigator step changes {#crafter-stepper-step-content-changes-when-navigator-step-changes}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+➕ **AND** the current step is "home"<br>
+🎯 **WHEN** the crafter navigator changes to step "base"<br>
+✅ **THEN** the stepper should update the container content<br>
+➕ **AND** the stepper should display the "base" template content<br>
+➕ **AND** the stepper should call the "base" step controller<br>
+➕ **AND** the stepper should replace the previous step content<br>
+
+#### 2.3. Step content changes when navigator step changes to composer {#crafter-stepper-step-content-changes-when-navigator-step-changes-to-composer}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+➕ **AND** the current step is "base"<br>
+🎯 **WHEN** the crafter navigator changes to step "composer"<br>
+✅ **THEN** the stepper should update the container content<br>
+➕ **AND** the stepper should display the "composer" template content<br>
+➕ **AND** the stepper should call the "composer" step controller<br>
+
+#### 2.4. Step content changes when navigator step changes to export {#crafter-stepper-step-content-changes-when-navigator-step-changes-to-export}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+➕ **AND** the current step is "composer"<br>
+🎯 **WHEN** the crafter navigator changes to step "export"<br>
+✅ **THEN** the stepper should update the container content<br>
+➕ **AND** the stepper should display the "export" template content<br>
+➕ **AND** the stepper should call the "export" step controller<br>
+
+#### 2.5. Error handling when step is not found {#crafter-stepper-error-handling-when-step-is-not-found}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to an invalid step<br>
+✅ **THEN** the stepper should throw an error "Stepper step invalid not found"<br>
+
+#### 2.6. Error handling when stepper container is missing {#crafter-stepper-error-handling-when-stepper-container-is-missing}
+
+🔧 **GIVEN** the DOM does not contain an element with id "stepper"<br>
+➕ **AND** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "base"<br>
+✅ **THEN** the stepper should throw an error "Stepper container not found"<br>
+
+#### 2.7. Error handling when step template is missing {#crafter-stepper-error-handling-when-step-template-is-missing}
+
+🔧 **GIVEN** the DOM contains an element with id "stepper"<br>
+➕ **AND** the DOM does not contain the "stepper-base-template"<br>
+➕ **AND** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "base"<br>
+✅ **THEN** the stepper should throw an error "Stepper template stepper-base-template not found"<br>
+
+#### 2.8. Stepper cleanup {#crafter-stepper-stepper-cleanup}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** I call the stepper cleanup method<br>
+✅ **THEN** the stepper should unsubscribe from the crafter navigator store<br>
+
+#### 2.9. Step controller execution {#crafter-stepper-step-controller-execution}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "home"<br>
+✅ **THEN** the stepper should execute the "home" step controller<br>
+➕ **AND** the step controller should log "home"<br>
+
+#### 2.10. Step controller execution for base step {#crafter-stepper-step-controller-execution-for-base-step}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "base"<br>
+✅ **THEN** the stepper should execute the "base" step controller<br>
+➕ **AND** the step controller should log "base"<br>
+
+#### 2.11. Step controller execution for composer step {#crafter-stepper-step-controller-execution-for-composer-step}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "composer"<br>
+✅ **THEN** the stepper should execute the "composer" step controller<br>
+➕ **AND** the step controller should log "composer"<br>
+
+#### 2.12. Step controller execution for export step {#crafter-stepper-step-controller-execution-for-export-step}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator changes to step "export"<br>
+✅ **THEN** the stepper should execute the "export" step controller<br>
+➕ **AND** the step controller should log "export"<br>
+
+#### 2.13. Content replacement between steps {#crafter-stepper-content-replacement-between-steps}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+➕ **AND** the current step is "home"<br>
+🎯 **WHEN** the crafter navigator changes to step "base"<br>
+✅ **THEN** the stepper should replace the home content with base content<br>
+➕ **AND** the stepper container should not contain home content<br>
+➕ **AND** the stepper container should contain base content<br>
+
+#### 2.14. Integration with crafter navigator store {#crafter-stepper-integration-with-crafter-navigator-store}
+
+🔧 **GIVEN** the Crafter Stepper is initialized<br>
+🎯 **WHEN** the crafter navigator store current step changes<br>
+✅ **THEN** the stepper should receive the step change notification<br>
+➕ **AND** the stepper should update the UI with the new step<br>
+
+
+
+---
+
+## 3. Front-end Router {#front-end-router}
 
 > As a user
 
@@ -113,7 +246,7 @@
 
 ### 🎯 Scenarios
 
-#### 2.1. Basic navigation with template rendering {#front-end-router-basic-navigation-with-template-rendering}
+#### 3.1. Basic navigation with template rendering {#front-end-router-basic-navigation-with-template-rendering}
 
 🎯 **WHEN** I visit the home page<br>
 ✅ **THEN** I should see the home page content<br>
@@ -121,7 +254,7 @@
 ➕ **AND** the URL should be "/"<br>
 ➕ **AND** the home template should be rendered<br>
 
-#### 2.2. Navigation to page with script {#front-end-router-navigation-to-page-with-script}
+#### 3.2. Navigation to page with script {#front-end-router-navigation-to-page-with-script}
 
 🎯 **WHEN** I click on the "About" link<br>
 ✅ **THEN** I should see the About page content<br>
@@ -131,7 +264,7 @@
 ➕ **AND** the about page script should be initialized<br>
 ➕ **AND** the previous page cleanup should be executed<br>
 
-#### 2.3. Navigation with dynamic parameters {#front-end-router-navigation-with-dynamic-parameters}
+#### 3.3. Navigation with dynamic parameters {#front-end-router-navigation-with-dynamic-parameters}
 
 🎯 **WHEN** I visit the page "/users/123"<br>
 ✅ **THEN** I should see the user profile for 123<br>
@@ -139,14 +272,14 @@
 ➕ **AND** the URL should be "/users/123"<br>
 ➕ **AND** the user template should be rendered<br>
 
-#### 2.4. Navigation with query parameters {#front-end-router-navigation-with-query-parameters}
+#### 3.4. Navigation with query parameters {#front-end-router-navigation-with-query-parameters}
 
 🎯 **WHEN** I visit the page "/search?q=test"<br>
 ✅ **THEN** I should see search results for "test"<br>
 ➕ **AND** the URL should be "/search?q=test"<br>
 ➕ **AND** the search template should be rendered<br>
 
-#### 2.5. Page not found {#front-end-router-page-not-found}
+#### 3.5. Page not found {#front-end-router-page-not-found}
 
 🎯 **WHEN** I visit a non-existent page<br>
 ✅ **THEN** I should see the 404 page<br>
@@ -154,7 +287,7 @@
 ➕ **AND** the URL should remain unchanged<br>
 ➕ **AND** the 404 template should be rendered<br>
 
-#### 2.6. Navigation with authentication {#front-end-router-navigation-with-authentication}
+#### 3.6. Navigation with authentication {#front-end-router-navigation-with-authentication}
 
 🔧 **GIVEN** I am not logged in<br>
 🎯 **WHEN** I try to access a protected page<br>
@@ -162,7 +295,7 @@
 ➕ **AND** the URL should be "/login"<br>
 ➕ **AND** the login template should be rendered<br>
 
-#### 2.7. Navigation with transition and cleanup {#front-end-router-navigation-with-transition-and-cleanup}
+#### 3.7. Navigation with transition and cleanup {#front-end-router-navigation-with-transition-and-cleanup}
 
 🔧 **GIVEN** I am on a page with active scripts<br>
 🎯 **WHEN** I navigate to a new page<br>
@@ -170,14 +303,14 @@
 ➕ **AND** the new page script should be initialized<br>
 ➕ **AND** the content should be updated after the transition<br>
 
-#### 2.8. Link handling with internal navigation {#front-end-router-link-handling-with-internal-navigation}
+#### 3.8. Link handling with internal navigation {#front-end-router-link-handling-with-internal-navigation}
 
 🎯 **WHEN** I click on an internal link<br>
 ✅ **THEN** the navigation should be handled by the router<br>
 ➕ **AND** the page should not be reloaded<br>
 ➕ **AND** the browser history should be updated<br>
 
-#### 2.9. Back button handling {#front-end-router-back-button-handling}
+#### 3.9. Back button handling {#front-end-router-back-button-handling}
 
 🔧 **GIVEN** I am on the "/about" page<br>
 🎯 **WHEN** I click the back button<br>
@@ -186,13 +319,13 @@
 ➕ **AND** the content should be updated<br>
 ➕ **AND** the page cleanup should be executed<br>
 
-#### 2.10. External link handling {#front-end-router-external-link-handling}
+#### 3.10. External link handling {#front-end-router-external-link-handling}
 
 🎯 **WHEN** I click on an external link<br>
 ✅ **THEN** the navigation should be handled by the browser<br>
 ➕ **AND** the page should be reloaded<br>
 
-#### 2.11. Template rendering with state management {#front-end-router-template-rendering-with-state-management}
+#### 3.11. Template rendering with state management {#front-end-router-template-rendering-with-state-management}
 
 🎯 **WHEN** I visit a page with reactive state<br>
 ✅ **THEN** the template should be rendered<br>
@@ -200,7 +333,7 @@
 ➕ **AND** the reactive state should be set up<br>
 ➕ **AND** the UI should respond to state changes<br>
 
-#### 2.12. Script cleanup on navigation {#front-end-router-script-cleanup-on-navigation}
+#### 3.12. Script cleanup on navigation {#front-end-router-script-cleanup-on-navigation}
 
 🔧 **GIVEN** I am on a page with active event listeners<br>
 🎯 **WHEN** I navigate to another page<br>
@@ -209,7 +342,7 @@
 ➕ **AND** the previous page state should be cleaned up<br>
 ➕ **AND** the new page should be properly initialized<br>
 
-#### 2.13. Multiple rapid navigation {#front-end-router-multiple-rapid-navigation}
+#### 3.13. Multiple rapid navigation {#front-end-router-multiple-rapid-navigation}
 
 🎯 **WHEN** I navigate quickly between multiple pages<br>
 ✅ **THEN** each page should render correctly<br>
@@ -217,7 +350,7 @@
 ➕ **AND** no memory leaks should occur<br>
 ➕ **AND** the final page should be active<br>
 
-#### 2.14. Browser refresh handling {#front-end-router-browser-refresh-handling}
+#### 3.14. Browser refresh handling {#front-end-router-browser-refresh-handling}
 
 🔧 **GIVEN** I am on a specific page<br>
 🎯 **WHEN** I refresh the browser<br>
@@ -229,7 +362,7 @@
 
 ---
 
-## 3. Routes {#routes}
+## 4. Routes {#routes}
 
 > As a user
 
@@ -237,7 +370,7 @@
 
 ### 🎯 Scenarios
 
-#### 3.1. Basic navigation with template rendering {#routes-basic-navigation-with-template-rendering}
+#### 4.1. Basic navigation with template rendering {#routes-basic-navigation-with-template-rendering}
 
 🎯 **WHEN** I visit the home page<br>
 ✅ **THEN** I should see the home page content<br>
@@ -245,7 +378,7 @@
 ➕ **AND** the URL should be "/"<br>
 ➕ **AND** the home template should be rendered<br>
 
-#### 3.2. Navigation to page with script {#routes-navigation-to-page-with-script}
+#### 4.2. Navigation to page with script {#routes-navigation-to-page-with-script}
 
 🎯 **WHEN** I click on the "About" link<br>
 ✅ **THEN** I should see the About page content<br>
@@ -257,11 +390,11 @@
 
 ## 📊 Statistics
 
-- **Features:** 3
-- **Scenarios:** 23
-- **Steps:** 111
+- **Features:** 4
+- **Scenarios:** 37
+- **Steps:** 177
 
 ---
 
-*Documentation generated on 18/07/2025 at 20:26:03*
+*Documentation generated on 18/07/2025 at 21:22:08*
 
