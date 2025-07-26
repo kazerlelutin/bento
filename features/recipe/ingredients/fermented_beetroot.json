@@ -1,0 +1,26 @@
+{
+  "id": "fermented_beetroot",
+  "name": {
+    "fr": "Beetroot fermenté",
+    "en": "Fermented beetroot",
+    "ko": "발효된 비트"
+  },
+  "origin": "korea",
+  "allergens": [],
+  "nameComponent": "Crunchy",
+  "description": {
+    "fr": "Beetroot fermenté, idéal pour la cuisson",
+    "en": "Fermented beetroot, ideal for cooking",
+    "ko": "발효된 비트, 요리에 이상적입니다"
+  },
+  "category": "legume",
+
+  "nutrition": {
+    "calories": 100,
+    "protein": 1,
+    "fat": 1,
+    "carbs": 1,
+    "fiber": 1,
+    "sugar": 1
+  }
+}

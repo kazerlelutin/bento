@@ -1,0 +1,23 @@
+{
+  "id": "cut_julienne",
+  "name": {
+    "fr": "Couper en Julienne",
+    "en": "Cut into Julienne",
+    "ko": "채썰기"
+  },
+  "description": {
+    "fr": "Couper les légumes en bâtonnets fins de la taille du gimbap",
+    "en": "Cut vegetables into thin strips the size of gimbap",
+    "ko": "김밥 크기에 맞게 채소를 가는 막대 모양으로 자르기"
+  },
+  "duration": 10,
+  "difficulty": 2,
+  "tools": ["knife", "cutting_board"],
+  "ingredients": ["carrot", "cucumber", "beetroot", "red_bell_pepper"],
+  "techniques": ["julienne_cutting", "precision_cutting"],
+  "tips": {
+    "fr": "Couper les légumes en bâtonnets de 5-6cm de long et 3-4mm d'épaisseur",
+    "en": "Cut vegetables into strips 5-6cm long and 3-4mm thick",
+    "ko": "채소를 길이 5-6cm, 두께 3-4mm의 막대 모양으로 자르기"
+  }
+}

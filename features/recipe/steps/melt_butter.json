@@ -1,0 +1,18 @@
+{
+  "id": "melt_butter",
+  "name": {
+    "fr": "Faire fondre le beurre",
+    "en": "Melt butter",
+    "ko": "버터 녹이기"
+  },
+  "description": {
+    "fr": "Faire fondre butter_soft à feu doux ou au micro-ondes",
+    "en": "Melt butter_soft over low heat or in microwave",
+    "ko": "butter_soft를 약한 불이나 전자레인지로 녹이기"
+  },
+  "tips": {
+    "fr": "Faire fondre butter_soft à feu doux ou au micro-ondes\nNe pas faire bouillir la matière grasse\nNe pas faire fondre le beurre dur",
+    "en": "Melt butter_soft over low heat or in microwave\nDo not boil butter_soft\nDo not melt hard butter",
+    "ko": "butter_soft를 약한 불이나 전자레인지로 녹이세요\nbutter_soft를 끓이지 마세요\n버터를 녹이지 마세요"
+  }
+}

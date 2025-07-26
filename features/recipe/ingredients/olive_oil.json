@@ -1,0 +1,24 @@
+{
+  "id": "olive_oil",
+  "name": {
+    "fr": "Huile d'olive",
+    "en": "Olive oil",
+    "ko": "올리브 오일"
+  },
+  "category": "oils",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Huile extraite des olives, riche en acides gras mono-insaturés",
+    "en": "Oil extracted from olives, rich in monounsaturated fatty acids",
+    "ko": "올리브에서 추출한 기름으로 단일불포화지방산이 풍부함"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 884,
+    "protein": 0,
+    "fat": 100,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Fruity"
+}

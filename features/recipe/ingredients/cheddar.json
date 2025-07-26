@@ -1,0 +1,24 @@
+{
+  "id": "cheddar",
+  "name": {
+    "fr": "Cheddar",
+    "en": "Cheddar",
+    "ko": "체다 치즈"
+  },
+  "category": "fromage",
+  "origin": "england",
+  "description": {
+    "fr": "Fromage cheddar affiné, excellent pour fondre",
+    "en": "Aged cheddar cheese, excellent for melting",
+    "ko": "녹이기에 뛰어난 숙성 체다 치즈"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 403,
+    "protein": 25,
+    "fat": 33,
+    "carbs": 1.3,
+    "fiber": 0
+  },
+  "nameComponent": "Cheddar"
+}

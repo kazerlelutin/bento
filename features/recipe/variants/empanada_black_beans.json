@@ -1,0 +1,170 @@
+{
+  "id": "empanada_black_beans",
+  "name": {
+    "fr": "Empanada aux Haricots Noirs",
+    "en": "Black Beans Empanada",
+    "ko": "검은 콩 엠빠나다"
+  },
+  "ingredients": [
+    {
+      "id": "black_beans",
+      "quantity": 150,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "red_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["yellow_bell_pepper", "orange_bell_pepper", "green_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "green_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["yellow_bell_pepper", "orange_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "yellow_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["green_bell_pepper", "orange_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "orange_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["green_bell_pepper", "yellow_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "lime_juice",
+      "quantity": 15,
+      "unit": "ml",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "pepper",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "cayenne_pepper",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "corn_kernels",
+      "quantity": 50,
+      "unit": "g",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "ginger",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": ["cilantro"],
+      "role": "optional"
+    },
+    {
+      "id": "cilantro",
+      "quantity": 10,
+      "unit": "g",
+      "score": 1,
+      "substitutes": [],
+      "foe": ["ginger"],
+      "role": "optional"
+    },
+    {
+      "id": "carrot",
+      "quantity": 60,
+      "unit": "g",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "mozzarella",
+      "quantity": 50,
+      "unit": "g",
+      "score": 1,
+      "substitutes": ["cheddar", "gruyere"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "turnip",
+      "quantity": 40,
+      "unit": "g",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "chop_small_dice",
+      "order": 55,
+      "ingredients": ["carrot", "turnip"]
+    },
+    {
+      "id": "cook_black_beans",
+      "order": 60,
+      "ingredients": [
+        "black_beans",
+        "red_bell_pepper",
+        "lime_juice",
+        "salt",
+        "pepper",
+        "cayenne_pepper",
+        "corn_kernels",
+        "ginger",
+        "cilantro",
+        "carrot",
+        "mozzarella",
+        "turnip"
+      ]
+    }
+  ]
+}

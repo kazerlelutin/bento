@@ -1,0 +1,24 @@
+{
+  "id": "lemon",
+  "name": {
+    "fr": "Citron",
+    "en": "Lemon",
+    "ko": "레몬"
+  },
+  "category": "fruit",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Citron jaune frais",
+    "en": "Fresh yellow lemon",
+    "ko": "신선한 노란 레몬"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 29,
+    "protein": 1.1,
+    "fat": 0.3,
+    "carbs": 9.3,
+    "fiber": 2.8
+  },
+  "nameComponent": "Zesty"
+}

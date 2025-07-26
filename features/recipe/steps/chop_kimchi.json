@@ -1,0 +1,18 @@
+{
+  "id": "chop_kimchi",
+  "name": {
+    "fr": "Hacher le kimchi",
+    "en": "Chop kimchi",
+    "ko": "김치 다지기"
+  },
+  "description": {
+    "fr": "Hacher finement le kimchi",
+    "en": "Finely chop the kimchi",
+    "ko": "김치를 잘게 다지기"
+  },
+  "tips": {
+    "fr": "Hacher finement le kimchi\nÉgoutter l'excès de liquide",
+    "en": "Finely chop the kimchi\nDrain excess liquid",
+    "ko": "김치를 잘게 다지세요\n과도한 액체를 빼내세요"
+  }
+}

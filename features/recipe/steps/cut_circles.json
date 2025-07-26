@@ -1,0 +1,18 @@
+{
+  "id": "cut_circles",
+  "name": {
+    "fr": "Découper les cercles",
+    "en": "Cut circles",
+    "ko": "원형 자르기"
+  },
+  "description": {
+    "fr": "Découper des cercles dans la pâte étalée",
+    "en": "Cut circles from the rolled out dough",
+    "ko": "밀린 반죽에서 원형을 자르기"
+  },
+  "tips": {
+    "fr": "Diamètre d'environ 10-12cm\nUtiliser un emporte-pièce ou un verre",
+    "en": "Diameter of about 10-12cm\nUse a cookie cutter or glass",
+    "ko": "약 10-12cm 지름\n쿠키 커터나 유리를 사용하세요"
+  }
+}

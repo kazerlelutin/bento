@@ -1,0 +1,24 @@
+{
+  "id": "ricotta",
+  "name": {
+    "fr": "Ricotta",
+    "en": "Ricotta",
+    "ko": "리코타"
+  },
+  "category": "fromage",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Fromage frais italien à base de lactosérum",
+    "en": "Fresh Italian cheese made from whey",
+    "ko": "유청으로 만든 신선한 이탈리아 치즈"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 174,
+    "protein": 11,
+    "fat": 13,
+    "carbs": 3,
+    "fiber": 0
+  },
+  "nameComponent": "Creamy"
+}

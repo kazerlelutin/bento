@@ -1,0 +1,24 @@
+{
+  "id": "cumin",
+  "name": {
+    "fr": "Cumin",
+    "en": "Cumin",
+    "ko": "커민"
+  },
+  "category": "epice",
+  "origin": "middle_east",
+  "description": {
+    "fr": "Le cumin est une épice aromatique utilisée dans de nombreuses cuisines du monde.",
+    "en": "Cumin is an aromatic spice used in many world cuisines.",
+    "ko": "커민은 세계 여러 요리에 사용되는 향신료입니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 22,
+    "protein": 1,
+    "fat": 1,
+    "carbs": 3,
+    "fiber": 1
+  },
+  "nameComponent": "Cumin"
+}

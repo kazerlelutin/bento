@@ -1,0 +1,18 @@
+{
+  "id": "cook_rice",
+  "name": {
+    "fr": "Cuire le riz",
+    "en": "Cook rice",
+    "ko": "쌀 조리하기"
+  },
+  "description": {
+    "fr": "Cuire le riz avec la quantité d'eau appropriée jusqu'à ce qu'il soit tendre et moelleux.",
+    "en": "Cook rice with appropriate amount of water until tender and fluffy.",
+    "ko": "적절한 양의 물로 쌀이 부드럽고 푹신해질 때까지 조리하세요."
+  },
+  "tips": {
+    "fr": "Cuire à feu doux, ne pas remuer\nLaisser reposer 10 minutes après cuisson\nRatio riz/eau : 1/1.5",
+    "en": "Cook over low heat, do not stir\nLet rest 10 minutes after cooking\nRice/water ratio: 1/1.5",
+    "ko": "약한 불에서 조리하고, 저으면 안 됩니다\n조리 후 10분간 그대로 두세요\n쌀/물 비율: 1/1.5"
+  }
+}

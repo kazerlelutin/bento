@@ -1,0 +1,18 @@
+{
+  "id": "grate_mozzarella",
+  "name": {
+    "fr": "Râper la mozzarella",
+    "en": "Grate mozzarella",
+    "ko": "모짜렐라 갈기"
+  },
+  "description": {
+    "fr": "Râper la mozzarella avec une râpe",
+    "en": "Grate the mozzarella with a grater",
+    "ko": "갈이로 모짜렐라를 갈기"
+  },
+  "tips": {
+    "fr": "Râper la mozzarella\nUtiliser la râpe fine",
+    "en": "Grate the mozzarella\nUse the fine grater",
+    "ko": "모짜렐라를 갈으세요\n가는 갈이를 사용하세요"
+  }
+}

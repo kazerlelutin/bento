@@ -1,0 +1,18 @@
+{
+  "id": "season_rice",
+  "name": {
+    "fr": "Assaisonner le riz",
+    "en": "Season rice",
+    "ko": "쌀 양념하기"
+  },
+  "description": {
+    "fr": "Mélanger délicatement le riz avec le sel et laisser refroidir légèrement",
+    "en": "Gently mix rice with salt and let cool slightly",
+    "ko": "쌀과 소금을 부드럽게 섞고 약간 식히세요"
+  },
+  "tips": {
+    "fr": "Mélanger délicatement le riz avec le sel\nLaisser refroidir légèrement",
+    "en": "Gently mix rice with salt\nLet cool slightly",
+    "ko": "쌀과 소금을 부드럽게 섞으세요\n약간 식히세요"
+  }
+}

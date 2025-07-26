@@ -1,0 +1,24 @@
+{
+  "id": "sesame_oil",
+  "name": {
+    "fr": "Huile de sésame",
+    "en": "Sesame oil",
+    "ko": "참기름"
+  },
+  "category": "oils",
+  "origin": "asia",
+  "description": {
+    "fr": "Huile de sésame torréfié, parfumée et aromatique",
+    "en": "Roasted sesame oil, fragrant and aromatic",
+    "ko": "향이 진하고 맛있는 볶은 참깨 기름"
+  },
+  "allergens": ["sesame"],
+  "nutrition": {
+    "calories": 884,
+    "protein": 0,
+    "fat": 100,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Toasted"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "casserole",
+  "name": {
+    "fr": "Casserole",
+    "en": "Saucepan",
+    "ko": "냄비"
+  },
+  "description": {
+    "fr": "Casserole de taille moyenne pour faire chauffer les liquides",
+    "en": "Medium-sized saucepan for heating liquids",
+    "ko": "액체를 가열하기 위한 중간 크기 냄비"
+  },
+  "category": "cooking",
+  "substitutes": ["poele", "marmite"]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "pasta",
+  "name": {
+    "fr": "Pâtes",
+    "en": "Pasta",
+    "ko": "파스타"
+  },
+  "category": "cereale",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Pâtes alimentaires sèches",
+    "en": "Dry pasta",
+    "ko": "건조 파스타"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 131,
+    "protein": 5,
+    "fat": 1.1,
+    "carbs": 25,
+    "fiber": 1.8
+  },
+  "nameComponent": "Al dente"
+}

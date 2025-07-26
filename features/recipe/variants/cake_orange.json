@@ -1,0 +1,67 @@
+{
+  "id": "cake_orange",
+  "name": {
+    "fr": "Cake à l'orange",
+    "en": "Orange cake",
+    "ko": "오렌지 케이크"
+  },
+  "ingredients": [
+    {
+      "id": "orange",
+      "quantity": 48,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "orange_juice",
+      "quantity": 3,
+      "unit": "cl",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "cinnamon",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chocolate_chips_milk",
+      "quantity": 50,
+      "unit": "g",
+      "score": 1,
+      "foe": ["chocolate_chips_dark"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "chocolate_chips_dark",
+      "quantity": 50,
+      "unit": "g",
+      "score": 1,
+      "foe": ["chocolate_chips_milk"],
+      "substitutes": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "add",
+      "order": 30,
+      "ingredients": [
+        "orange",
+        "orange_juice",
+        "cinnamon",
+        "chocolate_chips_dark"
+      ]
+    }
+  ]
+}

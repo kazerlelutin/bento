@@ -3,16 +3,21 @@ import type { CrafterNavigatorCtrl, Step } from "./crafter-navigator.types";
 import { createButton, getCrafterNavigatorContainer, handleEventCallback } from "./crafter-navigator.utils";
 import { steps } from "./crafter.navigator.const";
 
-
 const crafterNavigatorCtrl: CrafterNavigatorCtrl = {
 
   init() {
     const container = getCrafterNavigatorContainer()
+    if (!container) throw new Error('Container not found');
+
+    const fragment = document.createDocumentFragment();
     steps.forEach(step => {
       const button = createButton(step);
-      if (button) container.appendChild(button);
-      if (step.name === crafterNavigatorStore.currentStep.name) button.setAttribute('aria-current', 'true');
+      if (button) {
+        fragment.appendChild(button);
+        if (step.name === crafterNavigatorStore.currentStep.name) button.setAttribute('aria-current', 'true');
+      }
     });
+    container.appendChild(fragment);
 
     container.addEventListener('click', handleEventCallback);
     container.addEventListener('keydown', handleEventCallback);
@@ -32,6 +37,12 @@ const crafterNavigatorCtrl: CrafterNavigatorCtrl = {
   },
 
   cleanUp() {
+    const container = getCrafterNavigatorContainer();
+    if (container) container.innerHTML = '';
+    if (container) {
+      container.removeEventListener('click', handleEventCallback);
+      container.removeEventListener('keydown', handleEventCallback);
+    }
     this.unsubscribe?.();
   }
 }

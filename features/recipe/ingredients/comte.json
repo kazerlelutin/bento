@@ -1,0 +1,25 @@
+{
+  "id": "comte",
+  "name": {
+    "fr": "Comté",
+    "en": "Comté",
+    "ko": "코메트"
+  },
+  "category": "cheese",
+  "origin": "France",
+  "unit": "g",
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 300,
+    "protein": 20,
+    "fat": 20,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Nutty",
+  "description": {
+    "fr": "Comté est un fromage dur et crémeux avec un léger arôme de noisette. Il est populaire dans la France et la Suisse.",
+    "en": "Comté is a hard, creamy cheese with a slight nutty flavor. It is popular in France and Switzerland.",
+    "ko": "코메트는 단단하고 부드러운 치즈로, 누런 맛이 나는 치즈입니다. 프랑스와 스위스에서 인기가 있습니다."
+  }
+}

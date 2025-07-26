@@ -1,0 +1,18 @@
+{
+  "id": "mix_butter_sugar",
+  "name": {
+    "fr": "Mélanger butter_soft et sugar_powder",
+    "en": "Mix butter and sugar",
+    "ko": "버터와 설탕 섞기"
+  },
+  "description": {
+    "fr": "Mélanger butter_soft, sugar_powder à la spatule",
+    "en": "Mix butter_soft, sugar_powder with a spatula",
+    "ko": "butter_soft, sugar_powder를 주걱으로 섞으세요"
+  },
+  "tips": {
+    "fr": "Mélanger jusqu'à obtenir un mélange homogène",
+    "en": "Mix until homogeneous",
+    "ko": "균일한 혼합물이 될 때까지 섞으세요"
+  }
+}

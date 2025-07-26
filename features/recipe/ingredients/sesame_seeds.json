@@ -1,0 +1,24 @@
+{
+  "id": "sesame_seeds",
+  "name": {
+    "fr": "Graines de sésame",
+    "en": "Sesame seeds",
+    "ko": "참깨"
+  },
+  "category": "graine",
+  "origin": "africa",
+  "description": {
+    "fr": "Les graines de sésame sont de petites graines oléagineuses très nutritives.",
+    "en": "Sesame seeds are small oil-rich seeds that are very nutritious.",
+    "ko": "참깨는 영양가가 높은 작은 기름 씨앗입니다."
+  },
+  "allergens": ["sésame"],
+  "nutrition": {
+    "calories": 573,
+    "protein": 18,
+    "fat": 50,
+    "carbs": 23,
+    "fiber": 12
+  },
+  "nameComponent": "Sesame"
+}

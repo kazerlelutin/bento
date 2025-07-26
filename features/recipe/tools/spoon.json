@@ -1,0 +1,15 @@
+{
+  "id": "spoon",
+  "name": {
+    "fr": "Cuillère",
+    "en": "Spoon",
+    "ko": "숟가락"
+  },
+  "description": {
+    "fr": "Cuillère en métal ou en bois pour mélanger",
+    "en": "Metal or wooden spoon for mixing",
+    "ko": "섞기 위한 금속이나 나무 숟가락"
+  },
+  "category": "mixing",
+  "substitutes": ["spatule", "cuillere_bois"]
+}

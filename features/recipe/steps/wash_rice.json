@@ -1,0 +1,18 @@
+{
+  "id": "wash_rice",
+  "name": {
+    "fr": "Rincer le riz",
+    "en": "Wash rice",
+    "ko": "쌀 씻기"
+  },
+  "description": {
+    "fr": "Rincer le riz à l'eau froide jusqu'à ce que l'eau soit claire pour éliminer l'amidon en surface.",
+    "en": "Rinse rice with cold water until water is clear to remove surface starch.",
+    "ko": "표면의 녹말을 제거하기 위해 물이 맑아질 때까지 찬물로 쌀을 씻으세요."
+  },
+  "tips": {
+    "fr": "Rincer le riz jusqu'à ce que l'eau soit claire\nUtiliser de l'eau froide\nNe pas frotter trop fort",
+    "en": "Rinse rice until water is clear\nUse cold water\nDon't rub too hard",
+    "ko": "물이 맑아질 때까지 쌀을 씻으세요\n찬물을 사용하세요\n너무 세게 문지르지 마세요"
+  }
+}

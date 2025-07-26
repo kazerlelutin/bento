@@ -1,0 +1,24 @@
+{
+  "id": "yellow_bell_pepper",
+  "name": {
+    "fr": "Poivron jaune",
+    "en": "Yellow bell pepper",
+    "ko": "노란 파프리카"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Poivron doux jaune, sucré et juteux",
+    "en": "Sweet and juicy yellow bell pepper",
+    "ko": "달콤하고 촉촉한 노란 파프리카"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 27,
+    "protein": 1,
+    "fat": 0.3,
+    "carbs": 6,
+    "fiber": 2.1
+  },
+  "nameComponent": "Sweet"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "orange",
+  "name": {
+    "fr": "Orange",
+    "en": "Orange",
+    "ko": "오렌지"
+  },
+  "category": "fruit",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Orange fraîche et juteuse",
+    "en": "Fresh and juicy orange",
+    "ko": "신선하고 촉촉한 오렌지"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 47,
+    "protein": 0.9,
+    "fat": 0.1,
+    "carbs": 12,
+    "fiber": 2.4
+  },
+  "nameComponent": "Zesty"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "black_beans",
+  "name": {
+    "fr": "Haricot noir",
+    "en": "Black beans",
+    "ko": "검은콩"
+  },
+  "category": "legume",
+  "origin": "america",
+  "description": {
+    "fr": "Le haricot noir est un légume qui peut être utilisé dans de nombreuses recettes.",
+    "en": "Black beans are a legume that can be used in many recipes.",
+    "ko": "검은콩은 다양한 요리에 사용할 수 있는 콩류입니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 100,
+    "protein": 10,
+    "fat": 1,
+    "carbs": 10,
+    "fiber": 5
+  },
+  "nameComponent": "BlackBean"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "shape_onigiri_kimchi",
+  "name": {
+    "fr": "Former les onigiri kimchi",
+    "en": "Shape kimchi onigiri",
+    "ko": "김치 오니기리 만들기"
+  },
+  "description": {
+    "fr": "Former les onigiri avec du kimchi haché au centre et saupoudrer de graines de sésame pour une saveur coréenne authentique.",
+    "en": "Shape onigiri with chopped kimchi in the center and sprinkle with sesame seeds for authentic Korean flavor.",
+    "ko": "잘게 썬 김치를 중앙에 넣고 참깨를 뿌려 진정한 한국 맛의 오니기리를 만드세요."
+  },
+  "tips": {
+    "fr": "Ajouter le kimchi au centre avant de former\nSaupoudrer de graines de sésame\nFormer des triangles avec les mains humides",
+    "en": "Add kimchi to center before shaping\nSprinkle with sesame seeds\nShape triangles with wet hands",
+    "ko": "만들기 전에 중앙에 김치를 넣으세요\n참깨를 뿌리세요\n젖은 손으로 삼각형을 만드세요"
+  }
+}

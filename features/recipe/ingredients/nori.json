@@ -1,0 +1,24 @@
+{
+  "id": "nori",
+  "name": {
+    "fr": "Nori",
+    "en": "Nori",
+    "ko": "김"
+  },
+  "origin": "japan",
+  "category": "seaweed",
+  "nutrition": {
+    "calories": 35,
+    "protein": 5.8,
+    "carbs": 5.1,
+    "fat": 0.3,
+    "fiber": 0.3
+  },
+  "allergens": [],
+  "description": {
+    "fr": "Feuille d'algue séchée pour envelopper le gimbap",
+    "en": "Dried seaweed sheet to wrap gimbap",
+    "ko": "김밥을 감싸는 건조된 해조류 시트"
+  },
+  "nameComponent": "Nori"
+}

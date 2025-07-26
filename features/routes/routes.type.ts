@@ -1,6 +1,6 @@
 export type Ctrl = {
-  init?: () => void
-  cleanUp?: () => void
+  init?: () => Promise<void> | void
+  cleanUp?: () => Promise<void> | void
 }
 
 export interface Route {

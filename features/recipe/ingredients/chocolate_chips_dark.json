@@ -1,0 +1,24 @@
+{
+  "id": "chocolate_chips_dark",
+  "name": {
+    "fr": "Pépites de chocolat noir",
+    "en": "Dark chocolate chips",
+    "ko": "다크 초콜릿 칩"
+  },
+  "category": "sucre",
+  "origin": "global",
+  "description": {
+    "fr": "Pépites de chocolat noir pour pâtisserie",
+    "en": "Dark chocolate chips for baking",
+    "ko": "베이킹용 다크 초콜릿 칩"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 502,
+    "protein": 4.9,
+    "fat": 30,
+    "carbs": 63,
+    "fiber": 5.4
+  },
+  "nameComponent": "Sweet"
+}

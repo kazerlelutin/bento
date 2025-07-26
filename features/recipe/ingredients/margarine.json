@@ -1,0 +1,24 @@
+{
+  "id": "margarine",
+  "name": {
+    "fr": "Margarine",
+    "en": "Margarine",
+    "ko": "마가린"
+  },
+  "category": "matiere_grasse",
+  "origin": "europe",
+  "description": {
+    "fr": "Substitut végétal du beurre, à base d'huiles végétales",
+    "en": "Vegetable-based butter substitute made from vegetable oils",
+    "ko": "식물성 기름으로 만든 버터 대체품"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 717,
+    "protein": 0.2,
+    "fat": 81,
+    "carbs": 0.7,
+    "fiber": 0
+  },
+  "nameComponent": "Smooth"
+}

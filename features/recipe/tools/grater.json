@@ -1,0 +1,15 @@
+{
+  "id": "grater",
+  "name": {
+    "fr": "Râpe",
+    "en": "Grater",
+    "ko": "갈이"
+  },
+  "description": {
+    "fr": "Râpe pour râper le fromage ou les légumes",
+    "en": "Grater for grating cheese or vegetables",
+    "ko": "치즈나 채소를 갈기 위한 갈이"
+  },
+  "category": "cutting",
+  "substitutes": ["rape_fine", "rape_gros"]
+}

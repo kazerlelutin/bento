@@ -1,0 +1,24 @@
+{
+  "id": "kimchi",
+  "name": {
+    "fr": "Kimchi",
+    "en": "Kimchi",
+    "ko": "김치"
+  },
+  "category": "legume_fermente",
+  "origin": "korea",
+  "description": {
+    "fr": "Kimchi traditionnel coréen, légumes fermentés épicés",
+    "en": "Traditional Korean kimchi, spicy fermented vegetables",
+    "ko": "전통적인 한국 김치, 매운 발효 채소"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 23,
+    "protein": 2,
+    "fat": 0,
+    "carbs": 4,
+    "fiber": 2
+  },
+  "nameComponent": "Kimchi"
+}

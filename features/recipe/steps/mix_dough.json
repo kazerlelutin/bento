@@ -1,0 +1,18 @@
+{
+  "id": "mix_dough",
+  "name": {
+    "fr": "Mélanger la pâte",
+    "en": "Mix the dough",
+    "ko": "반죽 섞기"
+  },
+  "description": {
+    "fr": "Verser le mélange liquide dans la farine et mélanger",
+    "en": "Pour the liquid mixture into the flour and mix",
+    "ko": "액체 혼합물을 밀가루에 부어 섞기"
+  },
+  "tips": {
+    "fr": "Ajouter de l'eau si la pâte est trop sèche\nMélanger jusqu'à obtenir une consistance homogène",
+    "en": "Add water if the dough is too dry\nMix until you get a homogeneous consistency",
+    "ko": "반죽이 너무 마르면 물을 추가하세요\n균질한 농도가 될 때까지 섞으세요"
+  }
+}

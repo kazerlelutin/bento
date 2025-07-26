@@ -1,0 +1,19 @@
+{
+  "id": "bamboo_mat",
+  "name": {
+    "fr": "Natte de Bambou",
+    "en": "Bamboo Mat",
+    "ko": "마"
+  },
+  "category": "rolling",
+  "description": {
+    "fr": "Natte de bambou pour rouler le gimbap et les sushis",
+    "en": "Bamboo mat for rolling gimbap and sushi",
+    "ko": "김밥과 스시를 말기 위한 대나무 발"
+  },
+  "usage": {
+    "fr": "Placer le nori sur la natte, ajouter le riz et les ingrédients, puis rouler fermement",
+    "en": "Place nori on mat, add rice and ingredients, then roll tightly",
+    "ko": "마 위에 김을 놓고, 밥과 재료를 올린 후 꽉 말기"
+  }
+}

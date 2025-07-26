@@ -1,0 +1,24 @@
+{
+  "id": "pepper",
+  "name": {
+    "fr": "Poivre",
+    "en": "Pepper",
+    "ko": "후추"
+  },
+  "category": "epice",
+  "origin": "global",
+  "description": {
+    "fr": "Poivre noir moulu",
+    "en": "Ground black pepper",
+    "ko": "갈은 검은 후추"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 251,
+    "protein": 10.4,
+    "fat": 3.3,
+    "carbs": 64,
+    "fiber": 25.3
+  },
+  "nameComponent": "Spicy"
+}

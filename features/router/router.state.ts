@@ -1,28 +1,21 @@
-// @routes
-import type { Route } from "../routes/routes.type";
-import { routes } from "../routes/routes";
-// ---
-
+import type { Route } from "@features/routes/routes.type";
+import { routes } from "@features/routes/routes";
 
 export const routerState = new Proxy<{
   currentPage: string;
   cleanUp: undefined | (() => void)
-  // @routes
   routes: Map<string, Route>;
-  // ---
   onRouteChange?: (route: Route) => void;
 }>(
   {
     currentPage: '/',
-    // @routes
     routes,
-    // ---
     onRouteChange: undefined,
     cleanUp: undefined
   },
   {
     get(target, prop) {
-      return target[prop];
+      return target[prop as keyof typeof target];
     },
     set(target, prop, value) {
 
@@ -31,16 +24,14 @@ export const routerState = new Proxy<{
         target.cleanUp = undefined // delete for prevent re-trigger
       }
 
-      // @routes
       if (prop === 'currentPage') {
         const route = target.routes.get(value);
         if (route) {
           target.onRouteChange?.(route);
         }
       }
-      // ---
 
-      target[prop] = value;
+      target[prop as keyof typeof target] = value;
       return true;
     }
   }

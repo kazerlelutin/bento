@@ -1,0 +1,24 @@
+{
+  "id": "lime_juice",
+  "name": {
+    "fr": "Jus de citron vert",
+    "en": "Lime juice",
+    "ko": "라임 주스"
+  },
+  "category": "liquide",
+  "origin": "global",
+  "description": {
+    "fr": "Jus de citron vert fraîchement pressé",
+    "en": "Freshly squeezed lime juice",
+    "ko": "갓 짜낸 라임 주스"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 30,
+    "protein": 0.5,
+    "fat": 0.1,
+    "carbs": 10.5,
+    "fiber": 2.8
+  },
+  "nameComponent": "Tangy"
+}

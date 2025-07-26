@@ -1,10 +1,11 @@
-import type { Ctrl } from "../routes/routes.type";
+import type { Ctrl } from "@routes/routes.type";
+import type { Translation } from "@features/translate/translate.types";
 
 export type Step = {
   name: string;
-  title: string;
-  icon: string;
-  alt: string;
+  title: Translation;
+  alt: Translation;
+  description: Translation;
 }
 
 export type CrafterNavigatorStore = {

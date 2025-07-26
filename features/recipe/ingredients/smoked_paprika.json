@@ -1,0 +1,24 @@
+{
+  "id": "smoked_paprika",
+  "name": {
+    "fr": "Paprika fumé",
+    "en": "Smoked paprika",
+    "ko": "훈제 파프리카"
+  },
+  "category": "epice",
+  "origin": "spain",
+  "description": {
+    "fr": "Paprika fumé au bois, saveur intense et fumée",
+    "en": "Wood-smoked paprika, intense smoky flavor",
+    "ko": "나무로 훈제한 강렬한 훈연 맛의 파프리카"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 282,
+    "protein": 14,
+    "fat": 13,
+    "carbs": 54,
+    "fiber": 35
+  },
+  "nameComponent": "Smoky"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "lemon_juice",
+  "name": {
+    "fr": "Jus de citron",
+    "en": "Lemon juice",
+    "ko": "레몬 주스"
+  },
+  "category": "liquide",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Jus de citron fraîchement pressé",
+    "en": "Freshly squeezed lemon juice",
+    "ko": "갓 짜낸 레몬 주스"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 22,
+    "protein": 0.4,
+    "fat": 0.2,
+    "carbs": 6.9,
+    "fiber": 0.3
+  },
+  "nameComponent": "Tangy"
+}

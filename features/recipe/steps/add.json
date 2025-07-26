@@ -1,0 +1,13 @@
+{
+  "id": "add",
+  "name": {
+    "fr": "Ajouter {ingredients}",
+    "en": "Add {ingredients}",
+    "ko": "{ingredients} 추가"
+  },
+  "description": {
+    "fr": "Ajouter {ingredients}",
+    "en": "Add {ingredients}",
+    "ko": "{ingredients} 추가"
+  }
+}

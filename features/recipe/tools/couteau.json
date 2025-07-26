@@ -1,0 +1,15 @@
+{
+  "id": "couteau",
+  "name": {
+    "fr": "Couteau",
+    "en": "Knife",
+    "ko": "칼"
+  },
+  "description": {
+    "fr": "Couteau de cuisine pour découper",
+    "en": "Kitchen knife for cutting",
+    "ko": "자르기 위한 주방용 칼"
+  },
+  "category": "cutting",
+  "substitutes": ["couteau_chef", "couteau_office"]
+}

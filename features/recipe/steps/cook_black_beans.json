@@ -1,0 +1,18 @@
+{
+  "id": "cook_black_beans",
+  "name": {
+    "fr": "Cuire les haricots noirs",
+    "en": "Cook black beans",
+    "ko": "검은콩 요리하기"
+  },
+  "description": {
+    "fr": "Faire revenir les haricots avec les légumes et assaisonner avec paprika et cumin",
+    "en": "Sauté beans with vegetables and season with paprika and cumin",
+    "ko": "채소와 함께 콩을 볶고 파프리카와 커민으로 양념하세요"
+  },
+  "tips": {
+    "fr": "Faire revenir les haricots jusqu'à ce qu'ils soient bien dorés\nÉgoutter l'excès de liquide\nAssaisonner avec paprika et cumin",
+    "en": "Sauté beans until well browned\nDrain excess liquid\nSeason with paprika and cumin",
+    "ko": "콩이 잘 갈색이 될 때까지 볶으세요\n과도한 액체를 빼세요\n파프리카와 커민으로 양념하세요"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "roll_dough",
+  "name": {
+    "fr": "Étaler la pâte",
+    "en": "Roll out the dough",
+    "ko": "반죽 밀기"
+  },
+  "description": {
+    "fr": "Étaler la pâte au rouleau à pâtisserie",
+    "en": "Roll out the dough with a rolling pin",
+    "ko": "밀대로 반죽을 밀기"
+  },
+  "tips": {
+    "fr": "Épaisseur d'environ 3mm\nFariner légèrement le plan de travail",
+    "en": "Thickness of about 3mm\nLightly flour the work surface",
+    "ko": "약 3mm 두께\n작업대에 밀가루를 살짝 뿌리세요"
+  }
+}

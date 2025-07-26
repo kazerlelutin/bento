@@ -1,0 +1,24 @@
+{
+  "id": "cumin_seeds",
+  "name": {
+    "fr": "Graines de cumin",
+    "en": "Cumin seeds",
+    "ko": "커민 씨"
+  },
+  "category": "epice",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Graines aromatiques de cumin, épice chaude et terreuse",
+    "en": "Aromatic cumin seeds, warm and earthy spice",
+    "ko": "따뜻하고 흙냄새가 나는 향신료인 향기로운 커민 씨"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 375,
+    "protein": 18,
+    "fat": 22,
+    "carbs": 44,
+    "fiber": 11
+  },
+  "nameComponent": "Warm"
+}

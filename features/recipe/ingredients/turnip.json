@@ -1,0 +1,24 @@
+{
+  "id": "turnip",
+  "name": {
+    "fr": "Navet",
+    "en": "Turnip",
+    "ko": "순무"
+  },
+  "category": "legume",
+  "origin": "global",
+  "description": {
+    "fr": "Navets frais",
+    "en": "Fresh turnips",
+    "ko": "신선한 순무"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 28,
+    "protein": 0.9,
+    "fat": 0.1,
+    "carbs": 6.4,
+    "fiber": 1.8
+  },
+  "nameComponent": "Earthy"
+}

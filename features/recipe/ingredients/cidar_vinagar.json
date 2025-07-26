@@ -1,0 +1,24 @@
+{
+  "id": "cidar_vinagar",
+  "name": {
+    "fr": "Vinaigre de cidre",
+    "en": "Cider vinegar",
+    "ko": "사과 식초"
+  },
+  "category": "condiment",
+  "origin": "France",
+  "allergens": [],
+  "nutrition": {
+    "calories": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Sour",
+  "description": {
+    "fr": "Le vinaigre de cidre est un condiment français qui est utilisé pour assaisonner les plats. Il est fait à partir de cidre fermenté.",
+    "en": "Cider vinegar is a French condiment that is used to season dishes. It is made from fermented cider.",
+    "ko": "사과 식초는 프랑스 요리에서 사용되는 양념으로, 사과를 발효시킨 것입니다."
+  }
+}

@@ -3,4 +3,8 @@ preload = "./preload.ts"
 coverageThreshold = 0.8
 coverageSkipTestFiles = true  
 coverageReporter  = ["text", "lcov"]
-coverageIgnoreSourcemaps = true  
+coverageIgnoreSourcemaps = true
+
+[install]
+# Configuration pour les alias TypeScript
+[install.scopes]  

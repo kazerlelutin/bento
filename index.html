@@ -3,6 +3,7 @@
   <head>
     <title>BENTO</title>
     <link rel="stylesheet" href="public/style.css" />
+    <link rel="icon" href="public/favicon.ico" />
     <link rel="alternate" type="application/xml" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -43,9 +44,14 @@
       name="twitter:description"
       content="BENTO propose des recettes de bento personnalisables avec des visuels en pixel art. Créez et partagez vos compositions culinaires artistiques."
     />
+    <meta name="twitter:image" content="https://ben-to.fr/public/og-img.png" />
+    <meta name="twitter:image:alt" content="BENTO - Recettes de Bento en Pixel Art" />
+    <meta name="og:image" content="https://ben-to.fr/public/og-img.png" />
+    <meta name="og:image:alt" content="BENTO - Recettes de Bento en Pixel Art" />
   </head>
 
   <body class="app">
+    <div class="version">v<span id="version"></span></div>
     <header>
       <h1 class="app-name">BEN<span class="app-name-accent">TO</span></h1>
     </header>
@@ -53,57 +59,108 @@
     <main class="app-main"></main>
 
     <footer class="app-footer">
-      <nav>
-        <a href="/" data-internal>Accueil</a>
-        <a href="/about" data-internal>À propos</a>
+      <div class="crafter-controls" id="crafter-controls"></div>
+      <nav class="app-footer-nav">
+        <a href="/" data-internal aria-current="page" data-translate="home"></a>
+        <a href="/about" data-internal data-translate="about"></a>
+        <a href="https://ko-fi.com/kazerlelutin" target="_blank" data-external data-translate="follow-updates"></a>
       </nav>
     </footer>
+
     <!-- Templates -->
 
+    <!-- PAGES-->
     <template id="crafter-template">
       <div class="crafter-page">
-        <div class="crafter-canvas-container">
-          <canvas id="crafter-canvas" class="crafter-canvas"></canvas>
+        <div class="crafter-canvas-container" id="crafter-canvas-container">
+          <button class="bento-viewer-button icons" id="bento-viewer-button" aria-label="Bento Viewer toggle"></button>
+          <canvas id="bento-viewer-canvas" class="bento-viewer-canvas"></canvas>
         </div>
         <div class="crafter-stepper" id="stepper"></div>
-        <div class="crafter-controls" id="crafter-controls"></div>
       </div>
     </template>
 
     <template id="about-template">
-      <div class="about-page">
-        <h1>À propos</h1>
-        <p>Contenu de la page À propos</p>
+      <div class="about-page" id="about-container">
+        <h1></h1>
+        <div class="about-items-container" id="about-items-container"></div>
       </div>
     </template>
 
-    <!-- Stepper -->
-    <template id="stepper-home-template">
-      <div class="stepper-page">
-        <h1>Accueil</h1>
-        <p>Contenu de la page Accueil</p>
-      </div>
-    </template>
-
+    <!-- STEPPER -->
     <template id="stepper-base-template">
-      <div class="stepper-page">
-        <h1>Base</h1>
-        <p>Contenu de la page Base</p>
+      <div id="base-container" class="base-container">
       </div>
     </template>
 
     <template id="stepper-composer-template">
-      <div class="stepper-page">
-        <h1>Composer</h1>
-        <p>Contenu de la page Composer</p>
+      <div class="composer-page">
+        <h2 class="composer-title" id="recipe-name"></h2>
+        <div id="composer-container" class="base-container"></div>
       </div>
     </template>
 
     <template id="stepper-export-template">
-      <div class="stepper-page">
-        <h1>Export</h1>
-        <p>Contenu de la page Export</p>
+      <div class="stepper-export-page">
+        
+        <div class="stepper-export-controls" id="stepper-export-container">
+          <button class="stepper-export-button" data-translate="export-md" data-type="md"></button>
+          <button class="stepper-export-button" data-translate="export-json" data-type="json"></button>
+        </div>
+        <section class="stepper-export-content" id="stepper-export-content">
+          <h1 class="stepper-export-title" id="stepper-export-title"></h1>
+          <article class="stepper-export-ingredients" id="stepper-export-ingredients"></article>
+          <section class="stepper-export-steps" id="stepper-export-steps"></section>
+        </section>
+        </div>
       </div>
+    </template>
+
+    <template id="stepper-export-ingredients-template">
+      <h2 class="stepper-export-ingredients-title" id="stepper-export-ingredients-title" data-translate="ingredients"></h2>
+      <ul class="stepper-export-ingredients-list" id="stepper-export-ingredients-list"></ul>
+    </template>
+
+    <template id="stepper-export-steps-template">
+      <h2 class="stepper-export-steps-title" id="stepper-export-steps-title" data-translate="steps"></h2>
+      <section class="stepper-export-steps-list" id="stepper-export-steps-list"></section>
+    </template>
+
+    <template id="stepper-export-step-template">
+      <div class="stepper-export-step">
+        <h3 class="stepper-export-step-title" id="stepper-export-step-title"></h3>
+        <p class="stepper-export-step-description" id="stepper-export-step-description"></p>
+        <i id="stepper-export-step-tips"></i>
+      </div>
+    </template>
+
+    <!-- BASE -->
+    <template id="base-choice-template">
+      <button class="base-choice-page" role="button">
+        <div role="img" class="icons" data-position="0"></div>
+        <h2 data-role="text"></h2>
+      </button>
+    </template>
+
+    <!-- INGREDIENT -->
+    <template id="ingredient-choice-template">
+      <div class="ingredient-choice-container" role="button" data-role="ingredient-choice">
+        <div class="ingredient-choice-description">
+          <div role="img" class="icons" data-position="0"></div>
+          <h2 data-role="text"></h2>
+        </div>
+  
+        <div role="img" class="icons" data-role="action-icon" data-position="0"></div>
+      </div>
+    </template>
+
+    <!-- ABOUT -->
+    <template id="about-item-template">
+      <article class="about-item">
+        <h2 data-role="text"></h2>
+        <p data-role="text"></p>
+        <a href="data-role="link" target="_blank" rel="noopener noreferrer"></a>
+      </article>
     </template>
 
     <script type="module" src="app.ts"></script>

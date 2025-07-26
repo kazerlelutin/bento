@@ -1,0 +1,24 @@
+{
+  "id": "bread",
+  "name": {
+    "fr": "Pain",
+    "en": "Bread",
+    "ko": "빵"
+  },
+  "category": "cereale",
+  "origin": "global",
+  "description": {
+    "fr": "Pain frais",
+    "en": "Fresh bread",
+    "ko": "신선한 빵"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 265,
+    "protein": 9,
+    "fat": 3.2,
+    "carbs": 49,
+    "fiber": 2.7
+  },
+  "nameComponent": "Fresh"
+}

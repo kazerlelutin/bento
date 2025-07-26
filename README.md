@@ -1,4 +1,4 @@
-# 🍱 BENTO - Custom Veggie Bento Generator
+# 🍱 BENTO - Interactive Recipe Generator
 
 [![Bun](https://img.shields.io/badge/Runtime-Bun-000000?style=for-the-badge&logo=bun)](https://bun.sh/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -9,11 +9,11 @@
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
 [![Dependencies](https://img.shields.io/badge/Dependencies-Up%20to%20date-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
 
-> A playful pixel-art web app to compose your own veggie bento, step by step, like a Subway or Tacos menu.
+> An interactive recipe generator with pixel art, allowing you to create recipe variants from modular bases.
 
 ## 🎌 Concept
 
-**Ben-to** is a web application that turns bento creation into an interactive and fun experience. Users can compose their own vegetarian bento by choosing each ingredient step by step, with a retro pixel art design.
+**Bento** is a web application that turns recipe creation into an interactive and fun experience. Users can create recipe variants by combining modular bases with specific ingredients and steps, all with a retro pixel art design.
 
 ## 🧭 How it works
 
@@ -23,30 +23,27 @@ The app works instantly, no signup or account needed.
 
 ### 🎯 **Guided journey**
 
-1. **Choose your bento type**: onigiri, empanadas, gimbap, etc.
-2. **Select ingredients**:
-   - Base (rice, quinoa, etc.)
-   - Plant-based proteins
-   - Vegetables
-   - Sauces
-   - Toppings
-3. **Dessert suggestion**: dango, madeleine, compote, etc.
-4. **Automatic adjustment**: difficulty and time based on your choices
+1. **Choose your recipe base**: cake, onigiri, empanada, etc.
+2. **Select a variant**: lemon cake, kimchi onigiri, veggie empanada, etc.
+3. **Review ingredients**: automatic combination of base + variant ingredients
+4. **Follow steps**: ordered sequence of preparation steps
+5. **Export recipe**: generate markdown or JSON format
 
 ### 🎨 **Visual experience**
 
 - Each ingredient is represented by a pixel art icon
 - Retro and playful design
-- Automatic substitutions based on preferences
+- Modular recipe system with bases and variants
+- Step-by-step recipe generation
 
 ## 📤 Goal: Create, not store
 
 The goal is **not to save recipes** but to let users:
 
-- 🖼️ **Generate an image** or visual card of their bento
-- 📱 **Share** this content on social media (TikTok, Instagram...)
-- 🎮 **Have fun** composing, exploring, learning
-- 🌱 **Discover** Japanese vegetarian cuisine
+- 📝 **Generate recipes** in markdown or JSON format
+- 🎮 **Have fun** exploring recipe variants and combinations
+- 🌱 **Discover** modular cooking concepts
+- 📚 **Learn** about recipe structure and ingredient relationships
 
 ## 🧠 Technology & Values
 
@@ -68,7 +65,7 @@ The goal is **not to save recipes** but to let users:
 - **Eco-friendly**: Optimized, local-first
 - **Privacy-respecting**: No intrusive ads
 - **Minimalist**: Simple and efficient stack
-- **Educational**: Discover vegetarian cuisine
+- **Educational**: Discover modular cooking concepts
 
 ## 🚀 Why No Framework?
 
@@ -86,9 +83,12 @@ This app demonstrates you can build a modern experience **without a heavy framew
 bento/
 ├── app.ts                 # Main entry point
 ├── index.html             # Main HTML page with templates
-├── features/              # Cucumber BDD tests
-│   ├── router/            # Feature: Navigation
-│   └── translate/         # Feature: Translation
+├── features/              # Feature-based architecture
+│   ├── recipe/            # Recipe system (bases, variants, ingredients)
+│   ├── router/            # Navigation management
+│   ├── translate/         # Multi-language support
+│   ├── export/            # Recipe export functionality
+│   └── composer/          # Recipe composition interface
 ├── docs/                  # Generated documentation
 │   └── feature-documentation.md
 ├── scripts/               # Utility scripts
@@ -99,76 +99,84 @@ bento/
 
 ## 🔧 Main Features
 
-### 1. **Native Template System**
+### 1. **Modular Recipe System**
 
-Use native HTML templates for modular structure:
-
-```html
-<template id="bento-builder-template">
-  <div class="bento-builder">
-    <h1>Compose your Bento</h1>
-    <!-- Selection interface -->
-  </div>
-</template>
-```
-
-### 2. **Vanilla Reactive Proxy**
-
-Reactivity without a framework, just with JavaScript proxies:
+Create recipes from bases and variants:
 
 ```typescript
-const bentoState = new Proxy(
-  {
-    base: null,
-    proteins: [],
-    vegetables: [],
-    sauces: [],
-    toppings: [],
-  },
-  {
-    set(target, property, value) {
-      target[property] = value
-      updateBentoPreview() // Auto update
-      return true
-    },
-  }
-)
+// Base recipe
+const cakeBase = {
+  ingredients: [
+    'sugar_powder',
+    'butter_soft',
+    'eggs',
+    'flour_t55',
+    'baking_powder',
+  ],
+  steps: [
+    { id: 'melt_butter', order: 10 },
+    { id: 'mix_butter_sugar', order: 20 },
+    { id: 'add_flour_baking_powder', order: 40 },
+  ],
+}
+
+// Variant recipe
+const lemonCakeVariant = {
+  ingredients: ['lemon', 'lemon_juice'],
+  steps: [{ id: 'add_lemon_zest_juice', order: 30 }],
+}
 ```
 
-### 3. **Custom Frontend Router**
+### 2. **Ordered Step System**
 
-Client-side navigation built from scratch:
+Steps are automatically ordered and merged:
 
 ```typescript
-// Step navigation
-;<a href="/bento/builder" data-internal>
-  Create my Bento
-</a>
+// Final recipe combines base + variant steps
+const finalSteps = [
+  { id: 'melt_butter', order: 10 },
+  { id: 'mix_butter_sugar', order: 20 },
+  { id: 'add_lemon_zest_juice', order: 30 }, // From variant
+  { id: 'add_flour_baking_powder', order: 40 },
+].sort((a, b) => a.order - b.order)
+```
+
+### 3. **Recipe Export**
+
+Generate recipes in multiple formats:
+
+```typescript
+// Export to Markdown
+const markdown = recipe.toMd()
+
+// Export to JSON
+const json = recipe.toJson()
 ```
 
 ### 4. **Feature-based Architecture**
 
 Code organized by business features:
 
+- **Recipe**: Base and variant management
 - **Router**: Navigation management
-- **BentoBuilder**: Composition logic
-- **Ingredients**: Ingredient management
-- **Export**: Image/card generation
+- **Export**: Recipe export functionality
+- **Composer**: Recipe composition interface
 
 ## 🧪 BDD Tests
 
 The project uses Cucumber for BDD tests, allowing you to describe behavior in natural language:
 
 ```gherkin
-Feature: Bento Builder
+Feature: Recipe Generation
   As a user
-  I want to create a custom bento
-  So that I can enjoy a personalized meal
+  I want to create recipe variants
+  So that I can explore different cooking options
 
-  Scenario: Building a basic bento
-    When I select "onigiri" as base
-    And I add "tofu" as protein
-    Then I should see my bento preview
+  Scenario: Creating a lemon cake
+    When I select "cake" as base
+    And I choose "lemon" variant
+    Then I should see the combined recipe
+    And the steps should be properly ordered
 ```
 
 ### Documentation Generation
@@ -220,14 +228,15 @@ bun run build
 
 ## 📊 Available Scripts
 
-| Script                     | Description                    |
-| -------------------------- | ------------------------------ |
-| `bun run dev`              | Development server             |
-| `bun run test:integration` | Cucumber integration tests     |
-| `bun run docs:features`    | Generate feature documentation |
-| `bun run build`            | Production build               |
-| `bun run coverage`         | Generate coverage report       |
-| `bun run badge:coverage`   | Update the coverage badge      |
+| Script                     | Description                      |
+| -------------------------- | -------------------------------- |
+| `bun run dev`              | Development server               |
+| `bun run test:integration` | Cucumber integration tests       |
+| `bun run docs:features`    | Generate feature documentation   |
+| `bun run build`            | Production build                 |
+| `bun run coverage`         | Generate coverage report         |
+| `bun run badge:coverage`   | Update the coverage badge        |
+| `bun run validate:recipes` | Validate recipe system integrity |
 
 ## 🏷️ Badges & Quality
 
@@ -271,6 +280,7 @@ bun run badge:coverage 85
 - Clear and predictable architecture
 - BDD tests for quality
 - Auto-generated documentation
+- Recipe system validation to prevent regressions
 
 ### ✅ **Scalability**
 
@@ -278,42 +288,34 @@ bun run badge:coverage 85
 - Modular structure
 - No framework limitations
 
-## 🌱 Supported Ingredients
+## 🌱 Supported Recipes
 
-### 🍚 **Bases**
+### 🍰 **Cake Base**
 
-- White/basmati/quinoa rice
-- Onigiri
-- Gimbap
-- Empanadas
+- **Base ingredients**: Sugar, butter, eggs, flour, baking powder
+- **Variants**: Lemon cake, chocolate cake, vanilla cake
+- **Steps**: Melt butter → Mix ingredients → Add flavorings → Bake
 
-### 🥜 **Plant-based Proteins**
+### 🍙 **Onigiri Base**
 
-- Tofu
-- Tempeh
-- Seitan
-- Legumes
+- **Base ingredients**: Rice, water, salt
+- **Variants**: Kimchi onigiri, cheese onigiri
+- **Steps**: Wash rice → Cook rice → Season → Shape
 
-### 🥬 **Vegetables**
+### 🥟 **Empanada Base**
 
-- Carrots, cucumber
-- Spinach, cabbage
-- Avocado, tomatoes
-- Kimchi (with difficulty level)
+- **Base ingredients**: Flour, water, salt, oil
+- **Variants**: Savory veggie empanada, black bean empanada
+- **Steps**: Mix dough → Knead → Rest → Fill and cook
 
-### 🍯 **Sauces**
+### 🧂 **Ingredient Categories**
 
-- Soy sauce
-- Miso
-- Tahini
-- Vinaigrette
-
-### 🎨 **Toppings**
-
-- Sesame seeds
-- Nori seaweed
-- Edible flowers
-- Fresh herbs
+- **Liquids**: Water, lemon juice, oils
+- **Powders**: Salt, sugar, spices, baking powder
+- **Fats**: Butter, margarine
+- **Grains**: Rice, flour varieties
+- **Vegetables**: Onions, peppers, corn
+- **Proteins**: Eggs, beans, tempeh
 
 ## 🤝 Contributing
 

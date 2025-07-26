@@ -1,0 +1,24 @@
+{
+  "id": "vinegar",
+  "name": {
+    "fr": "Vinaigre",
+    "en": "Vinegar",
+    "ko": "식초"
+  },
+  "category": "condiment",
+  "tags": ["acidic", "fermented", "preservative"],
+  "nutrition": {
+    "calories": 3,
+    "protein": 0,
+    "carbs": 0.6,
+    "fat": 0,
+    "fiber": 0
+  },
+  "substitutes": ["rice_vinegar", "apple_cider_vinegar"],
+  "foe": [],
+  "description": {
+    "fr": "Vinaigre blanc pour assaisonner le riz",
+    "en": "White vinegar for seasoning rice",
+    "ko": "밥 양념용 백식초"
+  }
+}

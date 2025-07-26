@@ -38,10 +38,12 @@ export function createStore<T extends object>(
 
   return new Proxy(store, {
     get(target, prop) {
+      // @ts-ignore
       return target[prop];
     },
 
     set(target, prop, value) {
+      // @ts-ignore
       target[prop] = value;
 
       if (options?.notifyOnProps?.includes(prop as string)) {

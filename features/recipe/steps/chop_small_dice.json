@@ -1,0 +1,18 @@
+{
+  "id": "chop_small_dice",
+  "name": {
+    "fr": "Couper {ingredients} en petits dés",
+    "en": "Chop {ingredients} into small dice",
+    "ko": "{ingredients}를 작은 주사위 모양으로 자르기"
+  },
+  "description": {
+    "fr": "Couper {ingredients} en petits dés de 5mm",
+    "en": "Cut {ingredients} into small 5mm dice",
+    "ko": "{ingredients}를 5mm 작은 주사위 모양으로 자르기"
+  },
+  "tips": {
+    "fr": "Couper d'abord en tranches fines\nPuis en bâtonnets\nEnfin en petits dés de 5mm\nGarder une taille uniforme",
+    "en": "First cut into thin slices\nThen into sticks\nFinally into small 5mm dice\nKeep uniform size",
+    "ko": "먼저 얇은 조각으로 자르기\n그 다음 막대 모양으로\n마지막에 5mm 작은 주사위 모양으로\n균일한 크기 유지하기"
+  }
+}

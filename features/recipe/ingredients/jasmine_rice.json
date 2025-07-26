@@ -1,0 +1,24 @@
+{
+  "id": "jasmine_rice",
+  "name": {
+    "fr": "Riz jasmin",
+    "en": "Jasmine rice",
+    "ko": "자스민 쌀"
+  },
+  "category": "cereale",
+  "origin": "thailand",
+  "description": {
+    "fr": "Riz parfumé thaïlandais, à grains longs et aromatiques",
+    "en": "Aromatic Thai long-grain rice",
+    "ko": "향이 진한 태국산 장립 쌀"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 365,
+    "protein": 7,
+    "fat": 0.7,
+    "carbs": 80,
+    "fiber": 1.3
+  },
+  "nameComponent": "Floral"
+}

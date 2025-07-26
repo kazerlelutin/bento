@@ -1,0 +1,18 @@
+{
+  "id": "unmold_cool",
+  "name": {
+    "fr": "Démouler et refroidir",
+    "en": "Unmold and cool",
+    "ko": "틀에서 빼고 식히기"
+  },
+  "description": {
+    "fr": "Démouler le cake à chaud et le laisser refroidir dans du film alimentaire",
+    "en": "Unmold the cake while hot and let it cool in plastic wrap",
+    "ko": "뜨거울 때 케이크를 틀에서 빼고 랩에 싸서 식히기"
+  },
+  "tips": {
+    "fr": "Démouler à chaud et laisser refroidir dans un film alimentaire\nDémouler à chaud, laisser refroidir dans du film",
+    "en": "Unmold while hot and let cool in plastic wrap\nUnmold while hot, let cool in plastic wrap",
+    "ko": "뜨거울 때 빼내고 랩에 싸서 식히세요\n뜨거울 때 빼내고 랩에 싸서 식히세요"
+  }
+}

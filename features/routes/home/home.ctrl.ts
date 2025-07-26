@@ -1,20 +1,23 @@
-// @crafter-navigator
-import crafterNavigatorCtrl from '../../crafter-navigator/crafter-navigator.ctrl';
-import crafterStepperCtrl from '../../crafter-stepper/crafter-stepper.ctrl';
-import type { Ctrl } from '../routes.type';
+import { activeFooterLink } from '@/utils/active-footer-link';
+import bentoViewerCtrl from '@features/bento-viewer/bento-viewer.ctrl';
+import crafterNavigatorCtrl from '@features/crafter-navigator/crafter-navigator.ctrl';
+import crafterStepperCtrl from '@features/crafter-stepper/crafter-stepper.ctrl';
+import { recipeUrlCtrl } from '@features/recipe-url/recipe-url.ctrl';
+import type { Ctrl } from '@features/routes/routes.type';
 
 const homeCtrl: Ctrl = {
   init() {
-    // @crafter-navigator
+    recipeUrlCtrl.init?.();
     crafterNavigatorCtrl.init?.();
-    // @crafter-stepper
     crafterStepperCtrl.init?.();
+    bentoViewerCtrl.init?.();
+    activeFooterLink('/');
   },
   cleanUp() {
-    // @crafter-navigator
     crafterNavigatorCtrl.cleanUp?.();
-    // @crafter-stepper
     crafterStepperCtrl.cleanUp?.();
+    bentoViewerCtrl.cleanUp?.();
+    recipeUrlCtrl.cleanUp?.();
   }
 }
 

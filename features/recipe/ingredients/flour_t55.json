@@ -1,0 +1,24 @@
+{
+  "id": "flour_t55",
+  "name": {
+    "fr": "Farine T55",
+    "en": "T55 flour",
+    "ko": "T55 밀가루"
+  },
+  "category": "cereale",
+  "origin": "france",
+  "description": {
+    "fr": "Farine de blé tendre de type 55, idéale pour la pâtisserie",
+    "en": "Soft wheat flour type 55, ideal for pastry making",
+    "ko": "제과에 이상적인 연질 밀가루 타입 55"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 340,
+    "protein": 10,
+    "fat": 1,
+    "carbs": 72,
+    "fiber": 3
+  },
+  "nameComponent": "Soft"
+}

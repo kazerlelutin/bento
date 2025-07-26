@@ -1,0 +1,18 @@
+{
+  "id": "prepare_mold",
+  "name": {
+    "fr": "Préparer le moule",
+    "en": "Prepare the mold",
+    "ko": "틀 준비"
+  },
+  "description": {
+    "fr": "Chemiser le moule à cake avec du beurre et du sucre",
+    "en": "Line the cake mold with butter and sugar",
+    "ko": "케이크 틀에 버터와 설탕을 바르기"
+  },
+  "tips": {
+    "fr": "Chemiser le moule avec de la matière grasse et du sucre\nBeurrer et sucrer généreusement le moule",
+    "en": "Line the mold with fat and sugar\nButter and sugar the mold generously",
+    "ko": "틀에 지방과 설탕을 바르세요\n틀에 버터와 설탕을 충분히 바르세요"
+  }
+}

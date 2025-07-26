@@ -1,0 +1,24 @@
+{
+  "id": "beetroot",
+  "name": {
+    "fr": "Betterave",
+    "en": "Beetroot",
+    "ko": "비트"
+  },
+  "origin": "france",
+  "category": "vegetable",
+  "nutrition": {
+    "calories": 43,
+    "protein": 1.6,
+    "carbs": 9.6,
+    "fat": 0.2,
+    "fiber": 2.8
+  },
+  "nameComponent": "Crunchy",
+  "allergens": [],
+  "description": {
+    "fr": "Betterave cuite ou fermentée pour ajouter de la couleur et du goût au gimbap",
+    "en": "Cooked or fermented beetroot to add color and flavor to gimbap",
+    "ko": "김밥에 색과 맛을 더하는 삶은 또는 발효된 비트"
+  }
+}

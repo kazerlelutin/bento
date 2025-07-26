@@ -1,0 +1,24 @@
+{
+  "id": "baking_powder",
+  "name": {
+    "fr": "Levure chimique",
+    "en": "Baking powder",
+    "ko": "베이킹 파우더"
+  },
+  "category": "levure",
+  "origin": "global",
+  "description": {
+    "fr": "Levure chimique pour faire lever les pâtes",
+    "en": "Baking powder for dough rising",
+    "ko": "반죽을 부풀리는 베이킹 파우더"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 53,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 27,
+    "fiber": 0
+  },
+  "nameComponent": "Rising"
+}

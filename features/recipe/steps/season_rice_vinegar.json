@@ -1,0 +1,23 @@
+{
+  "id": "season_rice_vinegar",
+  "name": {
+    "fr": "Assaisonner le Riz au Vinaigre",
+    "en": "Season Rice with Vinegar",
+    "ko": "밥에 식초 양념하기"
+  },
+  "description": {
+    "fr": "Assaisonner le riz cuit avec du vinaigre, du sel et du poivre",
+    "en": "Season cooked rice with vinegar, salt and pepper",
+    "ko": "익은 밥에 식초, 소금, 후추로 양념하기"
+  },
+  "duration": 5,
+  "difficulty": 1,
+  "tools": ["mixing_bowl", "spoon"],
+  "ingredients": ["rice", "vinegar", "salt", "pepper"],
+  "techniques": ["mixing", "seasoning"],
+  "tips": {
+    "fr": "Assaisonner le riz quand il est encore chaud pour une meilleure absorption",
+    "en": "Season rice while still warm for better absorption",
+    "ko": "더 나은 흡수를 위해 밥이 따뜻할 때 양념하기"
+  }
+}

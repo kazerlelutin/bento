@@ -7,9 +7,10 @@ export type StepperStep = {
   ctrl?: StepperInitializer;
 }
 
-export type StepperInitializer = () => void | Promise<void>;
+export type StepperInitializer = Ctrl;
 
 export type CrafterStepperCtrl = Ctrl & {
+  currentStep: StepperInitializer | null;
   updateUI: (step: Step) => void;
   unsubscribe?: () => void;
 }

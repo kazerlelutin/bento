@@ -1,0 +1,24 @@
+{
+  "id": "cilantro",
+  "name": {
+    "fr": "Coriandre",
+    "en": "Cilantro",
+    "ko": "고수"
+  },
+  "category": "herbe",
+  "origin": "global",
+  "description": {
+    "fr": "Coriandre fraîche hachée",
+    "en": "Fresh chopped cilantro",
+    "ko": "신선한 다진 고수"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 23,
+    "protein": 2.1,
+    "fat": 0.5,
+    "carbs": 3.7,
+    "fiber": 2.8
+  },
+  "nameComponent": "Fresh"
+}

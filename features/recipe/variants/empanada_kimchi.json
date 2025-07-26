@@ -1,0 +1,35 @@
+{
+  "id": "empanada_kimchi",
+  "name": {
+    "fr": "Empanada au Kimchi",
+    "en": "Kimchi Empanada",
+    "ko": "김치 엠빠나다"
+  },
+  "ingredients": [
+    {
+      "id": "kimchi",
+      "quantity": 100,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "mozzarella",
+      "quantity": 20,
+      "unit": "g",
+      "score": 2,
+      "substitutes": ["cheddar", "gruyere"],
+      "foe": [],
+      "role": "base"
+    }
+  ],
+  "steps": [
+    {
+      "id": "chop_kimchi",
+      "order": 60,
+      "ingredients": ["kimchi", "mozzarella"]
+    }
+  ]
+}
