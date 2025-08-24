@@ -1,0 +1,24 @@
+{
+  "id": "flour",
+  "name": {
+    "fr": "Farine",
+    "en": "Flour",
+    "ko": "밀가루"
+  },
+  "category": "cereale",
+  "origin": "global",
+  "description": {
+    "fr": "La farine est une poudre obtenue par mouture de céréales.",
+    "en": "Flour is a powder obtained by grinding cereals.",
+    "ko": "밀가루는 곡물을 갈아서 만든 가루입니다."
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 364,
+    "protein": 10,
+    "fat": 1,
+    "carbs": 76,
+    "fiber": 3
+  },
+  "nameComponent": "Empa"
+}

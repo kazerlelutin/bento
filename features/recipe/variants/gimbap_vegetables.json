@@ -1,0 +1,131 @@
+{
+  "id": "gimbap_vegetables",
+  "name": {
+    "fr": "Gimbap aux Légumes",
+    "en": "Vegetable Gimbap",
+    "ko": "야채 김밥"
+  },
+  "ingredients": [
+    {
+      "id": "yellow_radish",
+      "quantity": 30,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "carrot",
+      "quantity": 20,
+      "unit": "g",
+      "score": 2,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "cucumber",
+      "quantity": 20,
+      "unit": "g",
+      "score": 2,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "beetroot",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["fermented_beetroot"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "fermented_beetroot",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["beetroot"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "red_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["yellow_bell_pepper", "orange_bell_pepper", "green_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "green_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["yellow_bell_pepper", "orange_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "yellow_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["green_bell_pepper", "orange_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "orange_bell_pepper",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["green_bell_pepper", "yellow_bell_pepper", "red_bell_pepper"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "gruyere",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["comte", "cheddar"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "comte",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["gruyere", "cheddar"],
+      "substitutes": [],
+      "role": "optional"
+    },
+    {
+      "id": "cheddar",
+      "quantity": 15,
+      "unit": "g",
+      "score": 2,
+      "foe": ["gruyere", "comte"],
+      "substitutes": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "cut_julienne",
+      "order": 25,
+      "ingredients": [
+        "carrot",
+        "cucumber",
+        "beetroot",
+        "red_bell_pepper",
+        "yellow_radish"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mix_dough_empanada",
+  "name": {
+    "fr": "Mélanger la pâte d'empanada",
+    "en": "Mix empanada dough",
+    "ko": "엠빠나다 반죽 섞기"
+  },
+  "description": {
+    "fr": "Verser le mélange tiède sur flour et pétrir pour former une pâte",
+    "en": "Pour the warm mixture over flour and knead to form a dough",
+    "ko": "따뜻한 혼합물을 flour에 부어 반죽을 만들기"
+  },
+  "tips": {
+    "fr": "Verser le mélange tiède sur flour\nPétrir jusqu'à ce que la pâte forme une boule\nSi trop sec, ajouter un peu d'eau",
+    "en": "Pour the warm mixture over flour\nKnead until the dough forms a ball\nIf too dry, add a little water",
+    "ko": "따뜻한 혼합물을 flour에 부으세요\n반죽이 공 모양이 될 때까지 치대세요\n너무 마르면 물을 조금 추가하세요"
+  }
+}

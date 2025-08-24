@@ -1,0 +1,18 @@
+{
+  "id": "knead_dough",
+  "name": {
+    "fr": "Pétrir la pâte",
+    "en": "Knead the dough",
+    "ko": "반죽 치대기"
+  },
+  "description": {
+    "fr": "Pétrir la pâte sur un plan de travail jusqu'à obtenir une boule homogène",
+    "en": "Knead the dough on a work surface until you get a homogeneous ball",
+    "ko": "균질한 공이 될 때까지 작업대에서 반죽을 치대기"
+  },
+  "tips": {
+    "fr": "Pétrir jusqu'à obtenir une boule homogène\nLa pâte ne doit plus coller aux mains",
+    "en": "Knead until you get a homogeneous ball\nThe dough should no longer stick to your hands",
+    "ko": "균질한 공이 될 때까지 치대세요\n반죽이 손에 더 이상 붙지 않아야 합니다"
+  }
+}

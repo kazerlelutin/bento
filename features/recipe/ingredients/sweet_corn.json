@@ -1,0 +1,24 @@
+{
+  "id": "sweet_corn",
+  "name": {
+    "fr": "Maïs doux",
+    "en": "Sweet corn",
+    "ko": "단옥수수"
+  },
+  "category": "legume",
+  "origin": "america",
+  "description": {
+    "fr": "Maïs sucré, tendre et juteux",
+    "en": "Sweet, tender and juicy corn",
+    "ko": "달콤하고 부드럽고 촉촉한 옥수수"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 86,
+    "protein": 3.2,
+    "fat": 1.2,
+    "carbs": 19,
+    "fiber": 2.7
+  },
+  "nameComponent": "Juicy"
+}

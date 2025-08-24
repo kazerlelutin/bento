@@ -1,0 +1,24 @@
+{
+  "id": "spring_onion",
+  "name": {
+    "fr": "Oignon de printemps",
+    "en": "Spring onion",
+    "ko": "봄양파"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Jeune oignon récolté tôt, tiges vertes et bulbe tendre",
+    "en": "Young onion harvested early, green stems and tender bulb",
+    "ko": "일찍 수확한 어린 양파로 녹색 줄기와 부드러운 알뿌리"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 32,
+    "protein": 1.8,
+    "fat": 0.2,
+    "carbs": 7,
+    "fiber": 2.6
+  },
+  "nameComponent": "Fresh"
+}

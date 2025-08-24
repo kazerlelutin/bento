@@ -1,0 +1,97 @@
+{
+  "id": "cake",
+  "name": {
+    "fr": "Cake",
+    "en": "Cake",
+    "ko": "케이크"
+  },
+  "ingredients": [
+    {
+      "id": "sugar_powder",
+      "quantity": 120,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "butter_soft",
+      "quantity": 72,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["margarine"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "eggs",
+      "quantity": 96,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "flour_t55",
+      "quantity": 90,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["flour_t65"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "baking_powder",
+      "quantity": 4.5,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    }
+  ],
+  "steps": [
+    {
+      "id": "melt_butter",
+      "order": 10,
+      "ingredients": ["butter_soft", "!margarine"]
+    },
+    {
+      "id": "mix_butter_sugar",
+      "order": 20,
+      "ingredients": ["butter_soft", "sugar_powder"]
+    },
+    {
+      "id": "add",
+      "order": 40,
+      "ingredients": ["flour_t55", "baking_powder"]
+    },
+    {
+      "id": "add",
+      "order": 50,
+      "ingredients": ["eggs"]
+    },
+    {
+      "id": "rest_dough",
+      "order": 60,
+      "ingredients": []
+    },
+    {
+      "id": "prepare_mold",
+      "order": 70,
+      "ingredients": []
+    },
+    {
+      "id": "bake_cake",
+      "order": 80,
+      "ingredients": []
+    },
+    {
+      "id": "unmold_cool",
+      "order": 90,
+      "ingredients": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "mozzarella",
+  "name": {
+    "fr": "Mozzarella",
+    "en": "Mozzarella",
+    "ko": "모짜렐라"
+  },
+  "category": "fromage",
+  "origin": "italy",
+  "description": {
+    "fr": "Fromage mozzarella frais, idéal pour fondre",
+    "en": "Fresh mozzarella cheese, ideal for melting",
+    "ko": "녹이기에 이상적인 신선한 모짜렐라 치즈"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 280,
+    "protein": 22,
+    "fat": 17,
+    "carbs": 2,
+    "fiber": 0
+  },
+  "nameComponent": "Mozza"
+}

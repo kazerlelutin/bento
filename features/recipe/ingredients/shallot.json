@@ -1,0 +1,24 @@
+{
+  "id": "shallot",
+  "name": {
+    "fr": "Échalote",
+    "en": "Shallot",
+    "ko": "샬롯"
+  },
+  "category": "legume",
+  "origin": "france",
+  "description": {
+    "fr": "Petit oignon fin, plus doux et aromatique",
+    "en": "Small fine onion, sweeter and more aromatic",
+    "ko": "더 달콤하고 향이 진한 작은 양파"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 72,
+    "protein": 2.5,
+    "fat": 0.1,
+    "carbs": 17,
+    "fiber": 3.2
+  },
+  "nameComponent": "Delicate"
+}

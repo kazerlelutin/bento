@@ -1,0 +1,24 @@
+{
+  "id": "red_onion",
+  "name": {
+    "fr": "Oignon rouge",
+    "en": "Red onion",
+    "ko": "빨간 양파"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Oignon rouge, plus doux et moins piquant",
+    "en": "Red onion, sweeter and less pungent",
+    "ko": "더 달콤하고 덜 매운 빨간 양파"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 40,
+    "protein": 1.1,
+    "fat": 0.1,
+    "carbs": 9,
+    "fiber": 1.7
+  },
+  "nameComponent": "Mild"
+}

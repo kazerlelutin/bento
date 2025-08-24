@@ -1,0 +1,44 @@
+{
+  "id": "onigiri_kimchi",
+  "name": {
+    "fr": "Onigiri kimchi",
+    "en": "Kimchi onigiri",
+    "ko": "김치 오니기리"
+  },
+  "ingredients": [
+    {
+      "id": "kimchi",
+      "quantity": 80,
+      "unit": "g",
+      "score": 8,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "mozzarella",
+      "quantity": 20,
+      "unit": "g",
+      "score": 2,
+      "substitutes": ["cheddar", "gruyere"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "sesame_seeds",
+      "quantity": 10,
+      "unit": "g",
+      "score": 2,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "shape_onigiri_kimchi",
+      "order": 40,
+      "ingredients": ["rice", "kimchi", "sesame_seeds"]
+    }
+  ]
+}

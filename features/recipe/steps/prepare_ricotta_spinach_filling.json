@@ -1,0 +1,18 @@
+{
+  "id": "prepare_ricotta_spinach_filling",
+  "name": {
+    "fr": "Préparer la farce ricotta-épinards",
+    "en": "Prepare ricotta-spinach filling",
+    "ko": "리코타-시금치 속 준비"
+  },
+  "description": {
+    "fr": "Mélanger ricotta et spinach avec salt pour former une farce homogène",
+    "en": "Mix ricotta and spinach with salt to form a homogeneous filling",
+    "ko": "ricotta와 spinach를 salt와 함께 섞어 균질한 속을 만들기"
+  },
+  "tips": {
+    "fr": "Égoutter spinach s'il est surgelé\nMélanger délicatement pour ne pas casser ricotta\nAssaisonner avec salt selon le goût",
+    "en": "Drain spinach if frozen\nMix gently to avoid breaking ricotta\nSeason with salt to taste",
+    "ko": "spinach가 냉동이면 물기를 빼주세요\nricotta가 부서지지 않도록 부드럽게 섞으세요\nsalt로 간을 맞춰주세요"
+  }
+}

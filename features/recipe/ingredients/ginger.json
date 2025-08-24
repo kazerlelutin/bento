@@ -1,0 +1,24 @@
+{
+  "id": "ginger",
+  "name": {
+    "fr": "Gingembre",
+    "en": "Ginger",
+    "ko": "생강"
+  },
+  "category": "epice",
+  "origin": "asia",
+  "description": {
+    "fr": "Le gingembre est une racine aromatique utilisée comme épice et remède traditionnel.",
+    "en": "Ginger is an aromatic root used as a spice and traditional remedy.",
+    "ko": "생강은 향신료와 전통 치료제로 사용되는 향기로운 뿌리입니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 80,
+    "protein": 2,
+    "fat": 1,
+    "carbs": 18,
+    "fiber": 2
+  },
+  "nameComponent": "Ginger"
+}

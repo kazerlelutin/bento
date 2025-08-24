@@ -1,0 +1,24 @@
+{
+  "id": "cinnamon",
+  "name": {
+    "fr": "Cannelle",
+    "en": "Cinnamon",
+    "ko": "시나몬"
+  },
+  "category": "epice",
+  "origin": "global",
+  "description": {
+    "fr": "Cannelle en poudre pour aromatiser",
+    "en": "Ground cinnamon for flavoring",
+    "ko": "향신료용 가루 시나몬"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 247,
+    "protein": 4,
+    "fat": 1.2,
+    "carbs": 81,
+    "fiber": 53
+  },
+  "nameComponent": "Warm"
+}

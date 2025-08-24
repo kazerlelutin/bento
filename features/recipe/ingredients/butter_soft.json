@@ -1,0 +1,24 @@
+{
+  "id": "butter_soft",
+  "name": {
+    "fr": "Beurre doux",
+    "en": "Soft butter",
+    "ko": "부드러운 버터"
+  },
+  "category": "matiere_grasse",
+  "origin": "europe",
+  "description": {
+    "fr": "Beurre doux non salé à température ambiante",
+    "en": "Unsalted soft butter at room temperature",
+    "ko": "실온의 무염 부드러운 버터"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 717,
+    "protein": 0.9,
+    "fat": 81,
+    "carbs": 0.1,
+    "fiber": 0
+  },
+  "nameComponent": "Creamy"
+}

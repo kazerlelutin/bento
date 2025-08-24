@@ -1,0 +1,24 @@
+{
+  "id": "paprika",
+  "name": {
+    "fr": "Paprika",
+    "en": "Paprika",
+    "ko": "파프리카"
+  },
+  "category": "epice",
+  "origin": "hungary",
+  "description": {
+    "fr": "Le paprika est une épice obtenue à partir de poivrons séchés et moulus.",
+    "en": "Paprika is a spice made from dried and ground peppers.",
+    "ko": "파프리카는 말린 고추를 갈아서 만든 향신료입니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 20,
+    "protein": 1,
+    "fat": 1,
+    "carbs": 4,
+    "fiber": 3
+  },
+  "nameComponent": "Spice"
+}

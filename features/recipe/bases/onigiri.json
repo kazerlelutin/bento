@@ -1,0 +1,102 @@
+{
+  "id": "onigiri",
+  "name": {
+    "fr": "Onigiri",
+    "en": "Onigiri",
+    "ko": "오니기리"
+  },
+  "ingredients": [
+    {
+      "id": "rice",
+      "quantity": 400,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["jasmine_rice", "brown_rice"],
+      "foe": ["pasta", "bread"],
+      "role": "base"
+    },
+    {
+      "id": "water",
+      "quantity": 600,
+      "unit": "ml",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    }
+  ],
+  "steps": [
+    {
+      "id": "wash_rice",
+      "order": 10,
+      "operation": "wash",
+      "duration": 3,
+      "difficulty": 1,
+      "ingredients": ["rice"],
+      "tools": [
+        {
+          "id": "mixing_bowl",
+          "mandatory": true
+        }
+      ],
+      "precisions": [
+        "Rincer le riz à l'eau froide",
+        "Répéter jusqu'à ce que l'eau soit claire"
+      ]
+    },
+    {
+      "id": "cook_rice",
+      "order": 20,
+      "operation": "cook",
+      "duration": 20,
+      "difficulty": 2,
+      "ingredients": ["rice", "water", "salt"],
+      "tools": [
+        {
+          "id": "rice_cooker",
+          "mandatory": false
+        },
+        {
+          "id": "pot",
+          "mandatory": true
+        }
+      ],
+      "precisions": [
+        "Porter à ébullition",
+        "Réduire le feu et couvrir",
+        "Laisser cuire 15-20 minutes"
+      ]
+    },
+    {
+      "id": "season_rice",
+      "order": 30,
+      "operation": "mix",
+      "duration": 2,
+      "difficulty": 1,
+      "ingredients": ["rice", "salt"],
+      "tools": [
+        {
+          "id": "mixing_bowl",
+          "mandatory": true
+        },
+        {
+          "id": "spoon",
+          "mandatory": true
+        }
+      ],
+      "precisions": [
+        "Mélanger délicatement le riz avec le sel",
+        "Laisser refroidir légèrement"
+      ]
+    }
+  ]
+}

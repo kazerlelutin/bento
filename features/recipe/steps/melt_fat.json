@@ -1,0 +1,18 @@
+{
+  "id": "melt_fat",
+  "name": {
+    "fr": "Faire fondre les matières grasses",
+    "en": "Melt the fat",
+    "ko": "지방 녹이기"
+  },
+  "description": {
+    "fr": "Faire chauffer l'eau avec le sel et les matières grasses jusqu'à ce qu'elles fondent",
+    "en": "Heat water with salt and fat until melted",
+    "ko": "소금과 지방을 물에 넣고 녹일 때까지 가열하기"
+  },
+  "tips": {
+    "fr": "Ne pas faire bouillir, juste faire fondre\nSurveiller la température",
+    "en": "Do not boil, just melt\nWatch the temperature",
+    "ko": "끓이지 말고 녹이기만 하세요\n온도를 주의하세요"
+  }
+}

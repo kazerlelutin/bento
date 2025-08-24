@@ -1,0 +1,24 @@
+{
+  "id": "corn",
+  "name": {
+    "fr": "Maïs",
+    "en": "Corn",
+    "ko": "옥수수"
+  },
+  "category": "cereale",
+  "origin": "america",
+  "description": {
+    "fr": "Le maïs est une céréale douce et nutritive utilisée dans de nombreuses cuisines.",
+    "en": "Corn is a sweet and nutritious cereal used in many cuisines.",
+    "ko": "옥수수는 달콤하고 영양가 있는 곡물로 다양한 요리에 사용됩니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 86,
+    "protein": 3,
+    "fat": 1,
+    "carbs": 19,
+    "fiber": 2
+  },
+  "nameComponent": "Corn"
+}

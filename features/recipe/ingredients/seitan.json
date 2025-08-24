@@ -1,0 +1,24 @@
+{
+  "id": "seitan",
+  "name": {
+    "fr": "Seitan",
+    "en": "Seitan",
+    "ko": "세이탄"
+  },
+  "category": "proteine_vegetale",
+  "origin": "asia",
+  "description": {
+    "fr": "Protéine de blé, alternative végétale à la viande",
+    "en": "Wheat protein, vegetarian meat alternative",
+    "ko": "밀 단백질로 만든 채식 고기 대체품"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 370,
+    "protein": 75,
+    "fat": 1.9,
+    "carbs": 14,
+    "fiber": 0.6
+  },
+  "nameComponent": "Meaty"
+}

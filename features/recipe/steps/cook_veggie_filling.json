@@ -1,0 +1,18 @@
+{
+  "id": "cook_veggie_filling",
+  "name": {
+    "fr": "Cuire la farce végétarienne",
+    "en": "Cook vegetarian filling",
+    "ko": "채식 속재료 요리하기"
+  },
+  "description": {
+    "fr": "Faire revenir le gingembre et la ciboule, puis ajouter le maïs et les autres légumes jusqu'à ce qu'ils soient tendres",
+    "en": "Sauté ginger and green onion, then add corn and other vegetables until tender",
+    "ko": "생강과 파를 볶고, 옥수수와 다른 채소를 추가하여 부드러워질 때까지 요리하세요"
+  },
+  "tips": {
+    "fr": "Faire revenir le gingembre et la ciboule\nAjouter le maïs et les autres légumes\nCuire jusqu'à ce que les légumes soient tendres",
+    "en": "Sauté ginger and green onion\nAdd corn and other vegetables\nCook until vegetables are tender",
+    "ko": "생강과 파를 볶으세요\n옥수수와 다른 채소를 추가하세요\n채소가 부드러워질 때까지 요리하세요"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "carrot",
+  "name": {
+    "fr": "Carotte",
+    "en": "Carrot",
+    "ko": "당근"
+  },
+  "category": "legume",
+  "origin": "global",
+  "description": {
+    "fr": "Carottes fraîches",
+    "en": "Fresh carrots",
+    "ko": "신선한 당근"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 41,
+    "protein": 0.9,
+    "fat": 0.2,
+    "carbs": 10,
+    "fiber": 2.8
+  },
+  "nameComponent": "Sweet"
+}

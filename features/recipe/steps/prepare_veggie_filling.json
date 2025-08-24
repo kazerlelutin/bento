@@ -1,0 +1,18 @@
+{
+  "id": "prepare_veggie_filling",
+  "name": {
+    "fr": "Préparer la farce végétarienne",
+    "en": "Prepare vegetarian filling",
+    "ko": "채식 속재료 준비하기"
+  },
+  "description": {
+    "fr": "Hacher finement le gingembre, émincer la ciboule et couper le poivron en petits dés",
+    "en": "Finely chop ginger, slice green onion and cut bell pepper into small cubes",
+    "ko": "생강을 잘게 썰고, 파를 얇게 썰고, 피망을 작은 큐브로 자르세요"
+  },
+  "tips": {
+    "fr": "Hacher finement le gingembre\nÉmincer la ciboule\nCouper le poivron en petits dés",
+    "en": "Finely chop ginger\nSlice green onion\nCut bell pepper into small cubes",
+    "ko": "생강을 잘게 썰으세요\n파를 얇게 썰으세요\n피망을 작은 큐브로 자르세요"
+  }
+}

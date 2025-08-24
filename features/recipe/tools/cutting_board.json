@@ -1,0 +1,15 @@
+{
+  "id": "cutting_board",
+  "name": {
+    "fr": "Planche à découper",
+    "en": "Cutting board",
+    "ko": "도마"
+  },
+  "description": {
+    "fr": "Planche en bois ou plastique pour découper",
+    "en": "Wooden or plastic board for cutting",
+    "ko": "자르기 위한 나무나 플라스틱 도마"
+  },
+  "category": "cutting",
+  "substitutes": ["planche_bois", "planche_plastique"]
+}

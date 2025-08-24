@@ -1,6 +1,6 @@
 import type { CrafterNavigatorStore, Step } from "./crafter-navigator.types";
 import { steps } from "./crafter.navigator.const";
-import { createStore } from "../../utils/proxy-sub";
+import { createStore } from "@utils/proxy-sub";
 
 export const setCurrentStep = (stepName: string) => {
   const step: Step | undefined = steps.find(s => s.name === stepName);

@@ -5,8 +5,8 @@ import { CrafterStepperCtrl } from "./crafter-stepper.types";
 
 const crafterStepperCtrl: CrafterStepperCtrl = {
 
+  currentStep: null,
   init() {
-    // @crafter-navigator
     this.unsubscribe = crafterNavigatorStore.subscribe((step) => {
       this.updateUI(step);
     });
@@ -26,11 +26,15 @@ const crafterStepperCtrl: CrafterStepperCtrl = {
     const content = template.content.cloneNode(true) as DocumentFragment;
     container.appendChild(content.firstElementChild as Node);
 
-    if (stepperStep.ctrl) await stepperStep.ctrl();
+    if (stepperStep.ctrl) {
+      this.currentStep = stepperStep.ctrl;
+      this.currentStep.init?.();
+    }
+
   },
   cleanUp() {
-    // @crafter-navigator
     this.unsubscribe?.();
+    this.currentStep?.cleanUp?.();
   }
 }
 

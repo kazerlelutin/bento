@@ -1,0 +1,24 @@
+{
+  "id": "oil",
+  "name": {
+    "fr": "Huile",
+    "en": "Oil",
+    "ko": "기름"
+  },
+  "category": "matiere_grasse",
+  "origin": "global",
+  "description": {
+    "fr": "L'huile est une matière grasse liquide utilisée pour la cuisson.",
+    "en": "Oil is a liquid fat used for cooking.",
+    "ko": "기름은 요리에 사용되는 액체 지방입니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 884,
+    "protein": 0,
+    "fat": 100,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Crispy"
+}

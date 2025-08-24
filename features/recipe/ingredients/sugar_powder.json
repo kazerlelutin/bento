@@ -1,0 +1,24 @@
+{
+  "id": "sugar_powder",
+  "name": {
+    "fr": "Sucre en poudre",
+    "en": "Powdered sugar",
+    "ko": "가루 설탕"
+  },
+  "category": "sucre",
+  "origin": "global",
+  "description": {
+    "fr": "Sucre blanc finement moulu",
+    "en": "Finely ground white sugar",
+    "ko": "곱게 갈린 흰 설탕"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 389,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 100,
+    "fiber": 0
+  },
+  "nameComponent": "Sweet"
+}

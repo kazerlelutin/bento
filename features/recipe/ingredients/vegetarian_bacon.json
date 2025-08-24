@@ -1,0 +1,24 @@
+{
+  "id": "vegetarian_bacon",
+  "name": {
+    "fr": "Bacon végétarien",
+    "en": "Vegetarian bacon",
+    "ko": "채식 베이컨"
+  },
+  "category": "proteine_vegetale",
+  "origin": "modern",
+  "description": {
+    "fr": "Le bacon végétarien est un substitut végétal au bacon traditionnel.",
+    "en": "Vegetarian bacon is a plant-based substitute for traditional bacon.",
+    "ko": "채식 베이컨은 전통 베이컨의 식물성 대체품입니다."
+  },
+  "allergens": ["soja"],
+  "nutrition": {
+    "calories": 150,
+    "protein": 12,
+    "fat": 8,
+    "carbs": 5,
+    "fiber": 2
+  },
+  "nameComponent": "Bacon"
+}

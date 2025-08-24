@@ -1,0 +1,24 @@
+{
+  "id": "cayenne_pepper",
+  "name": {
+    "fr": "Piment de Cayenne",
+    "en": "Cayenne pepper",
+    "ko": "카옌 페퍼"
+  },
+  "category": "epice",
+  "origin": "global",
+  "description": {
+    "fr": "Piment de Cayenne en poudre",
+    "en": "Ground cayenne pepper",
+    "ko": "가루 카옌 페퍼"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 318,
+    "protein": 12,
+    "fat": 17,
+    "carbs": 56,
+    "fiber": 27
+  },
+  "nameComponent": "Hot"
+}

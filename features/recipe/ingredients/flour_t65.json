@@ -1,0 +1,24 @@
+{
+  "id": "flour_t65",
+  "name": {
+    "fr": "Farine T65",
+    "en": "T65 flour",
+    "ko": "T65 밀가루"
+  },
+  "category": "cereale",
+  "origin": "france",
+  "description": {
+    "fr": "Farine de blé tendre de type 65, idéale pour le pain",
+    "en": "Soft wheat flour type 65, ideal for bread making",
+    "ko": "빵 만들기에 이상적인 연질 밀가루 타입 65"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 340,
+    "protein": 10,
+    "fat": 1,
+    "carbs": 72,
+    "fiber": 3
+  },
+  "nameComponent": "Rustic"
+}

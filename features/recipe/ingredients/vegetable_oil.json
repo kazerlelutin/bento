@@ -1,0 +1,24 @@
+{
+  "id": "vegetable_oil",
+  "name": {
+    "fr": "Huile végétale",
+    "en": "Vegetable oil",
+    "ko": "식물성 기름"
+  },
+  "category": "oils",
+  "origin": "various",
+  "description": {
+    "fr": "Huile végétale polyvalente pour la cuisson",
+    "en": "Versatile vegetable oil for cooking",
+    "ko": "요리에 다용도로 사용되는 식물성 기름"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 884,
+    "protein": 0,
+    "fat": 100,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Neutral"
+}

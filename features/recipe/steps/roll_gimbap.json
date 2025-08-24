@@ -1,0 +1,23 @@
+{
+  "id": "roll_gimbap",
+  "name": {
+    "fr": "Rouler le Gimbap",
+    "en": "Roll Gimbap",
+    "ko": "김밥 말기"
+  },
+  "description": {
+    "fr": "Rouler le riz et les ingrédients dans la feuille de nori",
+    "en": "Roll rice and ingredients in nori sheet",
+    "ko": "김 시트에 밥과 재료를 말기"
+  },
+  "duration": 15,
+  "difficulty": 3,
+  "tools": ["bamboo_mat", "hands"],
+  "ingredients": ["nori", "rice", "yellow_radish"],
+  "techniques": ["rolling", "tight_packing"],
+  "tips": {
+    "fr": "Rouler fermement en pressant avec les mains pour un gimbap compact",
+    "en": "Roll tightly while pressing with hands for compact gimbap",
+    "ko": "단단한 김밥을 위해 손으로 누르면서 꽉 말기"
+  }
+}

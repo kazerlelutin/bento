@@ -1,0 +1,24 @@
+{
+  "id": "red_bell_pepper",
+  "name": {
+    "fr": "Poivron rouge",
+    "en": "Red bell pepper",
+    "ko": "빨간 파프리카"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Poivron rouge mûr, très sucré et aromatique",
+    "en": "Mature red bell pepper, very sweet and aromatic",
+    "ko": "매우 달콤하고 향이 진한 익은 빨간 파프리카"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 31,
+    "protein": 1,
+    "fat": 0.3,
+    "carbs": 7,
+    "fiber": 2.1
+  },
+  "nameComponent": "Intense"
+}

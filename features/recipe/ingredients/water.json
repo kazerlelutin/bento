@@ -1,0 +1,24 @@
+{
+  "id": "water",
+  "name": {
+    "fr": "Eau",
+    "en": "Water",
+    "ko": "물"
+  },
+  "category": "liquide",
+  "origin": "global",
+  "description": {
+    "fr": "Eau potable à température ambiante",
+    "en": "Drinking water at room temperature",
+    "ko": "실온의 식수"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "giri"
+}

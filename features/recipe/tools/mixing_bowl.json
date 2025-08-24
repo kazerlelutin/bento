@@ -1,0 +1,15 @@
+{
+  "id": "mixing_bowl",
+  "name": {
+    "fr": "Saladier",
+    "en": "Mixing bowl",
+    "ko": "믹싱 볼"
+  },
+  "description": {
+    "fr": "Récipient pour mélanger les ingrédients",
+    "en": "Container for mixing ingredients",
+    "ko": "재료를 섞기 위한 용기"
+  },
+  "category": "mixing",
+  "substitutes": ["bol", "recipient"]
+}

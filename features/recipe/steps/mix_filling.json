@@ -1,0 +1,18 @@
+{
+  "id": "mix_filling",
+  "name": {
+    "fr": "Mélanger la garniture",
+    "en": "Mix filling",
+    "ko": "속재료 섞기"
+  },
+  "description": {
+    "fr": "Mélanger tous les ingrédients de la garniture",
+    "en": "Mix all the filling ingredients",
+    "ko": "모든 속재료 재료를 섞기"
+  },
+  "tips": {
+    "fr": "Mélanger tous les ingrédients\nGoûter et ajuster l'assaisonnement",
+    "en": "Mix all ingredients\nTaste and adjust seasoning",
+    "ko": "모든 재료를 섞으세요\n맛을 보고 양념을 조절하세요"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bell_pepper",
+  "name": {
+    "fr": "Poivron",
+    "en": "Bell pepper",
+    "ko": "피망"
+  },
+  "category": "legume",
+  "origin": "america",
+  "description": {
+    "fr": "Le poivron est un légume doux et croquant utilisé dans de nombreuses cuisines.",
+    "en": "Bell pepper is a sweet and crunchy vegetable used in many cuisines.",
+    "ko": "피망은 달콤하고 아삭한 채소로 다양한 요리에 사용됩니다."
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 20,
+    "protein": 1,
+    "fat": 0,
+    "carbs": 5,
+    "fiber": 2
+  },
+  "nameComponent": "Pepper"
+}

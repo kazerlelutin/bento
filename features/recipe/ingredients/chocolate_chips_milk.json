@@ -1,0 +1,24 @@
+{
+  "id": "chocolate_chips_milk",
+  "name": {
+    "fr": "Pépites de chocolat au lait",
+    "en": "Milk chocolate chips",
+    "ko": "밀크 초콜릿 칩"
+  },
+  "category": "sucre",
+  "origin": "global",
+  "description": {
+    "fr": "Pépites de chocolat au lait pour pâtisserie",
+    "en": "Milk chocolate chips for baking",
+    "ko": "베이킹용 밀크 초콜릿 칩"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 502,
+    "protein": 4.9,
+    "fat": 30,
+    "carbs": 63,
+    "fiber": 5.4
+  },
+  "nameComponent": "Sweet"
+}

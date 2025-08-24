@@ -1,0 +1,81 @@
+{
+  "id": "gimbap",
+  "name": {
+    "fr": "Gimbap",
+    "en": "Gimbap",
+    "ko": "김밥"
+  },
+  "ingredients": [
+    {
+      "id": "rice",
+      "quantity": 200,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["jasmine_rice", "brown_rice"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "nori",
+      "quantity": 1,
+      "unit": "sheet",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "yellow_radish",
+      "quantity": 30,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "rice_vinegar",
+      "quantity": 15,
+      "unit": "ml",
+      "score": 1,
+      "substitutes": ["cidar_vinagar"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "pepper",
+      "quantity": 0.25,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "cook_rice",
+      "order": 10,
+      "ingredients": ["rice"]
+    },
+    {
+      "id": "season_rice_vinegar",
+      "order": 20,
+      "ingredients": ["rice", "vinegar", "salt", "pepper"]
+    },
+    {
+      "id": "roll_gimbap",
+      "order": 30,
+      "ingredients": ["nori", "rice", "yellow_radish"]
+    }
+  ]
+}

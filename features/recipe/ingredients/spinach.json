@@ -1,0 +1,24 @@
+{
+  "id": "spinach",
+  "name": {
+    "fr": "Épinards",
+    "en": "Spinach",
+    "ko": "시금치"
+  },
+  "category": "legume",
+  "origin": "global",
+  "description": {
+    "fr": "Épinards frais ou surgelés",
+    "en": "Fresh or frozen spinach",
+    "ko": "신선하거나 냉동 시금치"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 23,
+    "protein": 2.9,
+    "fat": 0.4,
+    "carbs": 3.6,
+    "fiber": 2.2
+  },
+  "nameComponent": "Fresh"
+}

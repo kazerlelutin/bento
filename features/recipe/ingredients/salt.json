@@ -1,0 +1,24 @@
+{
+  "id": "salt",
+  "name": {
+    "fr": "Sel",
+    "en": "Salt",
+    "ko": "소금"
+  },
+  "category": "condiment",
+  "origin": "global",
+  "description": {
+    "fr": "Sel de table fin",
+    "en": "Fine table salt",
+    "ko": "정제된 식용 소금"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Salty"
+}

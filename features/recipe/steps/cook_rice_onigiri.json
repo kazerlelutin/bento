@@ -1,0 +1,18 @@
+{
+  "id": "cook_rice_onigiri",
+  "name": {
+    "fr": "Cuire le riz pour onigiri",
+    "en": "Cook rice for onigiri",
+    "ko": "오니기리용 쌀 요리하기"
+  },
+  "description": {
+    "fr": "Porter à ébullition, réduire le feu et couvrir pour laisser cuire 15-20 minutes",
+    "en": "Bring to boil, reduce heat and cover to cook for 15-20 minutes",
+    "ko": "끓인 후 불을 줄이고 뚜껑을 덮어 15-20분간 요리하세요"
+  },
+  "tips": {
+    "fr": "Porter à ébullition\nRéduire le feu et couvrir\nLaisser cuire 15-20 minutes",
+    "en": "Bring to boil\nReduce heat and cover\nLet cook for 15-20 minutes",
+    "ko": "끓이세요\n불을 줄이고 뚜껑을 덮으세요\n15-20분간 요리하세요"
+  }
+}

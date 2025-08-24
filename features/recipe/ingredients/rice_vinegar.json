@@ -1,0 +1,24 @@
+{
+  "id": "rice_vinegar",
+  "name": {
+    "fr": "Vinaigre de riz",
+    "en": "Rice vinegar",
+    "ko": "밥 식초"
+  },
+  "category": "condiment",
+  "origin": "Japan",
+  "allergens": [],
+  "nutrition": {
+    "calories": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0
+  },
+  "nameComponent": "Sour",
+  "description": {
+    "fr": "Le vinaigre de riz est un condiment japonais qui est utilisé pour assaisonner les plats. Il est fait à partir de riz fermenté.",
+    "en": "Rice vinegar is a Japanese condiment that is used to season dishes. It is made from fermented rice.",
+    "ko": "밥 식초는 일본 요리에서 사용되는 양념으로, 밥을 발효시킨 것입니다."
+  }
+}

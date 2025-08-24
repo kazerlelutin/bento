@@ -1,6 +1,6 @@
 {
   "name": "kazerlelutin",
-  "version": "0.0.23",
+  "version": "0.0.1",
   "author": "kazerlelutin",
   "type": "module",
   "repository": {
@@ -11,18 +11,29 @@
   "bugs": {
     "url": "https://github.com/kazerlelutin/kazerlelutin/issues"
   },
-  "description": "Bento",
+  "description": "Bento - An interactive recipe generator with pixel art, allowing you to create recipe variants from modular bases",
   "homepage": "https://github.com/kazerlelutin/kazerlelutin#readme",
   "keywords": [
-    "media",
-    "svg",
-    "webtoon",
-    "roller",
-    "derby",
-    "character",
-    "draw",
-    "open",
-    "source"
+    "bento",
+    "recipe-generator",
+    "cooking",
+    "pixel-art",
+    "food",
+    "recipes",
+    "interactive",
+    "modular",
+    "variants",
+    "culinary",
+    "gastronomy",
+    "meal-planning",
+    "cooking-app",
+    "recipe-builder",
+    "food-app",
+    "culinary-tools",
+    "recipe-variations",
+    "cooking-assistant",
+    "meal-prep",
+    "food-creativity"
   ],
   "license": "MIT",
   "scripts": {
@@ -30,12 +41,13 @@
     "test": "bun test",
     "coverage": "bun test --coverage",
     "test:integration": "bunx --bun cucumber-js",
-    "build": "bun build ./index.html --minify  --outdir=dist",
+    "build": "bun build ./index.html --minify  --outdir=dist && bun scripts/copy-static.ts",
     "docs:features": "bun scripts/generate-feature-docs.ts",
     "badge:coverage": "bun scripts/generate-coverage-badge.ts",
     "sitemap": "bun scripts/generate-sitemap.ts",
     "seo": "bun scripts/generate-sitemap.ts",
-    "validate:seo": "bun scripts/validate-sitemap.ts"
+    "validate:seo": "bun scripts/validate-sitemap.ts",
+    "validate:recipes": "bun scripts/validate-recipe-system.ts"
   },
   "update": "2025-04-26",
   "devDependencies": {

@@ -1,0 +1,24 @@
+{
+  "id": "corn_kernels",
+  "name": {
+    "fr": "Grains de maïs",
+    "en": "Corn kernels",
+    "ko": "옥수수 알"
+  },
+  "category": "legume",
+  "origin": "america",
+  "description": {
+    "fr": "Grains de maïs détachés, prêts à cuisiner",
+    "en": "Detached corn kernels, ready to cook",
+    "ko": "요리할 준비가 된 분리된 옥수수 알"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 86,
+    "protein": 3.2,
+    "fat": 1.2,
+    "carbs": 19,
+    "fiber": 2.7
+  },
+  "nameComponent": "Crunchy"
+}

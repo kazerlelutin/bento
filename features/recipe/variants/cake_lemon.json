@@ -1,0 +1,35 @@
+{
+  "id": "cake_lemon",
+  "name": {
+    "fr": "Cake au citron",
+    "en": "Lemon cake",
+    "ko": "레몬 케이크"
+  },
+  "ingredients": [
+    {
+      "id": "lemon",
+      "quantity": 48,
+      "unit": "g",
+      "score": 8,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "lemon_juice",
+      "quantity": 30,
+      "unit": "ml",
+      "score": 7,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    }
+  ],
+  "steps": [
+    {
+      "id": "add",
+      "order": 30,
+      "ingredients": ["lemon", "lemon_juice"]
+    }
+  ]
+}

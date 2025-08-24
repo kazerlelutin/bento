@@ -1,0 +1,18 @@
+{
+  "id": "rest_dough_empanada",
+  "name": {
+    "fr": "Repos de la pâte d'empanada",
+    "en": "Rest empanada dough",
+    "ko": "엠빠나다 반죽 휴식"
+  },
+  "description": {
+    "fr": "Couvrir la pâte avec un torchon humide et laisser reposer à température ambiante",
+    "en": "Cover the dough with a damp cloth and let rest at room temperature",
+    "ko": "반죽을 젖은 천으로 덮고 실온에서 휴식시키세요"
+  },
+  "tips": {
+    "fr": "Couvrir avec un torchon humide\nLaisser reposer à température ambiante",
+    "en": "Cover with a damp cloth\nLet rest at room temperature",
+    "ko": "젖은 천으로 덮으세요\n실온에서 휴식시키세요"
+  }
+}

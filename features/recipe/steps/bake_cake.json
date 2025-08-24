@@ -1,0 +1,18 @@
+{
+  "id": "bake_cake",
+  "name": {
+    "fr": "Cuire le cake",
+    "en": "Bake the cake",
+    "ko": "케이크 굽기"
+  },
+  "description": {
+    "fr": "Cuire le cake dans un four préchauffé à 170°C pendant 35 à 40 minutes",
+    "en": "Bake the cake in a preheated oven at 170°C for 35 to 40 minutes",
+    "ko": "170°C로 예열된 오븐에서 35-40분 동안 케이크 굽기"
+  },
+  "tips": {
+    "fr": "Cuire dans un four préchauffé à 170°c durant 35 à 40 minutes\nVérifier la cuisson avec la pointe d'un couteau",
+    "en": "Bake in a preheated oven at 170°C for 35 to 40 minutes\nCheck doneness with the tip of a knife",
+    "ko": "170°C로 예열된 오븐에서 35-40분 동안 굽으세요\n칼 끝으로 익었는지 확인하세요"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "cucumber",
+  "name": {
+    "fr": "Concombre",
+    "en": "Cucumber",
+    "ko": "오이"
+  },
+  "origin": "france",
+  "category": "vegetable",
+  "nutrition": {
+    "calories": 16,
+    "protein": 0.7,
+    "carbs": 3.6,
+    "fat": 0.1,
+    "fiber": 0.5
+  },
+  "nameComponent": "Crunchy",
+  "allergens": [],
+  "description": {
+    "fr": "Concombre frais pour ajouter du croquant au gimbap",
+    "en": "Fresh cucumber to add crunch to gimbap",
+    "ko": "김밥에 바삭함을 더하는 신선한 오이"
+  }
+}

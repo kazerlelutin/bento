@@ -1,0 +1,73 @@
+{
+  "id": "empanada",
+  "name": {
+    "fr": "Empanada",
+    "en": "Empanada",
+    "ko": "엠빠나다"
+  },
+  "ingredients": [
+    {
+      "id": "flour",
+      "quantity": 90,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["flour_t55", "flour_t65"],
+      "foe": ["yeast"],
+      "role": "base"
+    },
+    {
+      "id": "water",
+      "quantity": 30,
+      "unit": "ml",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "butter",
+      "quantity": 20,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["margarine"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "salt",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    }
+  ],
+  "steps": [
+    {
+      "id": "melt_butter_water",
+      "order": 10,
+      "ingredients": ["water", "salt", "butter"]
+    },
+    {
+      "id": "cool_mixture",
+      "order": 20,
+      "ingredients": []
+    },
+    {
+      "id": "mix_dough_empanada",
+      "order": 30,
+      "ingredients": ["flour", "water", "salt", "butter"]
+    },
+    {
+      "id": "knead_dough",
+      "order": 40,
+      "ingredients": ["flour"]
+    },
+    {
+      "id": "rest_dough_empanada",
+      "order": 50,
+      "ingredients": []
+    }
+  ]
+}

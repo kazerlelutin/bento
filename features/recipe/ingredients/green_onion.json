@@ -1,0 +1,24 @@
+{
+  "id": "green_onion",
+  "name": {
+    "fr": "Oignon vert",
+    "en": "Green onion",
+    "ko": "파"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Oignon immature avec tiges vertes, utilisé comme condiment",
+    "en": "Immature onion with green stems, used as seasoning",
+    "ko": "녹색 줄기가 있는 미성숙 양파로 조미료로 사용"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 32,
+    "protein": 1.8,
+    "fat": 0.2,
+    "carbs": 7,
+    "fiber": 2.6
+  },
+  "nameComponent": "Sharp"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "brown_rice",
+  "name": {
+    "fr": "Riz complet",
+    "en": "Brown rice",
+    "ko": "현미"
+  },
+  "category": "cereale",
+  "origin": "various",
+  "description": {
+    "fr": "Riz non raffiné, riche en fibres et nutriments",
+    "en": "Unrefined rice, rich in fiber and nutrients",
+    "ko": "섬유질과 영양소가 풍부한 정제되지 않은 쌀"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 362,
+    "protein": 7.5,
+    "fat": 2.7,
+    "carbs": 76,
+    "fiber": 3.6
+  },
+  "nameComponent": "Nutty"
+}

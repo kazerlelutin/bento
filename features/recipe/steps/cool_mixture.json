@@ -1,0 +1,18 @@
+{
+  "id": "cool_mixture",
+  "name": {
+    "fr": "Refroidir le mélange",
+    "en": "Cool the mixture",
+    "ko": "혼합물 식히기"
+  },
+  "description": {
+    "fr": "Laisser refroidir le mélange jusqu'à environ 45°C (tiède)",
+    "en": "Let the mixture cool to about 45°C (lukewarm)",
+    "ko": "혼합물을 약 45°C(미지근한 온도)까지 식히기"
+  },
+  "tips": {
+    "fr": "Le mélange doit être tiède, pas chaud\nTester avec le doigt : doit être agréable au toucher",
+    "en": "The mixture should be lukewarm, not hot\nTest with finger: should be pleasant to touch",
+    "ko": "혼합물은 뜨겁지 않고 미지근해야 함\n손가락으로 테스트: 만지기 좋은 온도여야 함"
+  }
+}

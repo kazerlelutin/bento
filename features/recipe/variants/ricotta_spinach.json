@@ -1,0 +1,44 @@
+{
+  "id": "ricotta_spinach",
+  "name": {
+    "fr": "Ricotta-Épinards",
+    "en": "Ricotta-Spinach",
+    "ko": "리코타-시금치"
+  },
+  "ingredients": [
+    {
+      "id": "ricotta",
+      "quantity": 200,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "spinach",
+      "quantity": 150,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "salt",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    }
+  ],
+  "steps": [
+    {
+      "id": "prepare_ricotta_spinach_filling",
+      "order": 60,
+      "ingredients": ["ricotta", "spinach", "salt"]
+    }
+  ]
+}

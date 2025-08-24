@@ -1,0 +1,13 @@
+{
+  "id": "rest_dough",
+  "name": {
+    "fr": "Repos de la pâte",
+    "en": "Dough resting",
+    "ko": "반죽 휴식"
+  },
+  "description": {
+    "fr": "Laisser la pâte reposer au réfrigérateur pendant au moins 6 heures",
+    "en": "Let the dough rest in the refrigerator for at least 6 hours",
+    "ko": "반죽을 냉장고에서 최소 6시간 휴식시키기"
+  }
+}

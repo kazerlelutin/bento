@@ -1,0 +1,24 @@
+{
+  "id": "gruyere",
+  "name": {
+    "fr": "Gruyère",
+    "en": "Gruyère",
+    "ko": "그뤼에르 치즈"
+  },
+  "category": "fromage",
+  "origin": "switzerland",
+  "description": {
+    "fr": "Fromage suisse affiné, parfait pour fondre",
+    "en": "Aged Swiss cheese, perfect for melting",
+    "ko": "녹이기에 완벽한 숙성 스위스 치즈"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 413,
+    "protein": 29,
+    "fat": 32,
+    "carbs": 0.4,
+    "fiber": 0
+  },
+  "nameComponent": "Rich"
+}

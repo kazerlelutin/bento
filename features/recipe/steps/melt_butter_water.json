@@ -1,0 +1,18 @@
+{
+  "id": "melt_butter_water",
+  "name": {
+    "fr": "Faire fondre le beurre avec l'eau",
+    "en": "Melt butter with water",
+    "ko": "버터와 물을 녹이기"
+  },
+  "description": {
+    "fr": "Dans une casserole, mettre water, salt et butter et chauffer",
+    "en": "In a saucepan, put water, salt and butter and heat",
+    "ko": "냄비에 water, salt, butter를 넣고 데우기"
+  },
+  "tips": {
+    "fr": "Chauffer jusqu'à ce que la matière grasse soit complètement fondu\nÉteindre le feu quand tout est fondu",
+    "en": "Heat until the fat is completely melted\nTurn off heat when everything is melted",
+    "ko": "버터가 완전히 녹을 때까지 데우기\n모두 녹으면 불을 끄기"
+  }
+}

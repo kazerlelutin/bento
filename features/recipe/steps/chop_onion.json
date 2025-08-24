@@ -1,0 +1,18 @@
+{
+  "id": "chop_onion",
+  "name": {
+    "fr": "Émincer l'oignon",
+    "en": "Chop onion",
+    "ko": "양파 썰기"
+  },
+  "description": {
+    "fr": "Émincer finement l'oignon",
+    "en": "Finely chop the onion",
+    "ko": "양파를 잘게 썰기"
+  },
+  "tips": {
+    "fr": "Émincer finement l'oignon\nPleurer en coupant l'oignon est normal",
+    "en": "Finely chop the onion\nCrying while cutting onions is normal",
+    "ko": "양파를 잘게 썰세요\n양파를 썰 때 눈물이 나는 것은 정상입니다"
+  }
+}

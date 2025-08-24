@@ -1,0 +1,24 @@
+{
+  "id": "chives",
+  "name": {
+    "fr": "Ciboulette",
+    "en": "Chives",
+    "ko": "차이브"
+  },
+  "category": "herbe",
+  "origin": "europe",
+  "description": {
+    "fr": "Herbe aromatique fine, goût d'oignon doux",
+    "en": "Fine aromatic herb with mild onion taste",
+    "ko": "부드러운 양파 맛의 섬세한 향신료"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 30,
+    "protein": 3.3,
+    "fat": 0.7,
+    "carbs": 4.4,
+    "fiber": 2.5
+  },
+  "nameComponent": "Aromatic"
+}

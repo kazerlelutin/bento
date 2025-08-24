@@ -1,0 +1,24 @@
+{
+  "id": "tomato",
+  "name": {
+    "fr": "Tomate",
+    "en": "Tomato",
+    "ko": "토마토"
+  },
+  "category": "legume",
+  "origin": "global",
+  "description": {
+    "fr": "Tomates fraîches",
+    "en": "Fresh tomatoes",
+    "ko": "신선한 토마토"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 18,
+    "protein": 0.9,
+    "fat": 0.2,
+    "carbs": 3.9,
+    "fiber": 1.2
+  },
+  "nameComponent": "Juicy"
+}

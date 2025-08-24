@@ -1,0 +1,24 @@
+{
+  "id": "ground_cumin",
+  "name": {
+    "fr": "Cumin moulu",
+    "en": "Ground cumin",
+    "ko": "커민 가루"
+  },
+  "category": "epice",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Cumin réduit en poudre, plus facile à utiliser",
+    "en": "Cumin ground into powder, easier to use",
+    "ko": "가루로 갈아서 사용하기 쉬운 커민"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 375,
+    "protein": 18,
+    "fat": 22,
+    "carbs": 44,
+    "fiber": 11
+  },
+  "nameComponent": "Powdery"
+}

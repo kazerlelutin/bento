@@ -1,0 +1,18 @@
+{
+  "id": "fill_empanadas",
+  "name": {
+    "fr": "Remplir les empanadas",
+    "en": "Fill empanadas",
+    "ko": "엠빠나다 채우기"
+  },
+  "description": {
+    "fr": "Remplir les cercles de pâte avec la garniture",
+    "en": "Fill the dough circles with the filling",
+    "ko": "반죽 원형에 속재료를 채우기"
+  },
+  "tips": {
+    "fr": "Ne pas trop remplir pour éviter que ça déborde à la cuisson\nHumidifier les bords pour bien coller",
+    "en": "Do not overfill to avoid overflow during cooking\nMoisten the edges to stick well",
+    "ko": "조리 중 넘치지 않도록 너무 많이 채우지 마세요\n잘 붙도록 가장자리를 적시세요"
+  }
+}

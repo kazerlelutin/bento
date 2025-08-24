@@ -1,0 +1,24 @@
+{
+  "id": "eggs",
+  "name": {
+    "fr": "Œufs",
+    "en": "Eggs",
+    "ko": "계란"
+  },
+  "category": "proteine",
+  "origin": "local",
+  "description": {
+    "fr": "Œufs frais de poule",
+    "en": "Fresh chicken eggs",
+    "ko": "신선한 닭고기 계란"
+  },
+  "allergens": ["eggs"],
+  "nutrition": {
+    "calories": 155,
+    "protein": 12.6,
+    "fat": 11.3,
+    "carbs": 0.6,
+    "fiber": 0
+  },
+  "nameComponent": "Fresh"
+}

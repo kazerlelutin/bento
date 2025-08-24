@@ -1,0 +1,24 @@
+{
+  "id": "yellow_radish",
+  "name": {
+    "fr": "Radis Jaune Mariné",
+    "en": "Pickled Yellow Radish",
+    "ko": "단무지"
+  },
+  "category": "vegetable",
+  "nutrition": {
+    "calories": 20,
+    "protein": 1,
+    "carbs": 4,
+    "fat": 0,
+    "fiber": 1
+  },
+  "origin": "korea",
+  "allergens": [],
+  "description": {
+    "fr": "Radis jaune mariné, ingrédient traditionnel du gimbap",
+    "en": "Pickled yellow radish, traditional gimbap ingredient",
+    "ko": "김밥의 전통 재료인 단무지"
+  },
+  "nameComponent": "Crunchy"
+}

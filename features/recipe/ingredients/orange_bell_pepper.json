@@ -1,0 +1,24 @@
+{
+  "id": "orange_bell_pepper",
+  "name": {
+    "fr": "Poivron orange",
+    "en": "Orange bell pepper",
+    "ko": "주황 파프리카"
+  },
+  "category": "legume",
+  "origin": "various",
+  "description": {
+    "fr": "Poivron orange, intermédiaire entre jaune et rouge",
+    "en": "Orange bell pepper, intermediate between yellow and red",
+    "ko": "노란색과 빨간색 사이의 중간 단계인 주황 파프리카"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 29,
+    "protein": 1,
+    "fat": 0.3,
+    "carbs": 6.5,
+    "fiber": 2.1
+  },
+  "nameComponent": "Balanced"
+}

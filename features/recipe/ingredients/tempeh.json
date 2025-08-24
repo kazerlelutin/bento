@@ -1,0 +1,24 @@
+{
+  "id": "tempeh",
+  "name": {
+    "fr": "Tempeh",
+    "en": "Tempeh",
+    "ko": "템페"
+  },
+  "category": "proteine_vegetale",
+  "origin": "indonesia",
+  "description": {
+    "fr": "Produit fermenté à base de soja, riche en protéines",
+    "en": "Fermented soy product, rich in protein",
+    "ko": "단백질이 풍부한 발효된 콩 제품"
+  },
+  "allergens": ["soy"],
+  "nutrition": {
+    "calories": 192,
+    "protein": 20,
+    "fat": 11,
+    "carbs": 9,
+    "fiber": 5
+  },
+  "nameComponent": "Earthy"
+}
