@@ -314,14 +314,35 @@ i {
 .crafter-page {
   display: grid;
   height: 100%;
-  grid-template-rows: 1fr 1.3fr auto;
+  grid-template-rows: 1fr 1.3fr;
   grid-template-areas:
     "canvas"
-    "stepper"
-    "controls";
+    "stepper";
   gap: 1rem;
   margin: 0 auto;
   max-width: 650px;
+}
+
+@media (min-width: 768px) {
+  .crafter-page {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+      "stepper canvas";
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 650px;
+  }
+
+  .crafter-canvas-container {
+    max-height: 400px;
+  }
+
+  .bento-viewer-button  {
+    display: none;
+  }
+
 }
 
 .crafter-page.mini-bento-viewer {
@@ -376,18 +397,6 @@ i {
   justify-items: center;
 }
 
-/* Desktop: 2 colonnes */
-@media (min-width: 768px) {
-  .base-container {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    margin: 0 auto;
-    gap: var(--gap-large);
-    justify-items: baseline;
-    overflow-x: hidden;
-    padding: var(--padding-large);
-  }
-}
 
 .base-choice-page {
   display: flex;
