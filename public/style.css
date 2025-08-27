@@ -324,6 +324,10 @@ i {
 }
 
 @media (min-width: 768px) {
+  .app-name {
+    margin-bottom: var(--margin-medium);
+  }
+  
   .crafter-page {
     display: grid;
     height: 100%;
