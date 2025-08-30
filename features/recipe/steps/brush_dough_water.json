@@ -1,0 +1,18 @@
+{
+  "id": "brush_dough_water",
+  "name": {
+    "fr": "Badigeonner la pâte avec de l'eau",
+    "en": "Brush dough with water",
+    "ko": "반죽에 물을 바르기"
+  },
+  "description": {
+    "fr": "Badigeonner l'intérieur de la pâte avec de l'eau à l'aide d'un pinceau",
+    "en": "Brush the inside of the dough with water using a brush",
+    "ko": "붓을 사용하여 반죽 안쪽에 물을 바르기"
+  },
+  "tips": {
+    "fr": "Utiliser de préférence un pinceau pour un badigeonnage uniforme\nL'eau permet de coller plus facilement la pâte et crée de la vapeur qui aide au gonflement",
+    "en": "Preferably use a brush for even brushing\nWater helps stick the dough more easily and creates steam that helps with rising",
+    "ko": "균등한 도포를 위해 붓 사용을 권장합니다\n물은 반죽을 더 쉽게 붙이고 팽창을 돕는 증기를 만듭니다"
+  }
+}

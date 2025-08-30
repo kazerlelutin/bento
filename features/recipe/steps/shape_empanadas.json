@@ -1,0 +1,18 @@
+{
+  "id": "shape_empanadas",
+  "name": {
+    "fr": "Façonner les empanadas",
+    "en": "Shape empanadas",
+    "ko": "엠빠나다 모양 만들기"
+  },
+  "description": {
+    "fr": "Mettre la pâte dans le creux de la main pour faire un creux, ajouter la farce et souder les bords pour que ce soit hermétique",
+    "en": "Place the dough in the palm of your hand to create a hollow, add the filling and seal the edges to make it airtight",
+    "ko": "반죽을 손바닥에 놓아 오목한 모양을 만들고, 속재료를 넣고 가장자리를 밀봉하여 밀폐되도록 하기"
+  },
+  "tips": {
+    "fr": "S'assurer que les bords sont bien soudés pour éviter que la farce ne s'échappe à la cuisson\nAppuyer fermement sur les bords pour une fermeture hermétique",
+    "en": "Make sure the edges are well sealed to prevent the filling from escaping during cooking\nPress firmly on the edges for an airtight seal",
+    "ko": "조리 중 속재료가 빠져나가지 않도록 가장자리가 잘 밀봉되었는지 확인하세요\n밀폐를 위해 가장자리를 단단히 누르세요"
+  }
+}

@@ -41,6 +41,15 @@
       "substitutes": [],
       "foe": [],
       "role": "base"
+    },
+    {
+      "id": "egg_yolk",
+      "quantity": 1,
+      "unit": "piece",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "finishing"
     }
   ],
   "steps": [
@@ -67,6 +76,31 @@
     {
       "id": "rest_dough_empanada",
       "order": 50,
+      "ingredients": []
+    },
+    {
+      "id": "fill_empanadas",
+      "order": 300,
+      "ingredients": []
+    },
+    {
+      "id": "brush_dough_water",
+      "order": 310,
+      "ingredients": ["water"]
+    },
+    {
+      "id": "shape_empanadas",
+      "order": 320,
+      "ingredients": []
+    },
+    {
+      "id": "brush_egg_yolk",
+      "order": 330,
+      "ingredients": ["egg_yolk"]
+    },
+    {
+      "id": "bake_empanadas",
+      "order": 340,
       "ingredients": []
     }
   ]

@@ -1,0 +1,18 @@
+{
+  "id": "brush_egg_yolk",
+  "name": {
+    "fr": "Badigeonner avec du jaune d'œuf",
+    "en": "Brush with egg yolk",
+    "ko": "노른자로 바르기"
+  },
+  "description": {
+    "fr": "Badigeonner le dessus des empanadas avec du jaune d'œuf pour une belle dorure",
+    "en": "Brush the top of the empanadas with egg yolk for a beautiful golden color",
+    "ko": "아름다운 황금빛을 위해 엠빠나다 위에 노른자를 바르기"
+  },
+  "tips": {
+    "fr": "Utiliser un pinceau pour un badigeonnage uniforme\nLe jaune d'œuf donne une belle couleur dorée et un aspect brillant",
+    "en": "Use a brush for even brushing\nEgg yolk gives a beautiful golden color and shiny appearance",
+    "ko": "균등한 도포를 위해 붓을 사용하세요\n노른자는 아름다운 황금빛과 광택을 줍니다"
+  }
+}

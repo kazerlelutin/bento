@@ -1,0 +1,24 @@
+{
+  "id": "egg_yolk",
+  "name": {
+    "fr": "Jaune d'œuf",
+    "en": "Egg yolk",
+    "ko": "계란 노른자"
+  },
+  "category": "proteine",
+  "origin": "local",
+  "description": {
+    "fr": "Jaune d'œuf frais de poule",
+    "en": "Fresh chicken egg yolk",
+    "ko": "신선한 닭고기 계란 노른자"
+  },
+  "allergens": ["eggs"],
+  "nutrition": {
+    "calories": 55,
+    "protein": 2.7,
+    "fat": 4.5,
+    "carbs": 0.6,
+    "fiber": 0
+  },
+  "nameComponent": "Fresh"
+}

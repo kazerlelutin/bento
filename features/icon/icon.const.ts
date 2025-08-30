@@ -121,6 +121,7 @@ export const ICONS = new Map<string, number>([
 
   // Œufs
   ['eggs', 28],
+  ['egg_yolk', 60],
 
   // Kimchi
   ['kimchi', 44],

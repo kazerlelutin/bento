@@ -1,0 +1,18 @@
+{
+  "id": "bake_empanadas",
+  "name": {
+    "fr": "Cuire les empanadas",
+    "en": "Bake empanadas",
+    "ko": "엠빠나다 굽기"
+  },
+  "description": {
+    "fr": "Cuire les empanadas au four pendant 20 minutes à 200°C",
+    "en": "Bake the empanadas in the oven for 20 minutes at 200°C",
+    "ko": "200°C에서 20분간 오븐에 엠빠나다 굽기"
+  },
+  "tips": {
+    "fr": "Préchauffer le four à 200°C avant de commencer la cuisson\nSurveiller la cuisson pour éviter qu'elles ne brûlent\nLes empanadas sont cuites quand elles sont dorées et croustillantes",
+    "en": "Preheat the oven to 200°C before starting to bake\nWatch the cooking to avoid burning\nEmpanadas are done when they are golden and crispy",
+    "ko": "굽기 시작하기 전에 오븐을 200°C로 예열하세요\n타지 않도록 조리 과정을 지켜보세요\n엠빠나다는 황금빛이고 바삭할 때 완성됩니다"
+  }
+}

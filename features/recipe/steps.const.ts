@@ -36,6 +36,9 @@ import washRiceOnigiri from "./steps/wash_rice_onigiri.json";
 import cutJulienne from "./steps/cut_julienne.json";
 import rollGimbap from "./steps/roll_gimbap.json";
 import seasonRiceVinegar from "./steps/season_rice_vinegar.json";
+import shapeEmpanadas from "./steps/shape_empanadas.json";
+import brushEggYolk from "./steps/brush_egg_yolk.json";
+import bakeEmpanadas from "./steps/bake_empanadas.json";
 
 export const steps: Map<string, Step> = new Map(
   [
@@ -75,6 +78,9 @@ export const steps: Map<string, Step> = new Map(
     ['cut_julienne', cutJulienne],
     ['roll_gimbap', rollGimbap],
     ['season_rice_vinegar', seasonRiceVinegar],
+    ['shape_empanadas', shapeEmpanadas],
+    ['brush_egg_yolk', brushEggYolk],
+    ['bake_empanadas', bakeEmpanadas],
   ]
 );
 

@@ -49,6 +49,7 @@ import lemonJuice from "./ingredients/lemon_juice.json";
 import sugarPowder from "./ingredients/sugar_powder.json";
 import bakingPowder from "./ingredients/baking_powder.json";
 import eggs from "./ingredients/eggs.json";
+import eggYolk from "./ingredients/egg_yolk.json";
 import butterSoft from "./ingredients/butter_soft.json";
 import yeast from "./ingredients/yeast.json";
 import pasta from "./ingredients/pasta.json";
@@ -126,6 +127,7 @@ export const ingredients: Map<string, Ingredient> = new Map([
   ['sugar_powder', sugarPowder],
   ['baking_powder', bakingPowder],
   ['eggs', eggs],
+  ['egg_yolk', eggYolk],
   ['butter_soft', butterSoft],
   ['yeast', yeast],
   ['pasta', pasta],
