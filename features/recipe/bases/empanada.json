@@ -56,7 +56,7 @@
     {
       "id": "melt_butter_water",
       "order": 10,
-      "ingredients": ["water", "salt", "butter"]
+      "ingredients": ["water", "butter"]
     },
     {
       "id": "cool_mixture",
