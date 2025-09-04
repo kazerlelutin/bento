@@ -93,6 +93,7 @@ describe('translate', () => {
 
     it('should return "Not found" when French translation is missing', () => {
       translateStore.currentLanguage = 'fr';
+      // @ts-ignore
       const translation: Translation = {
         en: 'Hello',
         ko: '안녕하세요'
