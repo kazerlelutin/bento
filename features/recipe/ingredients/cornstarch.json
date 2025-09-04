@@ -1,0 +1,24 @@
+{
+  "id": "cornstarch",
+  "name": {
+    "fr": "Fécule de maïs",
+    "en": "Cornstarch",
+    "ko": "옥수수 전분"
+  },
+  "category": "powder",
+  "origin": "global",
+  "description": {
+    "fr": "Fécule de maïs pour épaissir et alléger",
+    "en": "Cornstarch for thickening and lightening",
+    "ko": "걸쭉하게 하고 가볍게 만드는 옥수수 전분"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 381,
+    "protein": 0.3,
+    "fat": 0.1,
+    "carbs": 91.3,
+    "fiber": 0.9
+  },
+  "nameComponent": "Light"
+}

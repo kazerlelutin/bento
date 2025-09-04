@@ -1,0 +1,18 @@
+{
+  "id": "add_lemon_zest",
+  "name": {
+    "fr": "Ajouter le zeste de citron",
+    "en": "Add lemon zest",
+    "ko": "레몬 껍질 추가하기"
+  },
+  "description": {
+    "fr": "Ajouter le zeste de citron au sabayon",
+    "en": "Add lemon zest to the sabayon",
+    "ko": "사바용에 레몬 껍질 추가하기"
+  },
+  "tips": {
+    "fr": "Mélanger délicatement pour ne pas casser les bulles d'air\nLe zeste apporte de l'arôme sans acidité",
+    "en": "Mix gently to avoid breaking air bubbles\nThe zest adds aroma without acidity",
+    "ko": "공기 방울을 깨뜨리지 않도록 부드럽게 섞기\n껍질은 산도 없이 향을 더함"
+  }
+}

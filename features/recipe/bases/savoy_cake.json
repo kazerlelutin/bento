@@ -1,0 +1,143 @@
+{
+  "id": "savoy_cake",
+  "name": {
+    "fr": "Gâteau de Savoie",
+    "en": "Savoy cake",
+    "ko": "사부아 케이크"
+  },
+  "ingredients": [
+    {
+      "id": "egg_yolk",
+      "quantity": 2,
+      "unit": "piece",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "egg_white",
+      "quantity": 2,
+      "unit": "piece",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "sugar_powder",
+      "quantity": 50,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "cornstarch",
+      "quantity": 35,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "flour_t55",
+      "quantity": 10,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["flour_t65"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "salt",
+      "quantity": 1,
+      "unit": "pinch",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "sugar_icing",
+      "quantity": 8,
+      "unit": "g",
+      "score": 1,
+      "substitutes": [],
+      "foe": [],
+      "role": "finishing"
+    },
+    {
+      "id": "butter_soft",
+      "quantity": 5,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["margarine"],
+      "foe": [],
+      "role": "mold"
+    },
+    {
+      "id": "flour_mold",
+      "quantity": 5,
+      "unit": "g",
+      "score": 0,
+      "substitutes": ["flour_t65"],
+      "foe": [],
+      "role": "mold"
+    }
+  ],
+  "steps": [
+    {
+      "id": "preheat_oven",
+      "order": 10,
+      "ingredients": []
+    },
+    {
+      "id": "prepare_mold_butter_flour",
+      "order": 20,
+      "ingredients": ["butter_soft", "flour_mold"]
+    },
+    {
+      "id": "sift_flour_cornstarch",
+      "order": 30,
+      "ingredients": ["cornstarch", "flour_t55"]
+    },
+    {
+      "id": "beat_egg_yolks_sugar",
+      "order": 40,
+      "ingredients": ["egg_yolk", "sugar_powder", "salt"]
+    },
+    {
+      "id": "whip_egg_whites",
+      "order": 50,
+      "ingredients": ["egg_white", "sugar_powder"]
+    },
+    {
+      "id": "fold_meringue_sabayon",
+      "order": 60,
+      "ingredients": ["egg_yolk", "egg_white", "cornstarch", "flour_t55"]
+    },
+    {
+      "id": "pour_batter_mold",
+      "order": 70,
+      "ingredients": []
+    },
+    {
+      "id": "bake_savoy_cake",
+      "order": 80,
+      "ingredients": []
+    },
+    {
+      "id": "unmold_cool",
+      "order": 90,
+      "ingredients": []
+    },
+    {
+      "id": "dust_icing_sugar",
+      "order": 100,
+      "ingredients": ["sugar_icing"]
+    }
+  ]
+}

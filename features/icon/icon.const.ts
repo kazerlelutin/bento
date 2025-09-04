@@ -12,15 +12,18 @@ export const ICONS = new Map<string, number>([
   ['bento-viewer', 9],
   ['bento-viewer-close', 10],
 
+
   // Bases
   ['cake', 12],
   ['onigiri', 1],
   ['empanada', 4],
   ['gimbap', 36],
+  ['savoy_cake', 63],
 
   // Liquides
   ['water', 13],
   ['lemon_juice', 14],
+  ['lemon_zest', 14],
   ['orange_juice', 15],
   ['lime_juice', 14],
   ['mint_juice', 16],
@@ -43,6 +46,7 @@ export const ICONS = new Map<string, number>([
   ['pepper_powder', 23],
   ['garlic_powder', 24],
   ['sugar_powder', 24],
+  ['sugar_icing', 24],
   ['baking_powder', 24],
   ['paprika', 29],
   ['smoked_paprika', 29],
@@ -65,6 +69,10 @@ export const ICONS = new Map<string, number>([
   ['flour', 24],
   ['flour_t55', 24],
   ['flour_t65', 24],
+  ['flour_mold', 24],
+
+  // fécule
+  ['cornstarch', 24],
 
   // Fromages
   ['mozzarella', 8],
@@ -122,6 +130,7 @@ export const ICONS = new Map<string, number>([
   // Œufs
   ['eggs', 28],
   ['egg_yolk', 60],
+  ['egg_white', 61],
 
   // Kimchi
   ['kimchi', 44],
@@ -137,4 +146,7 @@ export const ICONS = new Map<string, number>([
 
   // Levures
   ['yeast', 0],
+
+  // Autres
+  ['vanilla_extract', 62],
 ]);

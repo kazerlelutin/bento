@@ -1,0 +1,24 @@
+{
+  "id": "vanilla_extract",
+  "name": {
+    "fr": "Extrait de vanille",
+    "en": "Vanilla extract",
+    "ko": "바닐라 추출물"
+  },
+  "category": "aromatic",
+  "origin": "tropical",
+  "description": {
+    "fr": "Extrait de vanille naturel",
+    "en": "Natural vanilla extract",
+    "ko": "천연 바닐라 추출물"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 288,
+    "protein": 0.1,
+    "fat": 0.1,
+    "carbs": 12.7,
+    "fiber": 0
+  },
+  "nameComponent": "Sweet"
+}

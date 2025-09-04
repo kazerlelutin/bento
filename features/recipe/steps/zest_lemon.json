@@ -1,0 +1,18 @@
+{
+  "id": "zest_lemon",
+  "name": {
+    "fr": "Zester le citron",
+    "en": "Zest the lemon",
+    "ko": "레몬 껍질 갈기"
+  },
+  "description": {
+    "fr": "Râper finement le zeste du citron jaune",
+    "en": "Finely grate the zest of the yellow lemon",
+    "ko": "노란 레몬의 껍질을 곱게 갈기"
+  },
+  "tips": {
+    "fr": "Ne pas râper la partie blanche (mésocarpe) qui est amère\nUtiliser un zesteur ou une râpe fine",
+    "en": "Don't grate the white part (mesocarp) which is bitter\nUse a zester or fine grater",
+    "ko": "쓴 흰 부분(중과피)은 갈지 말기\n제스터나 가는 강판 사용하기"
+  }
+}

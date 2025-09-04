@@ -77,6 +77,12 @@ import comte from "./ingredients/comte.json";
 import riceVinegar from "./ingredients/rice_vinegar.json";
 import cidarVinagar from "./ingredients/cidar_vinagar.json";
 import greenBellPepper from "./ingredients/green_bell_pepper.json";
+import eggWhite from "./ingredients/egg_white.json";
+import cornstarch from "./ingredients/cornstarch.json";
+import lemonZest from "./ingredients/lemon_zest.json";
+import vanillaExtract from "./ingredients/vanilla_extract.json";
+import sugarIcing from "./ingredients/sugar_icing.json";
+import flourMold from "./ingredients/flour_mold.json";
 
 export const ingredients: Map<string, Ingredient> = new Map([
   ['black_beans', blackBeans],
@@ -155,4 +161,10 @@ export const ingredients: Map<string, Ingredient> = new Map([
   ['rice_vinegar', riceVinegar],
   ['cidar_vinagar', cidarVinagar],
   ['green_bell_pepper', greenBellPepper],
+  ['egg_white', eggWhite],
+  ['cornstarch', cornstarch],
+  ['lemon_zest', lemonZest],
+  ['vanilla_extract', vanillaExtract],
+  ['sugar_icing', sugarIcing],
+  ['flour_mold', flourMold],
 ]);

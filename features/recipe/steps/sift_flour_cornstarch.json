@@ -1,0 +1,18 @@
+{
+  "id": "sift_flour_cornstarch",
+  "name": {
+    "fr": "Tamiser la farine et la fécule",
+    "en": "Sift flour and cornstarch",
+    "ko": "밀가루와 전분 체질하기"
+  },
+  "description": {
+    "fr": "Réunir la fécule de maïs et la farine puis tamiser le tout",
+    "en": "Combine cornstarch and flour then sift everything",
+    "ko": "옥수수 전분과 밀가루를 합쳐서 체질하기"
+  },
+  "tips": {
+    "fr": "Le tamisage permet d'aérer la farine et d'éviter les grumeaux\nMélanger d'abord à sec avant de tamiser",
+    "en": "Sifting aerates the flour and prevents lumps\nMix dry ingredients first before sifting",
+    "ko": "체질은 밀가루를 공기로 채우고 덩어리를 방지합니다\n체질하기 전에 먼저 건조 재료를 섞기"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "dust_icing_sugar",
+  "name": {
+    "fr": "Saupoudrer de sucre glace",
+    "en": "Dust with icing sugar",
+    "ko": "슈가파우더 뿌리기"
+  },
+  "description": {
+    "fr": "Démouler le gâteau et saupoudrer de sucre glace",
+    "en": "Unmold the cake and dust with icing sugar",
+    "ko": "케이크를 틀에서 빼고 슈가파우더 뿌리기"
+  },
+  "tips": {
+    "fr": "Utiliser un tamis fin pour une répartition uniforme\nSaupoudrer juste avant de servir\nLe sucre glace peut fondre si le gâteau est encore chaud",
+    "en": "Use a fine sieve for even distribution\nDust just before serving\nIcing sugar can melt if the cake is still warm",
+    "ko": "고른 분포를 위해 가는 체 사용하기\n서빙 직전에 뿌리기\n케이크가 아직 따뜻하면 슈가파우더가 녹을 수 있음"
+  }
+}

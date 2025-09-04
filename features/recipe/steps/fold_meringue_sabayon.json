@@ -1,0 +1,18 @@
+{
+  "id": "fold_meringue_sabayon",
+  "name": {
+    "fr": "Incorporer la meringue au sabayon",
+    "en": "Fold meringue into sabayon",
+    "ko": "사바용에 머랭 접기"
+  },
+  "description": {
+    "fr": "À l'aide du maryse, incorporer au sabayon 1/4 de la meringue, ajouter le mélange fécule-farine en évitant de trop travailler l'appareil. Incorporer ensuite délicatement le reste de la meringue",
+    "en": "Using a spatula, incorporate 1/4 of the meringue into the sabayon, add the flour-cornstarch mixture avoiding overworking the batter. Then gently fold in the remaining meringue",
+    "ko": "주걱을 사용해 사바용에 머랭의 1/4을 넣고, 반죽을 과도하게 작업하지 않도록 밀가루-전분 혼합물을 추가하기. 그 다음 나머지 머랭을 부드럽게 접어 넣기"
+  },
+  "tips": {
+    "fr": "Mouvement de bas en haut pour préserver les bulles d'air\nNe pas mélanger trop longtemps pour éviter que la pâte retombe\nL'appareil doit être homogène mais aéré",
+    "en": "Bottom to top movement to preserve air bubbles\nDon't mix too long to avoid the batter deflating\nThe batter should be homogeneous but airy",
+    "ko": "공기 방울을 보존하기 위해 아래에서 위로 움직이기\n반죽이 꺼지지 않도록 너무 오래 섞지 말기\n반죽은 균일하지만 공기가 있어야 함"
+  }
+}

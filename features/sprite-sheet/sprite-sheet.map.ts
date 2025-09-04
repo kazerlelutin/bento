@@ -12,6 +12,7 @@ export const BASES_LAYERS = new Map<string, number>([
   ['onigiri', 3],
   ['cake', 4],
   ['gimbap', 5],
+  ['savoy_cake', 6],
 ]);
 
 export const ZONE_LAYERS = new Map<string, [number, number][]>([
@@ -19,6 +20,7 @@ export const ZONE_LAYERS = new Map<string, [number, number][]>([
   ['gimbap', [[41, 1], [10, 1]]],
   ['cake', [[41, 29], [17, 28]]],
   ['empanada', [[41, 30], [10, 1]]],
+  ['savoy_cake', [[41, 28], [10, 28]]],
 ]);
 
 export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
@@ -304,6 +306,23 @@ export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
       num: [10, 20],
       size: [1, 3],
       color: [1, 1, 1]
+    }]
+  ])],
+
+  ['savoy_cake_lemon', new Map([
+    ['lemon', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [33, 32]
+    }]
+  ])],
+  ['savoy_cake_vanilla', new Map([
+    ['vanilla', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [31, 30]
     }]
   ])],
 ]);

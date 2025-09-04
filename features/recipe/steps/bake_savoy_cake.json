@@ -1,0 +1,18 @@
+{
+  "id": "bake_savoy_cake",
+  "name": {
+    "fr": "Cuire le gâteau de Savoie",
+    "en": "Bake Savoy cake",
+    "ko": "사부아 케이크 굽기"
+  },
+  "description": {
+    "fr": "Enfourner le gâteau pendant 40 à 45 minutes à 180°C (th. 6)",
+    "en": "Bake the cake for 40 to 45 minutes at 180°C (th. 6)",
+    "ko": "180°C에서 40-45분간 굽기"
+  },
+  "tips": {
+    "fr": "Ne pas ouvrir le four pendant les 30 premières minutes\nLe gâteau est cuit quand il se détache des bords et qu'un couteau ressort sec\nLaisser tiédir avant de démouler",
+    "en": "Don't open the oven during the first 30 minutes\nThe cake is done when it pulls away from the edges and a knife comes out dry\nLet cool before unmolding",
+    "ko": "처음 30분 동안 오븐을 열지 말기\n케이크가 가장자리에서 떨어지고 칼이 마르게 나오면 완성\n틀에서 빼기 전에 식히기"
+  }
+}

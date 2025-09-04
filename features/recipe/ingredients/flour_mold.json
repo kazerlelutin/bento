@@ -1,0 +1,24 @@
+{
+  "id": "flour_mold",
+  "name": {
+    "fr": "Farine pour moule",
+    "en": "Flour for mold",
+    "ko": "틀용 밀가루"
+  },
+  "category": "powder",
+  "origin": "global",
+  "description": {
+    "fr": "Farine pour beurrer et fariner le moule",
+    "en": "Flour for buttering and flouring the mold",
+    "ko": "틀에 버터와 밀가루를 바르기 위한 밀가루"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 364,
+    "protein": 10.3,
+    "fat": 1,
+    "carbs": 76.3,
+    "fiber": 2.7
+  },
+  "nameComponent": "Flour"
+}

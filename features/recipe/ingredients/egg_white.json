@@ -1,0 +1,24 @@
+{
+  "id": "egg_white",
+  "name": {
+    "fr": "Blanc d'œuf",
+    "en": "Egg white",
+    "ko": "달걀 흰자"
+  },
+  "category": "protein",
+  "origin": "global",
+  "description": {
+    "fr": "Blanc d'œuf frais",
+    "en": "Fresh egg white",
+    "ko": "신선한 달걀 흰자"
+  },
+  "allergens": ["eggs"],
+  "nutrition": {
+    "calories": 52,
+    "protein": 10.9,
+    "fat": 0.2,
+    "carbs": 0.7,
+    "fiber": 0
+  },
+  "nameComponent": "White"
+}
