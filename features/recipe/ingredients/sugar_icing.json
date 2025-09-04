@@ -1,0 +1,24 @@
+{
+  "id": "sugar_icing",
+  "name": {
+    "fr": "Sucre glace",
+    "en": "Icing sugar",
+    "ko": "슈가파우더"
+  },
+  "category": "powder",
+  "origin": "global",
+  "description": {
+    "fr": "Sucre glace finement moulu",
+    "en": "Finely ground icing sugar",
+    "ko": "곱게 간 슈가파우더"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 389,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 99.8,
+    "fiber": 0
+  },
+  "nameComponent": "Sweet"
+}

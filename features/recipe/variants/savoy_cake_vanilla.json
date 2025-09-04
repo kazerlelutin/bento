@@ -1,0 +1,26 @@
+{
+  "id": "savoy_cake_vanilla",
+  "name": {
+    "fr": "Gâteau de Savoie à la vanille",
+    "en": "Vanilla Savoy cake",
+    "ko": "바닐라 사부아 케이크"
+  },
+  "ingredients": [
+    {
+      "id": "vanilla_extract",
+      "quantity": 2,
+      "unit": "ml",
+      "score": 8,
+      "substitutes": [],
+      "foe": ["lemon", "lemon_zest", "lemon_juice"],
+      "role": "core"
+    }
+  ],
+  "steps": [
+    {
+      "id": "add_vanilla",
+      "order": 45,
+      "ingredients": ["vanilla_extract"]
+    }
+  ]
+}

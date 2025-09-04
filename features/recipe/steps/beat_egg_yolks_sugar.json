@@ -1,0 +1,18 @@
+{
+  "id": "beat_egg_yolks_sugar",
+  "name": {
+    "fr": "Battre les jaunes avec le sucre",
+    "en": "Beat egg yolks with sugar",
+    "ko": "노른자와 설탕 휘젓기"
+  },
+  "description": {
+    "fr": "Battre les jaunes d'œufs avec la moitié du sucre et le sel afin d'obtenir un mélange mousseux et blanc (blanchir)",
+    "en": "Beat egg yolks with half the sugar and salt to obtain a foamy and white mixture (whiten)",
+    "ko": "노른자에 설탕의 절반과 소금을 넣고 거품이 나고 하얗게 될 때까지 휘젓기"
+  },
+  "tips": {
+    "fr": "Battre jusqu'à ce que le mélange devienne pâle et mousseux\nLe mélange doit doubler de volume",
+    "en": "Beat until the mixture becomes pale and foamy\nThe mixture should double in volume",
+    "ko": "혼합물이 연해지고 거품이 날 때까지 휘젓기\n혼합물의 부피가 두 배가 되어야 함"
+  }
+}

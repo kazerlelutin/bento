@@ -7,6 +7,8 @@ import ricottaSpinach from "./variants/ricotta_spinach.json";
 import empanadaKimchi from "./variants/empanada_kimchi.json";
 import empanadaBlackBeans from "./variants/empanada_black_beans.json";
 import gimbapVegetables from "./variants/gimbap_vegetables.json";
+import savoyCakeLemon from "./variants/savoy_cake_lemon.json";
+import savoyCakeVanilla from "./variants/savoy_cake_vanilla.json";
 
 
 export const variants: Map<string, Map<string, Base>> = new Map(
@@ -32,6 +34,12 @@ export const variants: Map<string, Map<string, Base>> = new Map(
       new Map([
         ['lemon', cakeLemon],
         ['orange', cakeOrange],
+      ])
+    ],
+    ['savoy_cake',
+      new Map([
+        ['lemon', savoyCakeLemon],
+        ['vanilla', savoyCakeVanilla],
       ])
     ]
   ]

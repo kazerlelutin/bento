@@ -1,0 +1,18 @@
+{
+  "id": "prepare_mold_butter_flour",
+  "name": {
+    "fr": "Beurrer et fariner le moule",
+    "en": "Butter and flour the mold",
+    "ko": "틀에 버터와 밀가루 바르기"
+  },
+  "description": {
+    "fr": "Beurrer et fariner le moule à cake",
+    "en": "Butter and flour the cake mold",
+    "ko": "케이크 틀에 버터와 밀가루 바르기"
+  },
+  "tips": {
+    "fr": "Beurrer généreusement le moule puis saupoudrer de farine\nTapoter pour enlever l'excès de farine\nCela évite que le gâteau colle au moule",
+    "en": "Butter the mold generously then dust with flour\nTap to remove excess flour\nThis prevents the cake from sticking to the mold",
+    "ko": "틀에 충분히 버터를 바르고 밀가루를 뿌리기\n과도한 밀가루를 제거하기 위해 두드리기\n케이크가 틀에 붙지 않도록 방지"
+  }
+}

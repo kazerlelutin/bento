@@ -1,0 +1,18 @@
+{
+  "id": "preheat_oven",
+  "name": {
+    "fr": "Préchauffer le four",
+    "en": "Preheat oven",
+    "ko": "오븐 예열하기"
+  },
+  "description": {
+    "fr": "Préchauffer le four à 180°C (th. 6)",
+    "en": "Preheat oven to 180°C (th. 6)",
+    "ko": "180°C로 오븐 예열하기"
+  },
+  "tips": {
+    "fr": "Préchauffer au moins 15 minutes avant d'enfourner\nVérifier la température avec un thermomètre si possible\nLe four doit être chaud avant de mettre le gâteau",
+    "en": "Preheat at least 15 minutes before baking\nCheck temperature with thermometer if possible\nThe oven must be hot before putting in the cake",
+    "ko": "굽기 최소 15분 전에 예열하기\n가능하면 온도계로 온도 확인하기\n케이크를 넣기 전에 오븐이 뜨거워져야 함"
+  }
+}

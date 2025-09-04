@@ -1,0 +1,18 @@
+{
+  "id": "whip_egg_whites",
+  "name": {
+    "fr": "Monter les blancs en neige",
+    "en": "Whip egg whites",
+    "ko": "흰자 거품 내기"
+  },
+  "description": {
+    "fr": "Monter les blancs en neige. Lorsque le mélange double de volume, incorporer le reste de sucre et serrer (fouetter rapidement) au maximum pour obtenir une meringue très ferme",
+    "en": "Whip egg whites. When the mixture doubles in volume, incorporate the remaining sugar and whip rapidly to maximum to obtain a very firm meringue",
+    "ko": "흰자를 거품 내기. 혼합물의 부피가 두 배가 되면 나머지 설탕을 넣고 최대한 빠르게 휘저어 매우 단단한 머랭 만들기"
+  },
+  "tips": {
+    "fr": "Les blancs doivent être à température ambiante\nLe bol et les ustensiles doivent être parfaitement propres et secs\nLa meringue doit tenir sur la spatule",
+    "en": "Egg whites should be at room temperature\nThe bowl and utensils must be perfectly clean and dry\nThe meringue should hold on the spatula",
+    "ko": "흰자는 실온이어야 함\n그릇과 도구는 완전히 깨끗하고 마른 상태여야 함\n머랭이 주걱에 붙어야 함"
+  }
+}

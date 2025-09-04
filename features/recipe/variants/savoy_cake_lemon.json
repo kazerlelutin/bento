@@ -1,0 +1,49 @@
+{
+  "id": "savoy_cake_lemon",
+  "name": {
+    "fr": "Gâteau de Savoie au citron",
+    "en": "Lemon Savoy cake",
+    "ko": "레몬 사부아 케이크"
+  },
+  "ingredients": [
+    {
+      "id": "lemon",
+      "quantity": 0.25,
+      "unit": "piece",
+      "score": 8,
+      "substitutes": [],
+      "foe": ["vanilla_extract"],
+      "role": "core"
+    },
+    {
+      "id": "lemon_zest",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 7,
+      "substitutes": [],
+      "foe": ["vanilla_extract"],
+      "role": "core"
+    },
+    {
+      "id": "lemon_juice",
+      "quantity": 5,
+      "unit": "ml",
+      "score": 6,
+      "substitutes": [],
+      "foe": ["vanilla_extract"],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "zest_lemon",
+      "order": 25,
+      "ingredients": ["lemon"]
+    },
+    {
+      "id": "add_lemon_zest",
+      "order": 45,
+      "ingredients": ["lemon_zest"]
+    }
+  ]
+}

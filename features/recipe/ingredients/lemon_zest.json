@@ -1,0 +1,24 @@
+{
+  "id": "lemon_zest",
+  "name": {
+    "fr": "Zeste de citron",
+    "en": "Lemon zest",
+    "ko": "레몬 껍질"
+  },
+  "category": "aromatic",
+  "origin": "mediterranean",
+  "description": {
+    "fr": "Zeste de citron fraîchement râpé",
+    "en": "Freshly grated lemon zest",
+    "ko": "갓 간 레몬 껍질"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 47,
+    "protein": 1.5,
+    "fat": 0.3,
+    "carbs": 12.5,
+    "fiber": 10.6
+  },
+  "nameComponent": "Zesty"
+}

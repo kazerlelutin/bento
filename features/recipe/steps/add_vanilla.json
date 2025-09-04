@@ -1,0 +1,18 @@
+{
+  "id": "add_vanilla",
+  "name": {
+    "fr": "Ajouter la vanille",
+    "en": "Add vanilla",
+    "ko": "바닐라 추가하기"
+  },
+  "description": {
+    "fr": "Ajouter l'extrait de vanille au sabayon",
+    "en": "Add vanilla extract to the sabayon",
+    "ko": "사바용에 바닐라 추출물 추가하기"
+  },
+  "tips": {
+    "fr": "Mélanger délicatement pour ne pas casser les bulles d'air\nUtiliser de l'extrait de vanille naturel de préférence\nLa vanille apporte une saveur douce et parfumée",
+    "en": "Mix gently to avoid breaking air bubbles\nUse natural vanilla extract preferably\nVanilla adds a sweet and fragrant flavor",
+    "ko": "공기 방울을 깨뜨리지 않도록 부드럽게 섞기\n가능하면 천연 바닐라 추출물 사용하기\n바닐라는 달콤하고 향긋한 맛을 더함"
+  }
+}

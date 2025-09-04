@@ -39,6 +39,18 @@ import seasonRiceVinegar from "./steps/season_rice_vinegar.json";
 import shapeEmpanadas from "./steps/shape_empanadas.json";
 import brushEggYolk from "./steps/brush_egg_yolk.json";
 import bakeEmpanadas from "./steps/bake_empanadas.json";
+import preheatOven from "./steps/preheat_oven.json";
+import prepareMoldButterFlour from "./steps/prepare_mold_butter_flour.json";
+import siftFlourCornstarch from "./steps/sift_flour_cornstarch.json";
+import beatEggYolksSugar from "./steps/beat_egg_yolks_sugar.json";
+import whipEggWhites from "./steps/whip_egg_whites.json";
+import foldMeringueSabayon from "./steps/fold_meringue_sabayon.json";
+import pourBatterMold from "./steps/pour_batter_mold.json";
+import bakeSavoyCake from "./steps/bake_savoy_cake.json";
+import dustIcingSugar from "./steps/dust_icing_sugar.json";
+import zestLemon from "./steps/zest_lemon.json";
+import addLemonZest from "./steps/add_lemon_zest.json";
+import addVanilla from "./steps/add_vanilla.json";
 
 export const steps: Map<string, Step> = new Map(
   [
@@ -81,6 +93,18 @@ export const steps: Map<string, Step> = new Map(
     ['shape_empanadas', shapeEmpanadas],
     ['brush_egg_yolk', brushEggYolk],
     ['bake_empanadas', bakeEmpanadas],
+    ['preheat_oven', preheatOven],
+    ['prepare_mold_butter_flour', prepareMoldButterFlour],
+    ['sift_flour_cornstarch', siftFlourCornstarch],
+    ['beat_egg_yolks_sugar', beatEggYolksSugar],
+    ['whip_egg_whites', whipEggWhites],
+    ['fold_meringue_sabayon', foldMeringueSabayon],
+    ['pour_batter_mold', pourBatterMold],
+    ['bake_savoy_cake', bakeSavoyCake],
+    ['dust_icing_sugar', dustIcingSugar],
+    ['zest_lemon', zestLemon],
+    ['add_lemon_zest', addLemonZest],
+    ['add_vanilla', addVanilla],
   ]
 );
 

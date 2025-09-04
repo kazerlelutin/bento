@@ -1,0 +1,18 @@
+{
+  "id": "pour_batter_mold",
+  "name": {
+    "fr": "Verser la pâte dans le moule",
+    "en": "Pour batter into mold",
+    "ko": "틀에 반죽 붓기"
+  },
+  "description": {
+    "fr": "Verser la pâte dans le moule beurré et fariné",
+    "en": "Pour the batter into the buttered and floured mold",
+    "ko": "버터와 밀가루를 바른 틀에 반죽 붓기"
+  },
+  "tips": {
+    "fr": "Verser délicatement pour ne pas casser les bulles d'air\nLa pâte doit remplir le moule aux 3/4\nTaper légèrement le moule pour éliminer les bulles",
+    "en": "Pour gently to avoid breaking air bubbles\nThe batter should fill the mold 3/4 full\nTap the mold lightly to eliminate bubbles",
+    "ko": "공기 방울을 깨뜨리지 않도록 부드럽게 붓기\n반죽은 틀의 3/4을 채워야 함\n거품을 제거하기 위해 틀을 가볍게 두드리기"
+  }
+}
