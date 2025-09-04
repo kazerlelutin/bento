@@ -5,7 +5,7 @@ import type { Step } from "./crafter-navigator.types";
 
 describe('setCurrentStep', () => {
   it('should set current step when valid stepName', () => {
-    const currentStep = steps.find(s => s.name === 'home') as Step;
+    const currentStep = steps.find(s => s.name === 'base') as Step;
     setCurrentStep(currentStep.name);
     expect(crafterNavigatorStore.currentStep).toBe(currentStep);
   });
