@@ -1,0 +1,18 @@
+{
+  "id": "prepare_apple_chocolate_filling",
+  "name": {
+    "fr": "Préparer la farce pomme-chocolat",
+    "en": "Prepare apple-chocolate filling",
+    "ko": "사과-초콜릿 속 준비"
+  },
+  "description": {
+    "fr": "Mélanger les quartiers de pomme avec le chocolat râpé et la cannelle",
+    "en": "Mix apple quarters with grated chocolate and cinnamon",
+    "ko": "사과 조각을 갈은 초콜릿과 시나몬과 함께 섞기"
+  },
+  "tips": {
+    "fr": "Mélanger délicatement pour ne pas écraser les pommes\nAssaisonner avec la cannelle selon le goût\nLa farce doit être homogène mais pas trop liquide",
+    "en": "Mix gently to avoid crushing the apples\nSeason with cinnamon to taste\nThe filling should be homogeneous but not too liquid",
+    "ko": "사과가 으깨지지 않도록 부드럽게 섞으세요\n시나몬으로 간을 맞춰주세요\n속은 균질하지만 너무 액체가 되지 않도록 하세요"
+  }
+}

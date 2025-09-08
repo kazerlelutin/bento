@@ -1,0 +1,24 @@
+{
+  "id": "grated_chocolate",
+  "name": {
+    "fr": "Chocolat râpé",
+    "en": "Grated chocolate",
+    "ko": "강판 초콜릿"
+  },
+  "category": "sucre",
+  "origin": "global",
+  "description": {
+    "fr": "Chocolat râpé pour garniture et pâtisserie",
+    "en": "Grated chocolate for garnish and baking",
+    "ko": "가니시와 베이킹용 강판 초콜릿"
+  },
+  "allergens": ["lactose"],
+  "nutrition": {
+    "calories": 502,
+    "protein": 4.9,
+    "fat": 30,
+    "carbs": 63,
+    "fiber": 5.4
+  },
+  "nameComponent": "Sweet"
+}

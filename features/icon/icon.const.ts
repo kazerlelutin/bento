@@ -39,6 +39,8 @@ export const ICONS = new Map<string, number>([
   // Fruits
   ['lemon', 18],
   ['orange', 33],
+  ['apple', 34],
+  ['peach', 65],
 
   // Poudres/Épices
   ['salt', 19],
@@ -139,6 +141,7 @@ export const ICONS = new Map<string, number>([
   ['chocolate_chips', 30],
   ['chocolate_chips_dark', 31],
   ['chocolate_chips_milk', 30],
+  ['grated_chocolate', 64],
 
   // Céréales
   ['pasta', 0],

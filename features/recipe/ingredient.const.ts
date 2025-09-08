@@ -83,6 +83,9 @@ import lemonZest from "./ingredients/lemon_zest.json";
 import vanillaExtract from "./ingredients/vanilla_extract.json";
 import sugarIcing from "./ingredients/sugar_icing.json";
 import flourMold from "./ingredients/flour_mold.json";
+import apple from "./ingredients/apple.json";
+import gratedChocolate from "./ingredients/grated_chocolate.json";
+import peach from "./ingredients/peach.json";
 
 export const ingredients: Map<string, Ingredient> = new Map([
   ['black_beans', blackBeans],
@@ -167,4 +170,7 @@ export const ingredients: Map<string, Ingredient> = new Map([
   ['vanilla_extract', vanillaExtract],
   ['sugar_icing', sugarIcing],
   ['flour_mold', flourMold],
+  ['apple', apple],
+  ['grated_chocolate', gratedChocolate],
+  ['peach', peach],
 ]);

@@ -51,6 +51,9 @@ import dustIcingSugar from "./steps/dust_icing_sugar.json";
 import zestLemon from "./steps/zest_lemon.json";
 import addLemonZest from "./steps/add_lemon_zest.json";
 import addVanilla from "./steps/add_vanilla.json";
+import grateChocolate from "./steps/grate_chocolate.json";
+import chopAppleQuarters from "./steps/chop_apple_quarters.json";
+import prepareAppleChocolateFilling from "./steps/prepare_apple_chocolate_filling.json";
 
 export const steps: Map<string, Step> = new Map(
   [
@@ -105,6 +108,9 @@ export const steps: Map<string, Step> = new Map(
     ['zest_lemon', zestLemon],
     ['add_lemon_zest', addLemonZest],
     ['add_vanilla', addVanilla],
+    ['grate_chocolate', grateChocolate],
+    ['chop_apple_quarters', chopAppleQuarters],
+    ['prepare_apple_chocolate_filling', prepareAppleChocolateFilling],
   ]
 );
 

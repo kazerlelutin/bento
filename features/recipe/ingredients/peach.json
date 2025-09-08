@@ -1,0 +1,24 @@
+{
+  "id": "peach",
+  "name": {
+    "fr": "Pêche",
+    "en": "Peach",
+    "ko": "복숭아"
+  },
+  "category": "fruit",
+  "origin": "global",
+  "description": {
+    "fr": "Pêche fraîche pour la cuisine",
+    "en": "Fresh peach for cooking",
+    "ko": "요리용 신선한 복숭아"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 39,
+    "protein": 0.9,
+    "fat": 0.3,
+    "carbs": 10,
+    "fiber": 1.5
+  },
+  "nameComponent": "Sweet"
+}

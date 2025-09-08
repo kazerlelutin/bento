@@ -1,0 +1,24 @@
+{
+  "id": "apple",
+  "name": {
+    "fr": "Pomme",
+    "en": "Apple",
+    "ko": "사과"
+  },
+  "category": "fruit",
+  "origin": "global",
+  "description": {
+    "fr": "Pomme fraîche pour la cuisine",
+    "en": "Fresh apple for cooking",
+    "ko": "요리용 신선한 사과"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 52,
+    "protein": 0.3,
+    "fat": 0.2,
+    "carbs": 14,
+    "fiber": 2.4
+  },
+  "nameComponent": "Sweet"
+}

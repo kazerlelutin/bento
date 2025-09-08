@@ -1,0 +1,68 @@
+{
+  "id": "empanada_apple_chocolate",
+  "name": {
+    "fr": "Empanada aux Pommes et Chocolat",
+    "en": "Apple and Chocolate Empanada",
+    "ko": "사과 초콜릿 엠빠나다"
+  },
+  "ingredients": [
+    {
+      "id": "grated_chocolate",
+      "quantity": 4,
+      "unit": "tbsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "core"
+    },
+    {
+      "id": "apple",
+      "quantity": 1,
+      "unit": "unit",
+      "score": 0,
+      "substitutes": ["peach"],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "cinnamon",
+      "quantity": 8,
+      "unit": "pinch",
+      "score": 1,
+      "substitutes": [],
+      "foe": ["vanilla_extract"],
+      "role": "optional"
+    },
+    {
+      "id": "vanilla_extract",
+      "quantity": 0.5,
+      "unit": "tsp",
+      "score": 1,
+      "substitutes": [],
+      "foe": ["cinnamon"],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "grate_chocolate",
+      "order": 55,
+      "ingredients": ["grated_chocolate"]
+    },
+    {
+      "id": "chop_apple_quarters",
+      "order": 56,
+      "ingredients": ["apple"]
+    },
+    {
+      "id": "prepare_apple_chocolate_filling",
+      "order": 60,
+      "ingredients": ["grated_chocolate", "apple", "cinnamon"]
+    },
+    {
+      "id": "add_vanilla",
+      "order": 61,
+      "ingredients": ["vanilla_extract"]
+    }
+  ]
+}

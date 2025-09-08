@@ -1,0 +1,18 @@
+{
+  "id": "chop_apple_quarters",
+  "name": {
+    "fr": "Couper la pomme en quartiers",
+    "en": "Cut apple into quarters",
+    "ko": "사과를 4등분으로 자르기"
+  },
+  "description": {
+    "fr": "Couper la pomme en 4 quartiers égaux",
+    "en": "Cut the apple into 4 equal quarters",
+    "ko": "사과를 4개의 동일한 조각으로 자르기"
+  },
+  "tips": {
+    "fr": "Laver la pomme avant de la couper\nCouper d'abord en deux moitiés\nPuis chaque moitié en deux quartiers\nRetirer le cœur et les pépins",
+    "en": "Wash the apple before cutting\nFirst cut into two halves\nThen each half into two quarters\nRemove core and seeds",
+    "ko": "자르기 전에 사과를 씻으세요\n먼저 두 개의 반쪽으로 자르기\n그 다음 각 반쪽을 두 개의 조각으로\n심과 씨를 제거하세요"
+  }
+}

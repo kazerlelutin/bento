@@ -1,0 +1,18 @@
+{
+  "id": "grate_chocolate",
+  "name": {
+    "fr": "Râper le chocolat",
+    "en": "Grate chocolate",
+    "ko": "초콜릿 갈기"
+  },
+  "description": {
+    "fr": "Râper le chocolat avec une râpe fine",
+    "en": "Grate the chocolate with a fine grater",
+    "ko": "가는 갈이로 초콜릿을 갈기"
+  },
+  "tips": {
+    "fr": "Utiliser une râpe fine\nRâper délicatement pour éviter que le chocolat ne fonde\nRâper la quantité nécessaire pour chaque empanada",
+    "en": "Use a fine grater\nGrate gently to prevent chocolate from melting\nGrate the amount needed for each empanada",
+    "ko": "가는 갈이를 사용하세요\n초콜릿이 녹지 않도록 부드럽게 갈으세요\n각 엠빠나다에 필요한 양만큼 갈으세요"
+  }
+}
