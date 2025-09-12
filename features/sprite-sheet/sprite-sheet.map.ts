@@ -325,5 +325,39 @@ export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
       color: [31, 30]
     }]
   ])],
+  ['empanada_apple_chocolate', new Map([
+    ['apple', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [33, 34]
+    }],
+    ['cinnamon', {
+      form: 'square',
+      num: [4, 10],
+      size: [1, 2],
+      color: [30, 31]
+    }],
+    ['vanilla_extract', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [30, 31]
+    }],
+    ['peach', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [32, 33]
+    }],
+    ['grated_chocolate', {
+      form: 'circle',
+      num: [4, 10],
+      size: [2, 3],
+      color: [30, 31]
+    }]
+  ])],
+
+
 ]);
 
