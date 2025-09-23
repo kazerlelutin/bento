@@ -68,61 +68,65 @@
    7.7. [Handling missing icon mappings](#icon-management-and-display-handling-missing-icon-mappings)<br/>
    7.8. [Icon background position calculation](#icon-management-and-display-icon-background-position-calculation)<br/>
    7.9. [Multiple icon applications](#icon-management-and-display-multiple-icon-applications)<br/>
-8. [Unnamed Feature](#unnamed-feature)<br/>
-9. [Recipe URL management and sharing](#recipe-url-management-and-sharing)<br/>
-   9.1. [URL injection on page load](#recipe-url-management-and-sharing-url-injection-on-page-load)<br/>
-   9.2. [URL update on base change](#recipe-url-management-and-sharing-url-update-on-base-change)<br/>
-   9.3. [URL update on variant change](#recipe-url-management-and-sharing-url-update-on-variant-change)<br/>
-   9.4. [URL update on ingredient selection change](#recipe-url-management-and-sharing-url-update-on-ingredient-selection-change)<br/>
-   9.5. [Recipe data encoding in URL](#recipe-url-management-and-sharing-recipe-data-encoding-in-url)<br/>
-   9.6. [Recipe data decoding from URL](#recipe-url-management-and-sharing-recipe-data-decoding-from-url)<br/>
-   9.7. [Handling invalid URL parameters](#recipe-url-management-and-sharing-handling-invalid-url-parameters)<br/>
-   9.8. [URL parameter key management](#recipe-url-management-and-sharing-url-parameter-key-management)<br/>
-   9.9. [Browser history management](#recipe-url-management-and-sharing-browser-history-management)<br/>
-   9.10. [Recipe URL cleanup](#recipe-url-management-and-sharing-recipe-url-cleanup)<br/>
-   9.11. [Fallback to random variant](#recipe-url-management-and-sharing-fallback-to-random-variant)<br/>
-10. [Front-end Router](#front-end-router)<br/>
-   10.1. [Basic navigation with template rendering](#front-end-router-basic-navigation-with-template-rendering)<br/>
-   10.2. [Navigation to page with script](#front-end-router-navigation-to-page-with-script)<br/>
-   10.3. [Navigation with dynamic parameters](#front-end-router-navigation-with-dynamic-parameters)<br/>
-   10.4. [Navigation with query parameters](#front-end-router-navigation-with-query-parameters)<br/>
-   10.5. [Page not found](#front-end-router-page-not-found)<br/>
-   10.6. [Navigation with authentication](#front-end-router-navigation-with-authentication)<br/>
-   10.7. [Navigation with transition and cleanup](#front-end-router-navigation-with-transition-and-cleanup)<br/>
-   10.8. [Link handling with internal navigation](#front-end-router-link-handling-with-internal-navigation)<br/>
-   10.9. [Back button handling](#front-end-router-back-button-handling)<br/>
-   10.10. [External link handling](#front-end-router-external-link-handling)<br/>
-   10.11. [Template rendering with state management](#front-end-router-template-rendering-with-state-management)<br/>
-   10.12. [Script cleanup on navigation](#front-end-router-script-cleanup-on-navigation)<br/>
-   10.13. [Multiple rapid navigation](#front-end-router-multiple-rapid-navigation)<br/>
-   10.14. [Browser refresh handling](#front-end-router-browser-refresh-handling)<br/>
-11. [Routes](#routes)<br/>
-   11.1. [Basic navigation with template rendering](#routes-basic-navigation-with-template-rendering)<br/>
-   11.2. [Navigation to page with script](#routes-navigation-to-page-with-script)<br/>
-12. [Unnamed Feature](#unnamed-feature)<br/>
-13. [Translation and internationalization](#translation-and-internationalization)<br/>
-   13.1. [Language detection from browser](#translation-and-internationalization-language-detection-from-browser)<br/>
-   13.2. [Language persistence in localStorage](#translation-and-internationalization-language-persistence-in-localstorage)<br/>
-   13.3. [Language switching](#translation-and-internationalization-language-switching)<br/>
-   13.4. [Translation retrieval](#translation-and-internationalization-translation-retrieval)<br/>
-   13.5. [UI element translation](#translation-and-internationalization-ui-element-translation)<br/>
-   13.6. [Supported languages](#translation-and-internationalization-supported-languages)<br/>
-   13.7. [Translation key management](#translation-and-internationalization-translation-key-management)<br/>
-   13.8. [Fallback translation behavior](#translation-and-internationalization-fallback-translation-behavior)<br/>
-   13.9. [Language storage key management](#translation-and-internationalization-language-storage-key-management)<br/>
-   13.10. [Dynamic translation updates](#translation-and-internationalization-dynamic-translation-updates)<br/>
-   13.11. [Translation data structure](#translation-and-internationalization-translation-data-structure)<br/>
-14. [Application version management](#application-version-management)<br/>
-   14.1. [Version display initialization](#application-version-management-version-display-initialization)<br/>
-   14.2. [Version element update](#application-version-management-version-element-update)<br/>
-   14.3. [Version constant management](#application-version-management-version-constant-management)<br/>
-   14.4. [Version element not found](#application-version-management-version-element-not-found)<br/>
-   14.5. [Version display on page load](#application-version-management-version-display-on-page-load)<br/>
-   14.6. [Version consistency](#application-version-management-version-consistency)<br/>
-   14.7. [Version format validation](#application-version-management-version-format-validation)<br/>
-   14.8. [Version display in footer](#application-version-management-version-display-in-footer)<br/>
-   14.9. [Version updates tracking](#application-version-management-version-updates-tracking)<br/>
-   14.10. [Version system cleanup](#application-version-management-version-system-cleanup)<br/>
+8. [Quantity selector](#quantity-selector)<br/>
+   8.1. [Initial display](#quantity-selector-initial-display)<br/>
+   8.2. [Increment the quantity](#quantity-selector-increment-the-quantity)<br/>
+   8.3. [Decrement the quantity back to 1](#quantity-selector-decrement-the-quantity-back-to-1)<br/>
+9. [Unnamed Feature](#unnamed-feature)<br/>
+10. [Recipe URL management and sharing](#recipe-url-management-and-sharing)<br/>
+   10.1. [URL injection on page load](#recipe-url-management-and-sharing-url-injection-on-page-load)<br/>
+   10.2. [URL update on base change](#recipe-url-management-and-sharing-url-update-on-base-change)<br/>
+   10.3. [URL update on variant change](#recipe-url-management-and-sharing-url-update-on-variant-change)<br/>
+   10.4. [URL update on ingredient selection change](#recipe-url-management-and-sharing-url-update-on-ingredient-selection-change)<br/>
+   10.5. [Recipe data encoding in URL](#recipe-url-management-and-sharing-recipe-data-encoding-in-url)<br/>
+   10.6. [Recipe data decoding from URL](#recipe-url-management-and-sharing-recipe-data-decoding-from-url)<br/>
+   10.7. [Handling invalid URL parameters](#recipe-url-management-and-sharing-handling-invalid-url-parameters)<br/>
+   10.8. [URL parameter key management](#recipe-url-management-and-sharing-url-parameter-key-management)<br/>
+   10.9. [Browser history management](#recipe-url-management-and-sharing-browser-history-management)<br/>
+   10.10. [Recipe URL cleanup](#recipe-url-management-and-sharing-recipe-url-cleanup)<br/>
+   10.11. [Fallback to random variant](#recipe-url-management-and-sharing-fallback-to-random-variant)<br/>
+11. [Front-end Router](#front-end-router)<br/>
+   11.1. [Basic navigation with template rendering](#front-end-router-basic-navigation-with-template-rendering)<br/>
+   11.2. [Navigation to page with script](#front-end-router-navigation-to-page-with-script)<br/>
+   11.3. [Navigation with dynamic parameters](#front-end-router-navigation-with-dynamic-parameters)<br/>
+   11.4. [Navigation with query parameters](#front-end-router-navigation-with-query-parameters)<br/>
+   11.5. [Page not found](#front-end-router-page-not-found)<br/>
+   11.6. [Navigation with authentication](#front-end-router-navigation-with-authentication)<br/>
+   11.7. [Navigation with transition and cleanup](#front-end-router-navigation-with-transition-and-cleanup)<br/>
+   11.8. [Link handling with internal navigation](#front-end-router-link-handling-with-internal-navigation)<br/>
+   11.9. [Back button handling](#front-end-router-back-button-handling)<br/>
+   11.10. [External link handling](#front-end-router-external-link-handling)<br/>
+   11.11. [Template rendering with state management](#front-end-router-template-rendering-with-state-management)<br/>
+   11.12. [Script cleanup on navigation](#front-end-router-script-cleanup-on-navigation)<br/>
+   11.13. [Multiple rapid navigation](#front-end-router-multiple-rapid-navigation)<br/>
+   11.14. [Browser refresh handling](#front-end-router-browser-refresh-handling)<br/>
+12. [Routes](#routes)<br/>
+   12.1. [Basic navigation with template rendering](#routes-basic-navigation-with-template-rendering)<br/>
+   12.2. [Navigation to page with script](#routes-navigation-to-page-with-script)<br/>
+13. [Unnamed Feature](#unnamed-feature)<br/>
+14. [Translation and internationalization](#translation-and-internationalization)<br/>
+   14.1. [Language detection from browser](#translation-and-internationalization-language-detection-from-browser)<br/>
+   14.2. [Language persistence in localStorage](#translation-and-internationalization-language-persistence-in-localstorage)<br/>
+   14.3. [Language switching](#translation-and-internationalization-language-switching)<br/>
+   14.4. [Translation retrieval](#translation-and-internationalization-translation-retrieval)<br/>
+   14.5. [UI element translation](#translation-and-internationalization-ui-element-translation)<br/>
+   14.6. [Supported languages](#translation-and-internationalization-supported-languages)<br/>
+   14.7. [Translation key management](#translation-and-internationalization-translation-key-management)<br/>
+   14.8. [Fallback translation behavior](#translation-and-internationalization-fallback-translation-behavior)<br/>
+   14.9. [Language storage key management](#translation-and-internationalization-language-storage-key-management)<br/>
+   14.10. [Dynamic translation updates](#translation-and-internationalization-dynamic-translation-updates)<br/>
+   14.11. [Translation data structure](#translation-and-internationalization-translation-data-structure)<br/>
+15. [Application version management](#application-version-management)<br/>
+   15.1. [Version display initialization](#application-version-management-version-display-initialization)<br/>
+   15.2. [Version element update](#application-version-management-version-element-update)<br/>
+   15.3. [Version constant management](#application-version-management-version-constant-management)<br/>
+   15.4. [Version element not found](#application-version-management-version-element-not-found)<br/>
+   15.5. [Version display on page load](#application-version-management-version-display-on-page-load)<br/>
+   15.6. [Version consistency](#application-version-management-version-consistency)<br/>
+   15.7. [Version format validation](#application-version-management-version-format-validation)<br/>
+   15.8. [Version display in footer](#application-version-management-version-display-in-footer)<br/>
+   15.9. [Version updates tracking](#application-version-management-version-updates-tracking)<br/>
+   15.10. [Version system cleanup](#application-version-management-version-system-cleanup)<br/>
 
 
 ---
@@ -702,7 +706,45 @@
 
 ---
 
-## 8. Unnamed Feature {#unnamed-feature}
+## 8. Quantity selector {#quantity-selector}
+
+> Allows adjusting the number of people for the recipe.
+
+**File:** `features\quantity-selector\quantity-selector.feature`
+
+### 🔧 Background
+
+- **GIVEN** the application is loaded
+- **AND** the quantity selector is visible
+
+
+### 🎯 Scenarios
+
+#### 8.1. Initial display {#quantity-selector-initial-display}
+
+✅ **THEN** the displayed quantity is 1<br>
+➕ **AND** the "-" button is disabled<br>
+
+#### 8.2. Increment the quantity {#quantity-selector-increment-the-quantity}
+
+🎯 **WHEN** I click the "+" button<br>
+✅ **THEN** the displayed quantity is 2<br>
+➕ **AND** the "-" button is enabled<br>
+
+#### 8.3. Decrement the quantity back to 1 {#quantity-selector-decrement-the-quantity-back-to-1}
+
+🔧 **GIVEN** the displayed quantity is 2<br>
+🎯 **WHEN** I click the "-" button<br>
+✅ **THEN** the displayed quantity is 1<br>
+➕ **AND** the "-" button is disabled<br>
+🔧 **GIVEN** the current language is <lang><br>
+✅ **THEN** the selector label contains <text><br>
+
+
+
+---
+
+## 9. Unnamed Feature {#unnamed-feature}
 
 **File:** `features\recipe\recipe.feature`
 
@@ -712,7 +754,7 @@
 
 ---
 
-## 9. Recipe URL management and sharing {#recipe-url-management-and-sharing}
+## 10. Recipe URL management and sharing {#recipe-url-management-and-sharing}
 
 > As a bento generator user
 
@@ -726,7 +768,7 @@
 
 ### 🎯 Scenarios
 
-#### 9.1. URL injection on page load {#recipe-url-management-and-sharing-url-injection-on-page-load}
+#### 10.1. URL injection on page load {#recipe-url-management-and-sharing-url-injection-on-page-load}
 
 🔧 **GIVEN** I visit a URL with recipe parameters<br>
 🎯 **WHEN** the page loads<br>
@@ -735,7 +777,7 @@
 ➕ **AND** the variant is set according to the URL parameters<br>
 ➕ **AND** the selected ingredients are restored from the URL parameters<br>
 
-#### 9.2. URL update on base change {#recipe-url-management-and-sharing-url-update-on-base-change}
+#### 10.2. URL update on base change {#recipe-url-management-and-sharing-url-update-on-base-change}
 
 🔧 **GIVEN** I am on the bento generator page<br>
 ➕ **AND** I have a current recipe configuration<br>
@@ -744,7 +786,7 @@
 ➕ **AND** the URL contains the current variant ID<br>
 ➕ **AND** the URL contains the current selected ingredients<br>
 
-#### 9.3. URL update on variant change {#recipe-url-management-and-sharing-url-update-on-variant-change}
+#### 10.3. URL update on variant change {#recipe-url-management-and-sharing-url-update-on-variant-change}
 
 🔧 **GIVEN** I am on the bento generator page<br>
 ➕ **AND** I have a current recipe configuration<br>
@@ -753,7 +795,7 @@
 ➕ **AND** the URL contains the current base ID<br>
 ➕ **AND** the URL contains the current selected ingredients<br>
 
-#### 9.4. URL update on ingredient selection change {#recipe-url-management-and-sharing-url-update-on-ingredient-selection-change}
+#### 10.4. URL update on ingredient selection change {#recipe-url-management-and-sharing-url-update-on-ingredient-selection-change}
 
 🔧 **GIVEN** I am on the bento generator page<br>
 ➕ **AND** I have a current recipe configuration<br>
@@ -762,7 +804,7 @@
 ➕ **AND** the URL contains the current base ID<br>
 ➕ **AND** the URL contains the current variant ID<br>
 
-#### 9.5. Recipe data encoding in URL {#recipe-url-management-and-sharing-recipe-data-encoding-in-url}
+#### 10.5. Recipe data encoding in URL {#recipe-url-management-and-sharing-recipe-data-encoding-in-url}
 
 🔧 **GIVEN** I have a complete recipe configuration<br>
 🎯 **WHEN** the URL is updated<br>
@@ -770,7 +812,7 @@
 ➕ **AND** the encoded data contains base ID, variant ID, and selected ingredients<br>
 ➕ **AND** the encoded data is added as a URL parameter<br>
 
-#### 9.6. Recipe data decoding from URL {#recipe-url-management-and-sharing-recipe-data-decoding-from-url}
+#### 10.6. Recipe data decoding from URL {#recipe-url-management-and-sharing-recipe-data-decoding-from-url}
 
 🔧 **GIVEN** I have a URL with encoded recipe data<br>
 🎯 **WHEN** the URL is processed<br>
@@ -778,7 +820,7 @@
 ➕ **AND** the recipe configuration is parsed from JSON<br>
 ➕ **AND** the base, variant, and ingredients are restored<br>
 
-#### 9.7. Handling invalid URL parameters {#recipe-url-management-and-sharing-handling-invalid-url-parameters}
+#### 10.7. Handling invalid URL parameters {#recipe-url-management-and-sharing-handling-invalid-url-parameters}
 
 🔧 **GIVEN** I visit a URL with invalid recipe parameters<br>
 🎯 **WHEN** the page loads<br>
@@ -786,14 +828,14 @@
 ➕ **AND** the URL is updated with default configuration<br>
 ➕ **AND** no errors are thrown<br>
 
-#### 9.8. URL parameter key management {#recipe-url-management-and-sharing-url-parameter-key-management}
+#### 10.8. URL parameter key management {#recipe-url-management-and-sharing-url-parameter-key-management}
 
 🔧 **GIVEN** the recipe URL system is active<br>
 🎯 **WHEN** I check the URL parameter key<br>
 ✅ **THEN** the key is set to 'recipe'<br>
 ➕ **AND** the parameter is properly formatted in the URL<br>
 
-#### 9.9. Browser history management {#recipe-url-management-and-sharing-browser-history-management}
+#### 10.9. Browser history management {#recipe-url-management-and-sharing-browser-history-management}
 
 🔧 **GIVEN** I am on the bento generator page<br>
 🎯 **WHEN** the URL is updated with new recipe configuration<br>
@@ -801,14 +843,14 @@
 ➕ **AND** the back button works correctly<br>
 ➕ **AND** the URL reflects the current state<br>
 
-#### 9.10. Recipe URL cleanup {#recipe-url-management-and-sharing-recipe-url-cleanup}
+#### 10.10. Recipe URL cleanup {#recipe-url-management-and-sharing-recipe-url-cleanup}
 
 🔧 **GIVEN** the recipe URL system is active<br>
 🎯 **WHEN** I navigate away from the page<br>
 ✅ **THEN** the URL subscriptions are cleaned up<br>
 ➕ **AND** no memory leaks occur<br>
 
-#### 9.11. Fallback to random variant {#recipe-url-management-and-sharing-fallback-to-random-variant}
+#### 10.11. Fallback to random variant {#recipe-url-management-and-sharing-fallback-to-random-variant}
 
 🔧 **GIVEN** I have a URL with a base ID but invalid variant ID<br>
 🎯 **WHEN** the URL is processed<br>
@@ -820,7 +862,7 @@
 
 ---
 
-## 10. Front-end Router {#front-end-router}
+## 11. Front-end Router {#front-end-router}
 
 > As a user
 
@@ -835,7 +877,7 @@
 
 ### 🎯 Scenarios
 
-#### 10.1. Basic navigation with template rendering {#front-end-router-basic-navigation-with-template-rendering}
+#### 11.1. Basic navigation with template rendering {#front-end-router-basic-navigation-with-template-rendering}
 
 🎯 **WHEN** I visit the home page<br>
 ✅ **THEN** I should see the home page content<br>
@@ -843,7 +885,7 @@
 ➕ **AND** the URL should be "/"<br>
 ➕ **AND** the home template should be rendered<br>
 
-#### 10.2. Navigation to page with script {#front-end-router-navigation-to-page-with-script}
+#### 11.2. Navigation to page with script {#front-end-router-navigation-to-page-with-script}
 
 🎯 **WHEN** I click on the "About" link<br>
 ✅ **THEN** I should see the About page content<br>
@@ -853,7 +895,7 @@
 ➕ **AND** the about page script should be initialized<br>
 ➕ **AND** the previous page cleanup should be executed<br>
 
-#### 10.3. Navigation with dynamic parameters {#front-end-router-navigation-with-dynamic-parameters}
+#### 11.3. Navigation with dynamic parameters {#front-end-router-navigation-with-dynamic-parameters}
 
 🎯 **WHEN** I visit the page "/users/123"<br>
 ✅ **THEN** I should see the user profile for 123<br>
@@ -861,14 +903,14 @@
 ➕ **AND** the URL should be "/users/123"<br>
 ➕ **AND** the user template should be rendered<br>
 
-#### 10.4. Navigation with query parameters {#front-end-router-navigation-with-query-parameters}
+#### 11.4. Navigation with query parameters {#front-end-router-navigation-with-query-parameters}
 
 🎯 **WHEN** I visit the page "/search?q=test"<br>
 ✅ **THEN** I should see search results for "test"<br>
 ➕ **AND** the URL should be "/search?q=test"<br>
 ➕ **AND** the search template should be rendered<br>
 
-#### 10.5. Page not found {#front-end-router-page-not-found}
+#### 11.5. Page not found {#front-end-router-page-not-found}
 
 🎯 **WHEN** I visit a non-existent page<br>
 ✅ **THEN** I should see the 404 page<br>
@@ -876,7 +918,7 @@
 ➕ **AND** the URL should remain unchanged<br>
 ➕ **AND** the 404 template should be rendered<br>
 
-#### 10.6. Navigation with authentication {#front-end-router-navigation-with-authentication}
+#### 11.6. Navigation with authentication {#front-end-router-navigation-with-authentication}
 
 🔧 **GIVEN** I am not logged in<br>
 🎯 **WHEN** I try to access a protected page<br>
@@ -884,7 +926,7 @@
 ➕ **AND** the URL should be "/login"<br>
 ➕ **AND** the login template should be rendered<br>
 
-#### 10.7. Navigation with transition and cleanup {#front-end-router-navigation-with-transition-and-cleanup}
+#### 11.7. Navigation with transition and cleanup {#front-end-router-navigation-with-transition-and-cleanup}
 
 🔧 **GIVEN** I am on a page with active scripts<br>
 🎯 **WHEN** I navigate to a new page<br>
@@ -892,14 +934,14 @@
 ➕ **AND** the new page script should be initialized<br>
 ➕ **AND** the content should be updated after the transition<br>
 
-#### 10.8. Link handling with internal navigation {#front-end-router-link-handling-with-internal-navigation}
+#### 11.8. Link handling with internal navigation {#front-end-router-link-handling-with-internal-navigation}
 
 🎯 **WHEN** I click on an internal link<br>
 ✅ **THEN** the navigation should be handled by the router<br>
 ➕ **AND** the page should not be reloaded<br>
 ➕ **AND** the browser history should be updated<br>
 
-#### 10.9. Back button handling {#front-end-router-back-button-handling}
+#### 11.9. Back button handling {#front-end-router-back-button-handling}
 
 🔧 **GIVEN** I am on the "/about" page<br>
 🎯 **WHEN** I click the back button<br>
@@ -908,13 +950,13 @@
 ➕ **AND** the content should be updated<br>
 ➕ **AND** the page cleanup should be executed<br>
 
-#### 10.10. External link handling {#front-end-router-external-link-handling}
+#### 11.10. External link handling {#front-end-router-external-link-handling}
 
 🎯 **WHEN** I click on an external link<br>
 ✅ **THEN** the navigation should be handled by the browser<br>
 ➕ **AND** the page should be reloaded<br>
 
-#### 10.11. Template rendering with state management {#front-end-router-template-rendering-with-state-management}
+#### 11.11. Template rendering with state management {#front-end-router-template-rendering-with-state-management}
 
 🎯 **WHEN** I visit a page with reactive state<br>
 ✅ **THEN** the template should be rendered<br>
@@ -922,7 +964,7 @@
 ➕ **AND** the reactive state should be set up<br>
 ➕ **AND** the UI should respond to state changes<br>
 
-#### 10.12. Script cleanup on navigation {#front-end-router-script-cleanup-on-navigation}
+#### 11.12. Script cleanup on navigation {#front-end-router-script-cleanup-on-navigation}
 
 🔧 **GIVEN** I am on a page with active event listeners<br>
 🎯 **WHEN** I navigate to another page<br>
@@ -931,7 +973,7 @@
 ➕ **AND** the previous page state should be cleaned up<br>
 ➕ **AND** the new page should be properly initialized<br>
 
-#### 10.13. Multiple rapid navigation {#front-end-router-multiple-rapid-navigation}
+#### 11.13. Multiple rapid navigation {#front-end-router-multiple-rapid-navigation}
 
 🎯 **WHEN** I navigate quickly between multiple pages<br>
 ✅ **THEN** each page should render correctly<br>
@@ -939,7 +981,7 @@
 ➕ **AND** no memory leaks should occur<br>
 ➕ **AND** the final page should be active<br>
 
-#### 10.14. Browser refresh handling {#front-end-router-browser-refresh-handling}
+#### 11.14. Browser refresh handling {#front-end-router-browser-refresh-handling}
 
 🔧 **GIVEN** I am on a specific page<br>
 🎯 **WHEN** I refresh the browser<br>
@@ -951,7 +993,7 @@
 
 ---
 
-## 11. Routes {#routes}
+## 12. Routes {#routes}
 
 > As a user
 
@@ -959,7 +1001,7 @@
 
 ### 🎯 Scenarios
 
-#### 11.1. Basic navigation with template rendering {#routes-basic-navigation-with-template-rendering}
+#### 12.1. Basic navigation with template rendering {#routes-basic-navigation-with-template-rendering}
 
 🎯 **WHEN** I visit the home page<br>
 ✅ **THEN** I should see the home page content<br>
@@ -967,7 +1009,7 @@
 ➕ **AND** the URL should be "/"<br>
 ➕ **AND** the home template should be rendered<br>
 
-#### 11.2. Navigation to page with script {#routes-navigation-to-page-with-script}
+#### 12.2. Navigation to page with script {#routes-navigation-to-page-with-script}
 
 🎯 **WHEN** I click on the "About" link<br>
 ✅ **THEN** I should see the About page content<br>
@@ -977,7 +1019,7 @@
 
 ---
 
-## 12. Unnamed Feature {#unnamed-feature}
+## 13. Unnamed Feature {#unnamed-feature}
 
 **File:** `features\sprite-sheet\sprite-sheet.feature`
 
@@ -987,7 +1029,7 @@
 
 ---
 
-## 13. Translation and internationalization {#translation-and-internationalization}
+## 14. Translation and internationalization {#translation-and-internationalization}
 
 > As a bento generator user
 
@@ -1001,7 +1043,7 @@
 
 ### 🎯 Scenarios
 
-#### 13.1. Language detection from browser {#translation-and-internationalization-language-detection-from-browser}
+#### 14.1. Language detection from browser {#translation-and-internationalization-language-detection-from-browser}
 
 🔧 **GIVEN** I visit the application for the first time<br>
 ➕ **AND** no language preference is stored<br>
@@ -1010,7 +1052,7 @@
 ➕ **AND** if the browser language is supported, it is set as current language<br>
 ➕ **AND** if the browser language is not supported, French is set as default<br>
 
-#### 13.2. Language persistence in localStorage {#translation-and-internationalization-language-persistence-in-localstorage}
+#### 14.2. Language persistence in localStorage {#translation-and-internationalization-language-persistence-in-localstorage}
 
 🔧 **GIVEN** I have previously selected a language<br>
 🎯 **WHEN** the application loads<br>
@@ -1018,7 +1060,7 @@
 ➕ **AND** the application uses the stored language<br>
 ➕ **AND** the language preference persists across sessions<br>
 
-#### 13.3. Language switching {#translation-and-internationalization-language-switching}
+#### 14.3. Language switching {#translation-and-internationalization-language-switching}
 
 🔧 **GIVEN** I am using the application<br>
 🎯 **WHEN** I change the language setting<br>
@@ -1026,7 +1068,7 @@
 ➕ **AND** all UI elements are translated to the new language<br>
 ➕ **AND** the language preference is saved to localStorage<br>
 
-#### 13.4. Translation retrieval {#translation-and-internationalization-translation-retrieval}
+#### 14.4. Translation retrieval {#translation-and-internationalization-translation-retrieval}
 
 🔧 **GIVEN** I have translation data for multiple languages<br>
 🎯 **WHEN** I request a translation<br>
@@ -1034,7 +1076,7 @@
 ➕ **AND** if the current language translation is not available, French is used as fallback<br>
 ➕ **AND** if no translation is found, 'Not found' is returned<br>
 
-#### 13.5. UI element translation {#translation-and-internationalization-ui-element-translation}
+#### 14.5. UI element translation {#translation-and-internationalization-ui-element-translation}
 
 🔧 **GIVEN** I have UI elements with translation attributes<br>
 🎯 **WHEN** the language changes<br>
@@ -1042,7 +1084,7 @@
 ➕ **AND** the text content reflects the new language<br>
 ➕ **AND** the translation keys are properly resolved<br>
 
-#### 13.6. Supported languages {#translation-and-internationalization-supported-languages}
+#### 14.6. Supported languages {#translation-and-internationalization-supported-languages}
 
 🔧 **GIVEN** the translation system is active<br>
 🎯 **WHEN** I check available languages<br>
@@ -1051,7 +1093,7 @@
 ➕ **AND** Korean (ko) is supported<br>
 ➕ **AND** other languages are not supported<br>
 
-#### 13.7. Translation key management {#translation-and-internationalization-translation-key-management}
+#### 14.7. Translation key management {#translation-and-internationalization-translation-key-management}
 
 🔧 **GIVEN** I have UI translation keys<br>
 🎯 **WHEN** I check the available translation keys<br>
@@ -1060,7 +1102,7 @@
 ➕ **AND** content keys (ingredients, steps, export) are available<br>
 ➕ **AND** all keys have translations for supported languages<br>
 
-#### 13.8. Fallback translation behavior {#translation-and-internationalization-fallback-translation-behavior}
+#### 14.8. Fallback translation behavior {#translation-and-internationalization-fallback-translation-behavior}
 
 🔧 **GIVEN** I have a translation object with missing languages<br>
 🎯 **WHEN** I request a translation<br>
@@ -1068,14 +1110,14 @@
 ➕ **AND** the system returns 'Not found' if no translations are available<br>
 ➕ **AND** no errors are thrown for missing translations<br>
 
-#### 13.9. Language storage key management {#translation-and-internationalization-language-storage-key-management}
+#### 14.9. Language storage key management {#translation-and-internationalization-language-storage-key-management}
 
 🔧 **GIVEN** the translation system is active<br>
 🎯 **WHEN** I check the localStorage key<br>
 ✅ **THEN** the key is set to 'bento_language'<br>
 ➕ **AND** the language preference is stored under this key<br>
 
-#### 13.10. Dynamic translation updates {#translation-and-internationalization-dynamic-translation-updates}
+#### 14.10. Dynamic translation updates {#translation-and-internationalization-dynamic-translation-updates}
 
 🔧 **GIVEN** I have elements that need translation updates<br>
 🎯 **WHEN** the language changes<br>
@@ -1083,7 +1125,7 @@
 ➕ **AND** their text content is updated with new translations<br>
 ➕ **AND** the UI reflects the language change immediately<br>
 
-#### 13.11. Translation data structure {#translation-and-internationalization-translation-data-structure}
+#### 14.11. Translation data structure {#translation-and-internationalization-translation-data-structure}
 
 🔧 **GIVEN** I have translation objects<br>
 🎯 **WHEN** I examine the translation structure<br>
@@ -1095,7 +1137,7 @@
 
 ---
 
-## 14. Application version management {#application-version-management}
+## 15. Application version management {#application-version-management}
 
 > As a bento generator user
 
@@ -1109,7 +1151,7 @@
 
 ### 🎯 Scenarios
 
-#### 14.1. Version display initialization {#application-version-management-version-display-initialization}
+#### 15.1. Version display initialization {#application-version-management-version-display-initialization}
 
 🔧 **GIVEN** I am on any page of the application<br>
 🎯 **WHEN** the version system initializes<br>
@@ -1117,7 +1159,7 @@
 ➕ **AND** the version is displayed in the designated element<br>
 ➕ **AND** the version element is found by ID 'version'<br>
 
-#### 14.2. Version element update {#application-version-management-version-element-update}
+#### 15.2. Version element update {#application-version-management-version-element-update}
 
 🔧 **GIVEN** I have a version element in the DOM<br>
 🎯 **WHEN** the displayVersion function is called<br>
@@ -1125,7 +1167,7 @@
 ➕ **AND** the version matches the package.json version<br>
 ➕ **AND** the version is displayed correctly<br>
 
-#### 14.3. Version constant management {#application-version-management-version-constant-management}
+#### 15.3. Version constant management {#application-version-management-version-constant-management}
 
 🔧 **GIVEN** the version system is active<br>
 🎯 **WHEN** I check the version constant<br>
@@ -1133,7 +1175,7 @@
 ➕ **AND** the version constant is available for use<br>
 ➕ **AND** the version format follows semantic versioning<br>
 
-#### 14.4. Version element not found {#application-version-management-version-element-not-found}
+#### 15.4. Version element not found {#application-version-management-version-element-not-found}
 
 🔧 **GIVEN** the version element is not present in the DOM<br>
 🎯 **WHEN** the displayVersion function is called<br>
@@ -1141,7 +1183,7 @@
 ➕ **AND** the function handles the missing element gracefully<br>
 ➕ **AND** the application continues to function normally<br>
 
-#### 14.5. Version display on page load {#application-version-management-version-display-on-page-load}
+#### 15.5. Version display on page load {#application-version-management-version-display-on-page-load}
 
 🔧 **GIVEN** I visit the application<br>
 🎯 **WHEN** the page loads<br>
@@ -1149,7 +1191,7 @@
 ➕ **AND** the version is visible to the user<br>
 ➕ **AND** the version information is current<br>
 
-#### 14.6. Version consistency {#application-version-management-version-consistency}
+#### 15.6. Version consistency {#application-version-management-version-consistency}
 
 🔧 **GIVEN** the application is running<br>
 🎯 **WHEN** I check the version in different parts of the application<br>
@@ -1157,7 +1199,7 @@
 ➕ **AND** the version matches the package.json version<br>
 ➕ **AND** no version conflicts exist<br>
 
-#### 14.7. Version format validation {#application-version-management-version-format-validation}
+#### 15.7. Version format validation {#application-version-management-version-format-validation}
 
 🔧 **GIVEN** I have a version from package.json<br>
 🎯 **WHEN** I examine the version format<br>
@@ -1165,7 +1207,7 @@
 ➕ **AND** the version is a valid string<br>
 ➕ **AND** the version can be parsed correctly<br>
 
-#### 14.8. Version display in footer {#application-version-management-version-display-in-footer}
+#### 15.8. Version display in footer {#application-version-management-version-display-in-footer}
 
 🔧 **GIVEN** I am viewing the application<br>
 🎯 **WHEN** I look for version information<br>
@@ -1173,7 +1215,7 @@
 ➕ **AND** the version is easily accessible<br>
 ➕ **AND** the version is clearly labeled<br>
 
-#### 14.9. Version updates tracking {#application-version-management-version-updates-tracking}
+#### 15.9. Version updates tracking {#application-version-management-version-updates-tracking}
 
 🔧 **GIVEN** I am using the application<br>
 🎯 **WHEN** the application is updated<br>
@@ -1181,7 +1223,7 @@
 ➕ **AND** the new version is displayed<br>
 ➕ **AND** users can track application updates<br>
 
-#### 14.10. Version system cleanup {#application-version-management-version-system-cleanup}
+#### 15.10. Version system cleanup {#application-version-management-version-system-cleanup}
 
 🔧 **GIVEN** the version system is active<br>
 🎯 **WHEN** the application is closed<br>
@@ -1195,11 +1237,11 @@
 
 ## 📊 Statistics
 
-- **Features:** 14
-- **Scenarios:** 105
-- **Steps:** 542
+- **Features:** 15
+- **Scenarios:** 108
+- **Steps:** 553
 
 ---
 
-*Documentation generated on 04/09/2025 at 23:24:36*
+*Documentation generated on 23/09/2025 at 15:18:00*
 
