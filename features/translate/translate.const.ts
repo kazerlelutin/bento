@@ -1,7 +1,9 @@
+import type { UiTranslation } from "./translate.types";
+
 export const LS_KEY = 'bento_language';
 export const availableLanguages = new Set(['fr', 'en', 'ko']);
 
-export const UI = {
+export const UI: UiTranslation = {
   "add": {
     "fr": "Ajouter",
     "en": "Add",
@@ -72,9 +74,35 @@ export const UI = {
     "en": "Steps",
     "ko": "단계"
   },
+  "description": {
+    "fr": "Description",
+    "en": "Description",
+    "ko": "설명"
+  },
+  "tips": {
+    "fr": "Conseils",
+    "en": "Tips",
+    "ko": "팁"
+  },
   "follow-updates": {
     "fr": "Suivre les mises à jour",
     "en": "Follow updates",
     "ko": "업데이트 팔로우"
-  }
+  },
+
+  "quantity-selector-value": {
+    "fr": "Pour {quantity} personnes",
+    "en": "For {quantity} people",
+    "ko": "{quantity} 명"
+  },
+  "quantity-selector-value-plural": {
+    "fr": "Pour {quantity} personnes",
+    "en": "For {quantity} people",
+    "ko": "{quantity} 명"
+  },
+  "ingredients-for": {
+    "fr": "Ingrédients pour {quantity}",
+    "en": "Ingredients for {quantity}",
+    "ko": "{quantity}인분 재료"
+  },
 } as const;

@@ -1,10 +1,13 @@
 import type { Ctrl } from "@features/routes/routes.type";
 
 export type ExportCtrl = Ctrl & {
+  multiple: number;
   getRecipe: () => Recipe;
   updateUI: () => void;
   handleExportClick: (e: Event) => void;
   unsubscribeIngredient?: () => void;
+  unsubscribeQuantitySelector?: () => void;
+  updateIngredientsUI: () => void;
   updateFormatButtons: (activeFormat: 'md' | 'json') => void;
   downloadFile: (format: 'md' | 'json') => void;
   toMd: (recipe: Recipe) => string;

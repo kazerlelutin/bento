@@ -11,3 +11,8 @@ export type TranslateStore = {
   currentLanguage: Language;
   setCurrentLanguage: (language: Language) => void;
 };
+
+
+export type UiTranslation = {
+  [key: string]: Translation;
+};

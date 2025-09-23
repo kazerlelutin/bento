@@ -6,22 +6,78 @@ import { t } from "../translate/translate";
 import { UI } from "../translate/translate.const";
 import type { ExportCtrl, Recipe } from "./export.types";
 import { transformTextWithIngredients } from './export .utils';
+import quantitySelectorCtrl from "@features/quantity-selector/quantity-selector.ctrl";
+import { quantitySelectorStore } from "../quantity-selector/quantity-selector.store";
+import { translateStore } from "../translate/translate.store";
 
 const exportCtrl: ExportCtrl = {
+
+  multiple: 1,
   init() {
     const container = document.getElementById('stepper-export-container');
 
     if (container) {
       container.addEventListener('click', (e) => this.handleExportClick(e));
     }
+
+
+    // composer store injection
     this.unsubscribeIngredient = composerStore.subscribe(() => {
       this.updateUI();
     });
 
+    // quantity selector injection
+
+    this.unsubscribeQuantitySelector = quantitySelectorStore.subscribe(() => {
+      this.multiple = quantitySelectorStore.quantity;
+      this.updateIngredientsUI();
+    });
+
+    this.multiple = quantitySelectorStore.quantity;
+    quantitySelectorCtrl.init();
+
+    // Update UI
     this.updateUI();
+
+
+  },
+  updateIngredientsUI() {
+    const recipe = this.getRecipe();
+    const ingredientsSection = document.getElementById('stepper-export-ingredients');
+
+    const ingredientsTemplate = document.getElementById('stepper-export-ingredients-template') as HTMLTemplateElement;
+
+    if (ingredientsTemplate) {
+      const ingredientsFragment = ingredientsTemplate.content.cloneNode(true) as DocumentFragment;
+      const ingredientsList = ingredientsFragment.getElementById('stepper-export-ingredients-list');
+
+
+      if (ingredientsList) {
+        recipe.ingredients.forEach((ingredient) => {
+          const li = document.createElement('li');
+          const strong = document.createElement('strong');
+
+          const quantity = ingredient.quantity * this.multiple;
+
+          strong.textContent = ingredient.name;
+          li.appendChild(strong);
+          li.appendChild(document.createTextNode(` ${quantity.toLocaleString()} ${ingredient.unit}`));
+          ingredientsList.appendChild(li);
+
+        });
+      }
+
+      if (ingredientsSection) {
+        ingredientsSection.innerHTML = '';
+        ingredientsSection.appendChild(ingredientsFragment);
+      }
+    }
+
   },
   updateUI() {
     const recipe = this.getRecipe();
+
+
     const container = document.getElementById('stepper-export-content');
 
     const titleElement = document.getElementById('stepper-export-title');
@@ -31,28 +87,7 @@ const exportCtrl: ExportCtrl = {
 
     const fragment = document.createDocumentFragment();
 
-    const ingredientsTemplate = document.getElementById('stepper-export-ingredients-template') as HTMLTemplateElement;
-    if (ingredientsTemplate) {
-      const ingredientsFragment = ingredientsTemplate.content.cloneNode(true) as DocumentFragment;
-      const ingredientsList = ingredientsFragment.getElementById('stepper-export-ingredients-list');
-      if (ingredientsList) {
-        recipe.ingredients.forEach((ingredient) => {
-
-          const li = document.createElement('li');
-          const strong = document.createElement('strong');
-          strong.textContent = ingredient.name;
-          li.appendChild(strong);
-          li.appendChild(document.createTextNode(` ${ingredient.quantity} ${ingredient.unit}`));
-          ingredientsList.appendChild(li);
-
-        });
-      }
-
-      const ingredientsSection = document.getElementById('stepper-export-ingredients');
-      if (ingredientsSection) {
-        ingredientsSection.appendChild(ingredientsFragment);
-      }
-    }
+    this.updateIngredientsUI();
 
     const stepsTemplate = document.getElementById('stepper-export-steps-template') as HTMLTemplateElement;
 
@@ -61,6 +96,7 @@ const exportCtrl: ExportCtrl = {
       const stepsList = stepsFragment.getElementById('stepper-export-steps-list');
 
       if (stepsList) {
+
         recipe.steps.forEach((step, index) => {
           const stepFragment = document.getElementById('stepper-export-step-template') as HTMLTemplateElement;
 
@@ -162,6 +198,7 @@ const exportCtrl: ExportCtrl = {
 
     const mergeBaseAndVariant = [baseStore.currentBase, composerStore.currentVariant]
     const allIngredients = mergeBaseAndVariant.flatMap((variant) => variant.ingredients);
+
     const allSteps = mergeBaseAndVariant.flatMap((variant) => variant.steps);
 
     const filteredSteps = allSteps.filter((step) => {
@@ -195,7 +232,7 @@ const exportCtrl: ExportCtrl = {
         id: infos.id,
         stepId: ingredient.id,
         name: t(infos.name) + (isBase ? ' (base)' : ''),
-        quantity: ingredient.quantity,
+        quantity: ingredient.quantity * this.multiple,
         unit: ingredient.unit,
         allergens: infos?.allergens || [],
         nutrition: infos?.nutrition,
@@ -235,18 +272,20 @@ const exportCtrl: ExportCtrl = {
     let md = ''
 
     md += `# ${recipe.name}\n\n`;
+    md += `${t(UI['quantity-selector-value']).replace('{quantity}', this.multiple.toString())}\n\n`;
+    md += `${t(UI['ingredients-for']).replace('{quantity}', this.multiple.toString())}\n\n`;
     recipe.ingredients.forEach((ingredient) => {
-      md += `- ${ingredient.name}: ${ingredient.quantity} ${ingredient.unit}\n`;
+      md += `- ${ingredient.name}: ${ingredient.quantity.toLocaleString()} ${ingredient.unit}\n`;
     });
     md += '\n\n---\n\n';
 
-    md += '## Étapes\n\n';
+    md += `${t(UI.steps)}\n\n`;
     recipe.steps.forEach((step) => {
       if (step.description) {
-        md += `#### Description\n\n${step.description}\n\n`;
+        md += `#### ${t(UI.description)}\n\n${step.description}\n\n`;
       }
       if (step.tips) {
-        md += `#### Conseils\n\n${step.tips}\n\n`;
+        md += `#### ${t(UI.tips)}\n\n${step.tips}\n\n`;
       }
     });
 
@@ -258,10 +297,12 @@ const exportCtrl: ExportCtrl = {
   },
   cleanUp() {
     this.unsubscribeIngredient?.();
+    this.unsubscribeQuantitySelector?.();
     const container = document.getElementById('stepper-export-container');
     if (container) {
       container.removeEventListener('click', (e) => this.handleExportClick(e));
     }
+    quantitySelectorCtrl.cleanUp();
   }
 }
 
