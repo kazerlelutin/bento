@@ -20,7 +20,6 @@ const exportCtrl: ExportCtrl = {
       container.addEventListener('click', (e) => this.handleExportClick(e));
     }
 
-
     // composer store injection
     this.unsubscribeIngredient = composerStore.subscribe(() => {
       this.updateUI();
@@ -38,8 +37,6 @@ const exportCtrl: ExportCtrl = {
 
     // Update UI
     this.updateUI();
-
-
   },
   updateIngredientsUI() {
     const recipe = this.getRecipe();
@@ -59,9 +56,12 @@ const exportCtrl: ExportCtrl = {
 
           const quantity = ingredient.quantity * this.multiple;
 
+          const tradKey = quantity > 1 ? ingredient.unit + '-plural' : ingredient.unit;
+          const tradUnit = t(UI[tradKey as keyof typeof UI]);
+
           strong.textContent = ingredient.name;
           li.appendChild(strong);
-          li.appendChild(document.createTextNode(` ${quantity.toLocaleString()} ${ingredient.unit}`));
+          li.appendChild(document.createTextNode(` ${quantity.toLocaleString()} ${tradUnit}`));
           ingredientsList.appendChild(li);
 
         });
@@ -275,7 +275,8 @@ const exportCtrl: ExportCtrl = {
     md += `${t(UI['quantity-selector-value']).replace('{quantity}', this.multiple.toString())}\n\n`;
     md += `${t(UI['ingredients-for']).replace('{quantity}', this.multiple.toString())}\n\n`;
     recipe.ingredients.forEach((ingredient) => {
-      md += `- ${ingredient.name}: ${ingredient.quantity.toLocaleString()} ${ingredient.unit}\n`;
+      const tradKey = ingredient.quantity > 1 ? ingredient.unit + '-plural' : ingredient.unit;
+      md += `- ${ingredient.name}: ${ingredient.quantity.toLocaleString()} ${t(UI[tradKey as keyof typeof UI])}\n`;
     });
     md += '\n\n---\n\n';
 

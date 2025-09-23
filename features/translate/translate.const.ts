@@ -105,4 +105,95 @@ export const UI: UiTranslation = {
     "en": "Ingredients for {quantity}",
     "ko": "{quantity}인분 재료"
   },
+  "piece": {
+    "fr": "pièce",
+    "en": "piece",
+    "ko": "개"
+  },
+  "piece-plural": {
+    "fr": "pièces",
+    "en": "pieces",
+    "ko": "개"
+  },
+  "g": {
+    "fr": "g",
+    "en": "g",
+    "ko": "g"
+  },
+  "g-plural": {
+    "fr": "g",
+    "en": "g",
+    "ko": "g"
+  },
+  "ml": {
+    "fr": "ml",
+    "en": "ml",
+    "ko": "ml"
+  },
+  "ml-plural": {
+    "fr": "ml",
+    "en": "ml",
+    "ko": "ml"
+  },
+  "cl": {
+    "fr": "cl",
+    "en": "cl",
+    "ko": "cl"
+  },
+  "cl-plural": {
+    "fr": "cl",
+    "en": "cl",
+    "ko": "cl"
+  },
+  "l": {
+    "fr": "l",
+    "en": "l",
+    "ko": "l"
+  },
+  "l-plural": {
+    "fr": "l",
+    "en": "l",
+    "ko": "l"
+  },
+  "tsp": {
+    "fr": "cuillère à café",
+    "en": "teaspoon",
+    "ko": "작은 숟가락"
+  },
+  "tsp-plural": {
+    "fr": "cuillères à café",
+    "en": "teaspoons",
+    "ko": "작은 숟가락"
+  },
+
+  "tbsp": {
+    "fr": "cuillère à soupe",
+    "en": "tablespoon",
+    "ko": "큰 숟가락"
+  },
+  "tbsp-plural": {
+    "fr": "cuillères à soupe",
+    "en": "tablespoons",
+    "ko": "큰 숟가락"
+  },
+  "sheet": {
+    "fr": "feuille",
+    "en": "sheet",
+    "ko": "장"
+  },
+  "sheet-plural": {
+    "fr": "feuilles",
+    "en": "sheets",
+    "ko": "장"
+  },
+  "unit": {
+    "fr": "unité",
+    "en": "unit",
+    "ko": "개"
+  },
+  "unit-plural": {
+    "fr": "unités",
+    "en": "units",
+    "ko": "개"
+  }
 } as const;
