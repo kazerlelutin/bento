@@ -109,7 +109,16 @@
         </div>
         <section class="stepper-export-content" id="stepper-export-content">
           <h1 class="stepper-export-title" id="stepper-export-title"></h1>
-          <article class="stepper-export-ingredients" id="stepper-export-ingredients"></article>
+          <div class="stepper-export-quantity-selector-container" id="quantity-selector">
+            <button class="stepper-export-quantity-selector" data-type="minus">-</button>
+            <span class="stepper-export-quantity-selector-value" id="quantity-selector-value">1</span>
+            <button class="stepper-export-quantity-selector" data-type="plus">+</button>
+          </div>
+          <article class="stepper-export-ingredients" id="stepper-export-ingredients">
+            <h2 class="stepper-export-ingredients-title" id="stepper-export-ingredients-title" data-translate="ingredients">
+             
+            </h2>
+          </article>
           <section class="stepper-export-steps" id="stepper-export-steps"></section>
         </section>
         </div>
@@ -117,7 +126,6 @@
     </template>
 
     <template id="stepper-export-ingredients-template">
-      <h2 class="stepper-export-ingredients-title" id="stepper-export-ingredients-title" data-translate="ingredients"></h2>
       <ul class="stepper-export-ingredients-list" id="stepper-export-ingredients-list"></ul>
     </template>
 

@@ -18,7 +18,7 @@ export const setCurrentLanguage = (language: Language) => {
 
 
 export const translateStore = createStore<TranslateStore>({
-  currentLanguage: getLanguageFromLS(),
+  currentLanguage: getLanguageFromLS() || 'fr',
   setCurrentLanguage,
 }, {
   notifyOnProps: ['currentLanguage'],

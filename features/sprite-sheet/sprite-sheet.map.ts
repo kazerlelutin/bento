@@ -357,7 +357,5 @@ export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
       color: [30, 31]
     }]
   ])],
-
-
 ]);
 
