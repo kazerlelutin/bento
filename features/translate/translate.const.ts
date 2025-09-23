@@ -4,6 +4,11 @@ export const LS_KEY = 'bento_language';
 export const availableLanguages = new Set(['fr', 'en', 'ko']);
 
 export const UI: UiTranslation = {
+  "home": {
+    "fr": "Accueil",
+    "en": "Home",
+    "ko": "홈"
+  },
   "add": {
     "fr": "Ajouter",
     "en": "Add",
@@ -23,11 +28,6 @@ export const UI: UiTranslation = {
     "fr": "Sélectionner",
     "en": "Select",
     "ko": "선택"
-  },
-  "home": {
-    "fr": "Home",
-    "en": "Home",
-    "ko": "홈"
   },
   "about": {
     "fr": "À propos",
