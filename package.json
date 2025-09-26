@@ -1,7 +1,10 @@
 {
   "name": "kazerlelutin",
   "version": "4.0.2",
-  "author": "kazerlelutin",
+  "author": {
+    "email": "contact@ben-to.fr",
+    "name": "Benoist Bouteiller"
+  },
   "type": "module",
   "repository": {
     "type": "git",
