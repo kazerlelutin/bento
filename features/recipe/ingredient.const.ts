@@ -86,6 +86,17 @@ import flourMold from "./ingredients/flour_mold.json";
 import apple from "./ingredients/apple.json";
 import gratedChocolate from "./ingredients/grated_chocolate.json";
 import peach from "./ingredients/peach.json";
+import udonNoodles from "./ingredients/udon_noodles.json";
+import zucchini from "./ingredients/zucchini.json";
+import soySauce from "./ingredients/soy_sauce.json";
+import misoPaste from "./ingredients/miso_paste.json";
+import chiliPowder from "./ingredients/chili_powder.json";
+import chiliPepper from "./ingredients/chili_pepper.json";
+import peanut from "./ingredients/peanut.json";
+import cajunSpice from "./ingredients/cajun_spice.json";
+import tofu from "./ingredients/tofu.json";
+import ciboule from "./ingredients/ciboule.json";
+import cebette from "./ingredients/cebette.json";
 
 export const ingredients: Map<string, Ingredient> = new Map([
   ['black_beans', blackBeans],
@@ -173,4 +184,15 @@ export const ingredients: Map<string, Ingredient> = new Map([
   ['apple', apple],
   ['grated_chocolate', gratedChocolate],
   ['peach', peach],
+  ['udon_noodles', udonNoodles],
+  ['zucchini', zucchini],
+  ['soy_sauce', soySauce],
+  ['miso_paste', misoPaste],
+  ['chili_powder', chiliPowder],
+  ['chili_pepper', chiliPepper],
+  ['peanut', peanut],
+  ['cajun_spice', cajunSpice],
+  ['tofu', tofu],
+  ['ciboule', ciboule],
+  ['cebette', cebette],
 ]);

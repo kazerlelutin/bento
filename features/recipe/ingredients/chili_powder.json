@@ -1,0 +1,24 @@
+{
+  "id": "chili_powder",
+  "name": {
+    "fr": "Poudre de Piment",
+    "en": "Chili Powder",
+    "ko": "고춧가루"
+  },
+  "category": "spice",
+  "origin": "americas",
+  "description": {
+    "fr": "Poudre de piment rouge séché et moulu",
+    "en": "Dried and ground red chili powder",
+    "ko": "말린 빨간 고추를 갈아 만든 가루"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 282,
+    "protein": 12.8,
+    "fat": 12.4,
+    "carbs": 49.7,
+    "fiber": 28.7
+  },
+  "nameComponent": "Spicy"
+}

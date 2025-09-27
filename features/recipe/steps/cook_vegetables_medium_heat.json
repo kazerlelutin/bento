@@ -1,0 +1,30 @@
+{
+  "id": "cook_vegetables_medium_heat",
+  "name": {
+    "fr": "Cuire les légumes à feu moyen",
+    "en": "Cook vegetables on medium heat",
+    "ko": "중불에서 야채 익히기"
+  },
+  "description": {
+    "fr": "Faire revenir les légumes dans une poêle à feu moyen pendant 3-4 minutes",
+    "en": "Sauté vegetables in a pan on medium heat for 3-4 minutes",
+    "ko": "팬에서 중불로 3-4분간 야채 볶기"
+  },
+  "tips": {
+    "fr": "Remuer régulièrement pour éviter qu'ils collent",
+    "en": "Stir regularly to prevent sticking",
+    "ko": "붙지 않도록 정기적으로 저어주기"
+  },
+  "operation": "cook",
+  "duration": 4,
+  "difficulty": 2,
+  "ingredients": [
+    "zucchini",
+    "carrot",
+    "red_bell_pepper",
+    "green_bell_pepper",
+    "yellow_bell_pepper",
+    "orange_bell_pepper"
+  ],
+  "tools": ["pan", "spatula"]
+}

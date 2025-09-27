@@ -1,0 +1,23 @@
+{
+  "id": "cook_udon",
+  "name": {
+    "fr": "Cuire les udon",
+    "en": "Cook udon noodles",
+    "ko": "우동면 익히기"
+  },
+  "description": {
+    "fr": "Laisser cuire les nouilles udon minimum 5-10 minutes jusqu'à ce qu'elles soient tendres",
+    "en": "Cook udon noodles for at least 5-10 minutes until tender",
+    "ko": "우동면이 부드러워질 때까지 최소 5-10분간 익히기"
+  },
+  "tips": {
+    "fr": "Régler le feu selon la consistance désirée",
+    "en": "Adjust heat according to desired consistency",
+    "ko": "원하는 농도에 따라 불 조절하기"
+  },
+  "operation": "cook",
+  "duration": 8,
+  "difficulty": 2,
+  "ingredients": ["udon_noodles"],
+  "tools": ["pan", "spatula"]
+}

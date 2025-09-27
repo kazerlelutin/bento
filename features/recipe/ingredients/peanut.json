@@ -1,0 +1,24 @@
+{
+  "id": "peanut",
+  "name": {
+    "fr": "Cacahuète",
+    "en": "Peanut",
+    "ko": "땅콩"
+  },
+  "category": "nut",
+  "origin": "south_america",
+  "description": {
+    "fr": "Fruit à coque riche en protéines et lipides",
+    "en": "Nut rich in proteins and fats",
+    "ko": "단백질과 지방이 풍부한 견과류"
+  },
+  "allergens": ["nuts"],
+  "nutrition": {
+    "calories": 567,
+    "protein": 25.8,
+    "fat": 49.2,
+    "carbs": 16.1,
+    "fiber": 8.5
+  },
+  "nameComponent": "Nutty"
+}

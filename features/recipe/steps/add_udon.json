@@ -1,0 +1,23 @@
+{
+  "id": "add_udon",
+  "name": {
+    "fr": "Ajouter les udon",
+    "en": "Add udon noodles",
+    "ko": "우동면 추가하기"
+  },
+  "description": {
+    "fr": "Ajouter les nouilles udon dans la poêle avec les légumes",
+    "en": "Add udon noodles to the pan with vegetables",
+    "ko": "야채가 있는 팬에 우동면 추가하기"
+  },
+  "tips": {
+    "fr": "Les nouilles vont se détacher progressivement",
+    "en": "Noodles will gradually separate",
+    "ko": "면이 점진적으로 분리됩니다"
+  },
+  "operation": "add",
+  "duration": 1,
+  "difficulty": 1,
+  "ingredients": ["udon_noodles"],
+  "tools": ["pan", "spatula"]
+}
