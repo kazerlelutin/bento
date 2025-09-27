@@ -1,0 +1,18 @@
+{
+  "id": "cut_vegetables_sticks",
+  "name": {
+    "fr": "Couper les Légumes en Bâtonnets",
+    "en": "Cut Vegetables into Sticks",
+    "ko": "야채를 막대 모양으로 자르기"
+  },
+  "description": {
+    "fr": "Couper les légumes (courgette, carotte, poivron) en bâtonnets de 5cm de long",
+    "en": "Cut vegetables (zucchini, carrot, bell pepper) into 5cm long sticks",
+    "ko": "야채(호박, 당근, 피망)를 5cm 길이의 막대 모양으로 자르기"
+  },
+  "tips": {
+    "fr": "Couper tous les légumes de la même taille pour une cuisson uniforme",
+    "en": "Cut all vegetables the same size for even cooking",
+    "ko": "균일한 조리를 위해 모든 야채를 같은 크기로 자르기"
+  }
+}

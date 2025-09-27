@@ -1,0 +1,24 @@
+{
+  "id": "udon_noodles",
+  "name": {
+    "fr": "Nouilles Udon",
+    "en": "Udon Noodles",
+    "ko": "우동면"
+  },
+  "category": "noodles",
+  "origin": "japan",
+  "description": {
+    "fr": "Nouilles japonaises épaisses à base de farine de blé",
+    "en": "Thick Japanese wheat flour noodles",
+    "ko": "밀가루로 만든 두꺼운 일본 면"
+  },
+  "allergens": ["gluten"],
+  "nutrition": {
+    "calories": 130,
+    "protein": 4,
+    "fat": 0.5,
+    "carbs": 26,
+    "fiber": 1
+  },
+  "nameComponent": "Udon"
+}

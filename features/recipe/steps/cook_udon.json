@@ -1,0 +1,18 @@
+{
+  "id": "cook_udon",
+  "name": {
+    "fr": "Cuire les Udon",
+    "en": "Cook Udon",
+    "ko": "우동 조리하기"
+  },
+  "description": {
+    "fr": "Laisser cuire minimum 5-10 minutes jusqu'à ce que les udon soient détachés",
+    "en": "Cook for at least 5-10 minutes until udon noodles are separated",
+    "ko": "우동면이 분리될 때까지 최소 5-10분간 조리하기"
+  },
+  "tips": {
+    "fr": "Régler le feu selon la consistance désirée",
+    "en": "Adjust heat according to desired consistency",
+    "ko": "원하는 농도에 따라 불을 조절하기"
+  }
+}

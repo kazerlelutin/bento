@@ -1,0 +1,18 @@
+{
+  "id": "add_udon",
+  "name": {
+    "fr": "Ajouter les Udon",
+    "en": "Add Udon",
+    "ko": "우동면 추가하기"
+  },
+  "description": {
+    "fr": "Ajouter les nouilles udon dans la poêle avec les légumes",
+    "en": "Add udon noodles to the pan with vegetables",
+    "ko": "야채가 있는 팬에 우동면 추가하기"
+  },
+  "tips": {
+    "fr": "Les nouilles udon peuvent être collées ensemble, c'est normal",
+    "en": "Udon noodles may be stuck together, this is normal",
+    "ko": "우동면이 붙어있을 수 있는데 정상입니다"
+  }
+}

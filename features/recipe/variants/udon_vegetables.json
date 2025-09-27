@@ -1,0 +1,187 @@
+{
+  "id": "udon_vegetables",
+  "name": {
+    "fr": "Udon aux Légumes",
+    "en": "Vegetable Udon",
+    "ko": "야채 우동"
+  },
+  "ingredients": [
+    {
+      "id": "zucchini",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "carrot",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "red_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [
+        "green_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper"
+      ],
+      "foe": ["green_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "green_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [
+        "red_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper"
+      ],
+      "foe": ["red_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "yellow_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "orange_bell_pepper"
+      ],
+      "foe": ["red_bell_pepper", "green_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "orange_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "yellow_bell_pepper"
+      ],
+      "foe": ["red_bell_pepper", "green_bell_pepper", "yellow_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "green_onion",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 2,
+      "substitutes": ["onion", "spring_onion", "chives"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "onion",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 2,
+      "substitutes": ["green_onion", "spring_onion", "chives"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "spring_onion",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 2,
+      "substitutes": ["green_onion", "onion", "chives"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chives",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 2,
+      "substitutes": ["green_onion", "onion", "spring_onion"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chili_powder",
+      "quantity": 1,
+      "unit": "tbsp",
+      "score": 4,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chili_pepper",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "peanut",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 3,
+      "substitutes": ["cajun_spice"],
+      "foe": ["cajun_spice"],
+      "role": "optional"
+    },
+    {
+      "id": "cajun_spice",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 3,
+      "substitutes": ["peanut"],
+      "foe": ["peanut"],
+      "role": "optional"
+    },
+    {
+      "id": "tofu",
+      "quantity": 75,
+      "unit": "g",
+      "score": 4,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "cut_vegetables_sticks",
+      "order": 25,
+      "ingredients": [
+        "zucchini",
+        "carrot",
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper"
+      ]
+    },
+    {
+      "id": "cook_vegetables_medium_heat",
+      "order": 35,
+      "ingredients": [
+        "zucchini",
+        "carrot",
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper"
+      ]
+    }
+  ]
+}

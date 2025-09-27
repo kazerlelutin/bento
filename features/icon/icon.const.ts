@@ -19,6 +19,7 @@ export const ICONS = new Map<string, number>([
   ['empanada', 4],
   ['gimbap', 36],
   ['savoy_cake', 63],
+  ['udon', 64],
 
   // Liquides
   ['water', 13],
@@ -152,4 +153,15 @@ export const ICONS = new Map<string, number>([
 
   // Autres
   ['vanilla_extract', 62],
+
+  // Nouilles et sauces
+  ['udon_noodles', 66],
+  ['soy_sauce', 67],
+  ['miso_paste', 68],
+  ['chili_powder', 29],
+  ['chili_pepper', 22],
+  ['peanut', 69],
+  ['cajun_spice', 30],
+  ['tofu', 70],
+  ['zucchini', 71],
 ]);

@@ -1,0 +1,18 @@
+{
+  "id": "cook_vegetables_medium_heat",
+  "name": {
+    "fr": "Cuire les Légumes à Feu Moyen",
+    "en": "Cook Vegetables on Medium Heat",
+    "ko": "중불로 야채 조리하기"
+  },
+  "description": {
+    "fr": "Mettre les légumes dans une poêle à feu moyen et faire revenir 3-4 minutes",
+    "en": "Put vegetables in a pan on medium heat and sauté for 3-4 minutes",
+    "ko": "팬에 야채를 넣고 중불에서 3-4분간 볶기"
+  },
+  "tips": {
+    "fr": "Remuer de temps en temps pour éviter que les légumes collent",
+    "en": "Stir occasionally to prevent vegetables from sticking",
+    "ko": "야채가 눌지 않도록 가끔 저어주기"
+  }
+}

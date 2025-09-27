@@ -1,0 +1,18 @@
+{
+  "id": "mix_occasionally",
+  "name": {
+    "fr": "Mélanger de Temps en Temps",
+    "en": "Mix Occasionally",
+    "ko": "가끔씩 섞기"
+  },
+  "description": {
+    "fr": "Mélanger de temps en temps pour détacher les nouilles udon",
+    "en": "Mix occasionally to separate the udon noodles",
+    "ko": "우동면을 분리하기 위해 가끔씩 섞기"
+  },
+  "tips": {
+    "fr": "Parfois on peut retourner le 'bloc' d'udon pour immerger les parties hors liquide et aider au détachement",
+    "en": "Sometimes you can flip the udon 'block' to immerse the parts outside the liquid and help with separation",
+    "ko": "때로는 우동 '덩어리'를 뒤집어서 액체 밖의 부분을 담그고 분리에 도움을 줄 수 있습니다"
+  }
+}
