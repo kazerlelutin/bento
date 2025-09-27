@@ -1,0 +1,23 @@
+{
+  "id": "mix_sauce_base",
+  "name": {
+    "fr": "Mélanger la base de sauce",
+    "en": "Mix sauce base",
+    "ko": "소스 베이스 섞기"
+  },
+  "description": {
+    "fr": "Mélanger l'eau, la sauce soja, la pâte miso et l'huile de sésame dans un bol",
+    "en": "Mix water, soy sauce, miso paste and sesame oil in a bowl",
+    "ko": "물, 간장, 된장, 참기름을 그릇에 섞기"
+  },
+  "tips": {
+    "fr": "Bien mélanger jusqu'à ce que la pâte miso soit complètement dissoute",
+    "en": "Mix well until miso paste is completely dissolved",
+    "ko": "된장이 완전히 녹을 때까지 잘 섞기"
+  },
+  "operation": "mix",
+  "duration": 2,
+  "difficulty": 1,
+  "ingredients": ["water", "soy_sauce", "miso_paste", "sesame_oil"],
+  "tools": ["bowl", "whisk"]
+}

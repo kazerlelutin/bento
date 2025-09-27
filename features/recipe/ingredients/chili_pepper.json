@@ -1,0 +1,24 @@
+{
+  "id": "chili_pepper",
+  "name": {
+    "fr": "Piment Coupé",
+    "en": "Chopped Chili Pepper",
+    "ko": "고추 조각"
+  },
+  "category": "spice",
+  "origin": "americas",
+  "description": {
+    "fr": "Piment frais coupé en petits morceaux",
+    "en": "Fresh chili pepper cut into small pieces",
+    "ko": "작은 조각으로 자른 신선한 고추"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 40,
+    "protein": 1.9,
+    "fat": 0.4,
+    "carbs": 8.8,
+    "fiber": 1.5
+  },
+  "nameComponent": "Hot"
+}

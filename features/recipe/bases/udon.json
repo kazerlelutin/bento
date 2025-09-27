@@ -1,0 +1,77 @@
+{
+  "id": "udon",
+  "name": {
+    "fr": "Ramen aux Udon",
+    "en": "Udon Ramen",
+    "ko": "우동 라멘"
+  },
+  "ingredients": [
+    {
+      "id": "udon_noodles",
+      "quantity": 150,
+      "unit": "g",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "water",
+      "quantity": 500,
+      "unit": "ml",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "soy_sauce",
+      "quantity": 2,
+      "unit": "tbsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "miso_paste",
+      "quantity": 1,
+      "unit": "tbsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    },
+    {
+      "id": "sesame_oil",
+      "quantity": 1,
+      "unit": "tbsp",
+      "score": 0,
+      "substitutes": [],
+      "foe": [],
+      "role": "base"
+    }
+  ],
+  "steps": [
+    {
+      "id": "mix_sauce_base",
+      "order": 10,
+      "ingredients": ["water", "soy_sauce", "miso_paste", "sesame_oil"]
+    },
+    {
+      "id": "add_udon",
+      "order": 40,
+      "ingredients": ["udon_noodles"]
+    },
+    {
+      "id": "mix_occasionally",
+      "order": 50,
+      "ingredients": []
+    },
+    {
+      "id": "cook_udon",
+      "order": 60,
+      "ingredients": []
+    }
+  ]
+}

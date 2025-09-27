@@ -1,0 +1,24 @@
+{
+  "id": "tofu",
+  "name": {
+    "fr": "Tofu",
+    "en": "Tofu",
+    "ko": "두부"
+  },
+  "category": "protein",
+  "origin": "china",
+  "description": {
+    "fr": "Fromage de soja riche en protéines végétales",
+    "en": "Soy cheese rich in plant proteins",
+    "ko": "식물성 단백질이 풍부한 콩 치즈"
+  },
+  "allergens": ["soy"],
+  "nutrition": {
+    "calories": 76,
+    "protein": 8.1,
+    "fat": 4.8,
+    "carbs": 1.9,
+    "fiber": 0.3
+  },
+  "nameComponent": "Tofu"
+}

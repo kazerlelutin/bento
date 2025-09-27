@@ -1,0 +1,24 @@
+{
+  "id": "cajun_spice",
+  "name": {
+    "fr": "Épices Cajun",
+    "en": "Cajun Spice",
+    "ko": "카준 스파이스"
+  },
+  "category": "spice",
+  "origin": "louisiana",
+  "description": {
+    "fr": "Mélange d'épices cajun piquant et aromatique",
+    "en": "Spicy and aromatic Cajun spice blend",
+    "ko": "매콤하고 향긋한 카준 스파이스 믹스"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 251,
+    "protein": 12.8,
+    "fat": 8.2,
+    "carbs": 44.1,
+    "fiber": 25.3
+  },
+  "nameComponent": "Cajun"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "mix_occasionally",
+  "name": {
+    "fr": "Mélanger de temps en temps",
+    "en": "Mix occasionally",
+    "ko": "가끔씩 섞기"
+  },
+  "description": {
+    "fr": "Remuer doucement de temps en temps pour aider les nouilles à se détacher",
+    "en": "Gently stir occasionally to help noodles separate",
+    "ko": "면이 분리되도록 가끔씩 부드럽게 저어주기"
+  },
+  "tips": {
+    "fr": "Parfois on peut retourner le bloc d'udon pour immerger les parties hors liquide",
+    "en": "Sometimes you can flip the udon block to immerse parts outside the liquid",
+    "ko": "때로는 우동 덩어리를 뒤집어서 액체 밖의 부분을 담그기"
+  },
+  "operation": "mix",
+  "duration": 2,
+  "difficulty": 1,
+  "ingredients": [],
+  "tools": ["spatula"]
+}

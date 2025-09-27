@@ -13,6 +13,7 @@ export const BASES_LAYERS = new Map<string, number>([
   ['cake', 4],
   ['gimbap', 5],
   ['savoy_cake', 6],
+  ['udon', 7],
 ]);
 
 export const ZONE_LAYERS = new Map<string, [number, number][]>([
@@ -21,6 +22,7 @@ export const ZONE_LAYERS = new Map<string, [number, number][]>([
   ['cake', [[41, 29], [17, 28]]],
   ['empanada', [[41, 30], [10, 1]]],
   ['savoy_cake', [[41, 28], [10, 28]]],
+  ['udon', [[41, 29], [41, 29]]],
 ]);
 
 export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
@@ -355,6 +357,99 @@ export const ZONE_LAYERS_MAP = new Map<string, Map<string, {
       num: [4, 10],
       size: [2, 3],
       color: [30, 31]
+    }]
+  ])],
+
+  ['udon_vegetables', new Map([
+    ['zucchini', {
+      form: 'square',
+      num: [4, 10],
+      size: [4, 8],
+      color: [37, 36]
+    }],
+    ['carrot', {
+      form: 'square',
+      num: [4, 10],
+      size: [4, 4],
+      color: [26, 28]
+    }],
+    ['red_bell_pepper', {
+      form: 'square',
+      num: [4, 10],
+      size: [4, 10],
+      color: [26, 28]
+    }],
+    ['green_bell_pepper', {
+      form: 'square',
+      num: [4, 10],
+      size: [4, 4],
+      color: [37, 36]
+    }],
+    ['yellow_bell_pepper', {
+      form: 'square',
+      num: [2, 4],
+      size: [2, 3],
+      color: [29, 28]
+    }],
+    ['orange_bell_pepper', {
+      form: 'square',
+      num: [2, 4],
+      size: [2, 3],
+      color: [29, 26]
+    }],
+    ['green_onion', {
+      form: 'square',
+      num: [3, 6],
+      size: [1, 2],
+      color: [42, 43]
+    }],
+    ['onion', {
+      form: 'square',
+      num: [2, 4],
+      size: [2, 3],
+      color: [32, 33]
+    }],
+    ['spring_onion', {
+      form: 'square',
+      num: [3, 6],
+      size: [1, 2],
+      color: [42, 43]
+    }],
+    ['chives', {
+      form: 'square',
+      num: [3, 6],
+      size: [1, 2],
+      color: [42, 43]
+    }],
+    ['chili_powder', {
+      form: 'square',
+      num: [10, 20],
+      size: [1, 1],
+      color: [25, 26]
+    }],
+    ['chili_pepper', {
+      form: 'square',
+      num: [2, 4],
+      size: [1, 2],
+      color: [25, 26]
+    }],
+    ['peanut', {
+      form: 'circle',
+      num: [3, 8],
+      size: [1, 2],
+      color: [30, 31]
+    }],
+    ['cajun_spice', {
+      form: 'square',
+      num: [5, 10],
+      size: [1, 1],
+      color: [25, 26]
+    }],
+    ['tofu', {
+      form: 'square',
+      num: [4, 10],
+      size: [6, 6],
+      color: [1, 1]
     }]
   ])],
 ]);
