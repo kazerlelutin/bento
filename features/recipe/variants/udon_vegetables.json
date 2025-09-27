@@ -29,11 +29,7 @@
       "quantity": 0.3,
       "unit": "piece",
       "score": 3,
-      "substitutes": [
-        "green_bell_pepper",
-        "yellow_bell_pepper",
-        "orange_bell_pepper"
-      ],
+      "substitutes": [],
       "foe": ["green_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
       "role": "optional"
     },
@@ -42,11 +38,7 @@
       "quantity": 0.3,
       "unit": "piece",
       "score": 3,
-      "substitutes": [
-        "red_bell_pepper",
-        "yellow_bell_pepper",
-        "orange_bell_pepper"
-      ],
+      "substitutes": [],
       "foe": ["red_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
       "role": "optional"
     },
@@ -55,11 +47,7 @@
       "quantity": 0.3,
       "unit": "piece",
       "score": 3,
-      "substitutes": [
-        "red_bell_pepper",
-        "green_bell_pepper",
-        "orange_bell_pepper"
-      ],
+      "substitutes": [],
       "foe": ["red_bell_pepper", "green_bell_pepper", "orange_bell_pepper"],
       "role": "optional"
     },
@@ -68,47 +56,15 @@
       "quantity": 0.3,
       "unit": "piece",
       "score": 3,
-      "substitutes": [
-        "red_bell_pepper",
-        "green_bell_pepper",
-        "yellow_bell_pepper"
-      ],
       "foe": ["red_bell_pepper", "green_bell_pepper", "yellow_bell_pepper"],
       "role": "optional"
     },
     {
-      "id": "green_onion",
+      "id": "ciboule",
       "quantity": 1,
       "unit": "tsp",
       "score": 2,
-      "substitutes": ["onion", "spring_onion", "chives"],
-      "foe": [],
-      "role": "optional"
-    },
-    {
-      "id": "onion",
-      "quantity": 1,
-      "unit": "tsp",
-      "score": 2,
-      "substitutes": ["green_onion", "spring_onion", "chives"],
-      "foe": [],
-      "role": "optional"
-    },
-    {
-      "id": "spring_onion",
-      "quantity": 1,
-      "unit": "tsp",
-      "score": 2,
-      "substitutes": ["green_onion", "onion", "chives"],
-      "foe": [],
-      "role": "optional"
-    },
-    {
-      "id": "chives",
-      "quantity": 1,
-      "unit": "tsp",
-      "score": 2,
-      "substitutes": ["green_onion", "onion", "spring_onion"],
+      "substitutes": ["cebette", "chives"],
       "foe": [],
       "role": "optional"
     },
@@ -135,17 +91,6 @@
       "quantity": 1,
       "unit": "tsp",
       "score": 3,
-      "substitutes": ["cajun_spice"],
-      "foe": ["cajun_spice"],
-      "role": "optional"
-    },
-    {
-      "id": "cajun_spice",
-      "quantity": 1,
-      "unit": "tsp",
-      "score": 3,
-      "substitutes": ["peanut"],
-      "foe": ["peanut"],
       "role": "optional"
     },
     {

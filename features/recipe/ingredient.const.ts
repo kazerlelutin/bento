@@ -95,6 +95,8 @@ import chiliPepper from "./ingredients/chili_pepper.json";
 import peanut from "./ingredients/peanut.json";
 import cajunSpice from "./ingredients/cajun_spice.json";
 import tofu from "./ingredients/tofu.json";
+import ciboule from "./ingredients/ciboule.json";
+import cebette from "./ingredients/cebette.json";
 
 export const ingredients: Map<string, Ingredient> = new Map([
   ['black_beans', blackBeans],
@@ -191,4 +193,6 @@ export const ingredients: Map<string, Ingredient> = new Map([
   ['peanut', peanut],
   ['cajun_spice', cajunSpice],
   ['tofu', tofu],
+  ['ciboule', ciboule],
+  ['cebette', cebette],
 ]);

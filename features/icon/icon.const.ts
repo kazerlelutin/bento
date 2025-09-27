@@ -19,7 +19,7 @@ export const ICONS = new Map<string, number>([
   ['empanada', 4],
   ['gimbap', 36],
   ['savoy_cake', 63],
-  ['udon', 64],
+  ['udon', 66],
 
   // Liquides
   ['water', 13],
@@ -32,7 +32,7 @@ export const ICONS = new Map<string, number>([
   ['oil', 0],
   ['olive_oil', 0],
   ['vegetable_oil', 0],
-  ['sesame_oil', 0],
+  ['sesame_oil', 14],
   ['vinegar', 14],
   ['rice_vinegar', 14],
   ['cidar_vinagar', 14],
@@ -85,12 +85,11 @@ export const ICONS = new Map<string, number>([
   ['ricotta', 58],
 
   // Légumes
-  ['onion', 0],
-  ['red_onion', 0],
-  ['shallot', 0],
-  ['green_onion', 0],
-  ['spring_onion', 0],
-  ['chives', 0],
+  ['onion', 69],
+  ['red_onion', 69],
+  ['green_onion', 69],
+  ['spring_onion', 69],
+  ['chives', 73],
   ['spinach', 59],
   ['carrot', 38],
   ['turnip', 51],
@@ -100,6 +99,11 @@ export const ICONS = new Map<string, number>([
   ['fermented_beetroot', 37],
   ['yellow_radish', 40],
   ['cucumber', 45],
+  ['zucchini', 67],
+
+  // oignons
+  ['ciboule', 75],
+  ['cebette', 75],
 
   // Poivrons
   ['bell_pepper', 0],
@@ -154,14 +158,15 @@ export const ICONS = new Map<string, number>([
   // Autres
   ['vanilla_extract', 62],
 
+  // fruits à coques
+  ['peanut', 68],
+  ['tofu', 71],
+
   // Nouilles et sauces
-  ['udon_noodles', 66],
-  ['soy_sauce', 67],
-  ['miso_paste', 68],
-  ['chili_powder', 29],
-  ['chili_pepper', 22],
-  ['peanut', 69],
-  ['cajun_spice', 30],
-  ['tofu', 70],
-  ['zucchini', 71],
+  ['udon_noodles', 76],
+  ['soy_sauce', 74],
+  ['miso_paste', 72],
+  ['chili_powder', 22],
+  ['chili_pepper', 70],
+
 ]);
