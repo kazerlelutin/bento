@@ -1,8 +1,8 @@
 {
   "id": "add_udon",
   "name": {
-    "fr": "Ajouter les Udon",
-    "en": "Add Udon",
+    "fr": "Ajouter les udon",
+    "en": "Add udon noodles",
     "ko": "우동면 추가하기"
   },
   "description": {
@@ -11,8 +11,13 @@
     "ko": "야채가 있는 팬에 우동면 추가하기"
   },
   "tips": {
-    "fr": "Les nouilles udon peuvent être collées ensemble, c'est normal",
-    "en": "Udon noodles may be stuck together, this is normal",
-    "ko": "우동면이 붙어있을 수 있는데 정상입니다"
-  }
+    "fr": "Les nouilles vont se détacher progressivement",
+    "en": "Noodles will gradually separate",
+    "ko": "면이 점진적으로 분리됩니다"
+  },
+  "operation": "add",
+  "duration": 1,
+  "difficulty": 1,
+  "ingredients": ["udon_noodles"],
+  "tools": ["pan", "spatula"]
 }

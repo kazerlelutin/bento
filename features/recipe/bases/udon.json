@@ -59,16 +59,6 @@
       "ingredients": ["water", "soy_sauce", "miso_paste", "sesame_oil"]
     },
     {
-      "id": "cut_vegetables_sticks",
-      "order": 20,
-      "ingredients": []
-    },
-    {
-      "id": "cook_vegetables_medium_heat",
-      "order": 30,
-      "ingredients": []
-    },
-    {
       "id": "add_udon",
       "order": 40,
       "ingredients": ["udon_noodles"]

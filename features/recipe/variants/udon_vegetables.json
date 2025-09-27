@@ -117,16 +117,22 @@
       ]
     },
     {
-      "id": "cook_vegetables_medium_heat",
-      "order": 35,
+      "id": "add",
+      "order": 45,
       "ingredients": [
         "zucchini",
         "carrot",
         "red_bell_pepper",
         "green_bell_pepper",
         "yellow_bell_pepper",
-        "orange_bell_pepper"
+        "orange_bell_pepper",
+        "tofu"
       ]
+    },
+    {
+      "id": "add",
+      "order": 500,
+      "ingredients": ["ciboule", "chili_pepper", "peanut"]
     }
   ]
 }
