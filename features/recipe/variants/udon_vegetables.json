@@ -1,0 +1,138 @@
+{
+  "id": "udon_vegetables",
+  "name": {
+    "fr": "Udon aux Légumes",
+    "en": "Vegetable Udon",
+    "ko": "야채 우동"
+  },
+  "ingredients": [
+    {
+      "id": "zucchini",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "carrot",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "red_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": ["green_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "green_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": ["red_bell_pepper", "yellow_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "yellow_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "substitutes": [],
+      "foe": ["red_bell_pepper", "green_bell_pepper", "orange_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "orange_bell_pepper",
+      "quantity": 0.3,
+      "unit": "piece",
+      "score": 3,
+      "foe": ["red_bell_pepper", "green_bell_pepper", "yellow_bell_pepper"],
+      "role": "optional"
+    },
+    {
+      "id": "cebette",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 2,
+      "substitutes": ["chives"],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chili_powder",
+      "quantity": 1,
+      "unit": "tbsp",
+      "score": 4,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "chili_pepper",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 3,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    },
+    {
+      "id": "peanut",
+      "quantity": 1,
+      "unit": "tsp",
+      "score": 3,
+      "role": "optional"
+    },
+    {
+      "id": "tofu",
+      "quantity": 75,
+      "unit": "g",
+      "score": 4,
+      "substitutes": [],
+      "foe": [],
+      "role": "optional"
+    }
+  ],
+  "steps": [
+    {
+      "id": "cut_vegetables_sticks",
+      "order": 25,
+      "ingredients": [
+        "zucchini",
+        "carrot",
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper"
+      ]
+    },
+    {
+      "id": "add",
+      "order": 45,
+      "ingredients": [
+        "zucchini",
+        "carrot",
+        "red_bell_pepper",
+        "green_bell_pepper",
+        "yellow_bell_pepper",
+        "orange_bell_pepper",
+        "tofu"
+      ]
+    },
+    {
+      "id": "add",
+      "order": 500,
+      "ingredients": ["cebette", "chili_pepper", "peanut"]
+    }
+  ]
+}

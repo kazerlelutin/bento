@@ -54,6 +54,12 @@ import addVanilla from "./steps/add_vanilla.json";
 import grateChocolate from "./steps/grate_chocolate.json";
 import chopAppleQuarters from "./steps/chop_apple_quarters.json";
 import prepareAppleChocolateFilling from "./steps/prepare_apple_chocolate_filling.json";
+import mixSauceBase from "./steps/mix_sauce_base.json";
+import cutVegetablesSticks from "./steps/cut_vegetables_sticks.json";
+import cookVegetablesMediumHeat from "./steps/cook_vegetables_medium_heat.json";
+import addUdon from "./steps/add_udon.json";
+import mixOccasionally from "./steps/mix_occasionally.json";
+import cookUdon from "./steps/cook_udon.json";
 
 export const steps: Map<string, Step> = new Map(
   [
@@ -111,6 +117,12 @@ export const steps: Map<string, Step> = new Map(
     ['grate_chocolate', grateChocolate],
     ['chop_apple_quarters', chopAppleQuarters],
     ['prepare_apple_chocolate_filling', prepareAppleChocolateFilling],
+    ['mix_sauce_base', mixSauceBase],
+    ['cut_vegetables_sticks', cutVegetablesSticks],
+    ['cook_vegetables_medium_heat', cookVegetablesMediumHeat],
+    ['add_udon', addUdon],
+    ['mix_occasionally', mixOccasionally],
+    ['cook_udon', cookUdon],
   ]
 );
 

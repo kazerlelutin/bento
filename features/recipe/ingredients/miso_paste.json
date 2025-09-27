@@ -1,0 +1,24 @@
+{
+  "id": "miso_paste",
+  "name": {
+    "fr": "Pâte de Miso",
+    "en": "Miso Paste",
+    "ko": "된장"
+  },
+  "category": "fermented",
+  "origin": "japan",
+  "description": {
+    "fr": "Pâte fermentée de soja, salée et umami",
+    "en": "Fermented soybean paste, salty and umami",
+    "ko": "발효된 콩으로 만든 짠맛과 감칠맛의 페이스트"
+  },
+  "allergens": ["soy"],
+  "nutrition": {
+    "calories": 199,
+    "protein": 12.8,
+    "fat": 6,
+    "carbs": 26.5,
+    "fiber": 5.4
+  },
+  "nameComponent": "Miso"
+}

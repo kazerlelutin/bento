@@ -1,0 +1,24 @@
+{
+  "id": "cebette",
+  "name": {
+    "fr": "Cébette",
+    "en": "Scallion",
+    "ko": "실파"
+  },
+  "category": "vegetable",
+  "origin": "asia",
+  "description": {
+    "fr": "Jeune oignon vert, plus fin que la ciboule",
+    "en": "Young green onion, thinner than Welsh onion",
+    "ko": "대파보다 가는 어린 파"
+  },
+  "allergens": [],
+  "nutrition": {
+    "calories": 32,
+    "protein": 1.8,
+    "fat": 0.2,
+    "carbs": 7.3,
+    "fiber": 2.6
+  },
+  "nameComponent": "Cébette"
+}
