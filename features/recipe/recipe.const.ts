@@ -8,12 +8,15 @@ import udon from "./bases/udon.json";
 
 export const bases: Map<string, Base> = new Map(
   [
-    ['onigiri', onigiriBase],
+    //Plats
     ['empanada', empanada],
     ['gimbap', gimbap],
+    ['onigiri', onigiriBase],
+    ['udon', udon],
+
+    // Desserts
     ['cake', cake],
     ['savoy_cake', savoyCake],
-    ['udon', udon],
   ]
 );
 
