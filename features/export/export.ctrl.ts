@@ -8,7 +8,6 @@ import type { ExportCtrl, Recipe } from "./export.types";
 import { transformTextWithIngredients } from './export .utils';
 import quantitySelectorCtrl from "@features/quantity-selector/quantity-selector.ctrl";
 import { quantitySelectorStore } from "../quantity-selector/quantity-selector.store";
-import { translateStore } from "../translate/translate.store";
 
 const exportCtrl: ExportCtrl = {
 
@@ -54,7 +53,8 @@ const exportCtrl: ExportCtrl = {
           const li = document.createElement('li');
           const strong = document.createElement('strong');
 
-          const quantity = ingredient.quantity * this.multiple;
+
+          const quantity = ingredient.quantity;
 
           const tradKey = quantity > 1 ? ingredient.unit + '-plural' : ingredient.unit;
           const tradUnit = t(UI[tradKey as keyof typeof UI]);
