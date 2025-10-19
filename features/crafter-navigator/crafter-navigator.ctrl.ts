@@ -1,3 +1,4 @@
+import { cook } from "@/utils/kitchen";
 import { crafterNavigatorStore } from "./crafter-navigator.store";
 import type { CrafterNavigatorCtrl, Step } from "./crafter-navigator.types";
 import { createButton, getCrafterNavigatorContainer, handleEventCallback } from "./crafter-navigator.utils";
@@ -17,7 +18,9 @@ const crafterNavigatorCtrl: CrafterNavigatorCtrl = {
         if (step.name === crafterNavigatorStore.currentStep.name) button.setAttribute('aria-current', 'true');
       }
     });
-    container.appendChild(fragment);
+    cook('crafter-controls', () => {
+      container.appendChild(fragment);
+    });
 
     container.addEventListener('click', handleEventCallback);
     container.addEventListener('keydown', handleEventCallback);
@@ -32,7 +35,9 @@ const crafterNavigatorCtrl: CrafterNavigatorCtrl = {
     const buttons = container.querySelectorAll('.crafter-stepper-button') as NodeListOf<HTMLButtonElement>;
     buttons.forEach(button => {
       const isActive = step.name === button.dataset.stepName;
-      button.setAttribute('aria-current', isActive ? 'true' : 'false');
+      cook(`crafter-stepper-button-${button.dataset.stepName}`, () => {
+        button.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
     });
   },
 

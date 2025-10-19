@@ -1,3 +1,4 @@
+import { cook } from "@/utils/kitchen";
 import { t } from "../translate/translate";
 import { UI } from "../translate/translate.const";
 import { quantitySelectorStore } from "./quantity-selector.store";
@@ -38,7 +39,9 @@ export const quantitySelectorCtrl = {
         minusButton.removeAttribute('disabled');
       }
     }
-    container.textContent = translation.replace('{quantity}', quantitySelectorStore.quantity.toString());
+    cook('quantity-selector-value', () => {
+      container.textContent = translation.replace('{quantity}', quantitySelectorStore.quantity.toString());
+    });
   },
   cleanUp() {
     const container = document.getElementById('quantity-selector');

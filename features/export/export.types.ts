@@ -8,7 +8,6 @@ export type ExportCtrl = Ctrl & {
   unsubscribeIngredient?: () => void;
   unsubscribeQuantitySelector?: () => void;
   updateIngredientsUI: () => void;
-  updateFormatButtons: (activeFormat: 'md' | 'json') => void;
   downloadFile: (format: 'md' | 'json') => void;
   toMd: (recipe: Recipe) => string;
   toJson: (recipe: Recipe) => string;

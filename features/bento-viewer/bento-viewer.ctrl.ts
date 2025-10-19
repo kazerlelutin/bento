@@ -7,6 +7,7 @@ import { BASES_LAYERS, ZONE_LAYERS, ZONE_LAYERS_MAP } from "@features/sprite-she
 import { getStyleForIcon } from "../icon/icon";
 import { ICONS } from "../icon/icon.const";
 import { composerStore } from "../composer/composer.store";
+import { cook } from "@/utils/kitchen";
 
 const bentoViewerCtrl: BentoViewerCtrl = {
   onResize: undefined,
@@ -25,8 +26,8 @@ const bentoViewerCtrl: BentoViewerCtrl = {
       bentoViewerButton.addEventListener('click', this.toggleBentoViewer);
     }
 
-    await this.updateCanvas();
-    this.onResize = () => {
+    await bentoViewerCtrl.updateCanvas();
+    bentoViewerCtrl.onResize = () => {
       // Throttle via rAF
       if (!this._resizeScheduled) {
         this._resizeScheduled = true;
@@ -36,7 +37,11 @@ const bentoViewerCtrl: BentoViewerCtrl = {
         });
       }
     };
-    window.addEventListener('resize', this.onResize);
+
+    cook('bento-viewer-button', () => {
+      window.addEventListener('resize', bentoViewerCtrl?.onResize ?? (() => { }));
+    });
+
     this.startLoop();
 
     this.unsubscribeBase = baseStore.subscribe(() => {
@@ -242,7 +247,6 @@ const bentoViewerCtrl: BentoViewerCtrl = {
     tempCtx.arc(x + actualSize / 2, y + actualSize / 2, actualSize / 2, Math.PI, 1.5 * Math.PI);
     tempCtx.fill();
 
-    // Random arcs
     this.addRandomArcs(tempCtx, x, y, actualSize);
   },
 
@@ -504,11 +508,11 @@ const bentoViewerCtrl: BentoViewerCtrl = {
 
   cleanUp() {
     this.unsubscribeBase?.();
-    if (this.onResize) window.removeEventListener('resize', this.onResize);
-    if (this.rafId != null) cancelAnimationFrame(this.rafId);
+    if (bentoViewerCtrl?.onResize) window.removeEventListener('resize', bentoViewerCtrl?.onResize ?? (() => { }));
+    if (bentoViewerCtrl?.rafId != null) cancelAnimationFrame(bentoViewerCtrl?.rafId ?? 0);
     const bentoViewerButton = document.getElementById('bento-viewer-button');
     if (bentoViewerButton) {
-      bentoViewerButton.removeEventListener('click', this.toggleBentoViewer);
+      bentoViewerButton.removeEventListener('click', bentoViewerCtrl?.toggleBentoViewer ?? (() => { }));
     }
   }
 }

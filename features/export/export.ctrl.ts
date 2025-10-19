@@ -8,6 +8,7 @@ import type { ExportCtrl, Recipe } from "./export.types";
 import { transformTextWithIngredients } from './export .utils';
 import quantitySelectorCtrl from "@features/quantity-selector/quantity-selector.ctrl";
 import { quantitySelectorStore } from "../quantity-selector/quantity-selector.store";
+import { cook } from "@/utils/kitchen";
 
 const exportCtrl: ExportCtrl = {
 
@@ -140,15 +141,19 @@ const exportCtrl: ExportCtrl = {
 
     fragment.appendChild(stepsSection);
 
-    if (container) {
-      container.appendChild(fragment);
-    }
+    cook('stepper-export-content', () => {
+      if (container) {
+        container.appendChild(fragment);
+      }
+    });
 
     const elementToTranslate = document.querySelectorAll('[data-translate]');
-    elementToTranslate.forEach((element) => {
+    elementToTranslate.forEach((element, index) => {
       const translate = element.getAttribute('data-translate') ?? '';
       if (translate) {
-        (element as HTMLElement).innerText = t(UI[translate as keyof typeof UI]);
+        cook(`stepper-export-${index}`, () => {
+          (element as HTMLElement).innerText = t(UI[translate as keyof typeof UI]);
+        });
       }
     });
 
@@ -161,19 +166,6 @@ const exportCtrl: ExportCtrl = {
       this.downloadFile(target.dataset.type as 'md' | 'json');
     }
   },
-
-  updateFormatButtons(activeFormat: 'md' | 'json') {
-    const buttons = document.querySelectorAll('[data-format]');
-    buttons.forEach(button => {
-      const htmlButton = button as HTMLButtonElement;
-      if (htmlButton.dataset.format === activeFormat) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
-    });
-  },
-
   downloadFile(format: 'md' | 'json') {
     const recipe = this.getRecipe();
     let content = '';

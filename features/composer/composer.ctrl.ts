@@ -9,6 +9,7 @@ import { variants } from "../recipe/variant.const";
 import { t } from "../translate/translate";
 import { ingredients } from "../recipe/ingredient.const";
 import { UI } from "../translate/translate.const";
+import { cook } from "@/utils/kitchen";
 
 const composerCtrl: ComposerCtrl = {
   async init() {
@@ -137,7 +138,9 @@ const composerCtrl: ComposerCtrl = {
       fragment.appendChild(ingredientPage);
     }
 
-    container.appendChild(fragment);
+    cook('composer-container', () => {
+      container.appendChild(fragment);
+    });
   },
   selectIngredient(event: MouseEvent) {
     const target = (event.target as HTMLElement).closest('[data-role="ingredient-choice"]') as HTMLElement;

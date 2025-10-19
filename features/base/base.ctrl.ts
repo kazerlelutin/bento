@@ -8,6 +8,7 @@ import { ICONS } from "../icon/icon.const";
 import { getStyleForIcon } from "../icon/icon";
 import { getRandomVariant } from "../composer/composer.utils";
 import { composerStore } from "../composer/composer.store";
+import { cook } from "@/utils/kitchen";
 
 const baseCtrl: BaseCtrl = {
   init() {
@@ -15,7 +16,6 @@ const baseCtrl: BaseCtrl = {
     const template = document.getElementById('base-choice-template') as HTMLTemplateElement;
     const container = document.getElementById("base-container");
     if (!container) throw new Error('Container not found');
-    container.addEventListener('click', this.selectBase);
 
     const fragment = document.createDocumentFragment();
     for (const base of Array.from(bases.values()) as Base[]) {
@@ -30,7 +30,6 @@ const baseCtrl: BaseCtrl = {
       baseChoicePage.setAttribute('role', 'button');
       baseChoicePage.setAttribute('data-type', 'base');
 
-
       getStyleForIcon(img, ICONS.get(base.id) ?? 0);
 
       text.innerText = `${t(base.name)}`;
@@ -39,7 +38,10 @@ const baseCtrl: BaseCtrl = {
         baseChoicePage.setAttribute('disabled', 'true');
       }
     }
-    container.appendChild(fragment);
+    cook('base-choice-template', () => {
+      container.addEventListener('click', this.selectBase);
+      container.appendChild(fragment);
+    });
 
   },
   // Here because if is in utils, cause problem with proxy-sub
@@ -54,10 +56,15 @@ const baseCtrl: BaseCtrl = {
     composerStore.setCurrentVariant(getRandomVariant(baseStore.currentBase.id));
 
     const baseButtons = document.querySelectorAll('[data-type="base"]') as NodeListOf<HTMLButtonElement>;
-    baseButtons.forEach(button => {
-      button.removeAttribute('disabled');
+    baseButtons.forEach((button, index) => {
+      cook(`selectBase-btn-${index}`, () => {
+        button.removeAttribute('disabled');
+      });
     });
-    target.setAttribute('disabled', 'true');
+
+    cook('selectBase', () => {
+      target.setAttribute('disabled', 'true');
+    });
   },
 
   cleanUp() {
