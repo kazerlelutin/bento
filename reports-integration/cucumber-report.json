@@ -6,7 +6,7 @@
         "description": "",
         "id": "front-end-router;basic-navigation-with-template-rendering",
         "keyword": "Scenario",
-        "line": 11,
+        "line": 12,
         "name": "Basic navigation with template rendering",
         "steps": [
           {
@@ -14,105 +14,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1270199
+              "duration": 1291500
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 707400
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 587199
+              "duration": 812900
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "I visit the home page",
+            "name": "the router is initialized",
             "match": {
-              "location": "features\\router\\router.steps.ts:18"
+              "location": "features\\router\\router.steps.ts:10"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "I should see the home page content",
-            "match": {
-              "location": "features\\router\\router.steps.ts:22"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 289199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 14,
-            "name": "the page title should be \"Accueil\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:27"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 4167899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I visit the home page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1206599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see the home page content",
+            "match": {
+              "location": "features\\router\\router.steps.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 241700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 15,
-            "name": "the URL should be \"/\"",
+            "name": "the page title should be \"Accueil\"",
             "match": {
-              "location": "features\\router\\router.steps.ts:31"
+              "location": "features\\router\\router.steps.ts:46"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 427399
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 16,
-            "name": "the home template should be rendered",
+            "name": "the URL should be \"/\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 359300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the home template should be rendered",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 293300
             }
           },
           {
@@ -120,18 +126,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 140199
+              "duration": 141700
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;navigation-to-page-with-script",
         "keyword": "Scenario",
-        "line": 18,
+        "line": 19,
         "name": "Navigation to page with script",
         "steps": [
           {
@@ -139,122 +150,137 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 118700
+              "duration": 51399
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 158599
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 180999
+              "duration": 245599
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 19,
-            "name": "I click on the \"About\" link",
+            "name": "the router is initialized",
             "match": {
-              "location": "features\\router\\router.steps.ts:35"
+              "location": "features\\router\\router.steps.ts:10"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 20,
-            "name": "I should see the About page content",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 195000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 21,
-            "name": "the page title should be \"À propos\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:27"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 305700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I click on the \"About\" link",
+            "match": {
+              "location": "features\\router\\router.steps.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1578899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should see the About page content",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 255100
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 22,
-            "name": "the URL should be \"/about\"",
+            "name": "the page title should be \"À propos\"",
             "match": {
-              "location": "features\\router\\router.steps.ts:31"
+              "location": "features\\router\\router.steps.ts:46"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 178900
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 23,
-            "name": "the about template should be rendered",
+            "name": "the URL should be \"/about\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 264599
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 24,
-            "name": "the about page script should be initialized",
+            "name": "the about template should be rendered",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:14"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 426799
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 25,
-            "name": "the previous page cleanup should be executed",
+            "name": "the about page script should be initialized",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:19"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 190800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "the previous page cleanup should be executed",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 177799
             }
           },
           {
@@ -262,18 +288,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 113199
+              "duration": 58399
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;navigation-with-dynamic-parameters",
         "keyword": "Scenario",
-        "line": 27,
+        "line": 28,
         "name": "Navigation with dynamic parameters",
         "steps": [
           {
@@ -281,99 +312,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 121900
+              "duration": 46399
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 177700
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 256200
+              "duration": 83000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 28,
-            "name": "I visit the page \"/users/123\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 29,
-            "name": "I should see the user profile for 123",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 211999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 30,
-            "name": "the page title should be \"User Profile\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:27"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 939900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "I visit the page \"/users/123\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1183700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "I should see the user profile for 123",
+            "match": {
+              "location": "features\\router\\router.steps.ts:86"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 375999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 31,
-            "name": "the URL should be \"/users/123\"",
+            "name": "the page title should be \"User Profile\"",
             "match": {
-              "location": "features\\router\\router.steps.ts:31"
+              "location": "features\\router\\router.steps.ts:46"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 108699
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 32,
-            "name": "the user template should be rendered",
+            "name": "the URL should be \"/users/123\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 112000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "the user template should be rendered",
+            "match": {
+              "location": "features\\router\\router.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 156099
             }
           },
           {
@@ -381,18 +424,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 90899
+              "duration": 40100
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;navigation-with-query-parameters",
         "keyword": "Scenario",
-        "line": 34,
+        "line": 35,
         "name": "Navigation with query parameters",
         "steps": [
           {
@@ -400,86 +448,98 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 174599
+              "duration": 52100
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 224000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 279300
+              "duration": 105000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 35,
-            "name": "I visit the page \"/search?q=test\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 36,
-            "name": "I should see search results for \"test\"",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 87600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 37,
-            "name": "the URL should be \"/search?q=test\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:31"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 281600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "I visit the page \"/search?q=test\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 359400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "I should see search results for \"test\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:92"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 228700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 38,
-            "name": "the search template should be rendered",
+            "name": "the URL should be \"/search?q=test\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 66199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "the search template should be rendered",
+            "match": {
+              "location": "features\\router\\router.steps.ts:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 409200
             }
           },
           {
@@ -487,18 +547,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 91000
+              "duration": 101899
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;page-not-found",
         "keyword": "Scenario",
-        "line": 40,
+        "line": 41,
         "name": "Page not found",
         "steps": [
           {
@@ -506,96 +571,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 371900
+              "duration": 32899
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 303299
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 387399
+              "duration": 75099
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 41,
-            "name": "I visit a non-existent page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 42,
-            "name": "I should see the 404 page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 77199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 43,
-            "name": "the page title should be \"Page Not Found\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:27"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 233600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 42,
+            "name": "I visit a non-existent page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:98"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 427900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "I should see the 404 page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:102"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 220800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 44,
-            "name": "the URL should remain unchanged",
+            "name": "the page title should be \"Page Not Found\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:46"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 115999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 45,
-            "name": "the 404 template should be rendered",
+            "name": "the URL should remain unchanged",
+            "match": {
+              "location": "features\\router\\router.steps.ts:105"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 187099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "the 404 template should be rendered",
+            "match": {
+              "location": "features\\router\\router.steps.ts:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135899
             }
           },
           {
@@ -603,18 +683,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 60199
+              "duration": 172299
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;navigation-with-authentication",
         "keyword": "Scenario",
-        "line": 47,
+        "line": 48,
         "name": "Navigation with authentication",
         "steps": [
           {
@@ -622,96 +707,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 75999
+              "duration": 39600
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 179900
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 151400
+              "duration": 171499
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 48,
-            "name": "I am not logged in",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 49,
-            "name": "I try to access a protected page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 50,
-            "name": "I should be redirected to the login page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 73000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 51,
-            "name": "the URL should be \"/login\"",
+            "line": 10,
+            "name": "the templates are available",
             "match": {
-              "location": "features\\router\\router.steps.ts:31"
+              "location": "features\\router\\router.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 238100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "I am not logged in",
+            "match": {
+              "location": "features\\router\\router.steps.ts:111"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 250599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "I try to access a protected page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:114"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 550300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "I should be redirected to the login page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 144500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 52,
-            "name": "the login template should be rendered",
+            "name": "the URL should be \"/login\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 72599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "the login template should be rendered",
+            "match": {
+              "location": "features\\router\\router.steps.ts:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141699
             }
           },
           {
@@ -719,18 +819,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 49399
+              "duration": 34899
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;navigation-with-transition-and-cleanup",
         "keyword": "Scenario",
-        "line": 54,
+        "line": 55,
         "name": "Navigation with transition and cleanup",
         "steps": [
           {
@@ -738,93 +843,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 89700
+              "duration": 30000
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 172300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 301699
+              "duration": 47600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 55,
-            "name": "I am on a page with active scripts",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 56,
-            "name": "I navigate to a new page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 57,
-            "name": "the previous page cleanup should be executed",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 38700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 58,
-            "name": "the new page script should be initialized",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 248399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 56,
+            "name": "I am on a page with active scripts",
+            "match": {
+              "location": "features\\router\\router.steps.ts:127"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 153800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "I navigate to a new page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 118899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "the previous page cleanup should be executed",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 75399
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 59,
-            "name": "the content should be updated after the transition",
+            "name": "the new page script should be initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:133"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 129000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "the content should be updated after the transition",
+            "match": {
+              "location": "features\\router\\router.steps.ts:136"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150399
             }
           },
           {
@@ -832,18 +955,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 55899
+              "duration": 27300
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;link-handling-with-internal-navigation",
         "keyword": "Scenario",
-        "line": 61,
+        "line": 62,
         "name": "Link handling with internal navigation",
         "steps": [
           {
@@ -851,83 +979,98 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 153500
+              "duration": 42699
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 220599
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 263500
+              "duration": 53200
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 62,
-            "name": "I click on an internal link",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 63,
-            "name": "the navigation should be handled by the router",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 47700
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 64,
-            "name": "the page should not be reloaded",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 347700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "I click on an internal link",
+            "match": {
+              "location": "features\\router\\router.steps.ts:139"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 345100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 64,
+            "name": "the navigation should be handled by the router",
+            "match": {
+              "location": "features\\router\\router.steps.ts:143"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 148799
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 65,
-            "name": "the browser history should be updated",
+            "name": "the page should not be reloaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:146"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 240600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "the browser history should be updated",
+            "match": {
+              "location": "features\\router\\router.steps.ts:149"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123599
             }
           },
           {
@@ -935,18 +1078,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 80399
+              "duration": 50600
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;back-button-handling",
         "keyword": "Scenario",
-        "line": 67,
+        "line": 68,
         "name": "Back button handling",
         "steps": [
           {
@@ -954,103 +1102,124 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 126800
+              "duration": 44200
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 388600
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 158600
+              "duration": 55800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 68,
-            "name": "I am on the \"/about\" page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 69,
-            "name": "I click the back button",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 70,
-            "name": "I should go back to the previous page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 42400
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 71,
-            "name": "the URL should be updated",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 287599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "I am on the \"/about\" page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:152"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 784599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "I click the back button",
+            "match": {
+              "location": "features\\router\\router.steps.ts:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 239599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "I should go back to the previous page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:164"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 214999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 72,
-            "name": "the content should be updated",
+            "name": "the URL should be updated",
+            "match": {
+              "location": "features\\router\\router.steps.ts:167"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 254000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 73,
-            "name": "the page cleanup should be executed",
+            "name": "the content should be updated",
+            "match": {
+              "location": "features\\router\\router.steps.ts:170"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 142299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "the page cleanup should be executed",
+            "match": {
+              "location": "features\\router\\router.steps.ts:176"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147699
             }
           },
           {
@@ -1058,18 +1227,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 179700
+              "duration": 37499
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;external-link-handling",
         "keyword": "Scenario",
-        "line": 75,
+        "line": 76,
         "name": "External link handling",
         "steps": [
           {
@@ -1077,73 +1251,85 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 103199
+              "duration": 31299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 214299
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 204100
+              "duration": 40600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 76,
-            "name": "I click on an external link",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 77,
-            "name": "the navigation should be handled by the browser",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 42100
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 78,
-            "name": "the page should be reloaded",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 204799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 77,
+            "name": "I click on an external link",
+            "match": {
+              "location": "features\\router\\router.steps.ts:179"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 272999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 78,
+            "name": "the navigation should be handled by the browser",
+            "match": {
+              "location": "features\\router\\router.steps.ts:182"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "the page should be reloaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:185"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 210399
             }
           },
           {
@@ -1151,18 +1337,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 50900
+              "duration": 61099
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;template-rendering-with-state-management",
         "keyword": "Scenario",
-        "line": 80,
+        "line": 81,
         "name": "Template rendering with state management",
         "steps": [
           {
@@ -1170,93 +1361,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 69299
+              "duration": 30200
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 172799
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 169599
+              "duration": 86600
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 81,
-            "name": "I visit a page with reactive state",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 82,
-            "name": "the template should be rendered",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 39999
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 83,
-            "name": "the page script should be initialized",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 123599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 82,
+            "name": "I visit a page with reactive state",
+            "match": {
+              "location": "features\\router\\router.steps.ts:188"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 171499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 83,
+            "name": "the template should be rendered",
+            "match": {
+              "location": "features\\router\\router.steps.ts:191"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 269299
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 84,
-            "name": "the reactive state should be set up",
+            "name": "the page script should be initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:173"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 221800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 85,
-            "name": "the UI should respond to state changes",
+            "name": "the reactive state should be set up",
+            "match": {
+              "location": "features\\router\\router.steps.ts:194"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 199000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "the UI should respond to state changes",
+            "match": {
+              "location": "features\\router\\router.steps.ts:197"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 255599
             }
           },
           {
@@ -1264,18 +1473,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 40499
+              "duration": 41899
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;script-cleanup-on-navigation",
         "keyword": "Scenario",
-        "line": 87,
+        "line": 88,
         "name": "Script cleanup on navigation",
         "steps": [
           {
@@ -1283,103 +1497,124 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 70299
+              "duration": 29200
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 189899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 226300
+              "duration": 48300
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 88,
-            "name": "I am on a page with active event listeners",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 89,
-            "name": "I navigate to another page",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 90,
-            "name": "the previous page event listeners should be removed",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 61199
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 91,
-            "name": "the previous page timers should be cleared",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 196300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 89,
+            "name": "I am on a page with active event listeners",
+            "match": {
+              "location": "features\\router\\router.steps.ts:200"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 193199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 90,
+            "name": "I navigate to another page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:203"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 146200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 91,
+            "name": "the previous page event listeners should be removed",
+            "match": {
+              "location": "features\\router\\router.steps.ts:206"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 92,
-            "name": "the previous page state should be cleaned up",
+            "name": "the previous page timers should be cleared",
+            "match": {
+              "location": "features\\router\\router.steps.ts:209"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 133800
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 93,
-            "name": "the new page should be properly initialized",
+            "name": "the previous page state should be cleaned up",
+            "match": {
+              "location": "features\\router\\router.steps.ts:212"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 108000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 94,
+            "name": "the new page should be properly initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:215"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 123499
             }
           },
           {
@@ -1387,18 +1622,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 50500
+              "duration": 35900
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       },
       {
         "description": "",
         "id": "front-end-router;multiple-rapid-navigation",
         "keyword": "Scenario",
-        "line": 95,
+        "line": 96,
         "name": "Multiple rapid navigation",
         "steps": [
           {
@@ -1406,93 +1646,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 108299
+              "duration": 63100
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 7,
+            "line": 8,
             "name": "the application is loaded",
             "match": {
               "location": "features\\router\\router.steps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 201299
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the router is initialized",
-            "match": {
-              "location": "features\\router\\router.steps.ts:12"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 278200
+              "duration": 48100
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 9,
-            "name": "the templates are available",
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 96,
-            "name": "I navigate quickly between multiple pages",
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 97,
-            "name": "each page should render correctly",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 53699
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 98,
-            "name": "each page cleanup should execute properly",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 267799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 97,
+            "name": "I navigate quickly between multiple pages",
+            "match": {
+              "location": "features\\router\\router.steps.ts:218"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 205500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 98,
+            "name": "each page should render correctly",
+            "match": {
+              "location": "features\\router\\router.steps.ts:221"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 291899
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 99,
-            "name": "no memory leaks should occur",
+            "name": "each page cleanup should execute properly",
+            "match": {
+              "location": "features\\router\\router.steps.ts:224"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 243299
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 100,
-            "name": "the final page should be active",
+            "name": "no memory leaks should occur",
+            "match": {
+              "location": "features\\router\\router.steps.ts:227"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 232600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 101,
+            "name": "the final page should be active",
+            "match": {
+              "location": "features\\router\\router.steps.ts:230"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 124299
             }
           },
           {
@@ -1500,7 +1758,479 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 69999
+              "duration": 33599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "front-end-router;browser-refresh-handling",
+        "keyword": "Scenario",
+        "line": 103,
+        "name": "Browser refresh handling",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "the application is loaded",
+            "match": {
+              "location": "features\\router\\router.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the router is initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the templates are available",
+            "match": {
+              "location": "features\\router\\router.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 160300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 104,
+            "name": "I am on a specific page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:233"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 105,
+            "name": "I refresh the browser",
+            "match": {
+              "location": "features\\router\\router.steps.ts:236"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "the current page should be rendered correctly",
+            "match": {
+              "location": "features\\router\\router.steps.ts:239"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 154899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 107,
+            "name": "the page script should be initialized",
+            "match": {
+              "location": "features\\router\\router.steps.ts:173"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 108,
+            "name": "the URL should remain the same",
+            "match": {
+              "location": "features\\router\\router.steps.ts:242"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 315000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 40099
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@router",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "front-end-router",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Front-end Router",
+    "tags": [
+      {
+        "name": "@router",
+        "line": 1
+      }
+    ],
+    "uri": "features\\router\\router.feature"
+  },
+  {
+    "description": "  As a user\n  I want to navigate through the application\n  So that I can access different pages with proper state management",
+    "elements": [
+      {
+        "description": "",
+        "id": "routes;basic-navigation-with-template-rendering",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Basic navigation with template rendering",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 71099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I visit the home page",
+            "match": {
+              "location": "features\\router\\router.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1330500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should see the home page content",
+            "match": {
+              "location": "features\\router\\router.steps.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 288199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "the page title should be \"Accueil\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the URL should be \"/\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 105600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the home template should be rendered",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@routes",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "routes;navigation-to-page-with-script",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Navigation to page with script",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 44000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click on the \"About\" link",
+            "match": {
+              "location": "features\\router\\router.steps.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 365700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I should see the About page content",
+            "match": {
+              "location": "features\\routes\\routes.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 39200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "the page title should be \"À propos\"",
+            "match": {
+              "location": "features\\router\\router.steps.ts:46"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18700
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@routes",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "routes",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Routes",
+    "tags": [
+      {
+        "name": "@routes",
+        "line": 1
+      }
+    ],
+    "uri": "features\\routes\\routes.feature"
+  },
+  {
+    "description": "  As a bento generator user\n  I want to use the application in my preferred language\n  So that I can understand and interact with the interface effectively",
+    "elements": [
+      {
+        "description": "",
+        "id": "translation-and-internationalization;language-detection-from-browser",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Language detection from browser",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 51900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 494500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 231199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I visit the application for the first time",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 258900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "no language preference is stored",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 153600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "the application initializes",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the browser language is detected",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "if the browser language is supported, it is set as current language",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 178400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "if the browser language is not supported, French is set as default",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 160599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 129100
             }
           }
         ],
@@ -1509,103 +2239,108 @@
       },
       {
         "description": "",
-        "id": "front-end-router;browser-refresh-handling",
+        "id": "translation-and-internationalization;language-persistence-in-localstorage",
         "keyword": "Scenario",
-        "line": 102,
-        "name": "Browser refresh handling",
+        "line": 18,
+        "name": "Language persistence in localStorage",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 96100
+              "duration": 52299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 7,
-            "name": "the application is loaded",
+            "name": "the application is initialized",
             "match": {
-              "location": "features\\router\\router.steps.ts:5"
+              "location": "features\\translate\\translate.steps.ts:10"
             },
             "result": {
               "status": "passed",
-              "duration": 202199
+              "duration": 75299
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "the router is initialized",
+            "name": "translation data is available",
             "match": {
-              "location": "features\\router\\router.steps.ts:12"
+              "location": "features\\translate\\translate.steps.ts:14"
             },
             "result": {
               "status": "passed",
-              "duration": 167899
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "the templates are available",
-            "result": {
-              "status": "undefined",
-              "duration": 0
+              "duration": 45299
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 103,
-            "name": "I am on a specific page",
+            "line": 19,
+            "name": "I have previously selected a language",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:49"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 166699
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 104,
-            "name": "I refresh the browser",
+            "line": 20,
+            "name": "the application loads",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:53"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 129999
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 105,
-            "name": "the current page should be rendered correctly",
+            "line": 21,
+            "name": "the stored language preference is retrieved",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:61"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 110799
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 106,
-            "name": "the page script should be initialized",
+            "line": 22,
+            "name": "the application uses the stored language",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:65"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 145500
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 107,
-            "name": "the URL should remain the same",
+            "line": 23,
+            "name": "the language preference persists across sessions",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:70"
+            },
             "result": {
-              "status": "undefined",
-              "duration": 0
+              "status": "passed",
+              "duration": 149499
             }
           },
           {
@@ -1613,7 +2348,1082 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 61900
+              "duration": 45800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;language-switching",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Language switching",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 89600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 60799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "I am using the application",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "I change the language setting",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1887799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "the current language is updated",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:83"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 161299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "all UI elements are translated to the new language",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:87"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 185299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "the language preference is saved to localStorage",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 338700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 35900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;translation-retrieval",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "Translation retrieval",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3236400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 143400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "I have translation data for multiple languages",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 360900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "I request a translation",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 118399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "the translation for the current language is returned",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:109"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "if the current language translation is not available, French is used as fallback",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:113"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "if no translation is found, 'Not found' is returned",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:118"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 182699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 26599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;ui-element-translation",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "UI element translation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "I have UI elements with translation attributes",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:123"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1011199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "the language changes",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2199700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "all elements with 'data-translate' attributes are updated",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:134"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 380100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "the text content reflects the new language",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:139"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 442399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "the translation keys are properly resolved",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:146"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 275399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 31400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;supported-languages",
+        "keyword": "Scenario",
+        "line": 46,
+        "name": "Supported languages",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 65600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 47,
+            "name": "the translation system is active",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:151"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 145800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "I check available languages",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:156"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 101599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "French (fr) is supported",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:160"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 142000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "English (en) is supported",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:164"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 120699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Korean (ko) is supported",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:168"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 138799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "other languages are not supported",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:172"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 144000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;translation-key-management",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "Translation key management",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "I have UI translation keys",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:177"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 119900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "I check the available translation keys",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:182"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 137299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "action keys (add, delete, exchange, select) are available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:186"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 190099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "navigation keys (home, about) are available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:193"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "content keys (ingredients, steps, export) are available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:198"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 115199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "all keys have translations for supported languages",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:204"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 203100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;fallback-translation-behavior",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Fallback translation behavior",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 63,
+            "name": "I have a translation object with missing languages",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:211"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 64,
+            "name": "I request a translation",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:100"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 65,
+            "name": "the system falls back to French if the current language is missing",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:215"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 100100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "the system returns 'Not found' if no translations are available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:219"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "no errors are thrown for missing translations",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:223"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 61100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;language-storage-key-management",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "Language storage key management",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 70,
+            "name": "the translation system is active",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:151"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 71,
+            "name": "I check the localStorage key",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:228"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 72,
+            "name": "the key is set to 'bento_language'",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:232"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "the language preference is stored under this key",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:236"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 380799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 82599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;dynamic-translation-updates",
+        "keyword": "Scenario",
+        "line": 75,
+        "name": "Dynamic translation updates",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 29199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 41400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 76,
+            "name": "I have elements that need translation updates",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:241"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 749199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 77,
+            "name": "the language changes",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1142399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 78,
+            "name": "all elements with translation attributes are found",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:247"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 386400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "their text content is updated with new translations",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:252"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 256699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "the UI reflects the language change immediately",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:257"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 136199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 31600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "translation-and-internationalization;translation-data-structure",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "Translation data structure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "translation data is available",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 83,
+            "name": "I have translation objects",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:261"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 84,
+            "name": "I examine the translation structure",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:265"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 172800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 85,
+            "name": "each translation has a French (fr) property",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:272"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 173900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "optional English (en) and Korean (ko) properties",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:278"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 93700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "the structure is consistent across all translations",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:283"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 522000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 45499
             }
           }
         ],
@@ -1621,11 +3431,1202 @@
         "type": "scenario"
       }
     ],
-    "id": "front-end-router",
+    "id": "translation-and-internationalization",
     "line": 1,
     "keyword": "Feature",
-    "name": "Front-end Router",
+    "name": "Translation and internationalization",
     "tags": [],
-    "uri": "features\\router\\router.feature"
+    "uri": "features\\translate\\translate.feature"
+  },
+  {
+    "description": "  As a bento generator user\n  I want to see the current application version\n  So that I can track updates and report issues accurately",
+    "elements": [
+      {
+        "description": "",
+        "id": "application-version-management;version-display-initialization",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Version display initialization",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 30700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 89200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 175799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I am on any page of the application",
+            "match": {
+              "location": "features\\version\\version.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2770600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the version system initializes",
+            "match": {
+              "location": "features\\version\\version.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 320899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "the version is retrieved from package.json",
+            "match": {
+              "location": "features\\version\\version.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the version is displayed in the designated element",
+            "match": {
+              "location": "features\\version\\version.steps.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 349800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the version element is found by ID 'version'",
+            "match": {
+              "location": "features\\version\\version.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 118699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 28800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-element-update",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Version element update",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 26700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 35799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "I have a version element in the DOM",
+            "match": {
+              "location": "features\\version\\version.steps.ts:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 552000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "the displayVersion function is called",
+            "match": {
+              "location": "features\\version\\version.steps.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 179500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "the version element's text content is updated",
+            "match": {
+              "location": "features\\version\\version.steps.ts:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 168799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the version matches the package.json version",
+            "match": {
+              "location": "features\\version\\version.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 162799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "the version is displayed correctly",
+            "match": {
+              "location": "features\\version\\version.steps.ts:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 131100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 20500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-constant-management",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Version constant management",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 30700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I check the version constant",
+            "match": {
+              "location": "features\\version\\version.steps.ts:57"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 142700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "the version is imported from package.json",
+            "match": {
+              "location": "features\\version\\version.steps.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 96199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the version constant is available for use",
+            "match": {
+              "location": "features\\version\\version.steps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 158899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "the version format follows semantic versioning",
+            "match": {
+              "location": "features\\version\\version.steps.ts:70"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 147100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 23100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-element-not-found",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Version element not found",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 25999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 42099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "the version element is not present in the DOM",
+            "match": {
+              "location": "features\\version\\version.steps.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 287100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "the displayVersion function is called",
+            "match": {
+              "location": "features\\version\\version.steps.ts:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "no error is thrown",
+            "match": {
+              "location": "features\\version\\version.steps.ts:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 251699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "the function handles the missing element gracefully",
+            "match": {
+              "location": "features\\version\\version.steps.ts:83"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 393100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "the application continues to function normally",
+            "match": {
+              "location": "features\\version\\version.steps.ts:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 20800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-display-on-page-load",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "Version display on page load",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 20700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 65599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "I visit the application",
+            "match": {
+              "location": "features\\version\\version.steps.ts:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 508000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "the page loads",
+            "match": {
+              "location": "features\\version\\version.steps.ts:99"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 292100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "the version is automatically displayed",
+            "match": {
+              "location": "features\\version\\version.steps.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 205799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "the version is visible to the user",
+            "match": {
+              "location": "features\\version\\version.steps.ts:108"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 176799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "the version information is current",
+            "match": {
+              "location": "features\\version\\version.steps.ts:113"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 32600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-consistency",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "Version consistency",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 20499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 34799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "the application is running",
+            "match": {
+              "location": "features\\version\\version.steps.ts:117"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "I check the version in different parts of the application",
+            "match": {
+              "location": "features\\version\\version.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 224600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 48,
+            "name": "the version is consistent across all components",
+            "match": {
+              "location": "features\\version\\version.steps.ts:128"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "the version matches the package.json version",
+            "match": {
+              "location": "features\\version\\version.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 37199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "no version conflicts exist",
+            "match": {
+              "location": "features\\version\\version.steps.ts:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 153999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 13800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-format-validation",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "Version format validation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 27800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "I have a version from package.json",
+            "match": {
+              "location": "features\\version\\version.steps.ts:137"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 159900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "I examine the version format",
+            "match": {
+              "location": "features\\version\\version.steps.ts:141"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "the version follows semantic versioning (major.minor.patch)",
+            "match": {
+              "location": "features\\version\\version.steps.ts:145"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 120400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "the version is a valid string",
+            "match": {
+              "location": "features\\version\\version.steps.ts:149"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 132900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "the version can be parsed correctly",
+            "match": {
+              "location": "features\\version\\version.steps.ts:154"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 195799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 40999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-display-in-footer",
+        "keyword": "Scenario",
+        "line": 59,
+        "name": "Version display in footer",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 26800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 44000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 57900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 60,
+            "name": "I am viewing the application",
+            "match": {
+              "location": "features\\version\\version.steps.ts:162"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1244699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 61,
+            "name": "I look for version information",
+            "match": {
+              "location": "features\\version\\version.steps.ts:167"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 177800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 62,
+            "name": "the version is typically displayed in the footer",
+            "match": {
+              "location": "features\\version\\version.steps.ts:171"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 174299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "the version is easily accessible",
+            "match": {
+              "location": "features\\version\\version.steps.ts:176"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 114100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "the version is clearly labeled",
+            "match": {
+              "location": "features\\version\\version.steps.ts:180"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 498799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 33500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-updates-tracking",
+        "keyword": "Scenario",
+        "line": 66,
+        "name": "Version updates tracking",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 55100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 67,
+            "name": "I am using the application",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 68,
+            "name": "the application is updated",
+            "match": {
+              "location": "features\\version\\version.steps.ts:186"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 103399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 69,
+            "name": "the version number changes accordingly",
+            "match": {
+              "location": "features\\version\\version.steps.ts:190"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "the new version is displayed",
+            "match": {
+              "location": "features\\version\\version.steps.ts:194"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 87199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "users can track application updates",
+            "match": {
+              "location": "features\\version\\version.steps.ts:198"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 96700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 19500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "application-version-management;version-system-cleanup",
+        "keyword": "Scenario",
+        "line": 73,
+        "name": "Version system cleanup",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 19999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "the application is initialized",
+            "match": {
+              "location": "features\\translate\\translate.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 74,
+            "name": "the version system is active",
+            "match": {
+              "location": "features\\version\\version.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 75,
+            "name": "the application is closed",
+            "match": {
+              "location": "features\\version\\version.steps.ts:202"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "no cleanup is required for the version system",
+            "match": {
+              "location": "features\\version\\version.steps.ts:206"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "no memory leaks occur",
+            "match": {
+              "location": "features\\version\\version.steps.ts:210"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 98799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "the version system is stateless",
+            "match": {
+              "location": "features\\version\\version.steps.ts:214"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 83599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 17800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "application-version-management",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Application version management",
+    "tags": [],
+    "uri": "features\\version\\version.feature"
   }
 ]

@@ -1,6 +1,6 @@
 {
   "default": {
-    "import": ["features/**/*.steps.ts", "utils/tests/integration/*.utils.ts"],
+    "import": ["utils/tests/integration/setup.utils.ts", "utils/tests/integration/world.utils.ts", "features/**/*.steps.ts"],
     "paths": ["features/**/*.feature"],
 
     "format": [

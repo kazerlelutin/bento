@@ -1,9 +1,10 @@
-export type Language = 'fr' | 'en' | 'ko';
+export type Language = 'fr' | 'en' | 'ko' | 'ch';
 
 export type Translation = {
   fr: string;
   en?: string;
   ko?: string;
+  ch?: string;
 };
 
 

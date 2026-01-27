@@ -8,3 +8,6 @@ coverageIgnoreSourcemaps = true
 [install]
 # Configuration pour les alias TypeScript
 [install.scopes]  
+
+[serve.static]
+env = "PUBLIC_*"

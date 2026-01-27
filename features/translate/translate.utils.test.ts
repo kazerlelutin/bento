@@ -7,12 +7,12 @@ describe('translate.utils', () => {
       expect(availableLanguages.has('fr')).toBe(true);
       expect(availableLanguages.has('en')).toBe(true);
       expect(availableLanguages.has('ko')).toBe(true);
+      expect(availableLanguages.has('ch')).toBe(true);
     });
 
     it('should not contain unsupported languages', () => {
       expect(availableLanguages.has('de')).toBe(false);
       expect(availableLanguages.has('es')).toBe(false);
-      expect(availableLanguages.has('zh')).toBe(false);
     });
 
     it('should be a Set', () => {
@@ -39,7 +39,20 @@ describe('translate.utils', () => {
     it('should return a valid language', () => {
       const { getLanguageFromLS } = require('./translate.utils');
       const result = getLanguageFromLS();
-      expect(['fr', 'en', 'ko']).toContain(result);
+      expect(['fr', 'en', 'ko', 'ch']).toContain(result);
+    });
+
+    it('should return stored language when valid value is in localStorage', () => {
+      const { getLanguageFromLS } = require('./translate.utils');
+      const original = localStorage.getItem(LS_KEY);
+      localStorage.setItem(LS_KEY, 'en');
+      expect(getLanguageFromLS()).toBe('en');
+      localStorage.setItem(LS_KEY, 'ko');
+      expect(getLanguageFromLS()).toBe('ko');
+      localStorage.setItem(LS_KEY, 'ch');
+      expect(getLanguageFromLS()).toBe('ch');
+      if (original !== null) localStorage.setItem(LS_KEY, original);
+      else localStorage.removeItem(LS_KEY);
     });
   });
 });

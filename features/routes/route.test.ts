@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'bun:test';
-import { routes } from './routes';
-import type { Route } from './routes.type';
+import { routes } from '@features/routes/routes';
+import type { Route } from '@features/routes/routes.type';
 
 describe('routes', () => {
   describe('routes Map', () => {
@@ -14,6 +14,10 @@ describe('routes', () => {
 
     it('should have home route', () => {
       expect(routes.has('/')).toBe(true);
+    });
+
+    it('should have favorites route', () => {
+      expect(routes.has('/favorites')).toBe(true);
     });
 
     it('should have about route', () => {
@@ -38,8 +42,17 @@ describe('routes', () => {
       expect(homeRoute).toBeDefined();
       expect(homeRoute?.path).toBe('/');
       expect(homeRoute?.title).toBe('BEN(TO)');
-      expect(homeRoute?.templateId).toBe('crafter-template');
+      expect(homeRoute?.templateId).toBe('card');
       expect(homeRoute?.ctrl).toBeDefined();
+    });
+
+    it('should have correct favorites route properties', () => {
+      const favoritesRoute = routes.get('/favorites');
+      expect(favoritesRoute).toBeDefined();
+      expect(favoritesRoute?.path).toBe('/favorites');
+      expect(favoritesRoute?.title).toBe('Mes sauvegardes');
+      expect(favoritesRoute?.templateId).toBe('favorites-template');
+      expect(favoritesRoute?.ctrl).toBeDefined();
     });
 
     it('should have correct about route properties', () => {

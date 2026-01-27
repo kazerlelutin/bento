@@ -1,146 +1,106 @@
-import { describe, it, expect, beforeEach } from 'bun:test';
-import { t } from './translate';
-import { translateStore } from './translate.store';
-import type { Translation } from './translate.types';
+import { describe, it, expect } from "bun:test";
+import { getTranslation } from "./translate.utils";
+import type { Translation } from "./translate.types";
 
-describe('translate', () => {
-  beforeEach(() => {
-    // Reset the store to a known state
-    translateStore.currentLanguage = 'fr';
-  });
-
-  describe('t function', () => {
-    it('should return French translation when current language is French', () => {
-      translateStore.currentLanguage = 'fr';
+describe("translate", () => {
+  describe("getTranslation (logique pure)", () => {
+    it("should return French translation when language is French", () => {
       const translation: Translation = {
-        fr: 'Bonjour',
-        en: 'Hello',
-        ko: '안녕하세요'
+        fr: "Bonjour",
+        en: "Hello",
+        ko: "안녕하세요",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Bonjour');
+      expect(getTranslation(translation, "fr")).toBe("Bonjour");
     });
 
-    it('should return English translation when current language is English', () => {
-      translateStore.currentLanguage = 'en';
+    it("should return English translation when language is English", () => {
       const translation: Translation = {
-        fr: 'Bonjour',
-        en: 'Hello',
-        ko: '안녕하세요'
+        fr: "Bonjour",
+        en: "Hello",
+        ko: "안녕하세요",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Hello');
+      expect(getTranslation(translation, "en")).toBe("Hello");
     });
 
-    it('should return Korean translation when current language is Korean', () => {
-      translateStore.currentLanguage = 'ko';
+    it("should return Korean translation when language is Korean", () => {
       const translation: Translation = {
-        fr: 'Bonjour',
-        en: 'Hello',
-        ko: '안녕하세요'
+        fr: "Bonjour",
+        en: "Hello",
+        ko: "안녕하세요",
       };
-
-      const result = t(translation);
-      expect(result).toBe('안녕하세요');
+      expect(getTranslation(translation, "ko")).toBe("안녕하세요");
     });
 
-    it('should fallback to French when current language translation is missing', () => {
-      translateStore.currentLanguage = 'en';
+    it("should return Chinese translation when language is Chinese", () => {
       const translation: Translation = {
-        fr: 'Bonjour',
-        ko: '안녕하세요'
-        // Missing 'en'
+        fr: "Accueil",
+        en: "Home",
+        ko: "홈",
+        ch: "首页",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Bonjour');
+      expect(getTranslation(translation, "ch")).toBe("首页");
     });
 
-    it('should fallback to French when Korean translation is missing', () => {
-      translateStore.currentLanguage = 'ko';
+    it("should fallback to French when current language translation is missing", () => {
       const translation: Translation = {
-        fr: 'Bonjour',
-        en: 'Hello'
-        // Missing 'ko'
+        fr: "Bonjour",
+        ko: "안녕하세요",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Bonjour');
+      expect(getTranslation(translation, "en")).toBe("Bonjour");
     });
 
-    it('should fallback to French when current language translation is missing', () => {
-      translateStore.currentLanguage = 'en';
+    it("should fallback to French when Korean translation is missing", () => {
       const translation: Translation = {
-        fr: 'Bonjour'
-        // Missing 'en' and 'ko'
+        fr: "Bonjour",
+        en: "Hello",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Bonjour');
+      expect(getTranslation(translation, "ko")).toBe("Bonjour");
     });
 
-    it('should return empty string for empty French translation', () => {
-      translateStore.currentLanguage = 'fr';
+    it("should fallback to French when only fr is present", () => {
       const translation: Translation = {
-        fr: ''
+        fr: "Bonjour",
       };
+      expect(getTranslation(translation, "en")).toBe("Bonjour");
+    });
 
-      const result = t(translation);
-      expect(result).toBe('Not found');
+    it("should return Not found for empty French translation", () => {
+      const translation: Translation = { fr: "" };
+      expect(getTranslation(translation, "fr")).toBe("Not found");
     });
 
     it('should return "Not found" when French translation is missing', () => {
-      translateStore.currentLanguage = 'fr';
-      // @ts-ignore
+      const translation = {
+        en: "Hello",
+        ko: "안녕하세요",
+      } as Translation;
+      expect(getTranslation(translation, "fr")).toBe("Not found");
+    });
+
+    it("should handle undefined translation gracefully", () => {
+      expect(getTranslation(undefined as any, "fr")).toBe("Not found");
+    });
+
+    it("should handle null translation gracefully", () => {
+      expect(getTranslation(null as any, "fr")).toBe("Not found");
+    });
+
+    it("should work with minimal translation object", () => {
+      const translation: Translation = { fr: "Test" };
+      expect(getTranslation(translation, "fr")).toBe("Test");
+    });
+
+    it("should handle all four languages", () => {
       const translation: Translation = {
-        en: 'Hello',
-        ko: '안녕하세요'
-        // Missing 'fr'
+        fr: "Français",
+        en: "English",
+        ko: "한국어",
+        ch: "中文",
       };
-
-      const result = t(translation);
-      expect(result).toBe('Not found');
-    });
-
-    it('should handle undefined translation gracefully', () => {
-      translateStore.currentLanguage = 'fr';
-      const result = t(undefined as any);
-      expect(result).toBe('Not found');
-    });
-
-    it('should handle null translation gracefully', () => {
-      translateStore.currentLanguage = 'fr';
-      const result = t(null as any);
-      expect(result).toBe('Not found');
-    });
-
-    it('should work with minimal translation object', () => {
-      translateStore.currentLanguage = 'fr';
-      const translation: Translation = {
-        fr: 'Test'
-      };
-
-      const result = t(translation);
-      expect(result).toBe('Test');
-    });
-
-    it('should handle all three languages', () => {
-      const translation: Translation = {
-        fr: 'Français',
-        en: 'English',
-        ko: '한국어'
-      };
-
-      translateStore.currentLanguage = 'fr';
-      expect(t(translation)).toBe('Français');
-
-      translateStore.currentLanguage = 'en';
-      expect(t(translation)).toBe('English');
-
-      translateStore.currentLanguage = 'ko';
-      expect(t(translation)).toBe('한국어');
+      expect(getTranslation(translation, "fr")).toBe("Français");
+      expect(getTranslation(translation, "en")).toBe("English");
+      expect(getTranslation(translation, "ko")).toBe("한국어");
+      expect(getTranslation(translation, "ch")).toBe("中文");
     });
   });
 });
