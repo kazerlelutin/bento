@@ -1,5 +1,10 @@
 FROM docker.io/oven/bun:latest AS builder
 WORKDIR /app
+
+# Build-time args (to pass in --build-arg or via "Build Arguments" CapRover)
+ARG PUBLIC_BENTEXT_API_URL
+ENV PUBLIC_BENTEXT_API_URL=${PUBLIC_BENTEXT_API_URL}
+
 COPY . .
 RUN bun install --frozen-lockfile
 RUN bun run build
