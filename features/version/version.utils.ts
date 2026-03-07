@@ -1,4 +1,4 @@
-import { VERSION } from "./version.const";
+import { VERSION } from "@features/version/version.const";
 
 export function displayVersion() {
   const versionElement = document.getElementById('version');

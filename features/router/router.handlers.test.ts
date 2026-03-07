@@ -39,7 +39,7 @@ describe("router.handlers", () => {
     expect(mockRenderTemplate).toHaveBeenCalledWith("test-template");
   });
 
-  test("should call ctrl.init and set cleanUp", () => {
+  test("should call ctrl.init and set cleanUp", async () => {
     const ctrl = {
       init: jest.fn(),
       cleanUp: jest.fn()
@@ -49,7 +49,7 @@ describe("router.handlers", () => {
       templateId: "ctrl-template",
       ctrl
     };
-    handleRouteChange(route as any);
+    await handleRouteChange(route as any);
     expect(ctrl.init).toHaveBeenCalled();
     expect(routerState.cleanUp).toBe(ctrl.cleanUp);
   });

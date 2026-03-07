@@ -3,5 +3,7 @@ export const updateDocumentTitle = (title: string): void => {
 };
 
 export const updateHistory = (path: string): void => {
-  window.history.pushState({}, '', path);
-}; 
+  if (typeof window !== 'undefined' && window.history?.pushState) {
+    window.history.pushState({}, '', path);
+  }
+};

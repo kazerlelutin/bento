@@ -1,7 +1,7 @@
-export type Listener<T = any> = (data: T) => void;
+type Listener<T = any> = (data: T) => void;
 export type Unsubscribe = () => void;
 
-export interface SubscribableStore<T = any> {
+interface SubscribableStore<T = any> {
   listeners: Set<Listener<T>>;
   subscribe: (listener: Listener<T>) => Unsubscribe;
   notify: (data: T) => void;

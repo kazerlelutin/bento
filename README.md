@@ -1,11 +1,13 @@
 # 🍱 BENTO - Interactive Recipe Generator
 
+[![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20me-ff5f5f?logo=kofi&logoColor=white)](https://ko-fi.com/kazerlelutin)
+
 [![Bun](https://img.shields.io/badge/Runtime-Bun-000000?style=for-the-badge&logo=bun)](https://bun.sh/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tests](https://img.shields.io/badge/Tests-Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)](https://cucumber.io/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-[![Coverage](https://img.shields.io/badge/Coverage-65%25-yellow?style=for-the-badge)](https://github.com/kazerlelutin/bento)
+[![Coverage](https://img.shields.io/badge/Coverage-97%25-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
 [![Dependencies](https://img.shields.io/badge/Dependencies-Up%20to%20date-brightgreen?style=for-the-badge)](https://github.com/kazerlelutin/bento)
 

@@ -1,1 +1,0 @@
-export const RECIPE_URL_KEY = 'recipe';

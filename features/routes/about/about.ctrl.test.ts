@@ -202,7 +202,7 @@ describe('about.ctrl', () => {
       const title = firstItem.querySelector('h2');
       const content = firstItem.querySelector('p');
 
-      expect(title?.textContent).toBe('Who am I ?');
+      expect(title?.textContent).toBe('Who am I?');
       expect(content?.textContent).toContain('I am Benoist Bouteiller');
     });
 
