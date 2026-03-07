@@ -45,7 +45,7 @@
     "test": "bun test",
     "coverage": "bun test --coverage",
     "test:integration": "bunx --bun cucumber-js",
-    "build": "bun build ./index.html --minify  --outdir=dist && bun scripts/copy-static.ts",
+    "build": "bun build ./index.html --minify  --env=PUBLIC_* --outdir=dist && bun scripts/copy-static.ts",
     "docs:features": "bun scripts/generate-feature-docs.ts",
     "badge:coverage": "bun scripts/generate-coverage-badge.ts",
     "sitemap": "bun scripts/generate-sitemap.ts",
