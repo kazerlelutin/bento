@@ -21,6 +21,7 @@ import {
 } from "@features/micro-games/micro-games.utils";
 import { MicroGamesCtrl } from "@features/micro-games/micro-games.type";
 import type { MicroGame } from "@features/micro-games/micro-games.type";
+import { GAME_ABORTED } from "@features/micro-games/games/games.utils";
 import { MICRO_GAMES } from "@features/micro-games/games/games.registry";
 import * as ingredientSprite from "@features/ingredient-sprite/ingredient-sprite";
 import { t } from "@features/translate/translate";
@@ -101,6 +102,11 @@ export const microGamesCtrl: MicroGamesCtrl = {
     try {
       result = await promise;
     } catch (e) {
+      if (e instanceof Error && e.message === GAME_ABORTED) {
+        if (timerIntervalId != null) clearInterval(timerIntervalId);
+        microGamesCtrl.closeOverlay();
+        return;
+      }
       result = { win: false };
     } finally {
       if (timerIntervalId != null) clearInterval(timerIntervalId);
@@ -179,7 +185,11 @@ export const microGamesCtrl: MicroGamesCtrl = {
     pendingGame = game;
 
     const titleEl = document.getElementById(TITLE_ID);
-    if (titleEl) titleEl.textContent = game.name;
+    if (titleEl) {
+      titleEl.textContent = game.nameKey
+        ? t((UI as Record<string, { fr: string; en?: string; ko?: string }>)[game.nameKey])
+        : game.name;
+    }
 
     const consignesTextEl = document.getElementById(CONSIGNES_TEXT_ID);
     if (consignesTextEl) {

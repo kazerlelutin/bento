@@ -1,5 +1,5 @@
 import type { MicroGame } from "@features/micro-games/micro-games.type";
-import { capitalizeFirst, createSpriteButton, withGameTimeout } from "@features/micro-games/games/games.utils";
+import { capitalizeFirst, createSpriteButton, GAME_ABORTED, withGameTimeout } from "@features/micro-games/games/games.utils";
 import * as ingredientSprite from "@features/ingredient-sprite/ingredient-sprite";
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
@@ -9,17 +9,17 @@ const NUM_CHOICES = 4;
 
 export const clickTheIngredientGame: MicroGame = {
   id: "click-the-ingredient",
-  name: t(UI.click_the_ingredient_title),
+  name: "Click the ingredient",
+  nameKey: "click_the_ingredient_title",
   instructionKey: "click_the_ingredient_rules",
   durationMs: DURATION_MS,
 
   run(container: HTMLElement): Promise<{ win: boolean }> {
+    const aliases = ingredientSprite.getRandomAliases(NUM_CHOICES);
+    if (aliases.length < NUM_CHOICES) {
+      return Promise.reject(new Error(GAME_ABORTED));
+    }
     return withGameTimeout(DURATION_MS, (finish) => {
-      const aliases = ingredientSprite.getRandomAliases(NUM_CHOICES);
-      if (aliases.length < NUM_CHOICES) {
-        finish(false);
-        return;
-      }
       const targetIndex = Math.floor(Math.random() * NUM_CHOICES);
       const target = aliases[targetIndex];
       const displayName = capitalizeFirst(target);

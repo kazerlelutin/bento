@@ -1,3 +1,4 @@
+import { DEFAULT_API_BASE } from "../recipes/recipes.const";
 import { INGREDIENTS_SPRITE_PATH } from "./ingredient-sprite.const";
 import type { IngredientSpriteResponse, SpritePosition } from "./ingredient-sprite.type";
 
@@ -24,7 +25,7 @@ export async function load(): Promise<IngredientSpriteResponse> {
 
 function getImageUrl(): string {
   if (!cached?.imageUrl) return "";
-  const base = process.env.PUBLIC_BENTEXT_API_URL ?? "";
+  const base = process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
   if (!base) return "";
   try {
     return new URL(cached.imageUrl, base).href;
@@ -61,7 +62,6 @@ export function getRandomAliases(count: number): string[] {
 export function applySprite(element: HTMLElement, alias: string): void {
   const pos = getPosition(alias);
   const imageUrl = getImageUrl();
-  console.log('imageUrl', imageUrl);
   const size = getSpriteSize();
   if (!pos || !imageUrl) return;
   element.classList.add("ingredient-sprite");

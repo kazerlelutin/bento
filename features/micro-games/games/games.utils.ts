@@ -1,5 +1,7 @@
 import * as ingredientSprite from "@features/ingredient-sprite/ingredient-sprite";
 
+export const GAME_ABORTED = "MICRO_GAME_ABORTED";
+
 export function capitalizeFirst(str: string): string {
   if (!str) return str;
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
