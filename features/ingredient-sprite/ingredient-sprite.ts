@@ -28,7 +28,7 @@ function getImageUrl(): string {
   const base = process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
   if (!base) return "";
   try {
-    return new URL(cached.imageUrl, base).href;
+    return new URL(cached.imageUrl, base?.replace(/\/api$/, '')).href;
   } catch {
     return "";
   }
@@ -63,7 +63,7 @@ export function applySprite(element: HTMLElement, alias: string): void {
   const pos = getPosition(alias);
   const imageUrl = getImageUrl();
   const size = getSpriteSize();
-  if (!pos || !imageUrl) return;
+  if (!pos || !imageUrl) return console.error('Failed to apply sprite', { pos, imageUrl, size });
   element.classList.add("ingredient-sprite");
   element.style.backgroundImage = `url(${imageUrl})`;
   // Fixed failed background-position calculation
