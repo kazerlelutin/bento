@@ -12,7 +12,7 @@ function normalizeAlias(alias: string): string {
 
 export async function load(): Promise<IngredientSpriteResponse> {
   if (cached) return cached;
-  const base = process.env.PUBLIC_BENTEXT_API_URL ?? "";
+  const base = process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
   if (!base) throw new Error("PUBLIC_BENTEXT_API_URL is not set");
   const url = `${base}${INGREDIENTS_SPRITE_PATH}`;
 
