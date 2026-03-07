@@ -27,6 +27,7 @@ function getImageUrl(): string {
   if (!cached?.imageUrl) return "";
   const base = process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
   if (!base) return "";
+  console.log('base', base?.replace(/\/api$/, ''));
   try {
     return new URL(cached.imageUrl, base?.replace(/\/api$/, '')).href;
   } catch {
