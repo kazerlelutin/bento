@@ -115,24 +115,23 @@ export const recipeCtrl: RecipeCtrl = {
     scored.sort((a, b) => b.score - a.score);
 
     const len = scored.length;
-    const third = Math.max(1, Math.ceil(len / 3));
-    const topThird = scored.slice(0, third);
-    const bottomThird = scored.slice(-third);
 
-    const candidateTop = pickRandom(topThird)?.recipe;
-    const candidateBottom = pickRandom(bottomThird)?.recipe;
+    const half = Math.max(1, Math.ceil(len / 2));
+    const topHalf = scored.slice(0, half);
+    const bottomHalf = scored.slice(half, len);
+
+    const candidateTop = pickRandom(topHalf)?.recipe;
+    const candidateBottom = pickRandom(bottomHalf)?.recipe;
 
     if (!candidateTop && !candidateBottom) return null;
     if (!candidateBottom) return candidateTop ?? null;
     if (!candidateTop) return candidateBottom;
 
-    // Un tirage au hasard entre le meilleur match (top tier) et un choix de diversité (bottom tier)
     const candidates = [candidateTop, candidateBottom];
     const next = pickRandom(candidates)!;
 
-    // Éviter de renvoyer la recette en cours si on a d'autres candidats
     if (next.slug === currentRecipe?.slug && candidates.length > 1) {
-      return next.slug === candidateTop.slug ? candidateBottom : candidateTop;
+      return next.slug === candidateTop!.slug ? candidateBottom! : candidateTop!;
     }
     return next;
   },

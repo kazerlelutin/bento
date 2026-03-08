@@ -24,11 +24,6 @@ export function createSpriteButton(
   return btn;
 }
 
-/**
- * Encapsule l'exécution d'un mini-jeu avec un timeout.
- * Le callback reçoit une fonction `finish(win)` à appeler en cas de victoire/défaite (clic utilisateur).
- * Si le temps est écoulé avant tout appel à `finish`, la promesse est résolue avec `{ win: false }`.
- */
 export function withGameTimeout(
   durationMs: number,
   run: (finish: (win: boolean) => void) => void

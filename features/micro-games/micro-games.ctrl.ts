@@ -104,7 +104,18 @@ export const microGamesCtrl: MicroGamesCtrl = {
     } catch (e) {
       if (e instanceof Error && e.message === GAME_ABORTED) {
         if (timerIntervalId != null) clearInterval(timerIntervalId);
-        microGamesCtrl.closeOverlay();
+        if (container) {
+          container.innerHTML = "";
+          const p = document.createElement("p");
+          p.className = "micro-game-instruction";
+          p.setAttribute("aria-live", "polite");
+          p.textContent = t(UI.micro_game_unavailable);
+          container.appendChild(p);
+          setPhase("game");
+          setTimeout(() => microGamesCtrl.closeOverlay(), 2000);
+        } else {
+          microGamesCtrl.closeOverlay();
+        }
         return;
       }
       result = { win: false };

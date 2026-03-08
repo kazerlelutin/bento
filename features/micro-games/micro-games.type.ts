@@ -3,9 +3,7 @@ import { Ctrl } from "../routes/routes.type";
 export type MicroGame = {
   id: string;
   name: string;
-  /** Clé de traduction (UI) pour le titre du jeu. Si présente, le titre est traduit à l'affichage. */
   nameKey?: string;
-  /** Clé de traduction (UI) pour le texte des consignes affiché sur l'écran 1 */
   instructionKey: string;
   durationMs?: number;
   run(container: HTMLElement): Promise<{ win: boolean }>;

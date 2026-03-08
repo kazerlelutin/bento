@@ -38,6 +38,7 @@ export const cardCtrl: CardCtrl = {
   },
 
   updateUI() {
+
     const recipe =
       currentRecipeStore.recipe ??
       recipesStore.recipes[Math.floor(Math.random() * Math.max(1, recipesStore.recipes.length))];

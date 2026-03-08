@@ -349,6 +349,12 @@ export const UI: UiTranslation = {
     "ko": "닫기",
     "ch": "关闭"
   },
+  "micro_game_unavailable": {
+    "fr": "Ce jeu n'est pas disponible pour le moment.",
+    "en": "This game is not available at the moment.",
+    "ko": "이 게임은 현재 사용할 수 없습니다.",
+    "ch": "此游戏暂不可用。"
+  },
   "micro_game_result_win": {
     "fr": "Victoire !",
     "en": "You win!",
