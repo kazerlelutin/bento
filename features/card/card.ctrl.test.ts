@@ -10,6 +10,9 @@ import {
   CARD_STEPS_ID,
   CARD_NOTES_ID,
   MAIN_CARD_ID,
+  CARD_BENTO_RECAP_ID,
+  CARD_BENTO_DL_ID,
+  CARD_BENTO_EXPORT_ID,
 } from "@features/card/card.const";
 
 const t = (x: unknown) => (x && typeof x === "object" && "fr" in x ? String((x as { fr: string }).fr) : String(x));
@@ -21,9 +24,21 @@ function createCardDOM() {
     </template>
     <div class="card">
       <div id="${MAIN_CARD_ID}">
-        <h1 id="card-title"></h1>
-        <p id="card-description"></p>
         <div id="card-img"></div>
+        <h1 id="card-title"></h1>
+        <div class="card-bento-area">
+          <section id="${CARD_BENTO_RECAP_ID}" hidden>
+            <dl id="${CARD_BENTO_DL_ID}"></dl>
+          </section>
+          <div class="card-bento-export" role="group" id="${CARD_BENTO_EXPORT_ID}">
+            <div class="card-bento-export__row">
+              <button type="button" id="card-bento-copy"></button>
+              <button type="button" id="card-bento-print"></button>
+            </div>
+          </div>
+          <p id="card-bento-message" hidden></p>
+        </div>
+        <p id="card-description"></p>
         <h2 id="${CARD_INGREDIENTS_HEADING_ID}"></h2>
         <ul id="${CARD_INGREDIENTS_ID}"></ul>
         <div role="group">
@@ -115,6 +130,45 @@ describe("card.ctrl", () => {
       const catalogBtn = document.querySelector('[data-action="catalog"]');
       expect(randomBtn?.getAttribute("aria-label")).toBeDefined();
       expect(catalogBtn?.getAttribute("aria-label")).toBeDefined();
+    });
+
+    it("hides bento recap when recipe has no bento block", () => {
+      cardCtrl.updateUI();
+      const recap = document.getElementById(CARD_BENTO_RECAP_ID);
+      const dl = document.getElementById(CARD_BENTO_DL_ID);
+      expect(recap?.hidden).toBe(true);
+      expect(dl?.innerHTML).toBe("");
+    });
+
+    it("shows bento recap and dl rows when recipe has bento", () => {
+      currentRecipeStore.recipe = {
+        ...makeRecipe(),
+        bento: { transport: "Moyen", eating: "À la main" },
+      };
+      cardCtrl.updateUI();
+      const recap = document.getElementById(CARD_BENTO_RECAP_ID);
+      const dl = document.getElementById(CARD_BENTO_DL_ID);
+      expect(recap?.hidden).toBe(false);
+      expect(dl?.querySelectorAll("dt").length).toBe(2);
+      expect(dl?.querySelectorAll("dd").length).toBe(2);
+      expect(dl?.textContent).toContain("Moyen");
+      expect(dl?.textContent).toContain("À la main");
+    });
+
+    it("sets aria-label on bentext export group", () => {
+      cardCtrl.updateUI();
+      const exportEl = document.getElementById(CARD_BENTO_EXPORT_ID);
+      expect(exportEl?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
+    });
+
+    it("sets aria-label on bento recap when bento is present", () => {
+      currentRecipeStore.recipe = {
+        ...makeRecipe(),
+        bento: { transport: "Facile" },
+      };
+      cardCtrl.updateUI();
+      const recap = document.getElementById(CARD_BENTO_RECAP_ID);
+      expect(recap?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
     });
 
     it("does nothing when no recipe available and store empty", () => {

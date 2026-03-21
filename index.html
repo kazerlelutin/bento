@@ -92,6 +92,18 @@
         <div class="card-container scrollbar-hidden">
           <div id="card-img"></div>
           <h1 class="text-center m-0" id="card-title" data-role="text"></h1>
+          <div class="card-bento-area">
+            <section id="card-bento-recap" class="card-bento-recap" hidden>
+              <dl id="card-bento-dl" class="card-bento-dl"></dl>
+            </section>
+            <div class="card-bento-export" role="group" id="card-bento-export">
+              <div class="card-bento-export__row">
+                <button type="button" id="card-bento-copy" class="card-bento-export__btn" data-translate="bentext-copy-short">Copier</button>
+                <button type="button" id="card-bento-print" class="card-bento-export__btn" data-translate="bentext-print-short">Imprimer</button>
+              </div>
+            </div>
+            <p id="card-bento-message" class="card-bento-message" hidden aria-live="polite"></p>
+          </div>
           <p class="text-center italic p-md m-0" id="card-description" aria-roledescription="Description de la recette">
           </p>
 

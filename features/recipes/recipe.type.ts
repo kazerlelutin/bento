@@ -8,6 +8,19 @@ type Ingredient = {
   icon?: { x: number; y: number };
 };
 
+/** Bloc « repas emporté » renvoyé par l’API bentext (clés JSON). */
+export type RecipeBento = {
+  transport?: string;
+  reheat?: string;
+  cold?: string;
+  eating?: string;
+  leaks?: string;
+  smell?: string;
+  prep_ahead?: string;
+  holding?: string;
+  extra_notes?: string;
+};
+
 export type Recipe = {
   slug: string;
   identity: {
@@ -19,6 +32,7 @@ export type Recipe = {
   steps: string[];
   notes: string[];
   tags: string[];
+  bento?: RecipeBento;
   image?: {
     url: string;
     width: number;

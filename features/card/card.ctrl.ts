@@ -9,9 +9,18 @@ import {
   CARD_SERVING_INCREASE_ID,
   CARD_STEPS_ID,
   CARD_NOTES_ID,
-  MAIN_CARD_ID,
+  CARD_BENTO_RECAP_ID,
+  CARD_BENTO_DL_ID,
+  CARD_BENTO_COPY_ID,
+  CARD_BENTO_PRINT_ID,
+  CARD_BENTO_MESSAGE_ID,
+  CARD_BENTO_EXPORT_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
+import { hasBentoContent, renderCardBentoDl } from "@features/card/card.bento.utils";
+import { copyTextToClipboard, fetchBentext, printBentextInWindow } from "@features/recipes/bentext.utils";
+import { t } from "@features/translate/translate";
+import { UI } from "@features/translate/translate.const";
 
 let displayedRecipe: Recipe | null = null;
 let displayedServing = 1;
@@ -26,7 +35,40 @@ export const cardCtrl: CardCtrl = {
         else displayedServing += 1;
 
         refreshIngredientsAndServing(displayedRecipe, displayedServing);
+        return;
       }
+
+      if (target.id !== CARD_BENTO_COPY_ID && target.id !== CARD_BENTO_PRINT_ID) return;
+      if (!displayedRecipe?.slug) return;
+
+      const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
+      const showMsg = (text: string, isError: boolean) => {
+        if (!msgEl) return;
+        msgEl.hidden = false;
+        msgEl.textContent = text;
+        msgEl.classList.toggle("card-bento-message--error", isError);
+      };
+      const hideMsg = () => {
+        if (!msgEl) return;
+        msgEl.hidden = true;
+        msgEl.textContent = "";
+        msgEl.classList.remove("card-bento-message--error");
+      };
+
+      void (async () => {
+        try {
+          const text = await fetchBentext(displayedRecipe!.slug);
+          if (target.id === CARD_BENTO_COPY_ID) {
+            await copyTextToClipboard(text);
+            showMsg(t(UI["bentext-copied"]), false);
+          } else {
+            hideMsg();
+            printBentextInWindow(text, displayedRecipe!.identity.name ?? displayedRecipe!.slug);
+          }
+        } catch {
+          showMsg(t(UI["bentext-error"]), true);
+        }
+      })();
     });
 
     this.updateUI();
@@ -64,6 +106,33 @@ export const cardCtrl: CardCtrl = {
 
         imgEl.appendChild(tpl);
       }
+    }
+
+    const bentoRecap = document.getElementById(CARD_BENTO_RECAP_ID);
+    const bentoDl = document.getElementById(CARD_BENTO_DL_ID) as HTMLDListElement | null;
+    const bentoExport = document.getElementById(CARD_BENTO_EXPORT_ID);
+
+    if (bentoExport) {
+      bentoExport.setAttribute("aria-label", t(UI["bentext-actions-aria"]));
+    }
+
+    if (bentoRecap && bentoDl) {
+      if (hasBentoContent(recipe.bento)) {
+        bentoRecap.hidden = false;
+        bentoRecap.setAttribute("aria-label", t(UI["bento-recap-aria"]));
+        renderCardBentoDl(bentoDl, recipe.bento!);
+      } else {
+        bentoRecap.hidden = true;
+        bentoRecap.removeAttribute("aria-label");
+        bentoDl.innerHTML = "";
+      }
+    }
+
+    const bentoMsg = document.getElementById(CARD_BENTO_MESSAGE_ID);
+    if (bentoMsg) {
+      bentoMsg.hidden = true;
+      bentoMsg.textContent = "";
+      bentoMsg.classList.remove("card-bento-message--error");
     }
 
     refreshIngredientsAndServing(displayedRecipe, displayedServing);

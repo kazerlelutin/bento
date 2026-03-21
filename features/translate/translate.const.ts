@@ -325,6 +325,96 @@ export const UI: UiTranslation = {
     "ko": "다시 시도",
     "ch": "重试"
   },
+  "bento-recap-aria": {
+    "fr": "Repas emporté : transport, conservation, consommation",
+    "en": "Packed lunch: transport, storage, how to eat",
+    "ko": "도시락: 운반, 보관, 섭취",
+    "ch": "外带餐：携带、保存、食用"
+  },
+  "bento-transport": {
+    "fr": "Transport",
+    "en": "Transport",
+    "ko": "운반",
+    "ch": "携带"
+  },
+  "bento-reheat": {
+    "fr": "Réchauffage",
+    "en": "Reheating",
+    "ko": "데우기",
+    "ch": "复热"
+  },
+  "bento-cold": {
+    "fr": "Conservation au froid",
+    "en": "Cold storage",
+    "ko": "냉장 보관",
+    "ch": "冷藏"
+  },
+  "bento-eating": {
+    "fr": "À table",
+    "en": "How to eat",
+    "ko": "먹는 방법",
+    "ch": "食用方式"
+  },
+  "bento-leaks": {
+    "fr": "Fuites / étanchéité",
+    "en": "Leaks",
+    "ko": "샘 방지",
+    "ch": "渗漏"
+  },
+  "bento-smell": {
+    "fr": "Odeur",
+    "en": "Smell",
+    "ko": "냄새",
+    "ch": "气味"
+  },
+  "bento-prep_ahead": {
+    "fr": "Préparation la veille",
+    "en": "Prep ahead",
+    "ko": "전날 준비",
+    "ch": "提前准备"
+  },
+  "bento-holding": {
+    "fr": "Tenue / conservation",
+    "en": "Holding",
+    "ko": "보관 시간",
+    "ch": "存放"
+  },
+  "bento-extra_notes": {
+    "fr": "Notes",
+    "en": "Notes",
+    "ko": "메모",
+    "ch": "备注"
+  },
+  "bentext-copy-short": {
+    "fr": "Copier",
+    "en": "Copy",
+    "ko": "복사",
+    "ch": "复制"
+  },
+  "bentext-print-short": {
+    "fr": "Imprimer",
+    "en": "Print",
+    "ko": "인쇄",
+    "ch": "打印"
+  },
+  "bentext-actions-aria": {
+    "fr": "Copier ou imprimer la recette au format texte simplifié (bentext)",
+    "en": "Copy or print the recipe as simplified plain text (bentext)",
+    "ko": "간단한 텍스트(bentext)로 레시피 복사 또는 인쇄",
+    "ch": "以精简文本（bentext）复制或打印食谱"
+  },
+  "bentext-copied": {
+    "fr": "Texte copié dans le presse-papiers.",
+    "en": "Text copied to clipboard.",
+    "ko": "클립보드에 복사했습니다.",
+    "ch": "已复制到剪贴板。"
+  },
+  "bentext-error": {
+    "fr": "Impossible de récupérer le bentext. Réessayez plus tard.",
+    "en": "Could not load bentext. Try again later.",
+    "ko": "벤텍스트를 불러올 수 없습니다. 나중에 다시 시도하세요.",
+    "ch": "无法加载 bentext，请稍后再试。"
+  },
 } as const;
 
 /** Traductions pour les balises meta (title, description, og:*, twitter:*). */

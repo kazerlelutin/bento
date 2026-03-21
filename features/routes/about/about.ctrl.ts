@@ -43,6 +43,7 @@ const aboutCtrl: Ctrl = {
       const itemContent = itemTemplate.querySelector('p') as HTMLParagraphElement;
       if (itemContent) {
         itemContent.textContent = t(item.content);
+        itemContent.classList.toggle('about-item__body--preline', Boolean(item.contentPreline));
       }
       const itemLink = itemTemplate.querySelector('a') as HTMLAnchorElement;
       if (itemLink) {

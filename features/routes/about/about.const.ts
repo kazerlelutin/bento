@@ -1,3 +1,5 @@
+import type { AboutContentItem } from "./about.types";
+
 export const ABOUT_CONTAINER_ID = 'about-container';
 export const ABOUT_ITEMS_CONTAINER_ID = 'about-items-container';
 
@@ -10,7 +12,7 @@ export const aboutTitle = {
   ch: '关于'
 };
 
-export const aboutContent = [
+export const aboutContent: AboutContentItem[] = [
   {
     title: {
       fr: 'Qui suis-je ?',
@@ -79,6 +81,28 @@ export const aboutContent = [
       en: 'Source code',
       ko: '소스 코드',
       ch: '源代码'
+    }
+  },
+  {
+    title: {
+      fr: 'Lire une recette en bentext',
+      en: 'Reading a bentext recipe',
+      ko: '벤텍스트 레시피 읽기',
+      ch: '阅读 bentext 食谱'
+    },
+    content: {
+      fr: 'Une recette bentext est un fichier texte : des blocs séparés par une ligne qui contient uniquement trois tirets (---).\n\nLe premier bloc est l’identité : nom, nombre de portions, description (souvent une ligne chacun). Viennent ensuite les ingrédients (une ligne par ingrédient, avec | pour séparer nom, quantité, unité, note éventuelle), puis les étapes, éventuellement des conseils, des tags, et enfin un bloc « bento » avec des lignes du type Prefixe|texte (transport, réchauffage, conservation, façon de manger, etc.).\n\nCe format est volontairement compact : il se prête bien à la copie et à l’impression économe en papier — l’idée est d’avoir toute la recette sur une feuille lisible.\n\nLa grammaire complète, les exemples et l’API HTTP qui parse les fichiers .bentext sont documentés dans le dépôt bentext (Go).',
+      en: 'A bentext recipe is a plain text file: blocks separated by a line containing only three hyphens (---).\n\nThe first block is identity: name, servings, description (often one line each). Then ingredients (one line per ingredient, using | to separate name, quantity, unit, optional note), then steps, optional tips, tags, and finally a “bento” block with lines like Prefix|text (transport, reheating, storage, how to eat, etc.).\n\nThe format is deliberately compact: it is easy to copy and print with minimal paper — the goal is one readable sheet with the full recipe.\n\nThe full grammar, examples, and the HTTP API that parses .bentext files are documented in the bentext repository (Go).',
+      ko: '벤텍스트(bentext) 레시피는 일반 텍스트 파일입니다. 오직 세 개의 하이픈(---)만 있는 줄로 블록을 나눕니다.\n\n첫 블록은 이름, 인분 수, 설명(보통 각각 한 줄)입니다. 이어서 재료(한 줄에 하나, 이름·양·단위·메모는 | 로 구분), 단계, 선택적 팁·태그, 마지막으로 Transport|… 같은 Prefix|텍스트 형식의 벤토 블록이 올 수 있습니다.\n\n형식은 의도적으로 간결해서 복사·인쇄에 적합합니다. 전체 레시피를 한 장에 담는 것이 목표입니다.\n\n전체 문법, 예제, .bentext를 파싱하는 HTTP API는 bentext 저장소(Go)에 정리되어 있습니다.',
+      ch: 'bentext 食谱是纯文本文件：用仅含三个连字符（---）的一行分隔各个块。\n\n第一块是身份信息：名称、份数、描述（通常各一行）。接着是食材（每行一种，用 | 分隔名称、用量、单位、可选备注）、步骤、可选小贴士与标签，最后是「便当」块，形如 前缀|正文（携带、复热、冷藏、食用方式等）。\n\n格式刻意紧凑，便于复制与省纸打印——目标是一张纸上读完整条食谱。\n\n完整语法、示例与解析 .bentext 的 HTTP API 见 bentext 开源仓库（Go）。'
+    },
+    contentPreline: true,
+    link: "https://github.com/kazerlelutin/bentext",
+    linkText: {
+      fr: 'Dépôt bentext (GitHub)',
+      en: 'bentext repo (GitHub)',
+      ko: 'bentext 저장소 (GitHub)',
+      ch: 'bentext 仓库（GitHub）'
     }
   },
   {
