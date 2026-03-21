@@ -271,127 +271,37 @@ export const UI: UiTranslation = {
     'ko': '메모',
     'ch': '备注'
   },
-  "removeFromFavorites": {
-    "fr": "Retirer des sauvegardes",
-    "en": "Remove from favorites",
-    "ko": "Remove from favorites",
-    "ch": "从收藏中移除"
+  "randomRecipe": {
+    "fr": "Autre recette au hasard",
+    "en": "Random recipe",
+    "ko": "무작위 레시피",
+    "ch": "随机食谱"
   },
-  "saveForLater": {
-    "fr": "Sauvegarder pour plus tard",
-    "en": "Save for later",
-    "ko": "Save for later",
-    "ch": "稍后保存"
+  "openRecipeCatalog": {
+    "fr": "Liste des recettes et recherche",
+    "en": "Recipe list and search",
+    "ko": "레시피 목록 및 검색",
+    "ch": "食谱列表与搜索"
   },
-  "reject": {
-    "fr": "Rejeter",
-    "en": "Reject",
-    "ko": "Reject",
-    "ch": "跳过"
+  "all-recipes": {
+    "fr": "Toutes les recettes",
+    "en": "All recipes",
+    "ko": "모든 레시피",
+    "ch": "所有食谱"
   },
-  "like": {
-    "fr": "J'aime",
-    "en": "Like",
-    "ko": "Like",
-    "ch": "喜欢"
-  },
-  "my-favorites": {
-    "fr": "Mes sauvegardes",
-    "en": "My favorites",
-    "ko": "My favorites",
-    "ch": "我的收藏"
-  },
-  "click_the_ingredient_instruction": {
-    "fr": "Clique sur le {name} !",
-    "en": "Click on the {name}!",
-    "ko": "{name} 클릭!",
-    "ch": "点击 {name}！"
-  },
-  "click_the_ingredient_rules": {
-    "fr": "Clique sur l'ingrédient demandé avant la fin du temps.",
-    "en": "Click on the requested ingredient before time runs out.",
-    "ko": "제한 시간 안에 요청한 재료를 클릭하세요.",
-    "ch": "在时间结束前点击要求的食材。"
-  },
-  "click_the_ingredient_title": {
-    "fr": "Clique sur l'ingrédient",
-    "en": "Click the ingredient",
-    "ko": "재료 클릭",
-    "ch": "点击食材"
-  },
-  "find_the_intruder_instruction": {
-    "fr": "Trouve l'intrus !",
-    "en": "Find the intruder!",
-    "ko": "침입자 찾기!",
-    "ch": "找出不同！"
-  },
-  "find_the_intruder_rules": {
-    "fr": "Trouve l'intrus parmi les quatre ingrédients avant la fin du temps.",
-    "en": "Find the intruder among the four ingredients before time runs out.",
-    "ko": "제한 시간 안에 네 가지 재료 중 어울리지 않는 것을 찾으세요.",
-    "ch": "在时间结束前从四种食材中找出不同的那个。"
-  },
-  "find_the_intruder_title": {
-    "fr": "Ce qui ne va pas",
-    "en": "What doesn't belong",
-    "ko": "어울리지 않는 것",
-    "ch": "找出不同"
-  },
-  "micro_game_start": {
-    "fr": "Commencer",
-    "en": "Start",
-    "ko": "시작",
-    "ch": "开始"
-  },
-  "micro_game_close": {
-    "fr": "Fermer",
-    "en": "Close",
-    "ko": "닫기",
-    "ch": "关闭"
-  },
-  "micro_game_unavailable": {
-    "fr": "Ce jeu n'est pas disponible pour le moment.",
-    "en": "This game is not available at the moment.",
-    "ko": "이 게임은 현재 사용할 수 없습니다.",
-    "ch": "此游戏暂不可用。"
-  },
-  "micro_game_result_win": {
-    "fr": "Victoire !",
-    "en": "You win!",
-    "ko": "승리!",
-    "ch": "胜利！"
-  },
-  "micro_game_result_lose": {
-    "fr": "Défaite",
-    "en": "You lose",
-    "ko": "패배",
-    "ch": "失败"
-  },
-  "micro_game_session_score": {
-    "fr": "Score : {score}",
-    "en": "Score: {score}",
-    "ko": "점수: {score}",
-    "ch": "得分：{score}"
-  },
-  "micro_game_time_remaining": {
-    "fr": "Temps restant",
-    "en": "Time remaining",
-    "ko": "남은 시간",
-    "ch": "剩余时间"
-  },
-  "favorites-empty": {
-    "fr": "Aucune recette sauvegardée",
-    "en": "No saved recipes",
-    "ko": "저장된 레시피가 없습니다",
-    "ch": "暂无收藏的食谱"
-  },
-  "favorites-search-placeholder": {
+  "all-recipes-search-placeholder": {
     "fr": "Rechercher une recette",
     "en": "Search recipes",
     "ko": "레시피 검색",
     "ch": "搜索食谱"
   },
-  "favorites-no-results": {
+  "all-recipes-empty": {
+    "fr": "Aucune recette disponible",
+    "en": "No recipes available",
+    "ko": "사용 가능한 레시피가 없습니다",
+    "ch": "暂无食谱"
+  },
+  "all-recipes-no-results": {
     "fr": "Aucun résultat",
     "en": "No results",
     "ko": "결과 없음",
@@ -426,10 +336,10 @@ export const META: UiTranslation = {
     ch: "BENTO - 没有灵感时的食谱推荐"
   },
   "meta-description": {
-    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois jusqu'à trouver ton match. Toutes les recettes sont végé. Passe, like ou sauvegarde — des bentos en pixel art pour retrouver l'envie de cuisiner.",
-    en: "Out of recipe ideas? BENTO suggests one at a time until you find your match. All recipes are vegetarian. Swipe, like or save — pixel art bentos to get you back in the mood for cooking.",
-    ko: "레시피 아이디어가 없으신가요? BENTO가 하나씩 추천해요. 맞는 레시피를 찾을 때까지. 모든 레시피는 채식이에요. 픽셀 아트 벤토로 요리하고 싶은 마음이 생겨요.",
-    ch: "没有食谱灵感？BENTO 为你逐个推荐直到找到心仪之选。全部素食。滑动、喜欢或收藏——像素风便当让你重拾下厨乐趣。"
+    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art.",
+    en: "Out of recipe ideas? BENTO suggests one recipe at a time, with a catalog to browse or search. Vegetarian recipes and pixel art bentos.",
+    ko: "레시피 아이디어가 없으신가요? BENTO는 한 번에 하나씩 추천하고, 전체 목록을 검색·탐색할 수 있습니다. 채식 레시피와 픽셀 아트 벤토.",
+    ch: "没有食谱灵感？BENTO 每次推荐一道菜，另有完整目录可搜索浏览——像素风呈现。"
   },
   "meta-keywords": {
     fr: "bento, recettes végétariennes, végé, pas d'idée, inspiration cuisine, pixel art, lunch box, cuisine japonaise, découvrir recettes",
@@ -444,10 +354,10 @@ export const META: UiTranslation = {
     ch: "BENTO - 没有灵感时的食谱推荐"
   },
   "meta-og-description": {
-    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois jusqu'à trouver ton match. Toutes les recettes sont végé. Passe, like ou sauvegarde — des bentos en pixel art pour retrouver l'envie de cuisiner.",
-    en: "Out of recipe ideas? BENTO suggests one at a time until you find your match. All recipes are vegetarian. Swipe, like or save — pixel art bentos to get you back in the mood for cooking.",
-    ko: "레시피 아이디어가 없으신가요? BENTO가 하나씩 추천해요. 맞는 레시피를 찾을 때까지. 모든 레시피는 채식이에요. 픽셀 아트 벤토로 요리하고 싶은 마음이 생겨요.",
-    ch: "没有食谱灵感？BENTO 为你逐个推荐直到找到心仪之选。全部素食。滑动、喜欢或收藏——像素风便当让你重拾下厨乐趣。"
+    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art.",
+    en: "Out of recipe ideas? BENTO suggests one recipe at a time, with a catalog to browse or search. Vegetarian recipes and pixel art bentos.",
+    ko: "레시피 아이디어가 없으신가요? BENTO는 한 번에 하나씩 추천하고, 전체 목록을 검색·탐색할 수 있습니다. 채식 레시피와 픽셀 아트 벤토.",
+    ch: "没有食谱灵感？BENTO 每次推荐一道菜，另有完整目录可搜索浏览——像素风呈现。"
   },
   "meta-og-image-alt": {
     fr: "BENTO - Des recettes quand tu n'as pas d'idée",

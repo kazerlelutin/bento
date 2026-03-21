@@ -1,11 +1,9 @@
 import { CardCtrl } from "@features/card/card.type";
 import type { Recipe } from "@features/recipes/recipe.type";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
-import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import { cloneTemplate, getTemplate } from "@features/router/router.template";
-import { t } from "@features/translate/translate";
-import { UI } from "@features/translate/translate.const";
+import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
 import {
   CARD_SERVING_DECREASE_ID,
   CARD_SERVING_INCREASE_ID,
@@ -20,17 +18,14 @@ let displayedServing = 1;
 
 export const cardCtrl: CardCtrl = {
   init() {
-
     document.addEventListener("click", (e) => {
       const target = e.target as HTMLElement;
       if (target.id === CARD_SERVING_DECREASE_ID || target.id === CARD_SERVING_INCREASE_ID) {
-
         if (!displayedRecipe) return;
         if (target.id === CARD_SERVING_DECREASE_ID) displayedServing = Math.max(1, displayedServing - 1);
         else displayedServing += 1;
 
         refreshIngredientsAndServing(displayedRecipe, displayedServing);
-
       }
     });
 
@@ -38,7 +33,6 @@ export const cardCtrl: CardCtrl = {
   },
 
   updateUI() {
-
     const recipe =
       currentRecipeStore.recipe ??
       recipesStore.recipes[Math.floor(Math.random() * Math.max(1, recipesStore.recipes.length))];
@@ -60,7 +54,6 @@ export const cardCtrl: CardCtrl = {
       const tpl = cloneTemplate(getTemplate("placeholder-template"));
 
       if (recipe.image && tpl) {
-
         const img = tpl.querySelector("img") as HTMLImageElement | null;
 
         if (img) {
@@ -70,7 +63,6 @@ export const cardCtrl: CardCtrl = {
         }
 
         imgEl.appendChild(tpl);
-
       }
     }
 
@@ -97,21 +89,6 @@ export const cardCtrl: CardCtrl = {
       });
     }
 
-    const cardEl = document.getElementById(MAIN_CARD_ID)?.closest(".card");
-    const isBookmarked = recipeCtrl.isBookmarked(recipe.slug);
-
-    if (cardEl) cardEl.setAttribute("data-bookmarked", isBookmarked ? "true" : "false");
-
-    const rejectBtn = cardEl?.querySelector('[data-action="reject"]');
-
-    if (rejectBtn) rejectBtn.setAttribute("aria-label", t(UI.reject));
-
-    const likeBtn = cardEl?.querySelector('[data-action="like"]');
-
-    if (likeBtn) likeBtn.setAttribute("aria-label", t(UI.like));
-
-    const favBtn = cardEl?.querySelector('[data-action="favorite"]');
-
-    if (favBtn) favBtn.setAttribute("aria-label", isBookmarked ? t(UI.removeFromFavorites) : t(UI.saveForLater));
+    setCardControlsAriaLabels();
   },
 };

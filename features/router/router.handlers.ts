@@ -17,4 +17,12 @@ export const handleLinkClick = (event: Event): void => {
   const hrefWithoutSearch = href.split('?')[0];
   routerState.currentPage = hrefWithoutSearch;
   window.history.pushState({}, '', href);
-}; 
+};
+
+/** Met à jour l’URL (`pushState`) et `routerState.currentPage` comme un lien interne. */
+export function navigateInternal(path: string): void {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  const pathOnly = normalized.split('?')[0];
+  routerState.currentPage = pathOnly;
+  window.history.pushState({}, '', normalized);
+}

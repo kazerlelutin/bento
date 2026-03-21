@@ -11,7 +11,7 @@
   --color-success: #22c55e;
   --color-info: #38bdf8;
 
-  /* Palette Pixel Art (sprites / mini-jeux, inchangée) */
+  /* Palette Pixel Art */
   --color-pixel-1: #feffff;
   --color-pixel-2: #a0a0a0;
   --color-pixel-3: #525252;
@@ -413,7 +413,8 @@
     margin-top: 0.5rem;
   }
 
-  .favorites-load-error {
+  .favorites-load-error,
+  .recipes-load-error {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -424,17 +425,20 @@
     justify-content: center;
   }
 
-  .favorites-load-error[hidden] {
+  .favorites-load-error[hidden],
+  .recipes-load-error[hidden] {
     display: none;
   }
 
-  .favorites-load-error-message {
+  .favorites-load-error-message,
+  .recipes-load-error-message {
     margin: 0;
     color: var(--text-primary);
     font-size: var(--font-size-medium);
   }
 
-  .favorites-load-error-retry {
+  .favorites-load-error-retry,
+  .recipes-load-error-retry {
     margin-top: 0.5rem;
   }
 
@@ -494,50 +498,29 @@
     flex-shrink: 0;
   }
 
-  .btn-round[data-action="reject"] {
-    color: var(--color-error);
-    border-color: var(--color-error);
+  .btn-round[data-action="random"] {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
-  .btn-round[data-action="reject"]:active {
-    background-color: color-mix(in srgb, var(--color-error) 18%, var(--color-bg-primary));
-    color: var(--color-error);
+  .btn-round[data-action="random"]:active {
+    background-color: color-mix(in srgb, var(--color-accent) 18%, var(--color-bg-primary));
+    color: var(--color-accent);
   }
 
-  .btn-round[data-action="like"] {
-    color: var(--color-success);
-    border-color: var(--color-success);
+  .btn-round[data-action="catalog"] {
+    color: var(--text-secondary, #64748b);
+    border-color: var(--color-border);
   }
 
-  .btn-round[data-action="like"]:active {
-    background-color: color-mix(in srgb, var(--color-success) 18%, var(--color-bg-primary));
-    color: var(--color-success);
+  .btn-round[data-action="catalog"]:active {
+    background-color: color-mix(in srgb, var(--color-border) 35%, var(--color-bg-primary));
   }
 
-  .btn-round[data-action="favorite"] {
-    color: #ec4899;
-    border-color: #ec4899;
-  }
-
-  .btn-round[data-action="favorite"] .icon-bookmark-filled {
-    display: none;
-  }
-
-  .btn-round[data-action="favorite"] .icon-bookmark-outline {
-    display: block;
-  }
-
-  .card[data-bookmarked="true"] .btn-round[data-action="favorite"] .icon-bookmark-outline {
-    display: none;
-  }
-
-  .card[data-bookmarked="true"] .btn-round[data-action="favorite"] .icon-bookmark-filled {
-    display: block;
-  }
-
-  .btn-round[data-action="favorite"]:active {
-    background-color: color-mix(in srgb, #ec4899 18%, var(--color-bg-primary));
-    color: #ec4899;
+  .recipes-page-layout {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .main-card {
@@ -1036,136 +1019,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Sprite ingrédients (mini-jeux) — background-image et dimensions injectées en JS */
-.ingredient-sprite {
-  flex-shrink: 0;
-  overflow: hidden;
-  display: block;
-  box-sizing: border-box;
-  border-radius: 0;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
-/* Overlay mini-jeux */
-#micro-game-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
-  padding: var(--padding-large);
-}
-
-#micro-game-overlay[hidden] {
-  display: none;
-}
-
-#micro-game-overlay .micro-game-dialog {
-  background: var(--color-surface);
-  border-radius: var(--border-radius);
-  padding: var(--padding-large);
-  max-width: 90vw;
-  min-width: 250px;
-  max-height: 90vh;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap-medium);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-#micro-game-overlay .micro-game-title {
-  font-size: var(--font-size-medium);
-  font-weight: 600;
-}
-
-#micro-game-overlay .micro-game-instruction {
-  font-size: var(--font-size);
-  text-align: center;
-}
-
-#micro-game-overlay .micro-game-timer-wrap {
-  width: 100%;
-  height: 8px;
-  background: var(--color-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  margin-bottom: var(--gap-medium);
-}
-
-#micro-game-overlay .micro-game-timer-bar {
-  height: 100%;
-  background: var(--color-accent);
-  border-radius: var(--radius-sm);
-  transition: width 0.05s linear;
-}
-
-#micro-game-overlay .micro-game-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap-medium);
-  justify-content: center;
-  align-items: center;
-}
-
-#micro-game-overlay .micro-game-content button,
-#micro-game-overlay .micro-game-content [role="button"] {
-  padding: 0;
-  margin: 0;
-  border: 2px solid transparent;
-  background: transparent;
-  cursor: pointer;
-
-}
-
-#micro-game-overlay .micro-game-content button:hover,
-#micro-game-overlay .micro-game-content [role="button"]:hover {
-  transform: scale(1.05);
-  border-color: var(--color-border);
-}
-
-#micro-game-overlay .micro-game-content button:focus-visible,
-#micro-game-overlay .micro-game-content [role="button"]:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
-}
-
-#micro-game-overlay .micro-game-phase {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap-medium);
-  width: 100%;
-}
-
-#micro-game-overlay .micro-game-phase[hidden] {
-  display: none;
-}
-
-#micro-game-overlay .micro-game-consignes-text {
-  font-size: var(--font-size);
-  text-align: center;
-  margin: 0;
-  max-width: 360px;
-}
-
-#micro-game-overlay .micro-game-result-message {
-  font-size: var(--font-size-medium);
-  font-weight: 600;
-  margin: 0;
-}
-
-#micro-game-overlay .micro-game-result-score {
-  font-size: var(--font-size);
-  margin: 0;
-}
-
-.favorites-search {
+.favorites-search,
+.recipes-search {
   width: 100%;
   max-width: 100%;
   padding: var(--padding-medium);
@@ -1176,6 +1031,7 @@
   color: var(--text-primary);
 }
 
-.favorites-search::placeholder {
+.favorites-search::placeholder,
+.recipes-search::placeholder {
   opacity: 0.7;
 }

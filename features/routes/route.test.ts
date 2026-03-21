@@ -16,12 +16,12 @@ describe('routes', () => {
       expect(routes.has('/')).toBe(true);
     });
 
-    it('should have favorites route', () => {
-      expect(routes.has('/favorites')).toBe(true);
-    });
-
     it('should have about route', () => {
       expect(routes.has('/about')).toBe(true);
+    });
+
+    it('should have recipes route', () => {
+      expect(routes.has('/recipes')).toBe(true);
     });
 
     it('should have valid route structure', () => {
@@ -46,15 +46,6 @@ describe('routes', () => {
       expect(homeRoute?.ctrl).toBeDefined();
     });
 
-    it('should have correct favorites route properties', () => {
-      const favoritesRoute = routes.get('/favorites');
-      expect(favoritesRoute).toBeDefined();
-      expect(favoritesRoute?.path).toBe('/favorites');
-      expect(favoritesRoute?.title).toBe('Mes sauvegardes');
-      expect(favoritesRoute?.templateId).toBe('favorites-template');
-      expect(favoritesRoute?.ctrl).toBeDefined();
-    });
-
     it('should have correct about route properties', () => {
       const aboutRoute = routes.get('/about');
       expect(aboutRoute).toBeDefined();
@@ -62,6 +53,15 @@ describe('routes', () => {
       expect(aboutRoute?.title).toBe('À propos');
       expect(aboutRoute?.templateId).toBe('about-template');
       expect(aboutRoute?.ctrl).toBeDefined();
+    });
+
+    it('should have correct recipes route properties', () => {
+      const recipesRoute = routes.get('/recipes');
+      expect(recipesRoute).toBeDefined();
+      expect(recipesRoute?.path).toBe('/recipes');
+      expect(recipesRoute?.title).toBe('Toutes les recettes');
+      expect(recipesRoute?.templateId).toBe('recipes-template');
+      expect(recipesRoute?.ctrl).toBeDefined();
     });
 
     it('should have unique paths', () => {

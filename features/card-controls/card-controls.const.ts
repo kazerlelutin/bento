@@ -1,5 +1,4 @@
 export const ACTIONS = {
-  reject: 'reject',
-  like: 'like',
-  favorite: 'favorite',
+  random: "random",
+  catalog: "catalog",
 } as const;

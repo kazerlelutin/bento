@@ -1,14 +1,24 @@
 import { CardControlsCtrl } from "@features/card-controls/card-controls.type";
 import { ACTIONS } from "@features/card-controls/card-controls.const";
-import { microGamesCtrl } from "@features/micro-games/micro-games.ctrl";
+import { navigateInternal } from "@features/router/router.handlers";
 import { cardCtrl } from "@features/card/card.ctrl";
 import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
+import { routerState } from "@features/router/router.state";
+import { RECIPES_SEARCH_ID } from "@features/routes/recipes/recipes-list.const";
+
+let boundClick: ((e: Event) => void) | null = null;
+let controlsRoot: HTMLElement | null = null;
+
+function isRecipesCatalogPage(): boolean {
+  return routerState.currentPage === "/recipes";
+}
 
 export const cardControlsCtrl: CardControlsCtrl = {
   init() {
-    const container = document.getElementById("card-controls");
-    if (container) container.addEventListener("click", this.handleClick);
+    boundClick = (e: Event) => cardControlsCtrl.handleClick(e);
+    controlsRoot = document.getElementById("card-controls");
+    if (controlsRoot && boundClick) controlsRoot.addEventListener("click", boundClick);
   },
   handleClick(e: Event) {
     const target = e.target as HTMLElement;
@@ -16,30 +26,35 @@ export const cardControlsCtrl: CardControlsCtrl = {
     const action = button?.getAttribute("data-action") as keyof typeof ACTIONS | null;
     if (!action) return;
 
-    if (action === ACTIONS.reject) {
-      if (microGamesCtrl.spinTheWheel()) {
-        microGamesCtrl.runGame();
-        return;
-      }
-    }
-
-    if (action === ACTIONS.reject || action === ACTIONS.like) {
-      const nextRecipe = recipeCtrl.getRandomRecipe(action);
+    if (action === ACTIONS.random) {
+      const nextRecipe = recipeCtrl.pickRandomRecipe();
       currentRecipeStore.recipe = nextRecipe;
-      cardCtrl.updateUI?.();
+      if (!nextRecipe) return;
+      if (isRecipesCatalogPage()) {
+        navigateInternal(`/?slug=${encodeURIComponent(nextRecipe.slug)}`);
+      } else {
+        cardCtrl.updateUI?.();
+      }
       return;
     }
 
-    if (action === ACTIONS.favorite) {
-      const current = currentRecipeStore.recipe;
-      if (current?.slug) {
-        recipeCtrl.toggleBookmark(current.slug);
-        cardCtrl.updateUI?.();
+    if (action === ACTIONS.catalog) {
+      if (isRecipesCatalogPage()) {
+        const searchEl = document.getElementById(RECIPES_SEARCH_ID) as HTMLInputElement | null;
+        if (searchEl && !searchEl.hidden) {
+          searchEl.focus();
+          searchEl.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      } else {
+        navigateInternal("/recipes");
       }
     }
   },
   cleanUp() {
-    const container = document.getElementById('card-controls');
-    if (container) container.removeEventListener('click', this.handleClick);
-  }
-}
+    if (controlsRoot && boundClick) {
+      controlsRoot.removeEventListener("click", boundClick);
+    }
+    boundClick = null;
+    controlsRoot = null;
+  },
+};

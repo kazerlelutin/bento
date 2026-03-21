@@ -1,11 +1,11 @@
 import { describe, test, expect, beforeEach, afterEach, afterAll, jest } from "bun:test";
-import { handleRouteChange, handleLinkClick } from "./router.handlers";
-import { routerState } from "./router.state";
-import * as routerTemplate from "./router.template";
+import { handleRouteChange, handleLinkClick } from "../router/router.handlers";
+import { routerState } from "../router/router.state";
+import * as routerTemplate from "../router/router.template";
 
 // Mock renderTemplate
 const mockRenderTemplate = jest.fn();
-jest.spyOn(routerTemplate, 'renderTemplate').mockImplementation(mockRenderTemplate);
+jest.spyOn(routerTemplate, "renderTemplate").mockImplementation(mockRenderTemplate);
 
 describe("router.handlers", () => {
   beforeEach(() => {
@@ -32,7 +32,7 @@ describe("router.handlers", () => {
   test("should update the document title and render the template", () => {
     const route = {
       title: "Test Page",
-      templateId: "test-template"
+      templateId: "test-template",
     };
     handleRouteChange(route as any);
     expect(document.title).toBe("Test Page");
@@ -42,12 +42,12 @@ describe("router.handlers", () => {
   test("should call ctrl.init and set cleanUp", async () => {
     const ctrl = {
       init: jest.fn(),
-      cleanUp: jest.fn()
+      cleanUp: jest.fn(),
     };
     const route = {
       title: "With Ctrl",
       templateId: "ctrl-template",
-      ctrl
+      ctrl,
     };
     await handleRouteChange(route as any);
     expect(ctrl.init).toHaveBeenCalled();
@@ -57,7 +57,7 @@ describe("router.handlers", () => {
   test("should handle missing ctrl gracefully", () => {
     const route = {
       title: "No Ctrl",
-      templateId: "no-ctrl-template"
+      templateId: "no-ctrl-template",
     };
     expect(() => handleRouteChange(route as any)).not.toThrow();
     expect(routerState.cleanUp).toBeUndefined();
@@ -67,8 +67,8 @@ describe("router.handlers", () => {
     const event = {
       preventDefault: jest.fn(),
       currentTarget: {
-        getAttribute: () => "/about"
-      }
+        getAttribute: () => "/about",
+      },
     } as any;
     handleLinkClick(event);
     expect(routerState.currentPage).toBe("/about");
@@ -78,10 +78,10 @@ describe("router.handlers", () => {
     const event = {
       preventDefault: jest.fn(),
       currentTarget: {
-        getAttribute: () => null
-      }
+        getAttribute: () => null,
+      },
     } as any;
     handleLinkClick(event);
     expect(routerState.currentPage).toBe("/");
   });
-}); 
+});

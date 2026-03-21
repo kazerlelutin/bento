@@ -19,10 +19,10 @@ export const aboutContent = [
       ch: '我是谁？'
     },
     content: {
-      fr: 'Je suis Benoist Bouteiller, créateur de jeux, animateur pixel art et développeur d\'applications. Passionné par la cuisine japonaise et le pixel art, j\'ai créé BENTO pour vous aider à trouver des recettes végétariennes quand vous n\'avez pas d\'idée, avec un côté ludique et des mini-jeux.',
-      en: 'I am Benoist Bouteiller, game creator, pixel art animator and app developer. Passionate about Japanese cuisine and pixel art, I created BENTO to help you find vegetarian recipes when you have no idea what to cook, with a fun side and mini-games.',
-      ko: '저는 게임 제작자, 픽셀 아트 애니메이터, 앱 개발자인 Benoist Bouteiller입니다. 일본 요리와 픽셀 아트에 대한 열정으로 BENTO를 만들어, 요리 아이디어가 없을 때 채식 레시피를 찾고 미니 게임을 즐길 수 있게 했습니다.',
-      ch: '我是 Benoist Bouteiller，游戏创作者、像素画师和应用开发者。出于对日料和像素艺术的热爱，我做了 BENTO，帮你在没灵感时发现素食食谱，并配有迷你游戏。'
+      fr: 'Je suis Benoist Bouteiller, créateur de jeux, animateur pixel art et développeur d\'applications. Passionné par la cuisine japonaise et le pixel art, j\'ai créé BENTO pour vous aider à trouver des recettes végétariennes quand vous n\'avez pas d\'idée, avec une interface simple et un design pixel art.',
+      en: 'I am Benoist Bouteiller, game creator, pixel art animator and app developer. Passionate about Japanese cuisine and pixel art, I created BENTO to help you find vegetarian recipes when you have no idea what to cook, with a simple interface and pixel art design.',
+      ko: '저는 게임 제작자, 픽셀 아트 애니메이터, 앱 개발자인 Benoist Bouteiller입니다. 일본 요리와 픽셀 아트에 대한 열정으로 BENTO를 만들어, 요리 아이디어가 없을 때 채식 레시피를 쉽게 찾을 수 있게 했습니다.',
+      ch: '我是 Benoist Bouteiller，游戏创作者、像素画师和应用开发者。出于对日料和像素艺术的热爱，我做了 BENTO，帮你在没灵感时用简洁界面发现素食食谱。'
     },
     link: "http://bouteiller.contact/",
     linkText: {
@@ -40,10 +40,10 @@ export const aboutContent = [
       ch: 'BENTO 概念'
     },
     content: {
-      fr: 'BENTO propose des recettes végétariennes quand vous n\'avez pas d\'idée. Au lieu d\'un catalogue, vous découvrez les recettes par un système de match : like, rejet ou sauvegarde. Des mini-jeux autour des ingrédients et de la cuisine ajoutent un côté ludique, le tout avec un design pixel art.',
-      en: 'BENTO suggests vegetarian recipes when you have no idea what to cook. Instead of a catalogue, you discover recipes through a match-style flow: like, reject or save. Mini-games around ingredients and cooking add a fun touch, all with a pixel art design.',
-      ko: 'BENTO는 요리할 게 없을 때 채식 레시피를 제안합니다. 카탈로그 대신 매치 방식으로 레시피를 발견하고, 재료와 요리 테마의 미니 게임을 즐기며 픽셀 아트 디자인을 경험할 수 있습니다.',
-      ch: 'BENTO 在你没想法时推荐素食食谱。不用目录，用匹配方式发现食谱：喜欢、跳过或收藏。围绕食材和烹饪的迷你游戏增添趣味，配合像素风设计。'
+      fr: 'BENTO propose des recettes végétariennes quand vous n\'avez pas d\'idée : une recette à la fois avec un tirage au hasard, et un catalogue pour tout parcourir ou rechercher — le tout en pixel art.',
+      en: 'BENTO suggests vegetarian recipes when you have no idea what to cook: one recipe at a time with random picks, and a catalog to browse or search — all in pixel art.',
+      ko: 'BENTO는 요리 아이디어가 없을 때 채식 레시피를 제안합니다. 무작위로 한 번에 하나씩, 전체를 검색·탐색하는 목록까지 — 픽셀 아트로 구성했습니다.',
+      ch: 'BENTO 在你没想法时推荐素食食谱：每次随机一道，另有可搜索浏览的完整目录——像素风呈现。'
     }
   },
   {
@@ -54,10 +54,10 @@ export const aboutContent = [
       ch: '发现与找回'
     },
     content: {
-      fr: 'L\'expérience vise d\'abord la découverte : une recette à la fois, sans se perdre dans une liste. Vous pouvez sauvegarder vos préférées et les retrouver dans « Mes sauvegardes ». Idéal pour la cuisine du quotidien, les recettes végétariennes et les repas faciles à transporter.',
-      en: 'The experience is first about discovery: one recipe at a time, without getting lost in a list. You can save your favorites and find them in "My favorites". Ideal for everyday cooking, vegetarian recipes and easy-to-carry meals.',
-      ko: '한 번에 한 가지 레시피를 발견하는 경험을 제공합니다. 마음에 드는 것은 저장해 두고 "내 저장"에서 다시 찾을 수 있습니다. 일상 요리와 채식 레시피에 적합합니다.',
-      ch: '体验以发现为主：一次一道食谱，不会在列表中迷失。可收藏喜欢的并在「我的收藏」中找回。适合日常素食与便携餐。'
+      fr: 'L\'expérience vise d\'abord la découverte : une recette à la fois, sans se perdre dans une liste. Le catalogue permet de retrouver une recette par son nom quand vous le souhaitez. Idéal pour la cuisine du quotidien, les recettes végétariennes et les repas faciles à transporter.',
+      en: 'The experience is first about discovery: one recipe at a time, without getting lost in a list. The catalog lets you find a recipe by name whenever you want. Ideal for everyday cooking, vegetarian recipes and easy-to-carry meals.',
+      ko: '한 번에 한 가지 레시피를 발견하는 경험을 제공합니다. 목록에서 이름으로 다시 찾을 수 있습니다. 일상 요리와 채식 레시피에 적합합니다.',
+      ch: '体验以发现为主：一次一道食谱，不会在列表中迷失。目录可按名称随时找回食谱。适合日常素食与便携餐。'
     }
   },
   {

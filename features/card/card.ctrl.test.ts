@@ -14,13 +14,12 @@ import {
 
 const t = (x: unknown) => (x && typeof x === "object" && "fr" in x ? String((x as { fr: string }).fr) : String(x));
 mock.module("@features/translate/translate", () => ({ t }));
-
 function createCardDOM() {
   document.body.innerHTML = `
     <template id="placeholder-template">
       <img src="" alt="" />
     </template>
-    <div class="card" data-bookmarked="false">
+    <div class="card">
       <div id="${MAIN_CARD_ID}">
         <h1 id="card-title"></h1>
         <p id="card-description"></p>
@@ -36,9 +35,8 @@ function createCardDOM() {
         <ul id="${CARD_NOTES_ID}"></ul>
       </div>
       <div id="card-controls">
-        <button data-action="reject"></button>
-        <button data-action="like"></button>
-        <button data-action="favorite"></button>
+        <button data-action="random"></button>
+        <button data-action="catalog"></button>
       </div>
     </div>
   `;
@@ -64,13 +62,13 @@ describe("card.ctrl", () => {
 
   describe("init", () => {
     it("attaches click listener and calls updateUI", () => {
-      cardCtrl.init();
+      cardCtrl?.init?.();
       const titleEl = document.getElementById("card-title");
       expect(titleEl?.textContent).toBe("Test Recipe");
     });
 
     it("serving decrease updates displayed serving", () => {
-      cardCtrl.init();
+      cardCtrl?.init?.();
       const valueEl = document.getElementById(CARD_SERVING_VALUE_ID);
       const decreaseBtn = document.getElementById(CARD_SERVING_DECREASE_ID);
       expect(valueEl?.textContent).toBe("2");
@@ -79,7 +77,7 @@ describe("card.ctrl", () => {
     });
 
     it("serving increase updates displayed serving", () => {
-      cardCtrl.init();
+      cardCtrl?.init?.();
       const valueEl = document.getElementById(CARD_SERVING_VALUE_ID);
       const increaseBtn = document.getElementById(CARD_SERVING_INCREASE_ID);
       const initial = Number(valueEl?.textContent ?? 0);
@@ -111,21 +109,12 @@ describe("card.ctrl", () => {
       expect(notesEl?.children[0].textContent).toBe("Note one");
     });
 
-    it("sets data-bookmarked on card element", () => {
+    it("sets aria-label on random and catalog buttons", () => {
       cardCtrl.updateUI();
-      const cardEl = document.getElementById(MAIN_CARD_ID)?.closest(".card");
-      expect(cardEl?.getAttribute("data-bookmarked")).toBeDefined();
-    });
-
-    it("sets aria-label on action buttons", () => {
-      cardCtrl.updateUI();
-      const cardEl = document.getElementById(MAIN_CARD_ID)?.closest(".card");
-      const rejectBtn = cardEl?.querySelector('[data-action="reject"]');
-      const likeBtn = cardEl?.querySelector('[data-action="like"]');
-      const favBtn = cardEl?.querySelector('[data-action="favorite"]');
-      expect(rejectBtn?.getAttribute("aria-label")).toBeDefined();
-      expect(likeBtn?.getAttribute("aria-label")).toBeDefined();
-      expect(favBtn?.getAttribute("aria-label")).toBeDefined();
+      const randomBtn = document.querySelector('[data-action="random"]');
+      const catalogBtn = document.querySelector('[data-action="catalog"]');
+      expect(randomBtn?.getAttribute("aria-label")).toBeDefined();
+      expect(catalogBtn?.getAttribute("aria-label")).toBeDefined();
     });
 
     it("does nothing when no recipe available and store empty", () => {

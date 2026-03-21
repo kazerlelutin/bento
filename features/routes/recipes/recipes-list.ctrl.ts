@@ -2,40 +2,40 @@ import { activeFooterLink } from "@/utils/active-footer-link";
 import type { Ctrl } from "@features/routes/routes.type";
 import type { Recipe } from "@features/recipes/recipe.type";
 import { recipesCtrl } from "@features/recipes/recipes.ctrl";
-import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
 import { handleLinkClick } from "@/features/router/router.handlers";
+import { cardControlsCtrl } from "@features/card-controls/card-controls";
+import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
 import {
-  FAVORITES_CONTAINER_ID,
-  FAVORITES_LIST_ID,
-  FAVORITES_EMPTY_ID,
-  FAVORITES_SEARCH_ID,
-  FAVORITES_LOAD_ERROR_ID,
-  FAVORITES_LOAD_ERROR_MESSAGE_ID,
-  FAVORITES_LOAD_ERROR_RETRY_ID,
-} from "./favorites.const";
+  RECIPES_CONTAINER_ID,
+  RECIPES_LIST_ID,
+  RECIPES_EMPTY_ID,
+  RECIPES_SEARCH_ID,
+  RECIPES_LOAD_ERROR_ID,
+  RECIPES_LOAD_ERROR_MESSAGE_ID,
+  RECIPES_LOAD_ERROR_RETRY_ID,
+} from "./recipes-list.const";
 
-const favoritesCtrl: Ctrl = {
+const recipesListCtrl: Ctrl = {
   async init() {
-    activeFooterLink("/favorites");
+    activeFooterLink("/recipes");
 
     await recipesCtrl.init?.();
-    recipeCtrl.loadPreferences();
 
-    const container = document.getElementById(FAVORITES_CONTAINER_ID);
+    const container = document.getElementById(RECIPES_CONTAINER_ID);
     if (!container) return;
 
     const titleEl = container.querySelector("h1");
-    if (titleEl) titleEl.textContent = t(UI["my-favorites"]);
+    if (titleEl) titleEl.textContent = t(UI["all-recipes"]);
 
-    const searchEl = document.getElementById(FAVORITES_SEARCH_ID) as HTMLInputElement | null;
-    const listEl = document.getElementById(FAVORITES_LIST_ID);
-    const emptyEl = document.getElementById(FAVORITES_EMPTY_ID);
-    const errorEl = document.getElementById(FAVORITES_LOAD_ERROR_ID);
-    const errorMsgEl = document.getElementById(FAVORITES_LOAD_ERROR_MESSAGE_ID);
-    const errorRetryBtn = document.getElementById(FAVORITES_LOAD_ERROR_RETRY_ID) as HTMLButtonElement | null;
+    const searchEl = document.getElementById(RECIPES_SEARCH_ID) as HTMLInputElement | null;
+    const listEl = document.getElementById(RECIPES_LIST_ID);
+    const emptyEl = document.getElementById(RECIPES_EMPTY_ID);
+    const errorEl = document.getElementById(RECIPES_LOAD_ERROR_ID);
+    const errorMsgEl = document.getElementById(RECIPES_LOAD_ERROR_MESSAGE_ID);
+    const errorRetryBtn = document.getElementById(RECIPES_LOAD_ERROR_RETRY_ID) as HTMLButtonElement | null;
 
     if (!listEl) return;
 
@@ -50,12 +50,14 @@ const favoritesCtrl: Ctrl = {
         errorRetryBtn.setAttribute("aria-label", t(UI.retry));
         errorRetryBtn.onclick = async () => {
           await recipesCtrl.init();
-          if (!recipesStore.loadError) favoritesCtrl.init?.();
+          if (!recipesStore.loadError) recipesListCtrl.init?.();
         };
       }
       if (searchEl) searchEl.hidden = true;
       listEl.hidden = true;
       if (emptyEl) emptyEl.hidden = true;
+      cardControlsCtrl.init?.();
+      setCardControlsAriaLabels();
       return;
     }
 
@@ -65,12 +67,7 @@ const favoritesCtrl: Ctrl = {
     }
     listEl.hidden = false;
 
-    const bookmarkedSlugs = recipeCtrl.getBookmarks();
-    const bookmarkedRecipes = recipesStore.recipes.filter((r) =>
-      bookmarkedSlugs.includes(r.slug)
-    );
-
-    const sortedRecipes = [...bookmarkedRecipes].sort((a, b) =>
+    const sortedRecipes = [...recipesStore.recipes].sort((a, b) =>
       a.identity.name.localeCompare(b.identity.name, undefined, { sensitivity: "base" })
     );
 
@@ -79,10 +76,10 @@ const favoritesCtrl: Ctrl = {
       listEl.innerHTML = "";
       if (emptyEl) emptyEl.hidden = true;
 
-      if (bookmarkedRecipes.length === 0) {
+      if (sortedRecipes.length === 0) {
         if (emptyEl) {
           emptyEl.hidden = false;
-          emptyEl.textContent = t(UI["favorites-empty"]);
+          emptyEl.textContent = t(UI["all-recipes-empty"]);
         }
         return;
       }
@@ -90,7 +87,7 @@ const favoritesCtrl: Ctrl = {
       if (recipes.length === 0) {
         if (emptyEl) {
           emptyEl.hidden = false;
-          emptyEl.textContent = t(UI["favorites-no-results"]);
+          emptyEl.textContent = t(UI["all-recipes-no-results"]);
         }
         return;
       }
@@ -109,27 +106,33 @@ const favoritesCtrl: Ctrl = {
     }
 
     if (searchEl) {
-      const searchPlaceholder = t(UI["favorites-search-placeholder"]);
+      const searchPlaceholder = t(UI["all-recipes-search-placeholder"]);
       searchEl.placeholder = searchPlaceholder;
       searchEl.setAttribute("aria-label", searchPlaceholder);
-      if (bookmarkedRecipes.length === 0) {
+      if (sortedRecipes.length === 0) {
         searchEl.hidden = true;
       } else {
         searchEl.hidden = false;
-        searchEl.addEventListener("input", () => {
-          const query = searchEl.value.trim().toLowerCase();
+        const onInput = () => {
+          const query = searchEl!.value.trim().toLowerCase();
           const filtered = query
-            ? sortedRecipes.filter((r) =>
-              r.identity.name.toLowerCase().includes(query)
-            )
+            ? sortedRecipes.filter((r) => r.identity.name.toLowerCase().includes(query))
             : sortedRecipes;
           renderList(filtered);
-        });
+        };
+        searchEl.addEventListener("input", onInput);
       }
     }
 
     renderList(sortedRecipes);
+
+    cardControlsCtrl.init?.();
+    setCardControlsAriaLabels();
+  },
+
+  cleanUp() {
+    cardControlsCtrl.cleanUp?.();
   },
 };
 
-export default favoritesCtrl;
+export default recipesListCtrl;

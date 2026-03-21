@@ -38,5 +38,7 @@ export const cardPageCtrl: Ctrl = {
     hideOverlay();
     showCardAndControls();
   },
-  cleanUp() {},
+  cleanUp() {
+    cardControlsCtrl.cleanUp?.();
+  },
 };

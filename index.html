@@ -9,7 +9,7 @@
   <link rel="alternate" type="application/xml" href="/sitemap.xml" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Plus d'idée de recette ? BENTO t'en propose une à la fois jusqu'à trouver ton match. Toutes les recettes sont végé. Passe, like ou sauvegarde — des bentos en pixel art pour retrouver l'envie de cuisiner." />
+    content="Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art." />
   <meta name="keywords"
     content="bento, recettes végétariennes, végé, pas d'idée, inspiration cuisine, pixel art, lunch box, cuisine japonaise, découvrir recettes" />
   <meta name="author" content="BENTO" />
@@ -26,14 +26,14 @@
 
   <meta property="og:title" content="BENTO - Des recettes quand tu n'as pas d'idée" />
   <meta property="og:description"
-    content="Plus d'idée de recette ? BENTO t'en propose une à la fois jusqu'à trouver ton match. Toutes les recettes sont végé. Passe, like ou sauvegarde — des bentos en pixel art pour retrouver l'envie de cuisiner." />
+    content="Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="BENTO - Des recettes quand tu n'as pas d'idée" />
   <meta name="twitter:description"
-    content="Plus d'idée de recette ? BENTO t'en propose une à la fois jusqu'à trouver ton match. Toutes les recettes sont végé. Passe, like ou sauvegarde — des bentos en pixel art pour retrouver l'envie de cuisiner." />
+    content="Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art." />
   <meta name="twitter:image" content="https://ben-to.fr/public/og-img.png" />
   <meta name="twitter:image:alt" content="BENTO - Des recettes quand tu n'as pas d'idée" />
   <meta name="og:image" content="https://ben-to.fr/public/og-img.png" />
@@ -69,7 +69,7 @@
     <div class="crafter-controls flex gap-lg justify-center items-center" id="crafter-controls"></div>
     <nav class="app-footer-nav">
       <a href="/" data-internal aria-current="page" data-translate="home"></a>
-      <a href="/favorites" data-internal data-translate="my-favorites"></a>
+      <a href="/recipes" data-internal data-translate="all-recipes"></a>
       <a href="/about" data-internal data-translate="about"></a>
     </nav>
   </footer>
@@ -91,7 +91,7 @@
       <div class="main-card" id="main-card">
         <div class="card-container scrollbar-hidden">
           <div id="card-img"></div>
-          <h1 class="text-center" id="card-title" data-role="text"></h1>
+          <h1 class="text-center m-0" id="card-title" data-role="text"></h1>
           <p class="text-center italic p-md m-0" id="card-description" aria-roledescription="Description de la recette">
           </p>
 
@@ -117,25 +117,21 @@
       </div>
 
       <div class="flex gap-lg justify-center items-center align-self-end" id="card-controls">
-        <button class="btn-round" data-action="reject" type="button" aria-label="reject">
+        <button class="btn-round" data-action="random" type="button" aria-label="random">
+          <svg class="btn-round-icon btn-round-icon--dice" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="5" y="5" width="14" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linejoin="round" />
+            <circle cx="9" cy="9" r="1.35" fill="currentColor" />
+            <circle cx="15" cy="9" r="1.35" fill="currentColor" />
+            <circle cx="12" cy="12" r="1.35" fill="currentColor" />
+            <circle cx="9" cy="15" r="1.35" fill="currentColor" />
+            <circle cx="15" cy="15" r="1.35" fill="currentColor" />
+          </svg>
+        </button>
+        <button class="btn-round" data-action="catalog" type="button" aria-label="catalog">
           <svg class="btn-round-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
-        <button class="btn-round" data-action="like" type="button" aria-label="like">
-          <svg class="btn-round-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-          </svg>
-        </button>
-        <button class="btn-round" data-action="favorite" type="button" aria-label="favorite">
-          <svg class="btn-round-icon icon-bookmark-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-          </svg>
-          <svg class="btn-round-icon icon-bookmark-filled" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+            <path d="M4 6h16M4 12h16M4 18h10" />
           </svg>
         </button>
       </div>
@@ -151,16 +147,39 @@
     </div>
   </template>
 
-  <template id="favorites-template">
-    <div id="favorites-container" class="flex flex-col overflow-y-auto gap-lg mx-auto p-md max-w-content">
-      <h1 class="text-center" data-translate="my-favorites"></h1>
-      <div id="favorites-load-error" class="favorites-load-error" hidden aria-live="polite">
-        <p id="favorites-load-error-message" class="favorites-load-error-message">Impossible de charger les recettes. Vérifiez votre connexion.</p>
-        <button type="button" id="favorites-load-error-retry" class="btn favorites-load-error-retry">Réessayer</button>
+  <template id="recipes-template">
+    <div class="recipes-page-layout flex flex-col h-full min-h-0">
+      <div id="recipes-container" class="flex flex-col overflow-y-auto gap-lg mx-auto p-md max-w-content flex-1 min-h-0 w-full">
+        <h1 class="text-center" data-translate="all-recipes"></h1>
+        <div id="recipes-load-error" class="recipes-load-error" hidden aria-live="polite">
+          <p id="recipes-load-error-message" class="recipes-load-error-message">Impossible de charger les recettes. Vérifiez votre connexion.</p>
+          <button type="button" id="recipes-load-error-retry" class="btn recipes-load-error-retry">Réessayer</button>
+        </div>
+        <input type="search" id="recipes-search" class="recipes-search" placeholder="" aria-label="" autocomplete="off" />
+        <p id="recipes-empty" class="favorites-empty" hidden aria-live="polite"></p>
+        <div id="recipes-list" class="flex flex-col gap-md"></div>
       </div>
-      <input type="search" id="favorites-search" class="favorites-search" placeholder="" aria-label="" autocomplete="off" />
-      <p id="favorites-empty" class="favorites-empty" hidden aria-live="polite"></p>
-      <div id="favorites-list" class="flex flex-col gap-md"></div>
+      <div class="recipes-page-controls flex gap-lg justify-center items-center flex-shrink-0">
+        <div class="flex gap-lg justify-center items-center" id="card-controls">
+          <button class="btn-round" data-action="random" type="button" aria-label="random">
+            <svg class="btn-round-icon btn-round-icon--dice" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="5" width="14" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linejoin="round" />
+              <circle cx="9" cy="9" r="1.35" fill="currentColor" />
+              <circle cx="15" cy="9" r="1.35" fill="currentColor" />
+              <circle cx="12" cy="12" r="1.35" fill="currentColor" />
+              <circle cx="9" cy="15" r="1.35" fill="currentColor" />
+              <circle cx="15" cy="15" r="1.35" fill="currentColor" />
+            </svg>
+          </button>
+          <button class="btn-round" data-action="catalog" type="button" aria-label="catalog">
+            <svg class="btn-round-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h10" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </template>
 </div>
@@ -190,27 +209,6 @@
     </div>
   </template>
 
-</div>
-
-<div id="micro-game-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="micro-game-title">
-  <div class="micro-game-dialog">
-    <section id="micro-game-consignes" class="micro-game-phase" aria-describedby="micro-game-consignes-text">
-      <h2 id="micro-game-title" class="micro-game-title"></h2>
-      <p id="micro-game-consignes-text" class="micro-game-consignes-text"></p>
-      <button type="button" id="micro-game-start" class="btn"></button>
-    </section>
-    <section id="micro-game-phase-game" class="micro-game-phase" hidden>
-      <div id="micro-game-timer-wrap" class="micro-game-timer-wrap">
-        <div id="micro-game-timer-bar" class="micro-game-timer-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      <div id="micro-game-container" class="micro-game-content"></div>
-    </section>
-    <section id="micro-game-result" class="micro-game-phase" hidden aria-live="polite">
-      <p id="micro-game-result-message" class="micro-game-result-message" aria-live="polite"></p>
-      <p id="micro-game-result-score" class="micro-game-result-score" aria-live="polite"></p>
-      <button type="button" id="micro-game-close" class="btn" data-theme="secondary"></button>
-    </section>
-  </div>
 </div>
 
 <script type="module" src="app.ts"></script>

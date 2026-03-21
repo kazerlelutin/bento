@@ -1,15 +1,16 @@
-import { describe, it, expect, beforeEach, afterEach, mock } from "bun:test";
+import { describe, it, expect, beforeEach, afterEach, afterAll, mock } from "bun:test";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { recipesStore } from "@features/recipes/recipes.stores";
+import { routerState } from "@features/router/router.state";
 
-const runGame = mock(() => { });
-const spinTheWheel = mock(() => false);
-const updateUI = mock(() => { });
+const updateUI = mock(() => {});
+const navigateInternal = mock((_path: string) => {});
 
-mock.module("@features/micro-games/micro-games.ctrl", () => ({
-  microGamesCtrl: { spinTheWheel, runGame },
-}));
 mock.module("@features/card/card.ctrl", () => ({ cardCtrl: { updateUI } }));
+mock.module("@features/router/router.handlers", () => ({
+  navigateInternal,
+  handleLinkClick: () => {},
+}));
 
 const { cardControlsCtrl } = await import("./card-controls");
 const { recipeCtrl } = await import("@features/recipes/recipe/recipe.ctrl");
@@ -24,84 +25,86 @@ const makeRecipe = (slug: string) => ({
   tags: [],
 });
 
+afterAll(() => {
+  mock.restore();
+});
+
 describe("card-controls", () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <div id="card-controls">
-        <button data-action="${ACTIONS.reject}">Reject</button>
-        <button data-action="${ACTIONS.like}">Like</button>
-        <button data-action="${ACTIONS.favorite}">Favorite</button>
+        <button data-action="${ACTIONS.random}">Random</button>
+        <button data-action="${ACTIONS.catalog}">Catalog</button>
       </div>
     `;
-    runGame.mockClear();
-    spinTheWheel.mockClear();
+    navigateInternal.mockClear();
     updateUI.mockClear();
-    recipeCtrl.resetPreferences();
     recipesStore.setRecipes([makeRecipe("a"), makeRecipe("b"), makeRecipe("c")]);
     currentRecipeStore.recipe = makeRecipe("a");
+    history.replaceState({}, "", "/");
+    routerState.currentPage = "/";
   });
 
   afterEach(() => {
     cardControlsCtrl.cleanUp?.();
     document.body.innerHTML = "";
+    history.replaceState({}, "", "/");
+    routerState.currentPage = "/";
   });
 
   describe("init", () => {
-    it("attaches click listener to card-controls container", () => {
+    it("attaches listener so random updates recipe and UI on home", () => {
       cardControlsCtrl.init?.();
-      const rejectBtn = document.querySelector(`[data-action="${ACTIONS.reject}"]`);
-      (rejectBtn as HTMLElement)?.click();
+      const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
+      (btn as HTMLElement)?.click();
       expect(updateUI).toHaveBeenCalled();
-    });
-
-    it("does nothing when card-controls element is missing", () => {
-      document.body.innerHTML = "";
-      expect(() => cardControlsCtrl.init?.()).not.toThrow();
+      expect(currentRecipeStore.recipe).not.toBeNull();
     });
   });
 
   describe("handleClick", () => {
     beforeEach(() => cardControlsCtrl.init?.());
 
-    it("calls getRandomRecipe and updateUI on reject when wheel does not spin", () => {
-      spinTheWheel.mockReturnValueOnce(false);
-      const btn = document.querySelector(`[data-action="${ACTIONS.reject}"]`);
-      (btn as HTMLElement)?.click();
-      expect(spinTheWheel).toHaveBeenCalled();
-      expect(currentRecipeStore.recipe).not.toBeNull();
-      expect(updateUI).toHaveBeenCalled();
-    });
-
-    it("runs micro game on reject when spinTheWheel returns true", () => {
-      spinTheWheel.mockReturnValueOnce(true);
-      updateUI.mockClear();
-      const btn = document.querySelector(`[data-action="${ACTIONS.reject}"]`);
-      (btn as HTMLElement)?.click();
-      expect(runGame).toHaveBeenCalled();
-      expect(updateUI).not.toHaveBeenCalled();
-    });
-
-    it("calls getRandomRecipe and updateUI on like", () => {
-      const btn = document.querySelector(`[data-action="${ACTIONS.like}"]`);
+    it("on home: random calls pickRandomRecipe and updateUI", () => {
+      const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
       expect(currentRecipeStore.recipe).not.toBeNull();
       expect(updateUI).toHaveBeenCalled();
     });
 
-    it("calls toggleBookmark and updateUI on favorite when current recipe has slug", () => {
-      currentRecipeStore.recipe = makeRecipe("current-recipe");
-      const btn = document.querySelector(`[data-action="${ACTIONS.favorite}"]`);
+    it("on /recipes: random navigates to /?slug=...", () => {
+      navigateInternal.mockClear();
+      routerState.currentPage = "/recipes";
+      const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
-      expect(recipeCtrl.isBookmarked("current-recipe")).toBe(true);
-      expect(updateUI).toHaveBeenCalled();
+      expect(navigateInternal).toHaveBeenCalled();
+      const call = navigateInternal.mock.calls[0]?.[0] as string;
+      expect(call).toContain("slug=");
     });
 
-    it("does nothing on favorite when current recipe has no slug", () => {
-      currentRecipeStore.recipe = null;
-      updateUI.mockClear();
-      const btn = document.querySelector(`[data-action="${ACTIONS.favorite}"]`);
+    it("on home: catalog navigates to /recipes", () => {
+      const btn = document.querySelector(`[data-action="${ACTIONS.catalog}"]`);
       (btn as HTMLElement)?.click();
-      expect(updateUI).not.toHaveBeenCalled();
+      expect(navigateInternal).toHaveBeenCalledWith("/recipes");
+    });
+
+    it("on /recipes: catalog focuses search input", () => {
+      document.body.innerHTML = `
+        <input type="search" id="recipes-search" />
+        <div id="card-controls">
+          <button data-action="${ACTIONS.random}">R</button>
+          <button data-action="${ACTIONS.catalog}">C</button>
+        </div>
+      `;
+      cardControlsCtrl.cleanUp?.();
+      cardControlsCtrl.init?.();
+      routerState.currentPage = "/recipes";
+      const search = document.getElementById("recipes-search") as HTMLInputElement;
+      const focusSpy = mock(() => {});
+      search.focus = focusSpy as typeof search.focus;
+      const btn = document.querySelector(`[data-action="${ACTIONS.catalog}"]`);
+      (btn as HTMLElement)?.click();
+      expect(focusSpy).toHaveBeenCalled();
     });
 
     it("ignores click when target has no data-action", () => {
@@ -117,7 +120,7 @@ describe("card-controls", () => {
       cardControlsCtrl.init?.();
       cardControlsCtrl.cleanUp?.();
       updateUI.mockClear();
-      const btn = document.querySelector(`[data-action="${ACTIONS.like}"]`);
+      const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
       expect(updateUI).not.toHaveBeenCalled();
     });
