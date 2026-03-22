@@ -420,40 +420,40 @@ export const UI: UiTranslation = {
 /** Traductions pour les balises meta (title, description, og:*, twitter:*). */
 export const META: UiTranslation = {
   "meta-title": {
-    fr: "BENTO - Des recettes quand tu n'as pas d'idée",
-    en: "BENTO - Recipe ideas when you're out of inspiration",
-    ko: "BENTO - 레시피 아이디어가 필요할 때",
-    ch: "BENTO - 没有灵感时的食谱推荐"
+    fr: "BENTO - Recettes végé, bentos et repas emportés",
+    en: "BENTO - Veggie recipes, bentos & packed lunches",
+    ko: "BENTO - 채식 레시피, 벤토와 도시락",
+    ch: "BENTO - 素食食谱、便当与外带餐"
   },
   "meta-description": {
-    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art.",
-    en: "Out of recipe ideas? BENTO suggests one recipe at a time, with a catalog to browse or search. Vegetarian recipes and pixel art bentos.",
-    ko: "레시피 아이디어가 없으신가요? BENTO는 한 번에 하나씩 추천하고, 전체 목록을 검색·탐색할 수 있습니다. 채식 레시피와 픽셀 아트 벤토.",
-    ch: "没有食谱灵感？BENTO 每次推荐一道菜，另有完整目录可搜索浏览——像素风呈现。"
+    fr: "Recettes végétariennes pour repas emportés : une fiche à la fois, tirage au hasard ou catalogue. Infos bento (transport, conservation…), export bentext pour copier ou imprimer. Pixel art.",
+    en: "Vegetarian recipes for packed lunches: one card at a time, random pick or searchable catalog. Bento tips (transport, storage…), bentext export to copy or print. Pixel art.",
+    ko: "도시락용 채식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 벤토 안내(운반·보관 등), 벤텍스트 복사·인쇄. 픽셀 아트.",
+    ch: "素食外带餐食谱：每次一张卡片，随机或目录内搜索。便当提示（携带、保存等）、bentext 复制或打印。像素风。"
   },
   "meta-keywords": {
-    fr: "bento, recettes végétariennes, végé, pas d'idée, inspiration cuisine, pixel art, lunch box, cuisine japonaise, découvrir recettes",
-    en: "bento, vegetarian recipes, veggie, no idea what to cook, cooking inspiration, pixel art, lunch box, japanese cuisine, discover recipes",
-    ko: "벤토, 채식 레시피, 요리 아이디어, 픽셀 아트, 도시락, 일본 요리, 레시피 추천",
-    ch: "便当, 素食食谱, 烹饪灵感, 像素艺术, 便当盒, 日式料理, 食谱推荐"
+    fr: "bento, recettes végétariennes, repas emporté, lunch box, bentext, gamelle, transport nourriture, catalogue recettes, tirage au hasard, pixel art, cuisine végé",
+    en: "bento, vegetarian recipes, packed lunch, bentext, meal prep, recipe catalog, random recipe, pixel art, veggie",
+    ko: "벤토, 채식 레시피, 도시락, bentext, 레시피 목록, 무작위 추천, 픽셀 아트",
+    ch: "便当, 素食食谱, 外带餐, bentext, 食谱目录, 随机推荐, 像素艺术"
   },
   "meta-og-title": {
-    fr: "BENTO - Des recettes quand tu n'as pas d'idée",
-    en: "BENTO - Recipe ideas when you're out of inspiration",
-    ko: "BENTO - 레시피 아이디어가 필요할 때",
-    ch: "BENTO - 没有灵感时的食谱推荐"
+    fr: "BENTO - Recettes végé, bentos et repas emportés",
+    en: "BENTO - Veggie recipes, bentos & packed lunches",
+    ko: "BENTO - 채식 레시피, 벤토와 도시락",
+    ch: "BENTO - 素食食谱、便当与外带餐"
   },
   "meta-og-description": {
-    fr: "Plus d'idée de recette ? BENTO t'en propose une à la fois, avec un catalogue pour tout parcourir ou rechercher. Recettes végé et bentos en pixel art.",
-    en: "Out of recipe ideas? BENTO suggests one recipe at a time, with a catalog to browse or search. Vegetarian recipes and pixel art bentos.",
-    ko: "레시피 아이디어가 없으신가요? BENTO는 한 번에 하나씩 추천하고, 전체 목록을 검색·탐색할 수 있습니다. 채식 레시피와 픽셀 아트 벤토.",
-    ch: "没有食谱灵感？BENTO 每次推荐一道菜，另有完整目录可搜索浏览——像素风呈现。"
+    fr: "Recettes végétariennes pour repas emportés : une fiche à la fois, tirage au hasard ou catalogue. Infos bento (transport, conservation…), export bentext pour copier ou imprimer. Pixel art.",
+    en: "Vegetarian recipes for packed lunches: one card at a time, random pick or searchable catalog. Bento tips (transport, storage…), bentext export to copy or print. Pixel art.",
+    ko: "도시락용 채식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 벤토 안내(운반·보관 등), 벤텍스트 복사·인쇄. 픽셀 아트.",
+    ch: "素食外带餐食谱：每次一张卡片，随机或目录内搜索。便当提示（携带、保存等）、bentext 复制或打印。像素风。"
   },
   "meta-og-image-alt": {
-    fr: "BENTO - Des recettes quand tu n'as pas d'idée",
-    en: "BENTO - Recipe ideas when you're out of inspiration",
-    ko: "BENTO - 레시피 아이디어가 필요할 때",
-    ch: "BENTO - 没有灵感时的食谱推荐"
+    fr: "BENTO — recettes végé, bentos et repas emportés en pixel art",
+    en: "BENTO — veggie recipes, bentos and packed lunches in pixel art",
+    ko: "BENTO — 픽셀 아트 채식 레시피와 도시락",
+    ch: "BENTO — 像素风素食食谱与便当"
   },
   "meta-content-language": {
     fr: "fr",
