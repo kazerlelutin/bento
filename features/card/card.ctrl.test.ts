@@ -100,6 +100,16 @@ describe("card.ctrl", () => {
       increaseBtn?.click();
       expect(Number(valueEl?.textContent)).toBeGreaterThan(initial);
     });
+
+    it("does not stack click listeners when init is called multiple times", () => {
+      cardCtrl?.init?.();
+      cardCtrl?.init?.();
+      const valueEl = document.getElementById(CARD_SERVING_VALUE_ID);
+      const increaseBtn = document.getElementById(CARD_SERVING_INCREASE_ID);
+      expect(valueEl?.textContent).toBe("2");
+      increaseBtn?.click();
+      expect(valueEl?.textContent).toBe("3");
+    });
   });
 
   describe("updateUI", () => {

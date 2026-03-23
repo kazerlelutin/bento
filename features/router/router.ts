@@ -14,6 +14,7 @@ const setupNavigation = (): void => {
 const refreshCurrentRoute = (): void => {
   const path = window.location.pathname;
   const route = routerState.routes.get(path);
+  routerState.cleanUp?.();
   if (route) handleRouteChange(route);
 };
 

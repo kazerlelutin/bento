@@ -24,54 +24,66 @@ import { UI } from "@features/translate/translate.const";
 
 let displayedRecipe: Recipe | null = null;
 let displayedServing = 1;
+let boundDocumentClick: ((e: Event) => void) | null = null;
+
+function handleDocumentClick(e: Event): void {
+  const target = e.target as HTMLElement;
+  if (target.id === CARD_SERVING_DECREASE_ID || target.id === CARD_SERVING_INCREASE_ID) {
+    if (!displayedRecipe) return;
+    if (target.id === CARD_SERVING_DECREASE_ID) displayedServing = Math.max(1, displayedServing - 1);
+    else displayedServing += 1;
+
+    refreshIngredientsAndServing(displayedRecipe, displayedServing);
+    return;
+  }
+
+  if (target.id !== CARD_BENTO_COPY_ID && target.id !== CARD_BENTO_PRINT_ID) return;
+  if (!displayedRecipe?.slug) return;
+
+  const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
+  const showMsg = (text: string, isError: boolean) => {
+    if (!msgEl) return;
+    msgEl.hidden = false;
+    msgEl.textContent = text;
+    msgEl.classList.toggle("card-bento-message--error", isError);
+  };
+  const hideMsg = () => {
+    if (!msgEl) return;
+    msgEl.hidden = true;
+    msgEl.textContent = "";
+    msgEl.classList.remove("card-bento-message--error");
+  };
+
+  void (async () => {
+    try {
+      const text = await fetchBentext(displayedRecipe!.slug);
+      if (target.id === CARD_BENTO_COPY_ID) {
+        await copyTextToClipboard(text);
+        showMsg(t(UI["bentext-copied"]), false);
+      } else {
+        hideMsg();
+        printBentextInWindow(text, displayedRecipe!.identity.name ?? displayedRecipe!.slug);
+      }
+    } catch {
+      showMsg(t(UI["bentext-error"]), true);
+    }
+  })();
+}
 
 export const cardCtrl: CardCtrl = {
   init() {
-    document.addEventListener("click", (e) => {
-      const target = e.target as HTMLElement;
-      if (target.id === CARD_SERVING_DECREASE_ID || target.id === CARD_SERVING_INCREASE_ID) {
-        if (!displayedRecipe) return;
-        if (target.id === CARD_SERVING_DECREASE_ID) displayedServing = Math.max(1, displayedServing - 1);
-        else displayedServing += 1;
-
-        refreshIngredientsAndServing(displayedRecipe, displayedServing);
-        return;
-      }
-
-      if (target.id !== CARD_BENTO_COPY_ID && target.id !== CARD_BENTO_PRINT_ID) return;
-      if (!displayedRecipe?.slug) return;
-
-      const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
-      const showMsg = (text: string, isError: boolean) => {
-        if (!msgEl) return;
-        msgEl.hidden = false;
-        msgEl.textContent = text;
-        msgEl.classList.toggle("card-bento-message--error", isError);
-      };
-      const hideMsg = () => {
-        if (!msgEl) return;
-        msgEl.hidden = true;
-        msgEl.textContent = "";
-        msgEl.classList.remove("card-bento-message--error");
-      };
-
-      void (async () => {
-        try {
-          const text = await fetchBentext(displayedRecipe!.slug);
-          if (target.id === CARD_BENTO_COPY_ID) {
-            await copyTextToClipboard(text);
-            showMsg(t(UI["bentext-copied"]), false);
-          } else {
-            hideMsg();
-            printBentextInWindow(text, displayedRecipe!.identity.name ?? displayedRecipe!.slug);
-          }
-        } catch {
-          showMsg(t(UI["bentext-error"]), true);
-        }
-      })();
-    });
+    // Protect against duplicate listeners on route/language refreshes.
+    this.cleanUp?.();
+    boundDocumentClick = handleDocumentClick;
+    document.addEventListener("click", boundDocumentClick);
 
     this.updateUI();
+  },
+  cleanUp() {
+    if (boundDocumentClick) {
+      document.removeEventListener("click", boundDocumentClick);
+      boundDocumentClick = null;
+    }
   },
 
   updateUI() {

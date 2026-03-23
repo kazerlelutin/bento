@@ -18,6 +18,7 @@ export const languageSelectorCtrl = {
       const lang = select.value as "fr" | "en" | "ko" | 'ch';
       translateStore.setCurrentLanguage(lang);
       select.setAttribute("aria-label", t(UI["language-selector-label"]));
+      window.location.reload();
     });
   },
 };

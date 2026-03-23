@@ -39,6 +39,7 @@ export const cardPageCtrl: Ctrl = {
     showCardAndControls();
   },
   cleanUp() {
+    cardCtrl.cleanUp?.();
     cardControlsCtrl.cleanUp?.();
   },
 };
