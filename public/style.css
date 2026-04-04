@@ -937,10 +937,6 @@
   grid-template-rows: auto 2fr auto;
 }
 
-.crafter-controls {
-  grid-area: controls;
-}
-
 /* ==== @crafter-stepper ==== */
 
 .crafter-stepper {

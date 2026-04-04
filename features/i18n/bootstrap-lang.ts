@@ -8,7 +8,7 @@ import {
 import { availableLanguages, LS_KEY } from "@features/translate/translate.const";
 import type { Language } from "@features/translate/translate.types";
 import { getLanguageFromLS } from "@features/translate/translate.utils";
-import { translateStore } from "@features/translate/translate.store";
+import { applyTranslationsToDom, translateStore } from "@features/translate/translate.store";
 
 function defaultLangFromCookieOrLs(): Language {
   const c = getCookie(LANG_COOKIE);
@@ -48,4 +48,5 @@ export function syncTranslateStoreFromUrl(): void {
     translateStore.currentLanguage = parsed.lang;
     localStorage.setItem(LS_KEY, parsed.lang);
   }
+  applyTranslationsToDom();
 }
