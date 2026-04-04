@@ -1,10 +1,13 @@
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
 
-/** Met à jour les aria-label des boutons `#card-controls` (accueil ou catalogue). */
+/** Libellé du bouton aléatoire sous la carte (texte + accessibilité). */
 export function setCardControlsAriaLabels(): void {
   const root = document.getElementById("card-controls");
   if (!root) return;
-  root.querySelector('[data-action="random"]')?.setAttribute("aria-label", t(UI.randomRecipe));
-  root.querySelector('[data-action="catalog"]')?.setAttribute("aria-label", t(UI.openRecipeCatalog));
+  const btn = root.querySelector('[data-action="random"]') as HTMLButtonElement | null;
+  if (!btn) return;
+  const label = t(UI.randomRecipe);
+  btn.textContent = label;
+  btn.setAttribute("aria-label", label);
 }

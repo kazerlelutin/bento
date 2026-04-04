@@ -50,8 +50,7 @@ function createCardDOM() {
         <ul id="${CARD_NOTES_ID}"></ul>
       </div>
       <div id="card-controls">
-        <button data-action="random"></button>
-        <button data-action="catalog"></button>
+        <button data-action="random" type="button"></button>
       </div>
     </div>
   `;
@@ -134,12 +133,11 @@ describe("card.ctrl", () => {
       expect(notesEl?.children[0].textContent).toBe("Note one");
     });
 
-    it("sets aria-label on random and catalog buttons", () => {
+    it("sets visible label on random button", () => {
       cardCtrl.updateUI();
-      const randomBtn = document.querySelector('[data-action="random"]');
-      const catalogBtn = document.querySelector('[data-action="catalog"]');
-      expect(randomBtn?.getAttribute("aria-label")).toBeDefined();
-      expect(catalogBtn?.getAttribute("aria-label")).toBeDefined();
+      const randomBtn = document.querySelector('[data-action="random"]') as HTMLButtonElement | null;
+      expect(randomBtn?.textContent?.trim()).toBeTruthy();
+      expect(randomBtn?.getAttribute("aria-label")).toBe(randomBtn?.textContent?.trim() ?? "");
     });
 
     it("hides bento recap when recipe has no bento block", () => {

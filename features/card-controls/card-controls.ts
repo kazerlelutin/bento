@@ -5,7 +5,6 @@ import { cardCtrl } from "@features/card/card.ctrl";
 import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { routerState } from "@features/router/router.state";
-import { RECIPES_SEARCH_ID } from "@features/routes/recipes/recipes-list.const";
 import { parseLocalizedPath, normalizePathname, pathWithLang } from "@features/i18n/route-path";
 import { getRouteContext } from "@features/router/route-context";
 
@@ -40,19 +39,6 @@ export const cardControlsCtrl: CardControlsCtrl = {
         cardCtrl.updateUI?.();
       }
       return;
-    }
-
-    if (action === ACTIONS.catalog) {
-      if (isRecipesCatalogPage()) {
-        const searchEl = document.getElementById(RECIPES_SEARCH_ID) as HTMLInputElement | null;
-        if (searchEl && !searchEl.hidden) {
-          searchEl.focus();
-          searchEl.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      } else {
-        const { lang } = getRouteContext();
-        navigateInternal(pathWithLang(lang, "recipes"));
-      }
     }
   },
   cleanUp() {

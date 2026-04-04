@@ -39,7 +39,6 @@ describe("card-controls", () => {
     document.body.innerHTML = `
       <div id="card-controls">
         <button data-action="${ACTIONS.random}">Random</button>
-        <button data-action="${ACTIONS.catalog}">Catalog</button>
       </div>
     `;
     navigateInternal.mockClear();
@@ -86,32 +85,6 @@ describe("card-controls", () => {
       expect(navigateInternal).toHaveBeenCalled();
       const call = navigateInternal.mock.calls[0]?.[0] as string;
       expect(call).toMatch(/\/fr\/recipes\//);
-    });
-
-    it("on home: catalog navigates to /fr/recipes", () => {
-      const btn = document.querySelector(`[data-action="${ACTIONS.catalog}"]`);
-      (btn as HTMLElement)?.click();
-      expect(navigateInternal).toHaveBeenCalledWith("/fr/recipes");
-    });
-
-    it("on /fr/recipes: catalog focuses search input", () => {
-      document.body.innerHTML = `
-        <input type="search" id="recipes-search" />
-        <div id="card-controls">
-          <button data-action="${ACTIONS.random}">R</button>
-          <button data-action="${ACTIONS.catalog}">C</button>
-        </div>
-      `;
-      cardControlsCtrl.cleanUp?.();
-      cardControlsCtrl.init?.();
-      routerState.currentPage = "/fr/recipes";
-      setRouteContext({ lang: "fr" });
-      const search = document.getElementById("recipes-search") as HTMLInputElement;
-      const focusSpy = mock(() => {});
-      search.focus = focusSpy as typeof search.focus;
-      const btn = document.querySelector(`[data-action="${ACTIONS.catalog}"]`);
-      (btn as HTMLElement)?.click();
-      expect(focusSpy).toHaveBeenCalled();
     });
 
     it("ignores click when target has no data-action", () => {
