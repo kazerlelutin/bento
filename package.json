@@ -42,10 +42,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "bun --hot index.html --spa",
-    "test": "bun test",
+    "start": "bun run server.ts",
+    "test": "bun test --max-concurrency 1",
     "coverage": "bun test --coverage",
     "test:integration": "bunx --bun cucumber-js",
-    "build": "bun build ./index.html --minify  --env=PUBLIC_* --outdir=dist && bun scripts/copy-static.ts",
+    "build": "bun build ./index.html --minify --outdir=dist && bun scripts/copy-static.ts && bun scripts/prerender.ts",
     "docs:features": "bun scripts/generate-feature-docs.ts",
     "badge:coverage": "bun scripts/generate-coverage-badge.ts",
     "sitemap": "bun scripts/generate-sitemap.ts",

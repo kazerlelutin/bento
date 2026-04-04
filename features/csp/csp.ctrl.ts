@@ -1,5 +1,5 @@
 import { Ctrl } from "@features/routes/routes.type";
-import { getCspRules } from "./csp.const";
+import { getCspMetaContent } from "./csp.const";
 import { CSP_META_SELECTOR } from "./csp.const";
 
 function getApiOrigin(): string {
@@ -15,7 +15,7 @@ export const cspCtrl: Ctrl = {
   init() {
     const apiOrigin = getApiOrigin();
     const csp = document.querySelector(CSP_META_SELECTOR);
-    const content = getCspRules(apiOrigin).join("; ");
+    const content = getCspMetaContent(apiOrigin);
 
     if (csp) csp.setAttribute("content", content);
   },

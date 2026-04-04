@@ -3,10 +3,19 @@ import { RecipeCtrl } from "@features/recipes/recipe/recipe.type";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { Recipe } from "@features/recipes/recipe.type";
 import { recipesStore } from "@features/recipes/recipes.stores";
+import { getRouteContext } from "@features/router/route-context";
 
 export const recipeCtrl: RecipeCtrl = {
   async init() {
     await recipesCtrl.init?.();
+    const { recipeSlug } = getRouteContext();
+    if (recipeSlug) {
+      const bySlug = this.getRecipeBySlug(recipeSlug);
+      if (bySlug) {
+        currentRecipeStore.recipe = bySlug;
+        return;
+      }
+    }
     const recipe = this.pickRandomRecipe();
     if (recipe) currentRecipeStore.recipe = recipe;
   },

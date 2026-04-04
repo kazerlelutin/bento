@@ -7,6 +7,8 @@ import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
 import { handleLinkClick } from "@/features/router/router.handlers";
 import { cardControlsCtrl } from "@features/card-controls/card-controls";
+import { getRouteContext } from "@features/router/route-context";
+import { pathWithLang } from "@features/i18n/route-path";
 import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
 import {
   RECIPES_CONTAINER_ID,
@@ -20,7 +22,8 @@ import {
 
 const recipesListCtrl: Ctrl = {
   async init() {
-    activeFooterLink("/recipes");
+    const { lang } = getRouteContext();
+    activeFooterLink(pathWithLang(lang, "recipes"));
 
     await recipesCtrl.init?.();
 
@@ -95,7 +98,7 @@ const recipesListCtrl: Ctrl = {
       const fragment = document.createDocumentFragment();
       for (const recipe of recipes) {
         const a = document.createElement("a");
-        a.href = `/?slug=${encodeURIComponent(recipe.slug)}`;
+        a.href = pathWithLang(lang, "recipes", recipe.slug);
         a.setAttribute("data-internal", "true");
         a.className = "favorites-item";
         a.textContent = recipe.identity.name;

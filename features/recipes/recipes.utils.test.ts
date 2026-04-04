@@ -2,6 +2,8 @@ import { describe, it, expect, beforeEach, afterEach } from "bun:test";
 import { getApiBaseUrl, getApiLang } from "./recipes.utils";
 import { DEFAULT_API_BASE } from "./recipes.const";
 import { LS_KEY } from "@features/translate/translate.const";
+import { translateStore } from "@features/translate/translate.store";
+import type { Language } from "@features/translate/translate.types";
 
 describe("recipes.utils", () => {
   const envKey = "PUBLIC_BENTEXT_API_URL";
@@ -27,25 +29,31 @@ describe("recipes.utils", () => {
   describe("getApiLang", () => {
     afterEach(() => {
       localStorage.removeItem(LS_KEY);
+      translateStore.currentLanguage = "fr";
     });
 
+    function syncLang(lang: Language) {
+      localStorage.setItem(LS_KEY, lang);
+      translateStore.currentLanguage = lang;
+    }
+
     it("returns zh when language is ch", () => {
-      localStorage.setItem(LS_KEY, "ch");
+      syncLang("ch");
       expect(getApiLang()).toBe("zh");
     });
 
     it("returns fr when language is fr", () => {
-      localStorage.setItem(LS_KEY, "fr");
+      syncLang("fr");
       expect(getApiLang()).toBe("fr");
     });
 
     it("returns en when language is en", () => {
-      localStorage.setItem(LS_KEY, "en");
+      syncLang("en");
       expect(getApiLang()).toBe("en");
     });
 
     it("returns ko when language is ko", () => {
-      localStorage.setItem(LS_KEY, "ko");
+      syncLang("ko");
       expect(getApiLang()).toBe("ko");
     });
   });

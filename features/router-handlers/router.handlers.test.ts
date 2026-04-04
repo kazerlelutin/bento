@@ -16,6 +16,7 @@ describe("router.handlers", () => {
       <template id="ctrl-template">Ctrl content</template>
       <template id="no-ctrl-template">No ctrl content</template>
     `;
+    routerState.onRouteChange = undefined;
     routerState.currentPage = "/";
     routerState.cleanUp = undefined;
     mockRenderTemplate.mockClear();
@@ -67,11 +68,11 @@ describe("router.handlers", () => {
     const event = {
       preventDefault: jest.fn(),
       currentTarget: {
-        getAttribute: () => "/about",
+        getAttribute: () => "/fr/about",
       },
     } as any;
     handleLinkClick(event);
-    expect(routerState.currentPage).toBe("/about");
+    expect(routerState.currentPage).toBe("/fr/about");
   });
 
   test("should default to '/' if href is missing", () => {

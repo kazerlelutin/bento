@@ -2,11 +2,13 @@ import { describe, it, expect, beforeEach, afterEach, mock } from "bun:test";
 import { recipesCtrl } from "./recipes.ctrl";
 import { recipesStore } from "./recipes.stores";
 import { LOAD_ERROR_KEY } from "./recipes.const";
+import { setRouteContext } from "@features/router/route-context";
 
 describe("recipes.ctrl", () => {
   const originalFetch = globalThis.fetch;
 
   beforeEach(() => {
+    setRouteContext({ lang: "fr" });
     recipesStore.setLoadError(null);
     recipesStore.setRecipes([]);
   });

@@ -6,12 +6,15 @@ import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { routerState } from "@features/router/router.state";
 import { RECIPES_SEARCH_ID } from "@features/routes/recipes/recipes-list.const";
+import { parseLocalizedPath, normalizePathname, pathWithLang } from "@features/i18n/route-path";
+import { getRouteContext } from "@features/router/route-context";
 
 let boundClick: ((e: Event) => void) | null = null;
 let controlsRoot: HTMLElement | null = null;
 
 function isRecipesCatalogPage(): boolean {
-  return routerState.currentPage === "/recipes";
+  const parsed = parseLocalizedPath(normalizePathname(routerState.currentPage));
+  return Boolean(parsed?.segments[0] === "recipes" && parsed.segments.length === 1);
 }
 
 export const cardControlsCtrl: CardControlsCtrl = {
@@ -31,7 +34,8 @@ export const cardControlsCtrl: CardControlsCtrl = {
       currentRecipeStore.recipe = nextRecipe;
       if (!nextRecipe) return;
       if (isRecipesCatalogPage()) {
-        navigateInternal(`/?slug=${encodeURIComponent(nextRecipe.slug)}`);
+        const { lang } = getRouteContext();
+        navigateInternal(pathWithLang(lang, "recipes", nextRecipe.slug));
       } else {
         cardCtrl.updateUI?.();
       }
@@ -46,7 +50,8 @@ export const cardControlsCtrl: CardControlsCtrl = {
           searchEl.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       } else {
-        navigateInternal("/recipes");
+        const { lang } = getRouteContext();
+        navigateInternal(pathWithLang(lang, "recipes"));
       }
     }
   },

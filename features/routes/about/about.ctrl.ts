@@ -2,10 +2,13 @@ import { activeFooterLink } from '@/utils/active-footer-link';
 import type { Ctrl } from '../routes.type';
 import { ABOUT_CONTAINER_ID, ABOUT_ITEM_TEMPLATE_ID, ABOUT_ITEMS_CONTAINER_ID, aboutContent, aboutTitle } from './about.const';
 import { t } from '@/features/translate/translate';
+import { getRouteContext } from '@features/router/route-context';
+import { pathWithLang } from '@features/i18n/route-path';
 
 const aboutCtrl: Ctrl = {
   init() {
-    activeFooterLink('/about');
+    const { lang } = getRouteContext();
+    activeFooterLink(pathWithLang(lang, 'about'));
 
     const container = document.getElementById(ABOUT_CONTAINER_ID);
     if (!container) {

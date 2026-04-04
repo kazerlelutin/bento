@@ -1,3 +1,4 @@
+/** Préfixe `0-` : doit s’exécuter avant `card.ctrl.test.ts` (mock sur `./card.utils`). */
 import { describe, it, expect, beforeEach, afterEach, mock } from "bun:test";
 import {
   OVERLAY_ID,
@@ -41,6 +42,7 @@ describe("routes/card card.utils", () => {
   let els: ReturnType<typeof createOverlayDOM>;
 
   beforeEach(() => {
+    document.querySelectorAll("#card-overlay").forEach((el) => el.remove());
     els = createOverlayDOM();
     tMock.mockClear();
   });

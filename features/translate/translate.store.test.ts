@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, mock } from 'bun:test';
-import { UI } from './translate.const';
+import { UI, LS_KEY } from './translate.const';
 import type { Language } from './translate.types';
 
 mock.module('@features/meta/meta.ctrl', () => ({ metaCtrl: { updateMeta: () => {} } }));
@@ -12,6 +12,8 @@ describe('translate.store', () => {
   let mockElement: HTMLElement;
 
   beforeEach(() => {
+    translateStore.currentLanguage = 'fr';
+    localStorage.setItem(LS_KEY, 'fr');
     mockElement = document.createElement('div');
     mockElement.setAttribute('data-translate', 'add');
     mockElement.textContent = 'Old text';

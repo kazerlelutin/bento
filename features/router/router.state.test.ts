@@ -1,8 +1,19 @@
-import { expect, describe, test, jest } from "bun:test";
+import { expect, describe, test, jest, beforeEach, afterEach } from "bun:test";
 import { routerState } from './router.state';
 
 describe('router.state', () => {
+  afterEach(() => {
+    routerState.onRouteChange = undefined;
+    routerState.cleanUp = undefined;
+  });
+
   describe('Proxy implementation', () => {
+    beforeEach(() => {
+      routerState.onRouteChange = undefined;
+      routerState.cleanUp = undefined;
+      routerState.currentPage = '/';
+    });
+
     test('should get initial state', () => {
       expect(routerState.currentPage).toBe('/');
       expect(routerState.routes).toBeDefined();
@@ -17,7 +28,7 @@ describe('router.state', () => {
     test('should handle route change callback', () => {
       const callback = jest.fn();
       routerState.onRouteChange = callback;
-      routerState.currentPage = '/about';
+      routerState.currentPage = '/fr/about';
       expect(callback).toHaveBeenCalled();
     });
 

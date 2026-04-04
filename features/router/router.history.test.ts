@@ -1,7 +1,10 @@
-import { expect, describe, test, jest } from "bun:test";
+import { expect, describe, test, jest, afterEach } from "bun:test";
 import { updateDocumentTitle, updateHistory } from './router.history';
 
 describe('router.history', () => {
+  afterEach(() => {
+    window.history.pushState = History.prototype.pushState.bind(window.history);
+  });
 
   test('should update the document title', () => {
     const title = 'Test Title';

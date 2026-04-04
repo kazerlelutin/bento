@@ -1,0 +1,17 @@
+{
+  "name": "BENTO",
+  "short_name": "BENTO",
+  "description": "Recettes végé, bentos et repas emportés",
+  "start_url": "/fr",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1e",
+  "theme_color": "#1a1a1e",
+  "icons": [
+    {
+      "src": "/public/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

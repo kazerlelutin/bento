@@ -2,25 +2,27 @@ import { Ctrl } from "@features/routes/routes.type";
 import { cardCtrl } from "@/features/card/card.ctrl";
 import { cardControlsCtrl } from "@features/card-controls/card-controls";
 import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
-import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import { activeFooterLink } from "@/utils/active-footer-link";
+import { getRouteContext } from "@features/router/route-context";
+import { pathWithLang } from "@features/i18n/route-path";
 import { showOverlayLoading, showOverlayError, hideOverlay } from "./card.utils";
 
 function showCardAndControls(): void {
-  const slug = new URL(window.location.href).searchParams.get("slug");
-  if (slug) {
-    const recipe = recipeCtrl.getRecipeBySlug(slug);
-    if (recipe) currentRecipeStore.recipe = recipe;
-  }
   cardCtrl.init?.();
   cardControlsCtrl.init?.();
 }
 
 export const cardPageCtrl: Ctrl = {
   async init() {
-    activeFooterLink("/");
-    showOverlayLoading();
+    const { lang } = getRouteContext();
+    activeFooterLink(pathWithLang(lang));
+    const hasInitialData =
+      typeof document !== "undefined" &&
+      document.getElementById("bento-initial-state")?.textContent?.trim();
+    if (!hasInitialData) {
+      showOverlayLoading();
+    }
     await recipeCtrl.init?.();
     if (recipesStore.loadError) {
       const onRetry = async () => {
@@ -35,7 +37,9 @@ export const cardPageCtrl: Ctrl = {
       showOverlayError(onRetry);
       return;
     }
-    hideOverlay();
+    if (!hasInitialData) {
+      hideOverlay();
+    }
     showCardAndControls();
   },
   cleanUp() {

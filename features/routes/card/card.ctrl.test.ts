@@ -1,8 +1,9 @@
-import { describe, it, expect, beforeEach, afterEach, mock } from "bun:test";
+import { describe, it, expect, beforeEach, afterEach, afterAll, mock } from "bun:test";
 import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { LOAD_ERROR_KEY } from "@features/recipes/recipes.const";
+import { setRouteContext } from "@features/router/route-context";
 
 let showOverlayErrorCalls = 0;
 let capturedOnRetry: (() => void | Promise<void>) | null = null;
@@ -11,7 +12,7 @@ const cardCtrlInitSpy = mock(() => {});
 const cardControlsInitSpy = mock(() => {});
 const activeFooterLinkSpy = mock(() => {});
 
-mock.module("@features/routes/card/card.utils", () => ({
+mock.module("./card.utils", () => ({
   showOverlayLoading: () => {},
   hideOverlay: hideOverlaySpy,
   showOverlayError: (onRetry: () => void | Promise<void>) => {
@@ -24,6 +25,10 @@ mock.module("@features/card-controls/card-controls", () => ({ cardControlsCtrl: 
 mock.module("@/utils/active-footer-link", () => ({ activeFooterLink: activeFooterLinkSpy }));
 
 const { cardPageCtrl } = await import("./card.ctrl");
+
+afterAll(() => {
+  mock.restore();
+});
 
 const makeRecipe = (slug: string, name: string) => ({
   slug,
@@ -39,6 +44,7 @@ describe("routes/card card.ctrl", () => {
   let originalLocation: string;
 
   beforeEach(() => {
+    setRouteContext({ lang: "fr" });
     showOverlayErrorCalls = 0;
     capturedOnRetry = null;
     hideOverlaySpy.mockClear();
@@ -76,14 +82,15 @@ describe("routes/card card.ctrl", () => {
     expect(cardControlsInitSpy).toHaveBeenCalled();
   });
 
-  it("sets current recipe from URL slug when load succeeds and slug present", async () => {
+  it("sets current recipe from route slug when load succeeds and slug present", async () => {
     const r = makeRecipe("from-slug", "From Slug");
+    setRouteContext({ lang: "fr", recipeSlug: "from-slug" });
     recipesStore.setRecipes([r]);
     recipeCtrl.init = async () => {
       recipesStore.setLoadError(null);
       recipesStore.setRecipes([r]);
+      currentRecipeStore.recipe = r;
     };
-    Object.defineProperty(window, "location", { value: { href: "http://localhost/?slug=from-slug" }, writable: true });
     await cardPageCtrl.init();
     expect(currentRecipeStore.recipe?.slug).toBe("from-slug");
     expect(cardCtrlInitSpy).toHaveBeenCalled();

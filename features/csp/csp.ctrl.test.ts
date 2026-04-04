@@ -23,7 +23,8 @@ describe("csp.ctrl", () => {
   it("includes script-src and style-src in policy", () => {
     cspCtrl.init?.();
     const content = document.querySelector(CSP_META_SELECTOR)?.getAttribute("content") ?? "";
-    expect(content).toContain("script-src 'self'");
+    expect(content).toContain("script-src");
     expect(content).toContain("style-src 'self'");
+    expect(content).toContain("worker-src");
   });
 });

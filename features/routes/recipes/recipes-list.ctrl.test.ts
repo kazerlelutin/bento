@@ -9,6 +9,7 @@ import {
   RECIPES_LOAD_ERROR_MESSAGE_ID,
   RECIPES_LOAD_ERROR_RETRY_ID,
 } from "./recipes-list.const";
+import { setRouteContext } from "@features/router/route-context";
 
 const tMock = (x: unknown) => (x && typeof x === "object" && "fr" in x ? String((x as { fr: string }).fr) : String(x));
 mock.module("@features/translate/translate", () => ({ t: tMock }));
@@ -18,7 +19,10 @@ mock.module("@features/recipes/recipes.ctrl", () => ({
 mock.module("@features/routes/routes", () => ({
   routes: new Map(),
 }));
+
+const realRouterHandlers = await import("@/features/router/router.handlers");
 mock.module("@/features/router/router.handlers", () => ({
+  ...realRouterHandlers,
   handleLinkClick: () => {},
 }));
 mock.module("@features/card-controls/card-controls", () => ({
@@ -60,6 +64,7 @@ function createRecipesDOM() {
 
 describe("recipes-list.ctrl", () => {
   beforeEach(() => {
+    setRouteContext({ lang: "fr" });
     createRecipesDOM();
     recipesStore.setRecipes([]);
     recipesStore.setLoadError(null);
@@ -99,8 +104,8 @@ describe("recipes-list.ctrl", () => {
     expect(links?.length).toBe(2);
     expect(links?.[0].textContent).toBe("Bananes");
     expect(links?.[1].textContent).toBe("Pommes");
-    expect(listEl?.innerHTML).toContain("slug=r1");
-    expect(listEl?.innerHTML).toContain("slug=r2");
+    expect(listEl?.innerHTML).toContain("/fr/recipes/r1");
+    expect(listEl?.innerHTML).toContain("/fr/recipes/r2");
   });
 
   it("filters list on search input", async () => {
