@@ -24,6 +24,14 @@ describe("recipes.utils", () => {
       if (prev !== undefined) process.env[envKey] = prev;
       else delete process.env[envKey];
     });
+
+    it("returns DEFAULT_API_BASE when env is empty string", () => {
+      const prev = process.env[envKey];
+      process.env[envKey] = "";
+      expect(getApiBaseUrl()).toBe(DEFAULT_API_BASE);
+      if (prev !== undefined) process.env[envKey] = prev;
+      else delete process.env[envKey];
+    });
   });
 
   describe("getApiLang", () => {

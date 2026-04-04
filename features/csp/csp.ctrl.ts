@@ -1,13 +1,13 @@
 import { Ctrl } from "@features/routes/routes.type";
+import { resolvePublicBentextApiUrl } from "@features/recipes/recipes.const";
 import { getCspMetaContent } from "./csp.const";
 import { CSP_META_SELECTOR } from "./csp.const";
 
 function getApiOrigin(): string {
   try {
-    const base = process.env.PUBLIC_BENTEXT_API_URL ?? "https://bentext.ben-to.fr/api";
-    return new URL(base).origin;
+    return new URL(resolvePublicBentextApiUrl()).origin;
   } catch {
-    return "";
+    return new URL("https://bentext.ben-to.fr/api").origin;
   }
 }
 

@@ -10,17 +10,16 @@ import { fetchRecipesForLang } from "../features/recipes/recipes.fetch.ts";
 import { getCspMetaContent } from "../features/csp/csp.const.ts";
 import { buildSsgPageMeta, type SsgPageKind } from "../features/meta/ssg-meta.ts";
 import type { Language } from "../features/translate/translate.types.ts";
-import { DEFAULT_API_BASE } from "../features/recipes/recipes.const.ts";
+import { resolvePublicBentextApiUrl } from "../features/recipes/recipes.const.ts";
 import type { Recipe } from "../features/recipes/recipe.type.ts";
 
 const LANGS: Language[] = ["fr", "en", "ko", "ch"];
 
 function getApiOrigin(): string {
   try {
-    const base = process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
-    return new URL(base).origin;
+    return new URL(resolvePublicBentextApiUrl()).origin;
   } catch {
-    return "";
+    return new URL("https://bentext.ben-to.fr/api").origin;
   }
 }
 

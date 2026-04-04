@@ -1,8 +1,8 @@
-import { DEFAULT_API_BASE, LOAD_ERROR_KEY } from "./recipes.const";
+import { LOAD_ERROR_KEY, resolvePublicBentextApiUrl } from "./recipes.const";
 import type { Recipe } from "./recipe.type";
 
 export function getApiBaseUrl(): string {
-  return process.env.PUBLIC_BENTEXT_API_URL ?? DEFAULT_API_BASE;
+  return resolvePublicBentextApiUrl();
 }
 
 /** Langue pour l’API : le backend peut attendre "zh" pour le chinois. */

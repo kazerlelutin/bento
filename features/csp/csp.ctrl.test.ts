@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "bun:test";
+import { resolvePublicBentextApiUrl } from "@features/recipes/recipes.const";
 import { cspCtrl } from "./csp.ctrl";
 import { CSP_META_SELECTOR } from "./csp.const";
 
@@ -26,5 +27,12 @@ describe("csp.ctrl", () => {
     expect(content).toContain("script-src");
     expect(content).toContain("style-src 'self'");
     expect(content).toContain("worker-src");
+  });
+
+  it("includes API origin in img-src for recipe images", () => {
+    cspCtrl.init?.();
+    const content = document.querySelector(CSP_META_SELECTOR)?.getAttribute("content") ?? "";
+    const origin = new URL(resolvePublicBentextApiUrl()).origin;
+    expect(content).toContain(`img-src 'self' data: blob: ${origin}`);
   });
 });
