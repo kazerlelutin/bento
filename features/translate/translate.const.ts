@@ -272,10 +272,10 @@ export const UI: UiTranslation = {
     'ch': '备注'
   },
   "randomRecipe": {
-    "fr": "Autre recette au hasard",
-    "en": "Random recipe",
-    "ko": "무작위 레시피",
-    "ch": "随机食谱"
+    "fr": "Prochaine recette",
+    "en": "Next recipe",
+    "ko": "다음 레시피",
+    "ch": "下一道食谱"
   },
   "openRecipeCatalog": {
     "fr": "Liste des recettes et recherche",
