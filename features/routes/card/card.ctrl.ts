@@ -37,9 +37,9 @@ export const cardPageCtrl: Ctrl = {
       showOverlayError(onRetry);
       return;
     }
-    if (!hasInitialData) {
-      hideOverlay();
-    }
+    // Toujours masquer l’overlay au succès : avec SSG, hasInitialData évite showOverlayLoading
+    // mais le template HTML affiche « Chargement… » tant que hidden n’est pas posé.
+    hideOverlay();
     showCardAndControls();
   },
   cleanUp() {
