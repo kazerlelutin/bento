@@ -492,40 +492,40 @@ export const UI: UiTranslation = {
 /** Traductions pour les balises meta (title, description, og:*, twitter:*). */
 export const META: UiTranslation = {
   "meta-title": {
-    fr: "BENTO - Recettes végé, bentos et repas emportés",
-    en: "BENTO - Veggie recipes, bentos & packed lunches",
-    ko: "BENTO - 채식 레시피, 벤토와 도시락",
-    ch: "BENTO - 素食食谱、便当与外带餐"
+    fr: "BENTO - Cuisines coréenne, japonaise, chinoise & repas emportés",
+    en: "BENTO - Korean, Japanese & Chinese recipes, bentos & packed lunches",
+    ko: "BENTO - 한·일·중 요리, 벤토와 도시락",
+    ch: "BENTO - 韩日中餐、便当与外带餐"
   },
   "meta-description": {
-    fr: "Recettes végétariennes pour repas emportés : une fiche à la fois, tirage au hasard ou catalogue. Infos bento (transport, conservation…), export bentext pour copier ou imprimer. Pixel art.",
-    en: "Vegetarian recipes for packed lunches: one card at a time, random pick or searchable catalog. Bento tips (transport, storage…), bentext export to copy or print. Pixel art.",
-    ko: "도시락용 채식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 벤토 안내(운반·보관 등), 벤텍스트 복사·인쇄. 픽셀 아트.",
-    ch: "素食外带餐食谱：每次一张卡片，随机或目录内搜索。便当提示（携带、保存等）、bentext 复制或打印。像素风。"
+    fr: "Recettes inspirées surtout de Corée, du Japon et de Chine, pensées pour les bentos et repas à emporter : une fiche à la fois, tirage au hasard ou catalogue. Infos pratiques (transport, conservation…), export bentext pour copier ou imprimer.",
+    en: "Recipes drawing mainly from Korea, Japan and China, geared toward bentos and packed lunches: one card at a time, random pick or searchable catalog. Practical tips (transport, storage…), bentext export to copy or print.",
+    ko: "한국·일본·중국 요리에 기반한 도시락·외식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 실용 안내(운반·보관 등), 벤텍스트 복사·인쇄.",
+    ch: "以韩、日、中餐为主，面向便当与外带餐：每次一张卡片，随机或目录搜索。实用提示（携带、保存等）、bentext 复制或打印。"
   },
   "meta-keywords": {
-    fr: "bento, recettes végétariennes, repas emporté, lunch box, bentext, gamelle, transport nourriture, catalogue recettes, tirage au hasard, pixel art, cuisine végé",
-    en: "bento, vegetarian recipes, packed lunch, bentext, meal prep, recipe catalog, random recipe, pixel art, veggie",
-    ko: "벤토, 채식 레시피, 도시락, bentext, 레시피 목록, 무작위 추천, 픽셀 아트",
-    ch: "便当, 素食食谱, 外带餐, bentext, 食谱目录, 随机推荐, 像素艺术"
+    fr: "bento, cuisine coréenne, cuisine japonaise, cuisine chinoise, repas emporté, lunch box, bentext, street food asiatique, transport nourriture, catalogue recettes, tirage au hasard",
+    en: "bento, Korean recipes, Japanese recipes, Chinese recipes, packed lunch, bentext, meal prep, recipe catalog, random recipe, East Asian street food",
+    ko: "벤토, 한국 요리, 일본 요리, 중국 요리, 도시락, bentext, 길거리 음식, 레시피 목록, 무작위 추천",
+    ch: "便当, 韩餐, 日餐, 中餐, 外带餐, bentext, 东亚街头小吃, 食谱目录, 随机推荐"
   },
   "meta-og-title": {
-    fr: "BENTO - Recettes végé, bentos et repas emportés",
-    en: "BENTO - Veggie recipes, bentos & packed lunches",
-    ko: "BENTO - 채식 레시피, 벤토와 도시락",
-    ch: "BENTO - 素食食谱、便当与外带餐"
+    fr: "BENTO - Cuisines coréenne, japonaise, chinoise & repas emportés",
+    en: "BENTO - Korean, Japanese & Chinese recipes, bentos & packed lunches",
+    ko: "BENTO - 한·일·중 요리, 벤토와 도시락",
+    ch: "BENTO - 韩日中餐、便当与外带餐"
   },
   "meta-og-description": {
-    fr: "Recettes végétariennes pour repas emportés : une fiche à la fois, tirage au hasard ou catalogue. Infos bento (transport, conservation…), export bentext pour copier ou imprimer. Pixel art.",
-    en: "Vegetarian recipes for packed lunches: one card at a time, random pick or searchable catalog. Bento tips (transport, storage…), bentext export to copy or print. Pixel art.",
-    ko: "도시락용 채식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 벤토 안내(운반·보관 등), 벤텍스트 복사·인쇄. 픽셀 아트.",
-    ch: "素食外带餐食谱：每次一张卡片，随机或目录内搜索。便当提示（携带、保存等）、bentext 复制或打印。像素风。"
+    fr: "Recettes inspirées surtout de Corée, du Japon et de Chine, pensées pour les bentos et repas à emporter : une fiche à la fois, tirage au hasard ou catalogue. Infos pratiques (transport, conservation…), export bentext pour copier ou imprimer.",
+    en: "Recipes drawing mainly from Korea, Japan and China, geared toward bentos and packed lunches: one card at a time, random pick or searchable catalog. Practical tips (transport, storage…), bentext export to copy or print.",
+    ko: "한국·일본·중국 요리에 기반한 도시락·외식 레시피: 한 장씩, 무작위 또는 검색 가능한 목록. 실용 안내(운반·보관 등), 벤텍스트 복사·인쇄.",
+    ch: "以韩、日、中餐为主，面向便当与外带餐：每次一张卡片，随机或目录搜索。实用提示（携带、保存等）、bentext 复制或打印。"
   },
   "meta-og-image-alt": {
-    fr: "BENTO — recettes végé, bentos et repas emportés en pixel art",
-    en: "BENTO — veggie recipes, bentos and packed lunches in pixel art",
-    ko: "BENTO — 픽셀 아트 채식 레시피와 도시락",
-    ch: "BENTO — 像素风素食食谱与便当"
+    fr: "BENTO — recettes d'Asie de l'Est, bentos et repas emportés",
+    en: "BENTO — East Asian-inspired recipes, bentos and packed lunches",
+    ko: "BENTO — 동아시아풍 레시피, 벤토와 도시락",
+    ch: "BENTO — 东亚风味食谱、便当与外带餐"
   },
   "meta-content-language": {
     fr: "fr",

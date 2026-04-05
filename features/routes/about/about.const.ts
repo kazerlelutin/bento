@@ -21,10 +21,10 @@ export const aboutContent: AboutContentItem[] = [
       ch: '我是谁？'
     },
     content: {
-      fr: 'Je suis Benoist Bouteiller, créateur de jeux, animateur pixel art et développeur d\'applications. Passionné par la cuisine japonaise et le pixel art, j\'ai créé BENTO pour vous aider à trouver des recettes végétariennes quand vous n\'avez pas d\'idée, avec une interface simple et un design pixel art.',
-      en: 'I am Benoist Bouteiller, game creator, pixel art animator and app developer. Passionate about Japanese cuisine and pixel art, I created BENTO to help you find vegetarian recipes when you have no idea what to cook, with a simple interface and pixel art design.',
-      ko: '저는 게임 제작자, 픽셀 아트 애니메이터, 앱 개발자인 Benoist Bouteiller입니다. 일본 요리와 픽셀 아트에 대한 열정으로 BENTO를 만들어, 요리 아이디어가 없을 때 채식 레시피를 쉽게 찾을 수 있게 했습니다.',
-      ch: '我是 Benoist Bouteiller，游戏创作者、像素画师和应用开发者。出于对日料和像素艺术的热爱，我做了 BENTO，帮你在没灵感时用简洁界面发现素食食谱。'
+      fr: 'Je suis Benoist Bouteiller, créateur de jeux et développeur d\'applications. Passionné par les cuisines coréenne, japonaise et chinoise, j\'ai créé BENTO pour vous aider à trouver des recettes quand vous n\'avez pas d\'idée, avec une interface simple — centrée sur le repas à emporter et les infos utiles (transport, conservation, façon de manger…).',
+      en: 'I am Benoist Bouteiller, game creator and app developer. I love Korean, Japanese and Chinese cooking, and I built BENTO to help you find recipe ideas when you are stuck — with a simple interface focused on packed lunches and practical details (transport, storage, how to eat…).',
+      ko: '저는 게임 제작자이자 앱 개발자 Benoist Bouteiller입니다. 한국·일본·중국 요리를 사랑하며, 아이디어가 없을 때 도시락과 실용 정보(운반·보관·먹는 방식 등)에 초점을 맞춘 BENTO를 만들었습니다.',
+      ch: '我是 Benoist Bouteiller，游戏与应用开发者。我热爱韩餐、日餐与中餐，并做了 BENTO，帮你在没灵感时找食谱——界面简洁，侧重外带餐与实用信息（携带、保存、食用方式等）。'
     },
     link: "http://bouteiller.contact/",
     linkText: {
@@ -42,45 +42,10 @@ export const aboutContent: AboutContentItem[] = [
       ch: 'BENTO 概念'
     },
     content: {
-      fr: 'BENTO propose des recettes végétariennes quand vous n\'avez pas d\'idée : une recette à la fois avec un tirage au hasard, et un catalogue pour tout parcourir ou rechercher — le tout en pixel art.',
-      en: 'BENTO suggests vegetarian recipes when you have no idea what to cook: one recipe at a time with random picks, and a catalog to browse or search — all in pixel art.',
-      ko: 'BENTO는 요리 아이디어가 없을 때 채식 레시피를 제안합니다. 무작위로 한 번에 하나씩, 전체를 검색·탐색하는 목록까지 — 픽셀 아트로 구성했습니다.',
-      ch: 'BENTO 在你没想法时推荐素食食谱：每次随机一道，另有可搜索浏览的完整目录——像素风呈现。'
-    }
-  },
-  {
-    title: {
-      fr: 'Découvrir et retrouver',
-      en: 'Discover and find again',
-      ko: '발견하고 다시 찾기',
-      ch: '发现与找回'
-    },
-    content: {
-      fr: 'L\'expérience vise d\'abord la découverte : une recette à la fois, sans se perdre dans une liste. Le catalogue permet de retrouver une recette par son nom quand vous le souhaitez. Idéal pour la cuisine du quotidien, les recettes végétariennes et les repas faciles à transporter.',
-      en: 'The experience is first about discovery: one recipe at a time, without getting lost in a list. The catalog lets you find a recipe by name whenever you want. Ideal for everyday cooking, vegetarian recipes and easy-to-carry meals.',
-      ko: '한 번에 한 가지 레시피를 발견하는 경험을 제공합니다. 목록에서 이름으로 다시 찾을 수 있습니다. 일상 요리와 채식 레시피에 적합합니다.',
-      ch: '体验以发现为主：一次一道食谱，不会在列表中迷失。目录可按名称随时找回食谱。适合日常素食与便携餐。'
-    }
-  },
-  {
-    title: {
-      fr: 'Technologie',
-      en: 'Technology',
-      ko: '기술',
-      ch: '技术'
-    },
-    content: {
-      fr: 'BENTO est développé avec Vanilla JavaScript/TypeScript, HTML et CSS. Hébergé chez Infomaniak, l\'application utilise IndexedDB pour le stockage local et Bun comme runtime. Aucun framework lourd, juste du code simple et efficace.',
-      en: 'BENTO is developed with Vanilla JavaScript/TypeScript, HTML and CSS. Hosted at Infomaniak, the app uses IndexedDB for local storage and Bun as runtime. No heavy framework, just simple and efficient code.',
-      ko: 'BENTO는 Vanilla JavaScript/TypeScript, HTML, CSS로 개발되었습니다. Infomaniak에서 호스팅되며, 로컬 저장소로 IndexedDB, 런타임으로 Bun을 사용합니다.',
-      ch: 'BENTO 使用 Vanilla JavaScript/TypeScript、HTML 和 CSS 开发。托管于 Infomaniak，本地存储用 IndexedDB，运行时为 Bun。无重框架，代码简洁高效。'
-    },
-    link: "https://github.com/kazerlelutin/bento",
-    linkText: {
-      fr: 'Code source',
-      en: 'Source code',
-      ko: '소스 코드',
-      ch: '源代码'
+      fr: 'BENTO, ce sont des idées de plats à emporter : pensés pour être mangés vite, comme un vrai repas de bento. Les recettes s\'inspirent surtout des cuisines coréenne, japonaise et chinoise, et de la street food d\'Asie de l\'Est — non pas comme un fourre-tout, mais comme cette nourriture du quotidien, facile à manger à l\'extérieur ou sur le pouce. Une recette au hasard pour décrocher, un catalogue pour filtrer ou chercher — avec tout ce qu\'il faut savoir pour préparer, transporter et manger.',
+      en: 'BENTO is about takeaway-friendly meals: meant to be eaten quickly, like a real bento. Recipes draw mainly from Korean, Japanese and Chinese cooking, and from East Asian street food — not as a vague label, but as everyday food that is easy to eat outside or on the go. A random pick to get unstuck, a catalog to filter or search — with what you need to prep, carry and eat.',
+      ko: 'BENTO는 도시락처럼 빠르게 먹을 수 있는 외식 아이디어입니다. 한국·일본·중국 요리와 동아시아 길거리 음식에서 영감을 받되, 포괄적인 라벨이 아니라 밖에서·이동 중에 먹기 쉬운 일상 음식으로 다룹니다. 무작위로 한 가지 추천, 필터·검색이 가능한 목록 — 준비·운반·먹는 데 필요한 정보를 함께 제공합니다.',
+      ch: 'BENTO 提供外带餐灵感：像真正的便当一样，适合快速食用。食谱主要借鉴韩餐、日餐、中餐，以及东亚街头小吃——不是笼统的标签，而是日常在外、边走边吃也容易的食物。随机一道菜打破僵局，目录可筛选、搜索——并附准备、携带与食用所需的信息。'
     }
   },
   {

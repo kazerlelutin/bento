@@ -1,7 +1,7 @@
 {
   "name": "BENTO",
   "short_name": "BENTO",
-  "description": "Recettes végé, bentos et repas emportés",
+  "description": "Cuisines coréenne, japonaise, chinoise — bentos et repas emportés",
   "start_url": "/fr",
   "scope": "/",
   "display": "standalone",

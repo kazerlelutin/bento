@@ -201,7 +201,7 @@ Sitemap: ${CONFIG.baseUrl}/sitemap.xml
 Crawl-delay: 1
 
 # Site information
-# BENTO - Pixel art creation and sharing platform
+# BENTO - East Asian recipes, bentos & packed lunches
 # Last update: ${new Date().toLocaleDateString('fr-FR')}
 `;
 
