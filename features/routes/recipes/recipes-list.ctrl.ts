@@ -384,8 +384,6 @@ const recipesListCtrl: Ctrl = {
           img.alt = recipe.identity.name;
           img.loading = "lazy";
           img.decoding = "async";
-          if (recipe.image?.width) img.width = recipe.image.width;
-          if (recipe.image?.height) img.height = recipe.image.height;
           thumb.appendChild(img);
         } else {
           thumb.classList.add("recipes-list-item__thumb--empty");
@@ -406,10 +404,11 @@ const recipesListCtrl: Ctrl = {
           const meta = document.createElement("div");
           meta.className = "recipes-list-item__meta";
           for (const { field, display } of chips) {
+            const label = t(UI[bentoFilterFieldLabelKey(field)]);
             const chip = document.createElement("span");
             chip.className = `recipes-list-chip recipes-list-chip--${field}`;
-            chip.textContent = display;
-            chip.title = `${t(UI[bentoFilterFieldLabelKey(field)])}: ${display}`;
+            chip.textContent = `${label}: ${display}`;
+            chip.title = chip.textContent;
             meta.appendChild(chip);
           }
           body.appendChild(meta);

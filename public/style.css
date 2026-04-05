@@ -1279,14 +1279,18 @@ input.recipes-search[hidden],
   margin: 0;
 }
 
-/* Cartes catalogue recettes */
+/* Cartes catalogue recettes — format compact */
+#recipes-list {
+  gap: var(--gap-small);
+}
+
 .recipes-list-item {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: var(--gap-medium);
-  padding: var(--padding-small) var(--padding-medium);
-  border-radius: var(--border-radius);
+  gap: var(--gap-small);
+  padding: 0.35rem 0.5rem;
+  border-radius: calc(var(--border-radius) * 0.85);
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   text-decoration: none;
@@ -1306,10 +1310,10 @@ input.recipes-search[hidden],
 
 .recipes-list-item__thumb {
   flex-shrink: 0;
-  width: 5.25rem;
+  width: 3.25rem;
   align-self: center;
   aspect-ratio: 1;
-  border-radius: var(--border-radius);
+  border-radius: calc(var(--border-radius) * 0.85);
   overflow: hidden;
   background: var(--color-bg-primary);
 }
@@ -1336,53 +1340,45 @@ input.recipes-search[hidden],
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .recipes-list-item__title {
   font-weight: 600;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size);
   color: var(--color-accent);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .recipes-list-item__meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
 }
 
 .recipes-list-chip {
-  font-size: var(--font-size-small);
-  line-height: 1.3;
-  padding: 0.2rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
+  font-size: calc(var(--font-size-small) * 0.92);
+  line-height: 1.35;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
   color: var(--text-secondary);
-  background: color-mix(in srgb, var(--color-bg-primary) 85%, var(--color-surface));
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .recipes-list-chip--transport {
-  border-color: color-mix(in srgb, var(--color-accent) 45%, var(--color-border));
   color: var(--text-primary);
-}
-
-.recipes-list-chip--eating {
-  border-color: var(--color-border);
-}
-
-.recipes-list-chip--cover {
-  border-color: var(--color-border);
 }
 
 @media (max-width: 480px) {
   .recipes-list-item__thumb {
-    width: 4.25rem;
+    width: 2.875rem;
+  }
+
+  .recipes-list-item {
+    padding: 0.3rem 0.4rem;
   }
 }
 
