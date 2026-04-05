@@ -1,5 +1,13 @@
 export const RECIPES_CONTAINER_ID = "recipes-container";
-export const RECIPES_FILTER_BAR_ID = "recipes-filter-bar";
+export const RECIPES_SEARCH_TOOLBAR_ID = "recipes-search-toolbar";
+export const RECIPES_FILTER_CHIPS_ID = "recipes-filter-chips";
+export const RECIPES_FILTER_ADD_ID = "recipes-filter-add";
+export const RECIPES_FILTER_POPOVER_ID = "recipes-filter-popover";
+export const RECIPES_FILTER_FIELD_ID = "recipes-filter-field";
+export const RECIPES_FILTER_VALUE_ID = "recipes-filter-value";
+export const RECIPES_FILTER_APPLY_ID = "recipes-filter-apply";
+export const RECIPES_LIST_WRAP_ID = "recipes-list-wrap";
+export const RECIPES_LIST_LOADING_ID = "recipes-list-loading";
 export const RECIPES_LIST_ID = "recipes-list";
 export const RECIPES_EMPTY_ID = "recipes-empty";
 export const RECIPES_SEARCH_ID = "recipes-search";

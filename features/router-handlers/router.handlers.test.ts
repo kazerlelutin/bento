@@ -6,7 +6,7 @@ mock.module("@features/meta/meta.ctrl", () => ({
   metaCtrl: { updateMeta: () => {}, init: () => {} },
 }));
 
-const { handleRouteChange, handleLinkClick } = await import("../router/router.handlers");
+const { handleRouteChange, handleLinkClick, resetRouterViewCacheForTests } = await import("../router/router.handlers");
 
 // Mock renderTemplate
 const mockRenderTemplate = jest.fn();
@@ -14,6 +14,7 @@ jest.spyOn(routerTemplate, "renderTemplate").mockImplementation(mockRenderTempla
 
 describe("router.handlers", () => {
   beforeEach(() => {
+    resetRouterViewCacheForTests();
     document.body.innerHTML = `
       <main></main>
       <title></title>
@@ -95,5 +96,31 @@ describe("router.handlers", () => {
     const event = { preventDefault, target: el } as any;
     handleLinkClick(event);
     expect(preventDefault).not.toHaveBeenCalled();
+  });
+
+  test("ne rappelle pas renderTemplate si même template et même pathname (ex. query seule)", async () => {
+    const prev = window.location;
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { ...prev, pathname: "/fr/recipes", search: "?transport=easy" },
+    });
+    try {
+      resetRouterViewCacheForTests();
+      document.body.innerHTML = `
+      <main></main>
+      <title></title>
+      <template id="dup-template"><div>dup</div></template>
+    `;
+      const ctrl1 = { init: jest.fn(), cleanUp: jest.fn() };
+      await handleRouteChange({ title: "A", templateId: "dup-template", ctrl: ctrl1 } as any);
+      expect(mockRenderTemplate).toHaveBeenCalledTimes(1);
+      mockRenderTemplate.mockClear();
+      const ctrl2 = { init: jest.fn(), cleanUp: jest.fn() };
+      await handleRouteChange({ title: "B", templateId: "dup-template", ctrl: ctrl2 } as any);
+      expect(mockRenderTemplate).not.toHaveBeenCalled();
+      expect(ctrl2.init).toHaveBeenCalled();
+    } finally {
+      Object.defineProperty(window, "location", { configurable: true, value: prev });
+    }
   });
 });

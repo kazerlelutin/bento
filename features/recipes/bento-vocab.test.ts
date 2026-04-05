@@ -2,6 +2,7 @@ import { describe, it, expect } from "bun:test";
 import {
   bentoValueToCanonicalId,
   bentoValueToCanonicalIds,
+  formatBentoAlternativesForDisplay,
   parseBentoRecipesQuery,
   recipeBentoMatchesFilter,
 } from "./bento-vocab";
@@ -20,11 +21,15 @@ describe("bento-vocab", () => {
     expect(ids).toContain("reheat_optional_oven_micro");
   });
 
-  it("parseBentoRecipesQuery returns first known filter param", () => {
-    expect(parseBentoRecipesQuery("?cover=cover_optional&transport=transport_easy")).toEqual({
-      field: "transport",
-      id: "transport_easy",
-    });
+  it("parseBentoRecipesQuery returns all filter params (field order)", () => {
+    expect(parseBentoRecipesQuery("?cover=cover_optional&transport=transport_easy")).toEqual([
+      { field: "transport", id: "transport_easy" },
+      { field: "cover", id: "cover_optional" },
+    ]);
+  });
+
+  it("formatBentoAlternativesForDisplay replaces tilde with comma", () => {
+    expect(formatBentoAlternativesForDisplay("À la main ~ Baguettes")).toBe("À la main, Baguettes");
   });
 
   it("recipeBentoMatchesFilter uses segment-aware ids", () => {

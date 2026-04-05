@@ -111,15 +111,31 @@ const VOCAB_BY_FIELD: Record<BentoFilterField, LabelRow[]> = {
   prep_time: PREP_TIME,
 };
 
+/** Affichage : les alternatives API (`a ~ b`) deviennent « a, b ». */
+export function formatBentoAlternativesForDisplay(s: string): string {
+  return s.replace(/\s*~\s*/g, ", ");
+}
+
 /** Libellé affichable pour un id dans la langue UI. */
 export function canonicalIdLabel(field: BentoFilterField, id: string, lang: Language): string | null {
   const rows = VOCAB_BY_FIELD[field];
   const r = rows.find((x) => x.id === id);
-  return r ? r[lang] : null;
+  return r ? formatBentoAlternativesForDisplay(r[lang]) : null;
+}
+
+/** Options pour un sélecteur de filtre (Notion-style). */
+export function listBentoFilterValues(field: BentoFilterField, lang: Language): { id: string; label: string }[] {
+  return VOCAB_BY_FIELD[field].map((row) => ({
+    id: row.id,
+    label: formatBentoAlternativesForDisplay(row[lang]),
+  }));
 }
 
 function valueSegments(rawValue: string): string[] {
-  const parts = rawValue.split("~").map((s) => s.trim()).filter(Boolean);
+  const parts = rawValue
+    .split(/\s*~\s*|\s*,\s*/)
+    .map((s) => s.trim())
+    .filter(Boolean);
   return parts.length > 0 ? parts : rawValue.trim() ? [rawValue.trim()] : [];
 }
 
@@ -177,16 +193,31 @@ export function recipeBentoMatchesFilter(
   return bentoValueToCanonicalIds(field, value, lang).includes(filterId);
 }
 
-export function parseBentoRecipesQuery(search: string | undefined): { field: BentoFilterField; id: string } | null {
+export type BentoFilterEntry = { field: BentoFilterField; id: string };
+
+/** Lit tous les filtres bento présents dans la query (AND). */
+export function parseBentoRecipesQuery(search: string | undefined): BentoFilterEntry[] {
   const q = search ?? "";
   const params = new URLSearchParams(q.startsWith("?") ? q.slice(1) : q);
+  const out: BentoFilterEntry[] = [];
   for (const f of BENTO_FILTER_FIELDS) {
-    const id = params.get(f);
-    if (id?.trim()) return { field: f, id: id.trim() };
+    const id = params.get(f)?.trim();
+    if (id) out.push({ field: f, id });
   }
-  return null;
+  return out;
 }
 
 export function buildRecipesFilteredHref(lang: Language, field: BentoFilterField, id: string): string {
   return `${pathWithLang(lang, "recipes")}?${encodeURIComponent(field)}=${encodeURIComponent(id)}`;
+}
+
+/** Sérialise plusieurs filtres dans l’URL (un paramètre par champ). */
+export function buildRecipesFilteredHrefMany(lang: Language, filters: BentoFilterEntry[]): string {
+  const base = pathWithLang(lang, "recipes");
+  if (filters.length === 0) return base;
+  const p = new URLSearchParams();
+  for (const { field, id } of filters) {
+    p.set(field, id);
+  }
+  return `${base}?${p.toString()}`;
 }

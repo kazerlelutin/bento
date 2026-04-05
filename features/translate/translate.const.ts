@@ -307,6 +307,36 @@ export const UI: UiTranslation = {
     "ko": "도시락 필터 적용 중",
     "ch": "当前便当筛选"
   },
+  "recipes-filter-add-aria": {
+    "fr": "Ajouter un filtre (transport, couvert, etc.)",
+    "en": "Add a filter (transport, cover, etc.)",
+    "ko": "필터 추가 (운반, 뚜껑 등)",
+    "ch": "添加筛选（便当盒等）"
+  },
+  "recipes-filter-field-label": {
+    "fr": "Critère",
+    "en": "Field",
+    "ko": "항목",
+    "ch": "条件"
+  },
+  "recipes-filter-value-label": {
+    "fr": "Valeur",
+    "en": "Value",
+    "ko": "값",
+    "ch": "值"
+  },
+  "recipes-filter-apply": {
+    "fr": "Appliquer",
+    "en": "Apply",
+    "ko": "적용",
+    "ch": "应用"
+  },
+  "recipes-filter-chip-remove-aria": {
+    "fr": "Retirer ce filtre",
+    "en": "Remove this filter",
+    "ko": "이 필터 제거",
+    "ch": "移除此筛选"
+  },
   "recipes-meta-filtered-desc": {
     "fr": "{{field}} : {{value}} — recettes BENTO.",
     "en": "{{field}}: {{value}} — BENTO recipes.",

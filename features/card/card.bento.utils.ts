@@ -7,6 +7,7 @@ import {
   BENTO_FILTER_FIELDS,
   bentoValueToCanonicalId,
   buildRecipesFilteredHref,
+  formatBentoAlternativesForDisplay,
 } from "@features/recipes/bento-vocab";
 
 /** Ordre d’affichage des champs bento (aligné sur l’API bentext v2). */
@@ -77,8 +78,9 @@ export function hasBentoContent(bento: Recipe["bento"]): boolean {
 export function renderCardBentoDl(dl: HTMLDListElement, bento: RecipeBento, lang: Language): void {
   dl.innerHTML = "";
   for (const key of BENTO_FIELD_KEYS) {
-    const val = getBentoFieldValue(bento, key);
-    if (typeof val !== "string" || !val.trim()) continue;
+    const rawVal = getBentoFieldValue(bento, key);
+    if (typeof rawVal !== "string" || !rawVal.trim()) continue;
+    const val = formatBentoAlternativesForDisplay(rawVal);
     const dt = document.createElement("dt");
     dt.className = "card-bento-dl__term";
     dt.textContent = t(UI[BENTO_UI_KEY[key]]);
@@ -86,7 +88,7 @@ export function renderCardBentoDl(dl: HTMLDListElement, bento: RecipeBento, lang
     dd.className = "card-bento-dl__def";
 
     if (FILTER_SET.has(key)) {
-      const fid = bentoValueToCanonicalId(key as BentoFilterField, val, lang);
+      const fid = bentoValueToCanonicalId(key as BentoFilterField, rawVal, lang);
       if (fid) {
         const a = document.createElement("a");
         a.href = buildRecipesFilteredHref(lang, key as BentoFilterField, fid);

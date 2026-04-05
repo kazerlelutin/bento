@@ -4,6 +4,16 @@ import { renderTemplate } from '@features/router/router.template';
 import type { Route } from '@features/routes/routes.type';
 import { metaCtrl } from '@features/meta/meta.ctrl';
 
+/** Dernier rendu : évite de vider `main` si seule la query change (ex. filtres catalogue). */
+let lastRenderedTemplateId: string | null = null;
+let lastRenderedPathname: string | null = null;
+
+/** Réservé aux tests : réinitialise le cache de re-render partiel. */
+export function resetRouterViewCacheForTests(): void {
+  lastRenderedTemplateId = null;
+  lastRenderedPathname = null;
+}
+
 function anchorFromInternalLinkEvent(event: Event): HTMLAnchorElement | null {
   const t = event.target;
   const el = t instanceof Element ? t : (t as Node | null)?.parentElement;
@@ -14,7 +24,17 @@ function anchorFromInternalLinkEvent(event: Event): HTMLAnchorElement | null {
 export const handleRouteChange = async (route: Route): Promise<void> => {
   metaCtrl.updateMeta();
   updateDocumentTitle(route.title);
-  renderTemplate(route.templateId);
+  const pathname =
+    typeof window !== 'undefined' && window.location ? window.location.pathname : '';
+  const sameView =
+    lastRenderedTemplateId === route.templateId && lastRenderedPathname === pathname;
+
+  if (!sameView) {
+    renderTemplate(route.templateId);
+    lastRenderedTemplateId = route.templateId;
+    lastRenderedPathname = pathname;
+  }
+
   await route?.ctrl?.init?.();
   routerState.cleanUp = route?.ctrl?.cleanUp;
 };

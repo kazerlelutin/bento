@@ -2,7 +2,15 @@ import { describe, it, expect, beforeEach, afterAll, mock } from "bun:test";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import {
   RECIPES_CONTAINER_ID,
-  RECIPES_FILTER_BAR_ID,
+  RECIPES_SEARCH_TOOLBAR_ID,
+  RECIPES_FILTER_CHIPS_ID,
+  RECIPES_FILTER_ADD_ID,
+  RECIPES_FILTER_POPOVER_ID,
+  RECIPES_FILTER_FIELD_ID,
+  RECIPES_FILTER_VALUE_ID,
+  RECIPES_FILTER_APPLY_ID,
+  RECIPES_LIST_WRAP_ID,
+  RECIPES_LIST_LOADING_ID,
   RECIPES_LIST_ID,
   RECIPES_EMPTY_ID,
   RECIPES_SEARCH_ID,
@@ -25,12 +33,7 @@ const realRouterHandlers = await import("@/features/router/router.handlers");
 mock.module("@/features/router/router.handlers", () => ({
   ...realRouterHandlers,
   handleLinkClick: () => {},
-}));
-mock.module("@features/card-controls/card-controls", () => ({
-  cardControlsCtrl: { init: () => {}, cleanUp: () => {} },
-}));
-mock.module("@features/card-controls/card-controls.aria", () => ({
-  setCardControlsAriaLabels: () => {},
+  navigateInternal: () => {},
 }));
 mock.module("@features/meta/meta.ctrl", () => ({
   applyRecipesCatalogDefaultMeta: () => {},
@@ -56,13 +59,28 @@ function createRecipesDOM() {
   document.body.innerHTML = `
     <div id="${RECIPES_CONTAINER_ID}">
       <h1></h1>
-      <div id="${RECIPES_FILTER_BAR_ID}" hidden></div>
       <div id="${RECIPES_LOAD_ERROR_ID}" hidden>
         <p id="${RECIPES_LOAD_ERROR_MESSAGE_ID}"></p>
         <button type="button" id="${RECIPES_LOAD_ERROR_RETRY_ID}"></button>
       </div>
-      <input type="text" id="${RECIPES_SEARCH_ID}" />
-      <div id="${RECIPES_LIST_ID}"></div>
+      <div id="${RECIPES_SEARCH_TOOLBAR_ID}">
+        <div id="${RECIPES_FILTER_CHIPS_ID}"></div>
+        <div class="recipes-search-row">
+          <button type="button" id="${RECIPES_FILTER_ADD_ID}">+</button>
+          <input type="search" id="${RECIPES_SEARCH_ID}" />
+        </div>
+        <div id="${RECIPES_FILTER_POPOVER_ID}" hidden role="dialog">
+          <label id="recipes-filter-field-label" for="${RECIPES_FILTER_FIELD_ID}"></label>
+          <select id="${RECIPES_FILTER_FIELD_ID}"></select>
+          <label id="recipes-filter-value-label" for="${RECIPES_FILTER_VALUE_ID}"></label>
+          <select id="${RECIPES_FILTER_VALUE_ID}"></select>
+          <button type="button" id="${RECIPES_FILTER_APPLY_ID}"></button>
+        </div>
+      </div>
+      <div id="${RECIPES_LIST_WRAP_ID}">
+        <div id="${RECIPES_LIST_LOADING_ID}" hidden></div>
+        <div id="${RECIPES_LIST_ID}"></div>
+      </div>
       <p id="${RECIPES_EMPTY_ID}"></p>
     </div>
   `;
@@ -82,8 +100,10 @@ describe("recipes-list.ctrl", () => {
     await recipesListCtrl.init();
     const errorEl = document.getElementById(RECIPES_LOAD_ERROR_ID);
     const listEl = document.getElementById(RECIPES_LIST_ID);
+    const toolbarEl = document.getElementById(RECIPES_SEARCH_TOOLBAR_ID);
     expect(errorEl?.hidden).toBe(false);
     expect(listEl?.hidden).toBe(true);
+    expect(toolbarEl?.hidden).toBe(true);
   });
 
   it("hides error block and shows list when no loadError", async () => {
