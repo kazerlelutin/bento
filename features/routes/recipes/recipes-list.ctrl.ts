@@ -23,6 +23,8 @@ import {
   applyRecipesCatalogDefaultMeta,
   applyRecipesCatalogFilterMeta,
 } from "@features/meta/meta.ctrl";
+import { bentoFilterFieldLabelKey } from "@features/card/card.bento.utils";
+import { recipeListBentoChips, resolveRecipeListImageSrc } from "./recipes-list.utils";
 import {
   RECIPES_CONTAINER_ID,
   RECIPES_SEARCH_TOOLBAR_ID,
@@ -369,8 +371,52 @@ const recipesListCtrl: Ctrl = {
         const a = document.createElement("a");
         a.href = pathWithLang(lang, "recipes", recipe.slug);
         a.setAttribute("data-internal", "true");
-        a.className = "favorites-item";
-        a.textContent = recipe.identity.name;
+        a.className = "recipes-list-item";
+
+        const thumb = document.createElement("div");
+        thumb.className = "recipes-list-item__thumb";
+
+        const imgSrc = resolveRecipeListImageSrc(recipe);
+        if (imgSrc) {
+          const img = document.createElement("img");
+          img.className = "recipes-list-item__img";
+          img.src = imgSrc;
+          img.alt = recipe.identity.name;
+          img.loading = "lazy";
+          img.decoding = "async";
+          if (recipe.image?.width) img.width = recipe.image.width;
+          if (recipe.image?.height) img.height = recipe.image.height;
+          thumb.appendChild(img);
+        } else {
+          thumb.classList.add("recipes-list-item__thumb--empty");
+          thumb.setAttribute("aria-hidden", "true");
+        }
+
+        const body = document.createElement("div");
+        body.className = "recipes-list-item__body";
+
+        const title = document.createElement("span");
+        title.className = "recipes-list-item__title";
+        title.textContent = recipe.identity.name;
+
+        body.appendChild(title);
+
+        const chips = recipeListBentoChips(recipe);
+        if (chips.length > 0) {
+          const meta = document.createElement("div");
+          meta.className = "recipes-list-item__meta";
+          for (const { field, display } of chips) {
+            const chip = document.createElement("span");
+            chip.className = `recipes-list-chip recipes-list-chip--${field}`;
+            chip.textContent = display;
+            chip.title = `${t(UI[bentoFilterFieldLabelKey(field)])}: ${display}`;
+            meta.appendChild(chip);
+          }
+          body.appendChild(meta);
+        }
+
+        a.appendChild(thumb);
+        a.appendChild(body);
         fragment.appendChild(a);
       }
       listEl.appendChild(fragment);

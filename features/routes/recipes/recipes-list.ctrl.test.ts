@@ -131,7 +131,7 @@ describe("recipes-list.ctrl", () => {
     recipesStore.setRecipes([r1, r2]);
     await recipesListCtrl.init();
     const listEl = document.getElementById(RECIPES_LIST_ID);
-    const links = listEl?.querySelectorAll("a.favorites-item");
+    const links = listEl?.querySelectorAll("a.recipes-list-item");
     expect(links?.length).toBe(2);
     expect(links?.[0].textContent).toBe("Bananes");
     expect(links?.[1].textContent).toBe("Pommes");
@@ -146,11 +146,11 @@ describe("recipes-list.ctrl", () => {
     await recipesListCtrl.init();
     const searchEl = document.getElementById(RECIPES_SEARCH_ID) as HTMLInputElement;
     const listEl = document.getElementById(RECIPES_LIST_ID);
-    expect(listEl?.querySelectorAll("a.favorites-item").length).toBe(2);
+    expect(listEl?.querySelectorAll("a.recipes-list-item").length).toBe(2);
     searchEl!.value = "pom";
     searchEl!.dispatchEvent(new Event("input", { bubbles: true }));
     await Promise.resolve();
-    const links = listEl?.querySelectorAll("a.favorites-item");
+    const links = listEl?.querySelectorAll("a.recipes-list-item");
     expect(links?.length).toBe(1);
     expect(links?.[0].textContent).toBe("Pommes");
   });
@@ -167,7 +167,7 @@ describe("recipes-list.ctrl", () => {
       recipesStore.setRecipes([r1, r2]);
       await recipesListCtrl.init();
       const listEl = document.getElementById(RECIPES_LIST_ID);
-      expect(listEl?.querySelectorAll("a.favorites-item").length).toBe(1);
+      expect(listEl?.querySelectorAll("a.recipes-list-item").length).toBe(1);
       expect(listEl?.textContent).toContain("A");
     } finally {
       Object.defineProperty(window, "location", { configurable: true, value: prev });
