@@ -10,16 +10,23 @@ export function getTranslation(
 }
 
 export function getLanguageFromLS(): Language {
-  const language = localStorage.getItem(LS_KEY);
-  if (language && availableLanguages.has(language as Language)) {
-    return language as Language;
+  if (typeof globalThis.localStorage === "undefined") {
+    return "fr";
   }
-  if (!language) {
-    const browserLanguage = navigator.language.split('-')[0];
-    if (availableLanguages.has(browserLanguage as Language)) {
-      localStorage.setItem(LS_KEY, browserLanguage as Language);
-      return browserLanguage as Language;
+  try {
+    const language = globalThis.localStorage.getItem(LS_KEY);
+    if (language && availableLanguages.has(language as Language)) {
+      return language as Language;
     }
+    if (!language && typeof navigator !== "undefined" && navigator.language) {
+      const browserLanguage = navigator.language.split("-")[0];
+      if (availableLanguages.has(browserLanguage as Language)) {
+        globalThis.localStorage.setItem(LS_KEY, browserLanguage as Language);
+        return browserLanguage as Language;
+      }
+    }
+  } catch {
+    /* accès localStorage refusé ou indisponible (SSR / build) */
   }
-  return 'fr';
+  return "fr";
 }

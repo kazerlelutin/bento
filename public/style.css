@@ -477,7 +477,7 @@
     justify-content: center;
     width: auto;
     max-width: min(100%, 15rem);
-    margin: 0 auto;
+    margin: var(--gap-small) auto;
     padding: 0.4rem 0.85rem;
     border-radius: 1.25rem;
     font-size: var(--font-size-small);
