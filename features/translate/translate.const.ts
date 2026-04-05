@@ -487,6 +487,18 @@ export const UI: UiTranslation = {
     "ko": "벤텍스트를 불러올 수 없습니다. 나중에 다시 시도하세요.",
     "ch": "无法加载 bentext，请稍后再试。"
   },
+  "not-found-message": {
+    "fr": "Encore une recette mystérieusement perdue.",
+    "en": "Yet another recipe mysteriously lost.",
+    "ko": "또 사라진 레시피, 이번에도 수수께끼입니다.",
+    "ch": "又一道食谱神秘失踪了。"
+  },
+  "not-found-back-home": {
+    "fr": "Retour à l’accueil",
+    "en": "Back to home",
+    "ko": "홈으로",
+    "ch": "返回首页"
+  },
 } as const;
 
 /** Traductions pour les balises meta (title, description, og:*, twitter:*). */
@@ -538,5 +550,35 @@ export const META: UiTranslation = {
     en: "en_US",
     ko: "ko_KR",
     ch: "zh_CN"
+  },
+  "meta-not-found-title": {
+    fr: "404 — BENTO",
+    en: "404 — BENTO",
+    ko: "404 — BENTO",
+    ch: "404 — BENTO"
+  },
+  "meta-not-found-description": {
+    fr: "Encore une recette mystérieusement perdue.",
+    en: "Yet another recipe mysteriously lost.",
+    ko: "또 사라진 레시피, 이번에도 수수께끼입니다.",
+    ch: "又一道食谱神秘失踪了。"
+  },
+  "meta-not-found-keywords": {
+    fr: "404, page introuvable, BENTO",
+    en: "404, not found, BENTO",
+    ko: "404, 페이지 없음, BENTO",
+    ch: "404, 页面未找到, BENTO"
+  },
+  "meta-not-found-og-title": {
+    fr: "404 — BENTO",
+    en: "404 — BENTO",
+    ko: "404 — BENTO",
+    ch: "404 — BENTO"
+  },
+  "meta-not-found-og-description": {
+    fr: "Encore une recette mystérieusement perdue.",
+    en: "Yet another recipe mysteriously lost.",
+    ko: "또 사라진 레시피, 이번에도 수수께끼입니다.",
+    ch: "又一道食谱神秘失踪了。"
   }
 };

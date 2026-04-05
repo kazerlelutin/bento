@@ -398,6 +398,10 @@ const recipesListCtrl: Ctrl = {
       }
     }
 
+    if (addBtn) {
+      addBtn.hidden = sortedRecipes.length === 0;
+    }
+
     applySearchAndRender();
   },
 

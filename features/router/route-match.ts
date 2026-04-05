@@ -3,6 +3,7 @@ import type { Route } from "@features/routes/routes.type";
 import { cardPageCtrl } from "@features/routes/card/card.ctrl";
 import recipesListCtrl from "@features/routes/recipes/recipes-list.ctrl";
 import aboutCtrl from "@features/routes/about/about.ctrl";
+import notFoundCtrl from "@features/routes/not-found/not-found.ctrl";
 
 export type ResolvedRoute = {
   route: Route;
@@ -15,7 +16,10 @@ const titles = {
   recipes: "Toutes les recettes",
   about: "À propos",
   recipe: "Recette",
+  notFound: "404",
 } as const;
+
+export const NOT_FOUND_TEMPLATE_ID = "not-found-template" as const;
 
 function routeHome(lang: import("@features/translate/translate.types").Language): ResolvedRoute {
   return {
@@ -69,8 +73,24 @@ function routeRecipe(
   };
 }
 
+function routeNotFound(
+  lang: import("@features/translate/translate.types").Language,
+  pathname: string
+): ResolvedRoute {
+  return {
+    route: {
+      path: pathname,
+      title: titles.notFound,
+      templateId: NOT_FOUND_TEMPLATE_ID,
+      ctrl: notFoundCtrl,
+    },
+    lang,
+  };
+}
+
 /**
- * Résout pathname -> route SPA. Retourne null si le chemin n’est pas reconnu (404 logique).
+ * Résout pathname -> route SPA. Retourne null si le chemin n’a pas de préfixe langue.
+ * Les chemins `/{lang}/…` non reconnus mènent à la page 404.
  */
 export function resolveRoute(pathname: string): ResolvedRoute | null {
   const p = normalizePathname(pathname);
@@ -95,5 +115,5 @@ export function resolveRoute(pathname: string): ResolvedRoute | null {
     return routeAbout(lang);
   }
 
-  return null;
+  return routeNotFound(lang, p);
 }

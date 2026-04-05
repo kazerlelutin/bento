@@ -87,6 +87,21 @@ function htmlFileForPathname(pathname: string): string | null {
   return null;
 }
 
+/**
+ * Shell SPA pour URLs `/{lang}/…` sans fichier HTML dédié (404 HTTP + hydrate client).
+ * Exclut les chemins sous `/{lang}/public/…`.
+ */
+function spaIndexForLocalized404(pathname: string): string | null {
+  const p = pathname.replace(/\/$/, "") || "/";
+  const parts = p.split("/").filter(Boolean);
+  if (parts.length < 2) return null;
+  const lang = parts[0];
+  if (!["fr", "en", "ko", "ch"].includes(lang)) return null;
+  if (parts[1] === "public") return null;
+  const index = join(DIST, lang, "index.html");
+  return existsSync(index) ? index : null;
+}
+
 Bun.serve({
   port: PORT,
   async fetch(req) {
@@ -100,6 +115,14 @@ Bun.serve({
     const htmlPath = htmlFileForPathname(pathname);
     if (htmlPath && existsSync(htmlPath)) {
       return new Response(Bun.file(htmlPath), { headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+
+    const spa404 = spaIndexForLocalized404(pathname);
+    if (spa404) {
+      return new Response(Bun.file(spa404), {
+        status: 404,
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      });
     }
 
     const staticTry = readPublicOrDist(pathname);

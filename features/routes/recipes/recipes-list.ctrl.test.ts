@@ -117,8 +117,12 @@ describe("recipes-list.ctrl", () => {
   it("shows all-recipes-empty when store has no recipes", async () => {
     await recipesListCtrl.init();
     const emptyEl = document.getElementById(RECIPES_EMPTY_ID);
+    const addBtn = document.getElementById(RECIPES_FILTER_ADD_ID) as HTMLButtonElement | null;
+    const searchEl = document.getElementById(RECIPES_SEARCH_ID) as HTMLInputElement | null;
     expect(emptyEl?.hidden).toBe(false);
     expect(emptyEl?.textContent).toBeDefined();
+    expect(searchEl?.hidden).toBe(true);
+    expect(addBtn?.hidden).toBe(true);
   });
 
   it("renders all recipes sorted by name with links", async () => {

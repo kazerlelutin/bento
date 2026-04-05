@@ -34,4 +34,11 @@ describe("resolveRoute (chemins localisés)", () => {
     expect(resolveRoute("/recipes")).toBeNull();
     expect(resolveRoute("/")).toBeNull();
   });
+
+  it("résout une page 404 pour un segment inconnu sous /{lang}", () => {
+    const r = resolveRoute("/fr/chemin-inconnu");
+    expect(r).not.toBeNull();
+    expect(r!.lang).toBe("fr");
+    expect(r!.route.templateId).toBe("not-found-template");
+  });
 });

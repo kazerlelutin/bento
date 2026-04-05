@@ -3,7 +3,7 @@ import * as routerTemplate from "../router/router.template";
 import { routerState } from "../router/router.state";
 
 mock.module("@features/meta/meta.ctrl", () => ({
-  metaCtrl: { updateMeta: () => {}, init: () => {} },
+  metaCtrl: { updateMeta: () => {}, applyNotFoundMeta: () => {}, init: () => {} },
 }));
 
 const { handleRouteChange, handleLinkClick, resetRouterViewCacheForTests } = await import("../router/router.handlers");

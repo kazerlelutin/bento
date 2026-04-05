@@ -3,6 +3,7 @@ import { updateDocumentTitle } from '@features/router/router.history';
 import { renderTemplate } from '@features/router/router.template';
 import type { Route } from '@features/routes/routes.type';
 import { metaCtrl } from '@features/meta/meta.ctrl';
+import { NOT_FOUND_TEMPLATE_ID } from '@features/router/route-match';
 
 /** Dernier rendu : évite de vider `main` si seule la query change (ex. filtres catalogue). */
 let lastRenderedTemplateId: string | null = null;
@@ -22,8 +23,14 @@ function anchorFromInternalLinkEvent(event: Event): HTMLAnchorElement | null {
 }
 
 export const handleRouteChange = async (route: Route): Promise<void> => {
-  metaCtrl.updateMeta();
-  updateDocumentTitle(route.title);
+  if (route.templateId === NOT_FOUND_TEMPLATE_ID) {
+    metaCtrl.applyNotFoundMeta();
+  } else {
+    metaCtrl.updateMeta();
+  }
+  if (route.templateId !== NOT_FOUND_TEMPLATE_ID) {
+    updateDocumentTitle(route.title);
+  }
   const pathname =
     typeof window !== 'undefined' && window.location ? window.location.pathname : '';
   const sameView =

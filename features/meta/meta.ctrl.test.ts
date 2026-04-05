@@ -16,6 +16,10 @@ describe("meta.ctrl", () => {
       <meta property="og:title" content="">
       <meta property="og:description" content="">
       <meta property="og:locale" content="">
+      <meta name="twitter:title" content="">
+      <meta name="twitter:description" content="">
+      <meta name="twitter:image:alt" content="">
+      <meta name="og:image:alt" content="">
     `;
     document.documentElement.lang = "";
     document.title = "";
@@ -39,5 +43,12 @@ describe("meta.ctrl", () => {
   it("init calls updateMeta", () => {
     metaCtrl.init();
     expect(document.title).toBeDefined();
+  });
+
+  it("applyNotFoundMeta sets document.title and description", () => {
+    metaCtrl.applyNotFoundMeta();
+    expect(document.title).toContain("404");
+    const desc = document.querySelector('meta[name="description"]')?.getAttribute("content") ?? "";
+    expect(desc.length).toBeGreaterThan(0);
   });
 });

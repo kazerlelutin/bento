@@ -1111,6 +1111,16 @@
   width: 100%;
 }
 
+/* `hidden` doit primer sur display:flex / inline-flex (sinon la barre reste visible en erreur). */
+.recipes-search-toolbar[hidden] {
+  display: none !important;
+}
+
+input.recipes-search[hidden],
+.recipes-filter-add[hidden] {
+  display: none !important;
+}
+
 .recipes-search-row {
   display: flex;
   flex-direction: row;
@@ -1284,4 +1294,21 @@
 .favorites-search::placeholder,
 .recipes-search::placeholder {
   opacity: 0.7;
+}
+
+/* Page 404 */
+.not-found-page {
+  color: var(--text-primary);
+}
+
+.not-found-code {
+  margin: 0;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.not-found-home {
+  margin-top: var(--gap-small);
 }
