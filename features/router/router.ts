@@ -6,9 +6,7 @@ const setupRouteChangeListener = (): void => {
 };
 
 const setupNavigation = (): void => {
-  document.querySelectorAll("[data-internal]").forEach((link) => {
-    link.addEventListener("click", handleLinkClick);
-  });
+  document.addEventListener("click", handleLinkClick);
 };
 
 const refreshCurrentRoute = (): void => {

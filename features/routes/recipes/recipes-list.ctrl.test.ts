@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, afterAll, mock } from "bun:test";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import {
   RECIPES_CONTAINER_ID,
+  RECIPES_FILTER_BAR_ID,
   RECIPES_LIST_ID,
   RECIPES_EMPTY_ID,
   RECIPES_SEARCH_ID,
@@ -31,6 +32,10 @@ mock.module("@features/card-controls/card-controls", () => ({
 mock.module("@features/card-controls/card-controls.aria", () => ({
   setCardControlsAriaLabels: () => {},
 }));
+mock.module("@features/meta/meta.ctrl", () => ({
+  applyRecipesCatalogDefaultMeta: () => {},
+  applyRecipesCatalogFilterMeta: () => {},
+}));
 
 const { default: recipesListCtrl } = await import("./recipes-list.ctrl");
 
@@ -51,6 +56,7 @@ function createRecipesDOM() {
   document.body.innerHTML = `
     <div id="${RECIPES_CONTAINER_ID}">
       <h1></h1>
+      <div id="${RECIPES_FILTER_BAR_ID}" hidden></div>
       <div id="${RECIPES_LOAD_ERROR_ID}" hidden>
         <p id="${RECIPES_LOAD_ERROR_MESSAGE_ID}"></p>
         <button type="button" id="${RECIPES_LOAD_ERROR_RETRY_ID}"></button>
@@ -65,6 +71,7 @@ function createRecipesDOM() {
 describe("recipes-list.ctrl", () => {
   beforeEach(() => {
     setRouteContext({ lang: "fr" });
+    window.history.replaceState({}, "", "/");
     createRecipesDOM();
     recipesStore.setRecipes([]);
     recipesStore.setLoadError(null);
@@ -122,6 +129,25 @@ describe("recipes-list.ctrl", () => {
     const links = listEl?.querySelectorAll("a.favorites-item");
     expect(links?.length).toBe(1);
     expect(links?.[0].textContent).toBe("Pommes");
+  });
+
+  it("filters recipes by bento query param", async () => {
+    const prev = window.location;
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { ...prev, search: "?transport=transport_easy", pathname: "/fr/recipes" },
+    });
+    try {
+      const r1 = { ...makeRecipe("r1", "A"), bento: { transport: "Facile" } };
+      const r2 = { ...makeRecipe("r2", "B"), bento: { transport: "Moyen" } };
+      recipesStore.setRecipes([r1, r2]);
+      await recipesListCtrl.init();
+      const listEl = document.getElementById(RECIPES_LIST_ID);
+      expect(listEl?.querySelectorAll("a.favorites-item").length).toBe(1);
+      expect(listEl?.textContent).toContain("A");
+    } finally {
+      Object.defineProperty(window, "location", { configurable: true, value: prev });
+    }
   });
 
   it("shows all-recipes-no-results when search has no match", async () => {

@@ -18,6 +18,7 @@ import {
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
 import { hasBentoContent, renderCardBentoDl } from "@features/card/card.bento.utils";
+import { getRouteContext } from "@features/router/route-context";
 import { copyTextToClipboard, fetchBentext, printBentextInWindow } from "@features/recipes/bentext.utils";
 import { applyServingToBentext } from "@features/recipes/bentext.serving";
 import { t } from "@features/translate/translate";
@@ -134,7 +135,7 @@ export const cardCtrl: CardCtrl = {
       if (hasBentoContent(recipe.bento)) {
         bentoRecap.hidden = false;
         bentoRecap.setAttribute("aria-label", t(UI["bento-recap-aria"]));
-        renderCardBentoDl(bentoDl, recipe.bento!);
+        renderCardBentoDl(bentoDl, recipe.bento!, getRouteContext().lang);
       } else {
         bentoRecap.hidden = true;
         bentoRecap.removeAttribute("aria-label");

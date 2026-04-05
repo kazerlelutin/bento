@@ -1,4 +1,5 @@
 export const RECIPES_CONTAINER_ID = "recipes-container";
+export const RECIPES_FILTER_BAR_ID = "recipes-filter-bar";
 export const RECIPES_LIST_ID = "recipes-list";
 export const RECIPES_EMPTY_ID = "recipes-empty";
 export const RECIPES_SEARCH_ID = "recipes-search";

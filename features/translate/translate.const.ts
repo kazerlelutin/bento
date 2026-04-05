@@ -289,6 +289,30 @@ export const UI: UiTranslation = {
     "ko": "모든 레시피",
     "ch": "所有食谱"
   },
+  "recipes-catalog-title-short": {
+    "fr": "Recettes",
+    "en": "Recipes",
+    "ko": "레시피",
+    "ch": "食谱"
+  },
+  "recipes-filter-clear": {
+    "fr": "Tout afficher",
+    "en": "Show all",
+    "ko": "전체 보기",
+    "ch": "显示全部"
+  },
+  "recipes-filter-bar-aria": {
+    "fr": "Filtre actif sur le repas emporté",
+    "en": "Active packed-lunch filter",
+    "ko": "도시락 필터 적용 중",
+    "ch": "当前便当筛选"
+  },
+  "recipes-meta-filtered-desc": {
+    "fr": "{{field}} : {{value}} — recettes BENTO.",
+    "en": "{{field}}: {{value}} — BENTO recipes.",
+    "ko": "{{field}}: {{value}} — BENTO 레시피.",
+    "ch": "{{field}}：{{value}} — BENTO 食谱。"
+  },
   "all-recipes-search-placeholder": {
     "fr": "Rechercher une recette",
     "en": "Search recipes",
@@ -349,11 +373,23 @@ export const UI: UiTranslation = {
     "ko": "냉장 보관",
     "ch": "冷藏"
   },
+  "bento-cover": {
+    "fr": "Couvert",
+    "en": "Cutlery",
+    "ko": "수저 필요",
+    "ch": "餐具"
+  },
   "bento-eating": {
     "fr": "À table",
     "en": "How to eat",
     "ko": "먹는 방법",
     "ch": "食用方式"
+  },
+  "bento-stains": {
+    "fr": "Taches",
+    "en": "Stains",
+    "ko": "얼룩",
+    "ch": "污渍"
   },
   "bento-leaks": {
     "fr": "Fuites / étanchéité",
@@ -366,6 +402,12 @@ export const UI: UiTranslation = {
     "en": "Smell",
     "ko": "냄새",
     "ch": "气味"
+  },
+  "bento-prep_time": {
+    "fr": "Temps de préparation",
+    "en": "Prep time",
+    "ko": "준비 시간",
+    "ch": "准备时间"
   },
   "bento-prep_ahead": {
     "fr": "Préparation la veille",

@@ -603,6 +603,12 @@
     color: var(--text-primary);
   }
 
+  .card-bento-dl__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   .card-bento-export {
     display: flex;
     justify-content: center;
@@ -1095,6 +1101,30 @@
 .stepper-export-quantity-selector:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.recipes-filter-bar {
+  font-size: 0.9em;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.recipes-filter-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-small) var(--gap-medium);
+}
+
+.recipes-filter-bar__label {
+  opacity: 0.95;
+}
+
+.recipes-filter-bar__clear {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .favorites-search,

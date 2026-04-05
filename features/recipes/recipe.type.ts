@@ -13,9 +13,17 @@ export type RecipeBento = {
   transport?: string;
   reheat?: string;
   cold?: string;
+  /** Ligne 4 (couvert) — API v2. */
+  cover?: string;
   eating?: string;
+  /** Ligne 6 — remplace `leaks` (legacy). */
+  stains?: string;
+  /** @deprecated utiliser `stains` */
   leaks?: string;
   smell?: string;
+  /** Ligne 8 — remplace `prep_ahead` (legacy). */
+  prep_time?: string;
+  /** @deprecated utiliser `prep_time` */
   prep_ahead?: string;
   holding?: string;
   extra_notes?: string;

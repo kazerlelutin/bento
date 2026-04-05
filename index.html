@@ -162,7 +162,8 @@
   <template id="recipes-template">
     <div class="recipes-page-layout flex flex-col h-full min-h-0">
       <div id="recipes-container" class="flex flex-col overflow-y-auto gap-lg mx-auto p-md max-w-content flex-1 min-h-0 w-full">
-        <h1 class="text-center" data-translate="all-recipes"></h1>
+        <h1 class="text-center text-lg sm:text-xl font-semibold tracking-tight" data-translate="recipes-catalog-title-short"></h1>
+        <div id="recipes-filter-bar" class="recipes-filter-bar" hidden aria-live="polite"></div>
         <div id="recipes-load-error" class="recipes-load-error" hidden aria-live="polite">
           <p id="recipes-load-error-message" class="recipes-load-error-message">Impossible de charger les recettes. Vérifiez votre connexion.</p>
           <button type="button" id="recipes-load-error-retry" class="btn recipes-load-error-retry">Réessayer</button>
