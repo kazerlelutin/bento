@@ -20,7 +20,7 @@ import { refreshIngredientsAndServing } from "@features/card/card.utils";
 import { hasBentoContent, renderCardBentoDl } from "@features/card/card.bento.utils";
 import { getRouteContext } from "@features/router/route-context";
 import { copyTextToClipboard, fetchBentext, printBentextInWindow } from "@features/recipes/bentext.utils";
-import { applyServingToBentext } from "@features/recipes/bentext.serving";
+import { applyServingToBentext, buildBentextExportFromRecipe } from "@features/recipes/bentext.serving";
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
 
@@ -58,7 +58,13 @@ function handleDocumentClick(e: Event): void {
 
   void (async () => {
     try {
-      const raw = await fetchBentext(displayedRecipe!.slug);
+      const { lang } = getRouteContext();
+      let raw: string;
+      try {
+        raw = await fetchBentext(displayedRecipe!.slug, lang);
+      } catch {
+        raw = buildBentextExportFromRecipe(displayedRecipe!);
+      }
       const text = applyServingToBentext(raw, displayedRecipe!, displayedServing);
       if (target.id === CARD_BENTO_COPY_ID) {
         await copyTextToClipboard(text);

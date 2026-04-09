@@ -1,4 +1,6 @@
+import type { Language } from "@features/translate/translate.types";
 import { getApiBaseUrl, getApiLang } from "@features/recipes/recipes.utils";
+import { toApiLang } from "./recipes.fetch";
 
 export function escapeHtmlForPre(text: string): string {
   return text
@@ -8,10 +10,10 @@ export function escapeHtmlForPre(text: string): string {
     .replace(/"/g, "&quot;");
 }
 
-/** Télécharge le source bentext brut pour une recette. */
-export async function fetchBentext(slug: string): Promise<string> {
+/** Télécharge le source bentext brut pour une recette. `langOverride` = langue d’URL (recommandé, évite un décalage avec le sélecteur). */
+export async function fetchBentext(slug: string, langOverride?: Language): Promise<string> {
   const base = getApiBaseUrl();
-  const lang = getApiLang();
+  const lang = langOverride !== undefined ? toApiLang(langOverride) : getApiLang();
   const url = `${base}/recipes/${lang}/${encodeURIComponent(slug)}?format=bentext`;
   const res = await fetch(url);
   if (!res.ok) {

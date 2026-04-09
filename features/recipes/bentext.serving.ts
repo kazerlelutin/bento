@@ -1,5 +1,57 @@
-import type { Ingredient, Recipe } from "@features/recipes/recipe.type";
+import type { Ingredient, Recipe, RecipeBento } from "@features/recipes/recipe.type";
 import { formatQuantity } from "@features/card/card.utils";
+import {
+  BENTO_FIELD_KEYS,
+  type BentoFieldKey,
+  getBentoFieldValue,
+  hasBentoContent,
+} from "@features/card/card.bento.utils";
+
+/** Préfixes bentext `Prefix|texte` pour l’export local (aligné API v2). */
+const BENTO_EXPORT_PREFIX: Record<BentoFieldKey, string> = {
+  transport: "Transport",
+  reheat: "Reheat",
+  cold: "Cold",
+  cover: "Cover",
+  eating: "Eating",
+  stains: "Stains",
+  smell: "Smell",
+  prep_time: "Prep_time",
+  holding: "Holding",
+  extra_notes: "Extra_notes",
+};
+
+function formatBentoExportBlock(bento: RecipeBento): string {
+  const lines: string[] = [];
+  for (const key of BENTO_FIELD_KEYS) {
+    const raw = getBentoFieldValue(bento, key);
+    if (!raw?.trim()) continue;
+    lines.push(`${BENTO_EXPORT_PREFIX[key]}|${raw.trim()}`);
+  }
+  return lines.join("\n");
+}
+
+/**
+ * Reconstruit un source bentext depuis le JSON recette (copie / impression sans appel API).
+ * Utilisé en secours si `fetchBentext` échoue (réseau, 404, route API).
+ */
+export function buildBentextExportFromRecipe(recipe: Recipe): string {
+  const id = recipe.identity;
+  const identityBlock = [id.name, String(Math.max(1, id.servings || 1)), id.description ?? ""].join("\n");
+  const ing = buildScaledIngredientsSection(recipe, 1);
+  const stepsBlock = (recipe.steps ?? []).join("\n");
+  const parts: string[] = [identityBlock, ing, stepsBlock];
+  if (recipe.notes?.length) {
+    parts.push(recipe.notes.join("\n"));
+  }
+  if (recipe.tags?.length) {
+    parts.push(recipe.tags.join("\n"));
+  }
+  if (recipe.bento && hasBentoContent(recipe.bento)) {
+    parts.push(formatBentoExportBlock(recipe.bento));
+  }
+  return parts.join("\n---\n");
+}
 
 /** Découpe un source bentext en blocs séparés par une ligne `---` (spécification bentext). */
 export function splitBentextIntoSections(source: string): string[] {

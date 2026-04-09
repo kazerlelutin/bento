@@ -1,6 +1,7 @@
 import { describe, it, expect } from "bun:test";
 import {
   applyServingToBentext,
+  buildBentextExportFromRecipe,
   formatIngredientBentextLine,
   splitBentextIntoSections,
 } from "./bentext.serving";
@@ -62,5 +63,22 @@ Bake.`;
   it("returns source unchanged when fewer than 3 sections", () => {
     const short = "only\n---\ntwo";
     expect(applyServingToBentext(short, minimalRecipe(), 2)).toBe(short);
+  });
+
+  it("buildBentextExportFromRecipe yields bentext with identity, ingredients, steps", () => {
+    const text = buildBentextExportFromRecipe(minimalRecipe());
+    const parts = splitBentextIntoSections(text);
+    expect(parts.length).toBeGreaterThanOrEqual(3);
+    expect(parts[0]).toContain("Cake");
+    expect(parts[1]).toContain("flour|200|g");
+    expect(parts[2]).toContain("Mix.");
+  });
+
+  it("buildBentextExportFromRecipe appends bento block when present", () => {
+    const r = minimalRecipe();
+    r.bento = { transport: "Facile", eating: "À la main" };
+    const text = buildBentextExportFromRecipe(r);
+    expect(text).toContain("Transport|Facile");
+    expect(text).toContain("Eating|À la main");
   });
 });
