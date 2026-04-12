@@ -1,6 +1,10 @@
 # 🍱 BENTO - Interactive Recipe Generator
 
-**Join the community:** [#bento on Matrix (matrix.ben-to.fr)](https://matrix.to/#/#bento:matrix.ben-to.fr) · **Support the project:** [Ko-fi](https://ko-fi.com/kazerlelutin)
+**Join the community:**  
+[#bento on Matrix (matrix.ben-to.fr)](https://matrix.to/#/#bento:matrix.ben-to.fr)
+
+**Support the project:**  
+[Ko-fi](https://ko-fi.com/kazerlelutin)
 
 _Public Matrix room — open the link above in Element, FluffyChat, or any client (`#bento:matrix.ben-to.fr`)._
 
