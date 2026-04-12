@@ -2,6 +2,8 @@
 
 **Join the community:** [#bento on Matrix (matrix.ben-to.fr)](https://matrix.to/#/#bento:matrix.ben-to.fr) · **Support the project:** [Ko-fi](https://ko-fi.com/kazerlelutin)
 
+_Public Matrix room — open the link above in Element, FluffyChat, or any client (`#bento:matrix.ben-to.fr`)._
+
 [![Bun](https://img.shields.io/badge/Runtime-Bun-000000?style=for-the-badge&logo=bun)](https://bun.sh/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tests](https://img.shields.io/badge/Tests-Cucumber-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)](https://cucumber.io/)
