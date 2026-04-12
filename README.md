@@ -1,6 +1,6 @@
 # 🍱 BENTO - Interactive Recipe Generator
 
-[![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20me-ff5f5f?logo=kofi&logoColor=white)](https://ko-fi.com/kazerlelutin)
+**Join the community:** [#bento on Matrix (matrix.ben-to.fr)](https://matrix.to/#/#bento:matrix.ben-to.fr) · **Support the project:** [Ko-fi](https://ko-fi.com/kazerlelutin)
 
 [![Bun](https://img.shields.io/badge/Runtime-Bun-000000?style=for-the-badge&logo=bun)](https://bun.sh/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -321,7 +321,7 @@ bun run badge:coverage 85
 
 ## 💬 Community
 
-Join the conversation on Matrix: **[#bento:matrix.ben-to.fr](https://matrix.to/#/#bento:matrix.ben-to.fr)** (invitation link to the project’s home server).
+**[Join #bento on Matrix](https://matrix.to/#/#bento:matrix.ben-to.fr)** — same invitation link as in the page header (project home server).
 
 ## 🤝 Contributing
 
