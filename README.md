@@ -319,6 +319,10 @@ bun run badge:coverage 85
 - **Vegetables**: Onions, peppers, corn
 - **Proteins**: Eggs, beans, tempeh
 
+## 💬 Community
+
+Join the conversation on Matrix: **[#bento:matrix.ben-to.fr](https://matrix.to/#/#bento:matrix.ben-to.fr)** (invitation link to the project’s home server).
+
 ## 🤝 Contributing
 
 Please read the [Contributing Guide](./CONTRIBUTING.md) for detailed instructions, naming conventions, feature structure, and workflow before opening a pull request.
