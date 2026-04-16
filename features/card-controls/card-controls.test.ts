@@ -3,13 +3,14 @@ import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { recipesStore } from "@features/recipes/recipes.stores";
 import { routerState } from "@features/router/router.state";
 import { setRouteContext } from "@features/router/route-context";
+import { cardCtrl } from "@features/card/card.ctrl";
 
-const updateUI = mock(() => {});
+const updateUIMock = mock(() => {});
 const navigateInternal = mock((_path: string) => {});
+const originalCardUpdateUI = cardCtrl.updateUI.bind(cardCtrl);
 
 const realRouterHandlers = await import("@features/router/router.handlers");
 
-mock.module("@features/card/card.ctrl", () => ({ cardCtrl: { updateUI } }));
 mock.module("@features/router/router.handlers", () => ({
   handleRouteChange: realRouterHandlers.handleRouteChange,
   handleLinkClick: realRouterHandlers.handleLinkClick,
@@ -35,6 +36,7 @@ afterAll(() => {
 
 describe("card-controls", () => {
   beforeEach(() => {
+    cardCtrl.updateUI = updateUIMock as typeof cardCtrl.updateUI;
     setRouteContext({ lang: "fr" });
     document.body.innerHTML = `
       <div id="card-controls">
@@ -42,7 +44,7 @@ describe("card-controls", () => {
       </div>
     `;
     navigateInternal.mockClear();
-    updateUI.mockClear();
+    updateUIMock.mockClear();
     recipesStore.setRecipes([makeRecipe("a"), makeRecipe("b"), makeRecipe("c")]);
     currentRecipeStore.recipe = makeRecipe("a");
     history.replaceState({}, "", "/fr");
@@ -51,6 +53,7 @@ describe("card-controls", () => {
 
   afterEach(() => {
     cardControlsCtrl.cleanUp?.();
+    cardCtrl.updateUI = originalCardUpdateUI;
     document.body.innerHTML = "";
     history.replaceState({}, "", "/fr");
     routerState.currentPage = "/fr";
@@ -61,7 +64,7 @@ describe("card-controls", () => {
       cardControlsCtrl.init?.();
       const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
-      expect(updateUI).toHaveBeenCalled();
+      expect(updateUIMock).toHaveBeenCalled();
       expect(currentRecipeStore.recipe).not.toBeNull();
     });
   });
@@ -73,7 +76,7 @@ describe("card-controls", () => {
       const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
       expect(currentRecipeStore.recipe).not.toBeNull();
-      expect(updateUI).toHaveBeenCalled();
+      expect(updateUIMock).toHaveBeenCalled();
     });
 
     it("on /fr/recipes: random navigates to /fr/recipes/:slug", () => {
@@ -89,9 +92,9 @@ describe("card-controls", () => {
 
     it("ignores click when target has no data-action", () => {
       const container = document.getElementById("card-controls");
-      updateUI.mockClear();
+      updateUIMock.mockClear();
       container?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-      expect(updateUI).not.toHaveBeenCalled();
+      expect(updateUIMock).not.toHaveBeenCalled();
     });
   });
 
@@ -99,10 +102,10 @@ describe("card-controls", () => {
     it("removes click listener", () => {
       cardControlsCtrl.init?.();
       cardControlsCtrl.cleanUp?.();
-      updateUI.mockClear();
+      updateUIMock.mockClear();
       const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
-      expect(updateUI).not.toHaveBeenCalled();
+      expect(updateUIMock).not.toHaveBeenCalled();
     });
   });
 });

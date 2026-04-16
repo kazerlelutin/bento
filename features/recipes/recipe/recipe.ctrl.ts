@@ -1,4 +1,4 @@
-import { recipesCtrl } from "@features/recipes/recipes.ctrl";
+import { recipesCtrl, readInitialStateFromDom } from "@features/recipes/recipes.ctrl";
 import { RecipeCtrl } from "@features/recipes/recipe/recipe.type";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { Recipe } from "@features/recipes/recipe.type";
@@ -13,6 +13,14 @@ export const recipeCtrl: RecipeCtrl = {
       const bySlug = this.getRecipeBySlug(recipeSlug);
       if (bySlug) {
         currentRecipeStore.recipe = bySlug;
+        return;
+      }
+    }
+    const initial = readInitialStateFromDom();
+    if (!recipeSlug && initial?.homeRecipeSlug) {
+      const fromSsgHome = this.getRecipeBySlug(initial.homeRecipeSlug);
+      if (fromSsgHome) {
+        currentRecipeStore.recipe = fromSsgHome;
         return;
       }
     }

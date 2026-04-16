@@ -1,6 +1,6 @@
 import { routerState } from '@features/router/router.state';
 import { updateDocumentTitle } from '@features/router/router.history';
-import { renderTemplate } from '@features/router/router.template';
+import { renderTemplate, getMainContent } from '@features/router/router.template';
 import type { Route } from '@features/routes/routes.type';
 import { metaCtrl } from '@features/meta/meta.ctrl';
 import { NOT_FOUND_TEMPLATE_ID } from '@features/router/route-match';
@@ -37,9 +37,16 @@ export const handleRouteChange = async (route: Route): Promise<void> => {
     lastRenderedTemplateId === route.templateId && lastRenderedPathname === pathname;
 
   if (!sameView) {
-    renderTemplate(route.templateId);
-    lastRenderedTemplateId = route.templateId;
-    lastRenderedPathname = pathname;
+    const main = getMainContent();
+    if (main.hasAttribute("data-ssg")) {
+      main.removeAttribute("data-ssg");
+      lastRenderedTemplateId = route.templateId;
+      lastRenderedPathname = pathname;
+    } else {
+      renderTemplate(route.templateId);
+      lastRenderedTemplateId = route.templateId;
+      lastRenderedPathname = pathname;
+    }
   }
 
   await route?.ctrl?.init?.();

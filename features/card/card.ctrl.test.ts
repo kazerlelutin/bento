@@ -1,6 +1,8 @@
-import { describe, it, expect, beforeEach, mock } from "bun:test";
+import { describe, it, expect, beforeEach } from "bun:test";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { recipesStore } from "@features/recipes/recipes.stores";
+import { setRouteContext } from "@features/router/route-context";
+import { translateStore } from "@features/translate/translate.store";
 import {
   CARD_INGREDIENTS_ID,
   CARD_INGREDIENTS_HEADING_ID,
@@ -15,8 +17,6 @@ import {
   CARD_BENTO_EXPORT_ID,
 } from "@features/card/card.const";
 
-const t = (x: unknown) => (x && typeof x === "object" && "fr" in x ? String((x as { fr: string }).fr) : String(x));
-mock.module("@features/translate/translate", () => ({ t }));
 function createCardDOM() {
   document.body.innerHTML = `
     <template id="placeholder-template">
@@ -69,6 +69,8 @@ const { cardCtrl } = await import("./card.ctrl");
 
 describe("card.ctrl", () => {
   beforeEach(() => {
+    setRouteContext({ lang: "fr" });
+    translateStore.currentLanguage = "fr";
     createCardDOM();
     recipesStore.setRecipes([makeRecipe()]);
     currentRecipeStore.recipe = makeRecipe();

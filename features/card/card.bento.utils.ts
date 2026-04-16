@@ -1,7 +1,7 @@
 import type { Recipe, RecipeBento } from "@features/recipes/recipe.type";
 import type { Language } from "@features/translate/translate.types";
-import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
+import { getTranslation } from "@features/translate/translate.utils";
 import {
   type BentoFilterField,
   BENTO_FILTER_FIELDS,
@@ -76,21 +76,22 @@ export function hasBentoContent(bento: Recipe["bento"]): boolean {
 }
 
 export function renderCardBentoDl(dl: HTMLDListElement, bento: RecipeBento, lang: Language): void {
+  const owner = dl.ownerDocument;
   dl.innerHTML = "";
   for (const key of BENTO_FIELD_KEYS) {
     const rawVal = getBentoFieldValue(bento, key);
     if (typeof rawVal !== "string" || !rawVal.trim()) continue;
     const val = formatBentoAlternativesForDisplay(rawVal);
-    const dt = document.createElement("dt");
+    const dt = owner.createElement("dt");
     dt.className = "card-bento-dl__term";
-    dt.textContent = t(UI[BENTO_UI_KEY[key]]);
-    const dd = document.createElement("dd");
+    dt.textContent = getTranslation(UI[BENTO_UI_KEY[key]], lang);
+    const dd = owner.createElement("dd");
     dd.className = "card-bento-dl__def";
 
     if (FILTER_SET.has(key)) {
       const fid = bentoValueToCanonicalId(key as BentoFilterField, rawVal, lang);
       if (fid) {
-        const a = document.createElement("a");
+        const a = owner.createElement("a");
         a.href = buildRecipesFilteredHref(lang, key as BentoFilterField, fid);
         a.setAttribute("data-internal", "true");
         a.className = "card-bento-dl__link";

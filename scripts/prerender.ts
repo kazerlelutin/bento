@@ -12,6 +12,12 @@ import { buildSsgPageMeta, type SsgPageKind } from "../features/meta/ssg-meta.ts
 import type { Language } from "../features/translate/translate.types.ts";
 import { resolvePublicBentextApiUrl } from "../features/recipes/recipes.const.ts";
 import type { Recipe } from "../features/recipes/recipe.type.ts";
+import type { BentoInitialState } from "../features/recipes/bento-initial-state.type.ts";
+import {
+  buildSsgMainOuterHtml,
+  injectSsgMainFragment,
+  pickSsgHomeRecipe,
+} from "../features/ssg/ssg-render-main.ts";
 
 const LANGS: Language[] = ["fr", "en", "ko", "ch"];
 
@@ -190,11 +196,6 @@ async function main(): Promise<void> {
 
   for (const lang of LANGS) {
     const recipes = recipesByLang.get(lang)!;
-    const initialState = {
-      recipes,
-      loadError: null as string | null,
-      lang,
-    };
 
     const baseDir = join(process.cwd(), "dist", lang);
     await mkdir(join(baseDir, "recipes"), { recursive: true });
@@ -208,11 +209,31 @@ async function main(): Promise<void> {
     ];
 
     for (const { kind, recipe } of kinds) {
+      const homeRecipeSsg = kind === "home" ? pickSsgHomeRecipe(recipes) : null;
+      const initialState: BentoInitialState = {
+        recipes,
+        loadError: null,
+        lang,
+        ...(homeRecipeSsg ? { homeRecipeSlug: homeRecipeSsg.slug } : {}),
+      };
+
       const meta = buildSsgPageMeta(lang, kind, recipe ? { recipe } : undefined);
       let html = normalizeBundledAssets(rawTemplate);
       html = patchHead(html, meta, csp);
       html = injectInitialState(html, initialState);
       html = localizeNavLinks(html, lang);
+
+      let mainOuter: string | null = null;
+      if (kind === "home" && homeRecipeSsg) {
+        mainOuter = buildSsgMainOuterHtml(html, "home", lang, recipes, null);
+      } else if (kind === "recipes") {
+        mainOuter = buildSsgMainOuterHtml(html, "recipes", lang, recipes, null);
+      } else if (kind === "recipe" && recipe) {
+        mainOuter = buildSsgMainOuterHtml(html, "recipe", lang, recipes, recipe);
+      }
+      if (mainOuter) {
+        html = injectSsgMainFragment(html, mainOuter);
+      }
 
       if (kind === "home") {
         await writeFile(join(baseDir, "index.html"), html, "utf8");

@@ -7,7 +7,7 @@ import type { BentoInitialState } from "./bento-initial-state.type";
 
 const INITIAL_STATE_ID = "bento-initial-state";
 
-function readInitialStateFromDom(): BentoInitialState | null {
+export function readInitialStateFromDom(): BentoInitialState | null {
   const el = document.getElementById(INITIAL_STATE_ID);
   const raw = el?.textContent?.trim();
   if (!raw) return null;

@@ -2,22 +2,15 @@ import { CardCtrl } from "@features/card/card.type";
 import type { Recipe } from "@features/recipes/recipe.type";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
 import { recipesStore } from "@features/recipes/recipes.stores";
-import { cloneTemplate, getTemplate } from "@features/router/router.template";
-import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
 import {
   CARD_SERVING_DECREASE_ID,
   CARD_SERVING_INCREASE_ID,
-  CARD_STEPS_ID,
-  CARD_NOTES_ID,
-  CARD_BENTO_RECAP_ID,
-  CARD_BENTO_DL_ID,
   CARD_BENTO_COPY_ID,
   CARD_BENTO_PRINT_ID,
   CARD_BENTO_MESSAGE_ID,
-  CARD_BENTO_EXPORT_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
-import { hasBentoContent, renderCardBentoDl } from "@features/card/card.bento.utils";
+import { applyRecipeToCardDom } from "@features/card/card.view-fill";
 import { getRouteContext } from "@features/router/route-context";
 import { copyTextToClipboard, fetchBentext, printBentextInWindow } from "@features/recipes/bentext.utils";
 import { applyServingToBentext, buildBentextExportFromRecipe } from "@features/recipes/bentext.serving";
@@ -105,80 +98,6 @@ export const cardCtrl: CardCtrl = {
     displayedRecipe = recipe;
     displayedServing = recipe.identity.servings || 1;
 
-    const titleEl = document.getElementById("card-title");
-    const descEl = document.getElementById("card-description");
-    const imgEl = document.getElementById("card-img");
-
-    if (titleEl) titleEl.textContent = recipe.identity.name;
-    if (descEl) descEl.textContent = recipe.identity.description;
-
-    if (imgEl) {
-      imgEl.innerHTML = "";
-      const tpl = cloneTemplate(getTemplate("placeholder-template"));
-
-      if (recipe.image && tpl) {
-        const img = tpl.querySelector("img") as HTMLImageElement | null;
-
-        if (img) {
-          img.setAttribute("src", recipe.image?.url ?? "");
-          img.setAttribute("width", recipe.image?.width?.toString() ?? "");
-          img.setAttribute("height", recipe.image?.height?.toString() ?? "");
-        }
-
-        imgEl.appendChild(tpl);
-      }
-    }
-
-    const bentoRecap = document.getElementById(CARD_BENTO_RECAP_ID);
-    const bentoDl = document.getElementById(CARD_BENTO_DL_ID) as HTMLDListElement | null;
-    const bentoExport = document.getElementById(CARD_BENTO_EXPORT_ID);
-
-    if (bentoExport) {
-      bentoExport.setAttribute("aria-label", t(UI["bentext-actions-aria"]));
-    }
-
-    if (bentoRecap && bentoDl) {
-      if (hasBentoContent(recipe.bento)) {
-        bentoRecap.hidden = false;
-        bentoRecap.setAttribute("aria-label", t(UI["bento-recap-aria"]));
-        renderCardBentoDl(bentoDl, recipe.bento!, getRouteContext().lang);
-      } else {
-        bentoRecap.hidden = true;
-        bentoRecap.removeAttribute("aria-label");
-        bentoDl.innerHTML = "";
-      }
-    }
-
-    const bentoMsg = document.getElementById(CARD_BENTO_MESSAGE_ID);
-    if (bentoMsg) {
-      bentoMsg.hidden = true;
-      bentoMsg.textContent = "";
-      bentoMsg.classList.remove("card-bento-message--error");
-    }
-
-    refreshIngredientsAndServing(displayedRecipe, displayedServing);
-
-    const stepsEl = document.getElementById(CARD_STEPS_ID);
-
-    if (stepsEl) {
-      stepsEl.innerHTML = "";
-      (recipe.steps ?? []).forEach((step) => {
-        const li = document.createElement("li");
-        li.textContent = step;
-        stepsEl.appendChild(li);
-      });
-    }
-    const notesEl = document.getElementById(CARD_NOTES_ID);
-
-    if (notesEl) {
-      notesEl.innerHTML = "";
-      (recipe.notes ?? []).forEach((note) => {
-        const li = document.createElement("li");
-        li.textContent = note;
-        notesEl.appendChild(li);
-      });
-    }
-
-    setCardControlsAriaLabels();
+    applyRecipeToCardDom(document, recipe, getRouteContext().lang);
   },
 };
