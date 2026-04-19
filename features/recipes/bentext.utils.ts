@@ -22,6 +22,49 @@ export async function fetchBentext(slug: string, langOverride?: Language): Promi
   return res.text();
 }
 
+export type ShareBentextResult = "shared" | "clipboard" | "cancelled";
+
+/**
+ * Partage le bentext via l’API Web Share, avec repli copie (texte + URL).
+ * `AbortError` (fermeture de la feuille native) ⇒ `cancelled`.
+ */
+export async function shareBentextRecipe(options: {
+  title: string;
+  text: string;
+  url: string;
+}): Promise<ShareBentextResult> {
+  const { title, text, url } = options;
+  const combinedForClipboard = `${text}\n\n${url}`;
+
+  if (typeof navigator.share !== "function") {
+    await copyTextToClipboard(combinedForClipboard);
+    return "clipboard";
+  }
+
+  const candidates: ShareData[] = [
+    { title, text, url },
+    { title, text: `${text}\n\n${url}` },
+    { text: `${text}\n\n${url}`, url },
+  ];
+
+  for (const data of candidates) {
+    if (typeof navigator.canShare === "function" && !navigator.canShare(data)) {
+      continue;
+    }
+    try {
+      await navigator.share(data);
+      return "shared";
+    } catch (e: unknown) {
+      if (e && typeof e === "object" && "name" in e && (e as Error).name === "AbortError") {
+        return "cancelled";
+      }
+    }
+  }
+
+  await copyTextToClipboard(combinedForClipboard);
+  return "clipboard";
+}
+
 export async function copyTextToClipboard(text: string): Promise<void> {
   if (navigator.clipboard?.writeText) {
     await navigator.clipboard.writeText(text);

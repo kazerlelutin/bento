@@ -41,7 +41,7 @@ function createCardDOM() {
           </section>
           <div class="card-bento-export" role="group" id="${CARD_BENTO_EXPORT_ID}">
             <div class="card-bento-export__row">
-              <button type="button" id="card-bento-copy"></button>
+              <button type="button" id="card-bento-share"></button>
               <button type="button" id="card-bento-print"></button>
             </div>
           </div>
@@ -59,7 +59,7 @@ function createCardDOM() {
         <ul id="${CARD_NOTES_ID}"></ul>
         <div class="card-bento-export card-bento-export--bottom" role="group" id="${CARD_BENTO_EXPORT_BOTTOM_ID}">
           <div class="card-bento-export__row">
-            <button type="button" id="card-bento-copy-bottom"></button>
+            <button type="button" id="card-bento-share-bottom"></button>
             <button type="button" id="card-bento-print-bottom"></button>
           </div>
         </div>

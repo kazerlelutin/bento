@@ -493,11 +493,11 @@ export const UI: UiTranslation = {
     "ko": "메모",
     "ch": "备注"
   },
-  "bentext-copy-short": {
-    "fr": "Copier",
-    "en": "Copy",
-    "ko": "복사",
-    "ch": "复制"
+  "bentext-share-short": {
+    "fr": "Partager",
+    "en": "Share",
+    "ko": "공유",
+    "ch": "分享"
   },
   "bentext-print-short": {
     "fr": "Imprimer",
@@ -506,16 +506,22 @@ export const UI: UiTranslation = {
     "ch": "打印"
   },
   "bentext-actions-aria": {
-    "fr": "Copier ou imprimer la recette au format texte simplifié (bentext)",
-    "en": "Copy or print the recipe as simplified plain text (bentext)",
-    "ko": "간단한 텍스트(bentext)로 레시피 복사 또는 인쇄",
-    "ch": "以精简文本（bentext）复制或打印食谱"
+    "fr": "Partager ou imprimer la recette au format texte simplifié (bentext)",
+    "en": "Share or print the recipe as simplified plain text (bentext)",
+    "ko": "간단한 텍스트(bentext)로 레시피 공유 또는 인쇄",
+    "ch": "以精简文本（bentext）分享或打印食谱"
   },
-  "bentext-copied": {
-    "fr": "Texte copié dans le presse-papiers.",
-    "en": "Text copied to clipboard.",
-    "ko": "클립보드에 복사했습니다.",
-    "ch": "已复制到剪贴板。"
+  "bentext-shared": {
+    "fr": "Partage lancé.",
+    "en": "Share sheet opened.",
+    "ko": "공유 창이 열렸습니다.",
+    "ch": "已打开分享。"
+  },
+  "bentext-share-copied-fallback": {
+    "fr": "Partage indisponible : texte et lien copiés dans le presse-papiers.",
+    "en": "Sharing unavailable: text and link copied to the clipboard.",
+    "ko": "공유를 사용할 수 없어 텍스트와 링크를 클립보드에 복사했습니다.",
+    "ch": "无法使用分享功能，已将文本和链接复制到剪贴板。"
   },
   "bentext-error": {
     "fr": "Impossible de récupérer le bentext. Réessayez plus tard.",

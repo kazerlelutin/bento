@@ -5,16 +5,16 @@ import { recipesStore } from "@features/recipes/recipes.stores";
 import {
   CARD_SERVING_DECREASE_ID,
   CARD_SERVING_INCREASE_ID,
-  CARD_BENTO_COPY_ID,
+  CARD_BENTO_SHARE_ID,
   CARD_BENTO_PRINT_ID,
-  CARD_BENTO_COPY_BOTTOM_ID,
+  CARD_BENTO_SHARE_BOTTOM_ID,
   CARD_BENTO_PRINT_BOTTOM_ID,
   CARD_BENTO_MESSAGE_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
 import { applyRecipeToCardDom } from "@features/card/card.view-fill";
 import { getRouteContext } from "@features/router/route-context";
-import { copyTextToClipboard, fetchBentext, printBentextInWindow } from "@features/recipes/bentext.utils";
+import { fetchBentext, printBentextInWindow, shareBentextRecipe } from "@features/recipes/bentext.utils";
 import { applyServingToBentext, buildBentextExportFromRecipe } from "@features/recipes/bentext.serving";
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
@@ -34,11 +34,11 @@ function handleDocumentClick(e: Event): void {
     return;
   }
 
-  const isCopy =
-    target.id === CARD_BENTO_COPY_ID || target.id === CARD_BENTO_COPY_BOTTOM_ID;
+  const isShare =
+    target.id === CARD_BENTO_SHARE_ID || target.id === CARD_BENTO_SHARE_BOTTOM_ID;
   const isPrint =
     target.id === CARD_BENTO_PRINT_ID || target.id === CARD_BENTO_PRINT_BOTTOM_ID;
-  if (!isCopy && !isPrint) return;
+  if (!isShare && !isPrint) return;
   if (!displayedRecipe?.slug) return;
 
   const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
@@ -65,9 +65,17 @@ function handleDocumentClick(e: Event): void {
         raw = buildBentextExportFromRecipe(displayedRecipe!);
       }
       const text = applyServingToBentext(raw, displayedRecipe!, displayedServing);
-      if (isCopy) {
-        await copyTextToClipboard(text);
-        showMsg(t(UI["bentext-copied"]), false);
+      if (isShare) {
+        const title = displayedRecipe!.identity.name ?? displayedRecipe!.slug;
+        const pageUrl = new URL(window.location.pathname, window.location.origin).href;
+        const result = await shareBentextRecipe({ title, text, url: pageUrl });
+        if (result === "cancelled") {
+          hideMsg();
+        } else if (result === "shared") {
+          showMsg(t(UI["bentext-shared"]), false);
+        } else {
+          showMsg(t(UI["bentext-share-copied-fallback"]), false);
+        }
       } else {
         hideMsg();
         printBentextInWindow(text, displayedRecipe!.identity.name ?? displayedRecipe!.slug);
