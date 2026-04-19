@@ -71,17 +71,15 @@ describe("card.bento.utils", () => {
   });
 
   it("renderCardBentoRecap masque le héros si seulement secondaire", () => {
-    const heading = document.createElement("h2");
     const primary = document.createElement("div");
     const details = document.createElement("details");
     const dl = document.createElement("dl");
     details.appendChild(dl);
     renderCardBentoRecap(
-      { primaryHeading: heading, primaryGrid: primary, secondaryWrap: details, secondaryDl: dl },
+      { primaryGrid: primary, secondaryWrap: details, secondaryDl: dl },
       { stains: "Faible" },
       "fr"
     );
-    expect(heading.hidden).toBe(true);
     expect(primary.hidden).toBe(true);
     expect(details.hidden).toBe(false);
     expect(details.open).toBe(true);

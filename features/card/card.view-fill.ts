@@ -4,7 +4,6 @@ import {
   CARD_STEPS_ID,
   CARD_NOTES_ID,
   CARD_BENTO_RECAP_ID,
-  CARD_BENTO_BLOCK_TITLE_ID,
   CARD_BENTO_PRIMARY_ID,
   CARD_BENTO_SECONDARY_WRAP_ID,
   CARD_BENTO_SECONDARY_DL_ID,
@@ -55,7 +54,6 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
   }
 
   const bentoRecap = doc.getElementById(CARD_BENTO_RECAP_ID);
-  const bentoPrimaryHeading = doc.getElementById(CARD_BENTO_BLOCK_TITLE_ID);
   const bentoPrimaryGrid = doc.getElementById(CARD_BENTO_PRIMARY_ID);
   const bentoSecondaryWrap = doc.getElementById(CARD_BENTO_SECONDARY_WRAP_ID) as HTMLDetailsElement | null;
   const bentoSecondaryDl = doc.getElementById(CARD_BENTO_SECONDARY_DL_ID) as HTMLDListElement | null;
@@ -88,7 +86,6 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
       bentoRecap.setAttribute("aria-label", getTranslation(UI["bento-recap-aria"], lang));
       renderCardBentoRecap(
         {
-          primaryHeading: bentoPrimaryHeading,
           primaryGrid: bentoPrimaryGrid,
           secondaryWrap: bentoSecondaryWrap,
           secondaryDl: bentoSecondaryDl,
@@ -101,7 +98,6 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
       bentoRecap.removeAttribute("aria-label");
       bentoPrimaryGrid.innerHTML = "";
       bentoSecondaryDl.innerHTML = "";
-      if (bentoPrimaryHeading) bentoPrimaryHeading.hidden = true;
       bentoPrimaryGrid.hidden = true;
       if (bentoSecondaryWrap) bentoSecondaryWrap.hidden = true;
     }

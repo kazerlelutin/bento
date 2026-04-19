@@ -164,7 +164,6 @@ export function renderCardBentoSecondary(dl: HTMLDListElement, bento: RecipeBent
 }
 
 export type CardBentoRecapElements = {
-  primaryHeading: HTMLElement | null;
   primaryGrid: HTMLElement | null;
   secondaryWrap: HTMLDetailsElement | null;
   secondaryDl: HTMLDListElement | null;
@@ -176,13 +175,10 @@ export function renderCardBentoRecap(
   bento: RecipeBento,
   lang: Language
 ): void {
-  const { primaryHeading, primaryGrid, secondaryWrap, secondaryDl } = els;
+  const { primaryGrid, secondaryWrap, secondaryDl } = els;
   const primary = hasAnyPrimary(bento);
   const secondary = hasAnySecondary(bento);
 
-  if (primaryHeading) {
-    primaryHeading.hidden = !primary;
-  }
   if (primaryGrid) {
     renderCardBentoPrimary(primaryGrid, bento, lang);
     primaryGrid.hidden = !primary;

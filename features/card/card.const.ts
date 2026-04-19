@@ -7,7 +7,6 @@ export const CARD_STEPS_ID = "card-steps";
 export const CARD_NOTES_ID = "card-notes";
 export const MAIN_CARD_ID = "main-card";
 export const CARD_BENTO_RECAP_ID = "card-bento-recap";
-export const CARD_BENTO_BLOCK_TITLE_ID = "card-bento-block-title";
 export const CARD_BENTO_PRIMARY_ID = "card-bento-primary";
 export const CARD_BENTO_SECONDARY_WRAP_ID = "card-bento-secondary-wrap";
 export const CARD_BENTO_SECONDARY_DL_ID = "card-bento-secondary-dl";

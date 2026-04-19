@@ -487,12 +487,6 @@ export const UI: UiTranslation = {
     "ko": "식기",
     "ch": "餐具"
   },
-  "bento-block-title": {
-    "fr": "Repas emporté",
-    "en": "Packed lunch",
-    "ko": "도시락",
-    "ch": "外带餐"
-  },
   "bento-secondary-summary": {
     "fr": "Affiner et détails",
     "en": "More detail",

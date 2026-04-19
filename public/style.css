@@ -812,16 +812,6 @@
     border: none;
   }
 
-  .card-bento-block-title {
-    margin: 0 0 var(--margin-medium);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-align: center;
-    color: var(--text-primary);
-    text-transform: uppercase;
-    font-size: clamp(0.8rem, 2.8vw, 0.95rem);
-  }
-
   .card-bento-primary {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

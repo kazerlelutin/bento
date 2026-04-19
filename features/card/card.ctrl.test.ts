@@ -13,7 +13,6 @@ import {
   CARD_NOTES_ID,
   MAIN_CARD_ID,
   CARD_BENTO_RECAP_ID,
-  CARD_BENTO_BLOCK_TITLE_ID,
   CARD_BENTO_PRIMARY_ID,
   CARD_BENTO_SECONDARY_WRAP_ID,
   CARD_BENTO_SECONDARY_DL_ID,
@@ -34,7 +33,6 @@ function createCardDOM() {
         <h1 id="card-title"></h1>
         <div class="card-bento-area">
           <section id="${CARD_BENTO_RECAP_ID}" hidden>
-            <h2 id="${CARD_BENTO_BLOCK_TITLE_ID}" hidden></h2>
             <div id="${CARD_BENTO_PRIMARY_ID}" hidden></div>
             <details id="${CARD_BENTO_SECONDARY_WRAP_ID}" hidden>
               <summary class="card-bento-secondary-summary"><span class="card-bento-secondary-summary__label" data-translate="bento-secondary-summary"></span></summary>
