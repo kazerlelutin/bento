@@ -24,6 +24,11 @@ export async function fetchBentext(slug: string, langOverride?: Language): Promi
 
 export type ShareBentextResult = "shared" | "clipboard" | "cancelled";
 
+/** `true` si la feuille de partage native est disponible (souvent absent sur desktop). */
+export function isNavigatorShareSupported(): boolean {
+  return typeof navigator.share === "function";
+}
+
 /**
  * Partage le bentext via l’API Web Share, avec repli copie (texte + URL).
  * `AbortError` (fermeture de la feuille native) ⇒ `cancelled`.

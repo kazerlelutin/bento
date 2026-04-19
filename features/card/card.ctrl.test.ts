@@ -16,9 +16,11 @@ import {
   CARD_BENTO_BLOCK_TITLE_ID,
   CARD_BENTO_PRIMARY_ID,
   CARD_BENTO_SECONDARY_WRAP_ID,
-  CARD_BENTO_DL_ID,
+  CARD_BENTO_SECONDARY_DL_ID,
   CARD_BENTO_EXPORT_ID,
   CARD_BENTO_EXPORT_BOTTOM_ID,
+  CARD_BENTO_SHARE_ID,
+  CARD_BENTO_SHARE_BOTTOM_ID,
 } from "@features/card/card.const";
 
 function createCardDOM() {
@@ -36,7 +38,7 @@ function createCardDOM() {
             <div id="${CARD_BENTO_PRIMARY_ID}" hidden></div>
             <details id="${CARD_BENTO_SECONDARY_WRAP_ID}" hidden>
               <summary class="card-bento-secondary-summary"><span class="card-bento-secondary-summary__label" data-translate="bento-secondary-summary"></span></summary>
-              <dl id="${CARD_BENTO_DL_ID}"></dl>
+              <dl id="${CARD_BENTO_SECONDARY_DL_ID}"></dl>
             </details>
           </section>
           <div class="card-bento-export" role="group" id="${CARD_BENTO_EXPORT_ID}">
@@ -161,7 +163,7 @@ describe("card.ctrl", () => {
       cardCtrl.updateUI();
       const recap = document.getElementById(CARD_BENTO_RECAP_ID);
       const primary = document.getElementById(CARD_BENTO_PRIMARY_ID);
-      const dl = document.getElementById(CARD_BENTO_DL_ID);
+      const dl = document.getElementById(CARD_BENTO_SECONDARY_DL_ID);
       expect(recap?.hidden).toBe(true);
       expect(primary?.innerHTML).toBe("");
       expect(dl?.innerHTML).toBe("");
@@ -187,6 +189,36 @@ describe("card.ctrl", () => {
       const exportBottom = document.getElementById(CARD_BENTO_EXPORT_BOTTOM_ID);
       expect(exportEl?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
       expect(exportBottom?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
+    });
+
+    it("sans Web Share, libellé des boutons bentext : Copier le lien", () => {
+      cardCtrl.updateUI();
+      expect(document.getElementById(CARD_BENTO_SHARE_ID)?.textContent).toBe("Copier le lien");
+      expect(document.getElementById(CARD_BENTO_SHARE_BOTTOM_ID)?.textContent).toBe("Copier le lien");
+      expect(document.getElementById(CARD_BENTO_SHARE_ID)?.getAttribute("data-translate")).toBe(
+        "bentext-copy-link-short"
+      );
+    });
+
+    it("avec Web Share, libellé des boutons bentext : Partager", () => {
+      const prev = Object.getOwnPropertyDescriptor(Navigator.prototype, "share");
+      Object.defineProperty(Navigator.prototype, "share", {
+        configurable: true,
+        value: async () => {},
+      });
+      try {
+        cardCtrl.updateUI();
+        expect(document.getElementById(CARD_BENTO_SHARE_ID)?.textContent).toBe("Partager");
+        expect(document.getElementById(CARD_BENTO_SHARE_ID)?.getAttribute("data-translate")).toBe(
+          "bentext-share-short"
+        );
+      } finally {
+        if (prev) {
+          Object.defineProperty(Navigator.prototype, "share", prev);
+        } else {
+          delete (Navigator.prototype as { share?: unknown }).share;
+        }
+      }
     });
 
     it("sets aria-label on bento recap when bento is present", () => {

@@ -1,8 +1,11 @@
 import { parseLocalizedPath, normalizePathname } from "@features/i18n/route-path";
 import type { Route } from "@features/routes/routes.type";
+import { getTranslation } from "@features/translate/translate.utils";
 import { cardPageCtrl } from "@features/routes/card/card.ctrl";
 import recipesListCtrl from "@features/routes/recipes/recipes-list.ctrl";
 import aboutCtrl from "@features/routes/about/about.ctrl";
+import { privacyPageTitle } from "@features/routes/privacy/privacy.const";
+import privacyCtrl from "@features/routes/privacy/privacy.ctrl";
 import notFoundCtrl from "@features/routes/not-found/not-found.ctrl";
 
 export type ResolvedRoute = {
@@ -52,6 +55,18 @@ function routeAbout(lang: import("@features/translate/translate.types").Language
       title: titles.about,
       templateId: "about-template",
       ctrl: aboutCtrl,
+    },
+    lang,
+  };
+}
+
+function routePrivacy(lang: import("@features/translate/translate.types").Language): ResolvedRoute {
+  return {
+    route: {
+      path: `/${lang}/privacy`,
+      title: getTranslation(privacyPageTitle, lang),
+      templateId: "privacy-template",
+      ctrl: privacyCtrl,
     },
     lang,
   };
@@ -113,6 +128,10 @@ export function resolveRoute(pathname: string): ResolvedRoute | null {
 
   if (segments[0] === "about" && segments.length === 1) {
     return routeAbout(lang);
+  }
+
+  if (segments[0] === "privacy" && segments.length === 1) {
+    return routePrivacy(lang);
   }
 
   return routeNotFound(lang, p);

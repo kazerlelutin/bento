@@ -4,6 +4,7 @@ import { renderTemplate, getMainContent } from '@features/router/router.template
 import type { Route } from '@features/routes/routes.type';
 import { metaCtrl } from '@features/meta/meta.ctrl';
 import { NOT_FOUND_TEMPLATE_ID } from '@features/router/route-match';
+import { syncMobileNavPlacement } from '@features/mobile-nav/mobile-nav.ctrl';
 
 /** Dernier rendu : évite de vider `main` si seule la query change (ex. filtres catalogue). */
 let lastRenderedTemplateId: string | null = null;
@@ -50,6 +51,7 @@ export const handleRouteChange = async (route: Route): Promise<void> => {
   }
 
   await route?.ctrl?.init?.();
+  syncMobileNavPlacement();
   routerState.cleanUp = route?.ctrl?.cleanUp;
 };
 

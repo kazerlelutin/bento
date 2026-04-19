@@ -99,10 +99,10 @@ export const aboutContent: AboutContentItem[] = [
       ch: '法律声明'
     },
     content: {
-      fr: 'Les recettes sont à titre indicatif, aucune garantie de résultat. Tout le contenu est sous licence Creative Commons. Aucun cookie n\'est utilisé sur ce site.',
-      en: 'Recipes are for informational purposes only, no guarantee of results. All content is under Creative Commons license. No cookies are used on this site.',
-      ko: '레시피는 참고용이며, 결과에 대한 보장은 없습니다. 모든 콘텐츠는 Creative Commons 라이선스 하에 있습니다. 이 사이트에서는 쿠키를 사용하지 않습니다.',
-      ch: '食谱仅供参考，不保证效果。所有内容采用 Creative Commons 许可。本站不使用 cookie。'
+      fr: 'Les recettes sont à titre indicatif, aucune garantie de résultat. Tout le contenu est sous licence Creative Commons. La mesure d’audience (Matomo) et les préférences (langue, choix cookies) sont décrites dans la politique de confidentialité.',
+      en: 'Recipes are for informational purposes only, no guarantee of results. All content is under Creative Commons license. Audience measurement (Matomo) and preferences (language, cookie choice) are described in the privacy policy.',
+      ko: '레시피는 참고용이며 결과 보장은 없습니다. 콘텐츠는 Creative Commons 라이선스입니다. 방문 분석(Matomo) 및 설정(언어·쿠키 선택)은 개인정보 처리방침에 설명되어 있습니다.',
+      ch: '食谱仅供参考，不保证效果。内容采用 Creative Commons 许可。访问统计（Matomo）与偏好（语言、Cookie 选择）详见隐私政策。'
     }
   }
 ];

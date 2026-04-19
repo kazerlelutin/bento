@@ -40,6 +40,7 @@ function normalizeBundledAssets(html: string): string {
 function localizeNavLinks(html: string, lang: string): string {
   return html
     .replace(/href="\/about"/g, `href="/${lang}/about"`)
+    .replace(/href="\/privacy"/g, `href="/${lang}/privacy"`)
     .replace(/href="\/recipes"/g, `href="/${lang}/recipes"`)
     .replace(/href="\/"/g, `href="/${lang}"`);
 }
@@ -199,11 +200,13 @@ async function main(): Promise<void> {
     const baseDir = join(process.cwd(), "dist", lang);
     await mkdir(join(baseDir, "recipes"), { recursive: true });
     await mkdir(join(baseDir, "about"), { recursive: true });
+    await mkdir(join(baseDir, "privacy"), { recursive: true });
 
     const kinds: { kind: SsgPageKind; recipe?: Recipe }[] = [
       { kind: "home" },
       { kind: "recipes" },
       { kind: "about" },
+      { kind: "privacy" },
       ...recipes.map((r) => ({ kind: "recipe" as const, recipe: r })),
     ];
 
@@ -246,6 +249,10 @@ async function main(): Promise<void> {
         await writeFile(join(baseDir, "about", "index.html"), html, "utf8");
         allUrls.push(`/${lang}/about`);
         console.log(`✅ ${lang}/about/index.html`);
+      } else if (kind === "privacy") {
+        await writeFile(join(baseDir, "privacy", "index.html"), html, "utf8");
+        allUrls.push(`/${lang}/privacy`);
+        console.log(`✅ ${lang}/privacy/index.html`);
       } else if (recipe) {
         const safe = recipe.slug.replace(/[^a-zA-Z0-9._-]/g, "_");
         await writeFile(join(baseDir, "recipes", `${safe}.html`), html, "utf8");

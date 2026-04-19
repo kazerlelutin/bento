@@ -14,7 +14,12 @@ import {
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
 import { applyRecipeToCardDom } from "@features/card/card.view-fill";
 import { getRouteContext } from "@features/router/route-context";
-import { fetchBentext, printBentextInWindow, shareBentextRecipe } from "@features/recipes/bentext.utils";
+import {
+  fetchBentext,
+  isNavigatorShareSupported,
+  printBentextInWindow,
+  shareBentextRecipe,
+} from "@features/recipes/bentext.utils";
 import { applyServingToBentext, buildBentextExportFromRecipe } from "@features/recipes/bentext.serving";
 import { t } from "@features/translate/translate";
 import { UI } from "@features/translate/translate.const";
@@ -22,6 +27,41 @@ import { UI } from "@features/translate/translate.const";
 let displayedRecipe: Recipe | null = null;
 let displayedServing = 1;
 let boundDocumentClick: ((e: Event) => void) | null = null;
+
+const CARD_BENTO_SUCCESS_HIDE_MS = 3000;
+let cardBentoMessageAutoHideTimer: ReturnType<typeof setTimeout> | null = null;
+
+/** Annule le masquage différé (ex. recette remplacée avant la fin du délai). */
+export function clearCardBentoMessageAutoHideTimer(): void {
+  if (cardBentoMessageAutoHideTimer !== null) {
+    clearTimeout(cardBentoMessageAutoHideTimer);
+    cardBentoMessageAutoHideTimer = null;
+  }
+}
+
+function hideCardBentoMessage(): void {
+  clearCardBentoMessageAutoHideTimer();
+  const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
+  if (!msgEl) return;
+  msgEl.hidden = true;
+  msgEl.textContent = "";
+  msgEl.classList.remove("card-bento-message--error");
+}
+
+function showCardBentoMessage(text: string, isError: boolean): void {
+  clearCardBentoMessageAutoHideTimer();
+  const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
+  if (!msgEl) return;
+  msgEl.hidden = false;
+  msgEl.textContent = text;
+  msgEl.classList.toggle("card-bento-message--error", isError);
+  if (!isError) {
+    cardBentoMessageAutoHideTimer = setTimeout(() => {
+      cardBentoMessageAutoHideTimer = null;
+      hideCardBentoMessage();
+    }, CARD_BENTO_SUCCESS_HIDE_MS);
+  }
+}
 
 function handleDocumentClick(e: Event): void {
   const target = e.target as HTMLElement;
@@ -41,20 +81,6 @@ function handleDocumentClick(e: Event): void {
   if (!isShare && !isPrint) return;
   if (!displayedRecipe?.slug) return;
 
-  const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
-  const showMsg = (text: string, isError: boolean) => {
-    if (!msgEl) return;
-    msgEl.hidden = false;
-    msgEl.textContent = text;
-    msgEl.classList.toggle("card-bento-message--error", isError);
-  };
-  const hideMsg = () => {
-    if (!msgEl) return;
-    msgEl.hidden = true;
-    msgEl.textContent = "";
-    msgEl.classList.remove("card-bento-message--error");
-  };
-
   void (async () => {
     try {
       const { lang } = getRouteContext();
@@ -70,18 +96,21 @@ function handleDocumentClick(e: Event): void {
         const pageUrl = new URL(window.location.pathname, window.location.origin).href;
         const result = await shareBentextRecipe({ title, text, url: pageUrl });
         if (result === "cancelled") {
-          hideMsg();
+          hideCardBentoMessage();
         } else if (result === "shared") {
-          showMsg(t(UI["bentext-shared"]), false);
+          showCardBentoMessage(t(UI["bentext-shared"]), false);
         } else {
-          showMsg(t(UI["bentext-share-copied-fallback"]), false);
+          const clipboardKey = isNavigatorShareSupported()
+            ? "bentext-share-copied-fallback"
+            : "bentext-copy-link-copied";
+          showCardBentoMessage(t(UI[clipboardKey]), false);
         }
       } else {
-        hideMsg();
+        hideCardBentoMessage();
         printBentextInWindow(text, displayedRecipe!.identity.name ?? displayedRecipe!.slug);
       }
     } catch {
-      showMsg(t(UI["bentext-error"]), true);
+      showCardBentoMessage(t(UI["bentext-error"]), true);
     }
   })();
 }
@@ -96,6 +125,7 @@ export const cardCtrl: CardCtrl = {
     this.updateUI();
   },
   cleanUp() {
+    hideCardBentoMessage();
     if (boundDocumentClick) {
       document.removeEventListener("click", boundDocumentClick);
       boundDocumentClick = null;

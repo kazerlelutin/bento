@@ -5,9 +5,9 @@ describe("active-footer-link", () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <nav class="app-footer-nav">
-        <a href="/">Accueil</a>
-        <a href="/favorites">Favoris</a>
-        <a href="/about">À propos</a>
+        <a class="app-site-nav__link" href="/">Accueil</a>
+        <a class="app-site-nav__link" href="/favorites">Favoris</a>
+        <a class="app-site-nav__link" href="/about">À propos</a>
       </nav>
     `;
   });
@@ -18,7 +18,7 @@ describe("active-footer-link", () => {
 
   it("sets active class and aria-current on matching link", () => {
     activeFooterLink("/favorites");
-    const links = document.querySelectorAll(".app-footer-nav a");
+    const links = document.querySelectorAll(".app-site-nav__link");
     const home = links[0];
     const fav = links[1];
     const about = links[2];
@@ -32,7 +32,7 @@ describe("active-footer-link", () => {
   it("clears active from other links when path changes", () => {
     activeFooterLink("/favorites");
     activeFooterLink("/about");
-    const links = document.querySelectorAll(".app-footer-nav a");
+    const links = document.querySelectorAll(".app-site-nav__link");
     expect(links[1].classList.contains("active")).toBe(false);
     expect(links[2].classList.contains("active")).toBe(true);
     expect(links[2].getAttribute("aria-current")).toBe("page");
@@ -40,7 +40,7 @@ describe("active-footer-link", () => {
 
   it("handles home path", () => {
     activeFooterLink("/");
-    const home = document.querySelector('.app-footer-nav a[href="/"]');
+    const home = document.querySelector('.app-site-nav__link[href="/"]');
     expect(home?.classList.contains("active")).toBe(true);
     expect(home?.getAttribute("aria-current")).toBe("page");
   });

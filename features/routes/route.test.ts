@@ -23,6 +23,12 @@ describe("resolveRoute (chemins localisés)", () => {
     expect(r!.route.templateId).toBe("about-template");
   });
 
+  it("résout /{lang}/privacy", () => {
+    const r = resolveRoute("/en/privacy");
+    expect(r).not.toBeNull();
+    expect(r!.route.templateId).toBe("privacy-template");
+  });
+
   it("résout /{lang}/recipes/:slug", () => {
     const r = resolveRoute("/fr/recipes/tarte-pommes");
     expect(r).not.toBeNull();

@@ -1,8 +1,6 @@
 import type { Recipe } from "@features/recipes/recipe.type";
 import type { Language } from "@features/translate/translate.types";
 import {
-  CARD_SERVING_DECREASE_ID,
-  CARD_SERVING_INCREASE_ID,
   CARD_STEPS_ID,
   CARD_NOTES_ID,
   CARD_BENTO_RECAP_ID,
@@ -13,10 +11,14 @@ import {
   CARD_BENTO_MESSAGE_ID,
   CARD_BENTO_EXPORT_ID,
   CARD_BENTO_EXPORT_BOTTOM_ID,
+  CARD_BENTO_SHARE_ID,
+  CARD_BENTO_SHARE_BOTTOM_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
 import { hasBentoContent, renderCardBentoRecap } from "@features/card/card.bento.utils";
 import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
+import { clearCardBentoMessageAutoHideTimer } from "@features/card/card.ctrl";
+import { isNavigatorShareSupported } from "@features/recipes/bentext.utils";
 import { getTranslation } from "@features/translate/translate.utils";
 import { UI } from "@features/translate/translate.const";
 
@@ -59,12 +61,25 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
   const bentoSecondaryDl = doc.getElementById(CARD_BENTO_SECONDARY_DL_ID) as HTMLDListElement | null;
   const bentoExport = doc.getElementById(CARD_BENTO_EXPORT_ID);
   const bentoExportBottom = doc.getElementById(CARD_BENTO_EXPORT_BOTTOM_ID);
-  const bentextActionsAria = getTranslation(UI["bentext-actions-aria"], lang);
+  const shareUi = isNavigatorShareSupported();
+  const bentextActionsAria = getTranslation(
+    UI[shareUi ? "bentext-actions-aria" : "bentext-actions-aria-copylink"],
+    lang
+  );
   if (bentoExport) {
     bentoExport.setAttribute("aria-label", bentextActionsAria);
   }
   if (bentoExportBottom) {
     bentoExportBottom.setAttribute("aria-label", bentextActionsAria);
+  }
+
+  const shareLabelKey = shareUi ? "bentext-share-short" : "bentext-copy-link-short";
+  for (const id of [CARD_BENTO_SHARE_ID, CARD_BENTO_SHARE_BOTTOM_ID]) {
+    const btn = doc.getElementById(id);
+    if (btn) {
+      btn.setAttribute("data-translate", shareLabelKey);
+      btn.textContent = getTranslation(UI[shareLabelKey], lang);
+    }
   }
 
   if (bentoRecap && bentoPrimaryGrid && bentoSecondaryDl) {
@@ -94,6 +109,9 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
 
   const bentoMsg = doc.getElementById(CARD_BENTO_MESSAGE_ID);
   if (bentoMsg) {
+    if (doc === document) {
+      clearCardBentoMessageAutoHideTimer();
+    }
     bentoMsg.hidden = true;
     bentoMsg.textContent = "";
     bentoMsg.classList.remove("card-bento-message--error");

@@ -41,6 +41,66 @@ export const UI: UiTranslation = {
     "ko": "자동 설치 안내가 없으면 브라우저 메뉴(⋮ 또는 공유)에서 앱 설치 또는 홈 화면에 추가를 선택하세요. 로컬에서는 빌드 후 « bun run preview »를 권장합니다.",
     "ch": "若未出现安装提示：请用浏览器菜单（⋮ 或分享）→「安装应用」或「添加到主屏幕」。本地开发请在构建后运行「 bun run preview 」。"
   },
+  "cookie-banner-text": {
+    "fr": "Nous utilisons Matomo (analytics.ben-to.fr) pour des statistiques de fréquentation. Vous pouvez accepter les cookies de mesure d’audience ou les refuser.",
+    "en": "We use Matomo (analytics.ben-to.fr) for audience statistics. You can accept analytics cookies or decline them.",
+    "ko": "방문 통계를 위해 Matomo(analytics.ben-to.fr)를 사용합니다. 분석 쿠키를 허용하거나 거부할 수 있습니다.",
+    "ch": "我们使用 Matomo（analytics.ben-to.fr）统计访问情况。您可以选择接受或拒绝分析类 Cookie。"
+  },
+  "cookie-banner-accept": {
+    "fr": "Accepter",
+    "en": "Accept",
+    "ko": "허용",
+    "ch": "接受"
+  },
+  "cookie-banner-refuse": {
+    "fr": "Refuser",
+    "en": "Decline",
+    "ko": "거부",
+    "ch": "拒绝"
+  },
+  "cookie-banner-privacy-link": {
+    "fr": "Politique de confidentialité",
+    "en": "Privacy policy",
+    "ko": "개인정보 처리방침",
+    "ch": "隐私政策"
+  },
+  "footer-privacy": {
+    "fr": "Confidentialité",
+    "en": "Privacy",
+    "ko": "개인정보",
+    "ch": "隐私"
+  },
+  "footer-more-links": {
+    "fr": "Autres liens",
+    "en": "More links",
+    "ko": "더 보기",
+    "ch": "更多链接"
+  },
+  "nav-menu-title": {
+    "fr": "Menu",
+    "en": "Menu",
+    "ko": "메뉴",
+    "ch": "菜单"
+  },
+  "nav-menu-open": {
+    "fr": "Ouvrir le menu de navigation",
+    "en": "Open navigation menu",
+    "ko": "내비게이션 메뉴 열기",
+    "ch": "打开导航菜单"
+  },
+  "nav-menu-close": {
+    "fr": "Fermer le menu",
+    "en": "Close menu",
+    "ko": "메뉴 닫기",
+    "ch": "关闭菜单"
+  },
+  "nav-site": {
+    "fr": "Navigation du site",
+    "en": "Site navigation",
+    "ko": "사이트 내비게이션",
+    "ch": "网站导航"
+  },
   "language-selector-label": {
     "fr": "Choisir la langue",
     "en": "Choose language",
@@ -499,6 +559,12 @@ export const UI: UiTranslation = {
     "ko": "공유",
     "ch": "分享"
   },
+  "bentext-copy-link-short": {
+    "fr": "Copier le lien",
+    "en": "Copy link",
+    "ko": "링크 복사",
+    "ch": "复制链接"
+  },
   "bentext-print-short": {
     "fr": "Imprimer",
     "en": "Print",
@@ -511,6 +577,12 @@ export const UI: UiTranslation = {
     "ko": "간단한 텍스트(bentext)로 레시피 공유 또는 인쇄",
     "ch": "以精简文本（bentext）分享或打印食谱"
   },
+  "bentext-actions-aria-copylink": {
+    "fr": "Copier le lien ou imprimer la recette au format texte simplifié (bentext)",
+    "en": "Copy the link or print the recipe as simplified plain text (bentext)",
+    "ko": "링크를 복사하거나 간단한 텍스트(bentext)로 레시피를 인쇄",
+    "ch": "复制链接或以精简文本（bentext）打印食谱"
+  },
   "bentext-shared": {
     "fr": "Partage lancé.",
     "en": "Share sheet opened.",
@@ -522,6 +594,12 @@ export const UI: UiTranslation = {
     "en": "Sharing unavailable: text and link copied to the clipboard.",
     "ko": "공유를 사용할 수 없어 텍스트와 링크를 클립보드에 복사했습니다.",
     "ch": "无法使用分享功能，已将文本和链接复制到剪贴板。"
+  },
+  "bentext-copy-link-copied": {
+    "fr": "Copié dans le presse-papiers.",
+    "en": "Copied to clipboard.",
+    "ko": "클립보드에 복사했습니다.",
+    "ch": "已复制到剪贴板。"
   },
   "bentext-error": {
     "fr": "Impossible de récupérer le bentext. Réessayez plus tard.",

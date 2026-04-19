@@ -45,21 +45,6 @@
   <meta name="twitter:image:alt" content="BENTO — recettes d'Asie de l'Est, bentos et repas emportés" />
   <meta name="og:image" content="https://ben-to.fr/public/og-img.png" />
   <meta name="og:image:alt" content="BENTO — recettes d'Asie de l'Est, bentos et repas emportés" />
-  <!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//analytics.ben-to.fr/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->
 
 </head>
 
@@ -77,6 +62,11 @@
       </a>
     </div>
     <div class="flex items-center gap-md">
+      <button type="button" class="app-mobile-nav-trigger app-header-burger" data-open-mobile-nav
+        aria-expanded="false" aria-controls="mobile-nav-sheet">
+        <span class="visually-hidden" data-translate="nav-menu-open"></span>
+        <span class="app-burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
       <a href="https://ko-fi.com/kazerlelutin" target="_blank" data-external data-translate="support-me"></a>
       <select id="language-selector" class="language-selector" aria-label="">
         <option value="fr">Français</option>
@@ -88,7 +78,6 @@
     </div>
   </header>
 
-  <!-- Contenu du main : vide en dev ; au build, prerender clone #card / #recipes-template depuis cette même page. -->
   <main class="app-main"></main>
 
   <footer class="app-footer">
@@ -103,11 +92,49 @@
       </div>
     </div>
     <nav class="app-footer-nav">
-      <a href="/fr" data-internal aria-current="page" data-translate="home"></a>
-      <a href="/fr/recipes" data-internal data-translate="all-recipes"></a>
-      <a href="/fr/about" data-internal data-translate="about"></a>
+      <a class="app-site-nav__link" href="/fr" data-internal aria-current="page" data-translate="home"></a>
+      <a class="app-site-nav__link" href="/fr/recipes" data-internal data-translate="all-recipes"></a>
+      <a class="app-site-nav__link" href="/fr/about" data-internal data-translate="about"></a>
+      <a class="app-site-nav__link" href="/fr/privacy" data-internal data-translate="footer-privacy"></a>
     </nav>
   </footer>
+
+  <div id="cookie-consent" class="cookie-consent" role="region" aria-labelledby="cookie-consent-label" hidden>
+    <div class="cookie-consent__inner">
+      <p id="cookie-consent-label" class="cookie-consent__text">
+        <span data-translate="cookie-banner-text"></span>
+        <a href="/fr/privacy" class="cookie-consent__more" data-internal data-translate="cookie-banner-privacy-link"></a>
+      </p>
+      <div class="cookie-consent__actions">
+        <button type="button" id="cookie-consent-accept" class="btn cookie-consent__btn cookie-consent__btn--primary"
+          data-translate="cookie-banner-accept"></button>
+        <button type="button" id="cookie-consent-refuse" class="btn cookie-consent__btn"
+          data-translate="cookie-banner-refuse"></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-nav-sheet" class="mobile-nav-sheet" aria-hidden="true">
+    <div class="mobile-nav-sheet__backdrop" data-close-mobile-nav tabindex="-1" aria-hidden="true"></div>
+    <div class="mobile-nav-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-sheet-title">
+      <div class="mobile-nav-sheet__head">
+        <h2 id="mobile-nav-sheet-title" class="mobile-nav-sheet__title" data-translate="nav-menu-title"></h2>
+        <button type="button" class="mobile-nav-sheet__close" data-close-mobile-nav>
+          <span class="visually-hidden" data-translate="nav-menu-close"></span>
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <nav class="mobile-nav-sheet__nav">
+        <a class="mobile-nav-sheet__link app-site-nav__link" href="/fr" data-internal data-translate="home"></a>
+        <a class="mobile-nav-sheet__link app-site-nav__link" href="/fr/recipes" data-internal
+          data-translate="all-recipes"></a>
+        <a class="mobile-nav-sheet__link app-site-nav__link" href="/fr/about" data-internal
+          data-translate="about"></a>
+        <a class="mobile-nav-sheet__link app-site-nav__link" href="/fr/privacy" data-internal
+          data-translate="footer-privacy"></a>
+      </nav>
+    </div>
+  </div>
 </body>
 
 <!-- ==================== TEMPLATES ==================== -->
@@ -177,8 +204,13 @@
         </div>
       </div>
 
-      <div class="flex gap-lg justify-center items-center align-self-end" id="card-controls">
+      <div class="flex gap-lg justify-center items-center align-self-end card-controls-row" id="card-controls">
         <button class="btn-card-random" data-action="random" type="button"></button>
+        <button type="button" class="app-mobile-nav-trigger app-card-nav-burger" data-open-mobile-nav
+          aria-expanded="false" aria-controls="mobile-nav-sheet">
+          <span class="visually-hidden" data-translate="nav-menu-open"></span>
+          <span class="app-burger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </div>
     </div>
   </template>
@@ -189,6 +221,13 @@
     <div id="about-container" class="flex flex-col overflow-y-auto gap-lg mx-auto p-lg max-w-content">
       <h1></h1>
       <div id="about-items-container" class="flex flex-col gap-md"></div>
+    </div>
+  </template>
+
+  <template id="privacy-template">
+    <div id="privacy-container" class="flex flex-col overflow-y-auto gap-lg mx-auto p-lg max-w-content">
+      <h1></h1>
+      <div id="privacy-items-container" class="flex flex-col gap-md"></div>
     </div>
   </template>
 

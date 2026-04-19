@@ -13,8 +13,6 @@ export const CARD_BENTO_SECONDARY_WRAP_ID = "card-bento-secondary-wrap";
 export const CARD_BENTO_SECONDARY_DL_ID = "card-bento-secondary-dl";
 export const CARD_BENTO_EXPORT_ID = "card-bento-export";
 export const CARD_BENTO_EXPORT_BOTTOM_ID = "card-bento-export-bottom";
-/** @deprecated utiliser `CARD_BENTO_SECONDARY_DL_ID` */
-export const CARD_BENTO_DL_ID = "card-bento-secondary-dl";
 export const CARD_BENTO_SHARE_ID = "card-bento-share";
 export const CARD_BENTO_PRINT_ID = "card-bento-print";
 export const CARD_BENTO_SHARE_BOTTOM_ID = "card-bento-share-bottom";

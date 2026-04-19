@@ -3,8 +3,9 @@ import { META, UI } from "@features/translate/translate.const";
 import type { Language } from "@features/translate/translate.types";
 import type { Recipe } from "@features/recipes/recipe.type";
 import { getBentoFieldValue, hasBentoContent } from "@features/card/card.bento.utils";
+import { privacyPageTitle } from "@features/routes/privacy/privacy.const";
 
-export type SsgPageKind = "home" | "recipes" | "about" | "recipe";
+export type SsgPageKind = "home" | "recipes" | "about" | "privacy" | "recipe";
 
 export type SsgPageMeta = {
   title: string;
@@ -36,6 +37,7 @@ function pathForPage(lang: Language, kind: SsgPageKind, recipeSlug?: string): st
   if (kind === "home") return `/${lang}`;
   if (kind === "recipes") return `/${lang}/recipes`;
   if (kind === "about") return `/${lang}/about`;
+  if (kind === "privacy") return `/${lang}/privacy`;
   return `/${lang}/recipes/${encodeURIComponent(recipeSlug ?? "")}`;
 }
 
@@ -123,9 +125,16 @@ export function buildSsgPageMeta(
 
   const titleRecipes = getTranslation(UI["all-recipes"], lang);
   const titleAbout = getTranslation(UI.about, lang);
+  const titlePrivacy = getTranslation(privacyPageTitle, lang);
 
   const pageTitle =
-    kind === "recipes" ? `${titleRecipes} | BENTO` : kind === "about" ? `${titleAbout} | BENTO` : title;
+    kind === "recipes"
+      ? `${titleRecipes} | BENTO`
+      : kind === "about"
+        ? `${titleAbout} | BENTO`
+        : kind === "privacy"
+          ? `${titlePrivacy} | BENTO`
+          : title;
 
   return {
     title: esc(pageTitle),

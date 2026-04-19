@@ -9,6 +9,8 @@ import {
   syncTranslateStoreFromUrl,
 } from "@features/i18n/bootstrap-lang";
 import { pwaInstallCtrl } from "@features/pwa/pwa-install.ctrl";
+import { cookieConsentCtrl } from "@features/cookie-consent/cookie-consent.ctrl";
+import { initMobileNav } from "@features/mobile-nav/mobile-nav.ctrl";
 
 addEventListener("DOMContentLoaded", () => {
   ensureLocalizedPathOrRedirect();
@@ -21,6 +23,8 @@ addEventListener("DOMContentLoaded", () => {
   languageSelectorCtrl.init();
   displayVersion();
   pwaInstallCtrl.init();
+  cookieConsentCtrl.init();
+  initMobileNav();
 
   registerServiceWorkerIfServedAsJs();
 });
