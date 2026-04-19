@@ -404,6 +404,11 @@
     justify-content: center;
   }
 
+  /** `hidden` doit primer sur `display:flex` (sinon la barre reste visible après « Plus tard »). */
+  .app-footer-pwa[hidden] {
+    display: none !important;
+  }
+
   /** PWA installée : pas de bandeau d’installation (navigateur + secours si le JS a posé la classe). */
   @media (display-mode: standalone) {
     .app-footer-pwa {
@@ -417,15 +422,35 @@
 
   .app-footer-pwa-inner {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    gap: 0.45rem;
     max-width: min(100%, 28rem);
     padding: 0.4rem 0.75rem;
     background: var(--color-bg-primary);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
+  }
+
+  .pwa-install-fallback {
+    margin: 0;
+    font-size: var(--font-size-small);
+    color: var(--text-secondary);
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .pwa-install-actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pwa-install-actions--fallback .pwa-install-btn {
+    display: none !important;
   }
 
   .pwa-install-btn {

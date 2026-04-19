@@ -35,6 +35,12 @@ export const UI: UiTranslation = {
     "ko": "나중에",
     "ch": "稍后"
   },
+  "install-app-fallback-hint": {
+    "fr": "Aucune invite automatique : utilisez le menu du navigateur (⋮ ou partage) → « Installer l’application » ou « Ajouter à l’écran d’accueil ». En local, préférez « bun run preview » après un build.",
+    "en": "No automatic install prompt: use the browser menu (⋮ or Share) → Install app or Add to Home Screen. Locally, run « bun run preview » after building.",
+    "ko": "자동 설치 안내가 없으면 브라우저 메뉴(⋮ 또는 공유)에서 앱 설치 또는 홈 화면에 추가를 선택하세요. 로컬에서는 빌드 후 « bun run preview »를 권장합니다.",
+    "ch": "若未出现安装提示：请用浏览器菜单（⋮ 或分享）→「安装应用」或「添加到主屏幕」。本地开发请在构建后运行「 bun run preview 」。"
+  },
   "language-selector-label": {
     "fr": "Choisir la langue",
     "en": "Choose language",

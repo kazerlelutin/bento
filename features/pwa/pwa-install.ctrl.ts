@@ -1,3 +1,5 @@
+import { applyTranslationsToDom } from "@features/translate/translate.store";
+
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
@@ -40,6 +42,16 @@ function isRunningAsInstalledPwa(): boolean {
 
 let deferred: BeforeInstallPromptEvent | null = null;
 
+/** Annule l’affichage du message de secours si `beforeinstallprompt` arrive avant la fin du délai. */
+let fallbackTimer: number | null = null;
+
+function clearFallbackTimer(): void {
+  if (fallbackTimer !== null) {
+    clearTimeout(fallbackTimer);
+    fallbackTimer = null;
+  }
+}
+
 function getWrap(): HTMLElement | null {
   return document.getElementById("pwa-install-wrap");
 }
@@ -52,22 +64,76 @@ function getDismissBtn(): HTMLButtonElement | null {
   return document.getElementById("pwa-install-dismiss") as HTMLButtonElement | null;
 }
 
-function showInstallUi(): void {
+/** Invite navigateur native (`beforeinstallprompt`). */
+function showNativeInstallUi(): void {
+  clearFallbackTimer();
   const wrap = getWrap();
-  if (!wrap) return;
+  const fb = document.getElementById("pwa-install-fallback");
+  const actions = document.getElementById("pwa-install-actions");
+  if (!wrap || !actions) return;
+  if (fb) fb.hidden = true;
+  actions.classList.remove("pwa-install-actions--fallback");
+  const installBtn = getInstallBtn();
+  if (installBtn) installBtn.hidden = false;
   wrap.hidden = false;
 }
 
+/** Aucun `beforeinstallprompt` (souvent en local) : texte d’aide + « Plus tard » uniquement. */
+function showFallbackInstallUi(): void {
+  clearFallbackTimer();
+  const wrap = getWrap();
+  const fb = document.getElementById("pwa-install-fallback");
+  const actions = document.getElementById("pwa-install-actions");
+  if (!wrap || !fb || !actions) return;
+  fb.hidden = false;
+  actions.classList.add("pwa-install-actions--fallback");
+  const installBtn = getInstallBtn();
+  if (installBtn) installBtn.hidden = true;
+  wrap.hidden = false;
+  applyTranslationsToDom();
+}
+
 function hideInstallUi(): void {
+  clearFallbackTimer();
   const wrap = getWrap();
   if (!wrap) return;
+  const fb = document.getElementById("pwa-install-fallback");
+  const actions = document.getElementById("pwa-install-actions");
+  if (fb) fb.hidden = true;
+  if (actions) actions.classList.remove("pwa-install-actions--fallback");
+  const installBtn = getInstallBtn();
+  if (installBtn) installBtn.hidden = false;
   wrap.hidden = true;
 }
 
+function scheduleFallbackProbe(): void {
+  clearFallbackTimer();
+  fallbackTimer = window.setTimeout(() => {
+    fallbackTimer = null;
+    if (deferred !== null || isRunningAsInstalledPwa() || isSnoozeActive()) return;
+    showFallbackInstallUi();
+  }, 2800);
+}
+
 function onBeforeInstallPrompt(e: Event): void {
+  if (isRunningAsInstalledPwa()) return;
+  if (isSnoozeActive()) {
+    e.preventDefault();
+    hideInstallUi();
+    return;
+  }
   e.preventDefault();
   deferred = e as BeforeInstallPromptEvent;
-  showInstallUi();
+  showNativeInstallUi();
+}
+
+/** Aligne la classe `html` avec le mode d’affichage (corrige un état coincé après DevTools / install). */
+function syncStandaloneClassOnHtml(): void {
+  if (isRunningAsInstalledPwa()) {
+    document.documentElement.classList.add("is-pwa-standalone");
+  } else {
+    document.documentElement.classList.remove("is-pwa-standalone");
+  }
 }
 
 /** Capture : les clics passent même si un calque (carte, etc.) interfère avec le footer. */
@@ -78,6 +144,7 @@ function onDocumentClickCapture(e: MouseEvent): void {
   if (target.closest("#pwa-install-dismiss")) {
     e.preventDefault();
     localStorage.setItem(LS_SNOOZE_UNTIL, String(Date.now() + SNOOZE_MS));
+    deferred = null;
     hideInstallUi();
     return;
   }
@@ -99,27 +166,54 @@ export const pwaInstallCtrl = {
     migrateLegacyDismiss();
 
     if (isRunningAsInstalledPwa()) {
-      document.documentElement.classList.add("is-pwa-standalone");
+      syncStandaloneClassOnHtml();
       hideInstallUi();
       return;
     }
-    document.documentElement.classList.remove("is-pwa-standalone");
+
+    syncStandaloneClassOnHtml();
 
     document.addEventListener("click", onDocumentClickCapture, true);
 
-    if (isSnoozeActive()) {
-      hideInstallUi();
+    /** Après modification du storage dans DevTools (même onglet), le `focus` resynchronise la classe et la barre si `deferred` existe encore. */
+    window.addEventListener("focus", () => {
+      syncStandaloneClassOnHtml();
+      if (isRunningAsInstalledPwa()) {
+        hideInstallUi();
+        return;
+      }
+      if (isSnoozeActive()) {
+        hideInstallUi();
+        return;
+      }
+      if (deferred) {
+        showNativeInstallUi();
+      }
+    });
+
+    if (
+      !getWrap() ||
+      !getInstallBtn() ||
+      !getDismissBtn() ||
+      !document.getElementById("pwa-install-fallback") ||
+      !document.getElementById("pwa-install-actions")
+    ) {
       return;
     }
-
-    if (!getWrap() || !getInstallBtn() || !getDismissBtn()) return;
 
     window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
 
     window.addEventListener("appinstalled", () => {
       deferred = null;
       hideInstallUi();
-      document.documentElement.classList.add("is-pwa-standalone");
+      /** Ne pas poser `is-pwa-standalone` ici : l’onglet navigateur reste souvent non-standalone, ce qui masquait la barre à tort jusqu’au prochain reload. */
+      syncStandaloneClassOnHtml();
     });
+
+    if (isSnoozeActive()) {
+      hideInstallUi();
+    } else {
+      scheduleFallbackProbe();
+    }
   },
 };

@@ -94,9 +94,12 @@
   <footer class="app-footer">
     <div id="pwa-install-wrap" class="app-footer-pwa" hidden>
       <div class="app-footer-pwa-inner">
-        <button type="button" id="pwa-install-btn" class="pwa-install-btn" data-translate="install-app"></button>
-        <button type="button" id="pwa-install-dismiss" class="pwa-install-dismiss"
-          data-translate="install-app-dismiss"></button>
+        <p id="pwa-install-fallback" class="pwa-install-fallback" hidden data-translate="install-app-fallback-hint"></p>
+        <div id="pwa-install-actions" class="pwa-install-actions">
+          <button type="button" id="pwa-install-btn" class="pwa-install-btn" data-translate="install-app"></button>
+          <button type="button" id="pwa-install-dismiss" class="pwa-install-dismiss"
+            data-translate="install-app-dismiss"></button>
+        </div>
       </div>
     </div>
     <nav class="app-footer-nav">
