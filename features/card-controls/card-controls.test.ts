@@ -60,11 +60,11 @@ describe("card-controls", () => {
   });
 
   describe("init", () => {
-    it("attaches listener so random updates recipe and UI on home", () => {
+    it("attache le listener : random met à jour la recette et appelle navigateInternal", () => {
       cardControlsCtrl.init?.();
       const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
-      expect(updateUIMock).toHaveBeenCalled();
+      expect(navigateInternal).toHaveBeenCalled();
       expect(currentRecipeStore.recipe).not.toBeNull();
     });
   });
@@ -72,11 +72,13 @@ describe("card-controls", () => {
   describe("handleClick", () => {
     beforeEach(() => cardControlsCtrl.init?.());
 
-    it("on home: random calls pickRandomRecipe and updateUI", () => {
+    it("on home: random appelle navigateInternal vers /:lang/recipes/:slug", () => {
       const btn = document.querySelector(`[data-action="${ACTIONS.random}"]`);
       (btn as HTMLElement)?.click();
       expect(currentRecipeStore.recipe).not.toBeNull();
-      expect(updateUIMock).toHaveBeenCalled();
+      expect(navigateInternal).toHaveBeenCalled();
+      const call = navigateInternal.mock.calls[0]?.[0] as string;
+      expect(call).toMatch(/\/fr\/recipes\//);
     });
 
     it("on /fr/recipes: random navigates to /fr/recipes/:slug", () => {

@@ -1,20 +1,13 @@
 import { CardControlsCtrl } from "@features/card-controls/card-controls.type";
 import { ACTIONS } from "@features/card-controls/card-controls.const";
 import { navigateInternal } from "@features/router/router.handlers";
-import { cardCtrl } from "@features/card/card.ctrl";
 import { recipeCtrl } from "@features/recipes/recipe/recipe.ctrl";
 import { currentRecipeStore } from "@features/recipes/recipe/recipe.store";
-import { routerState } from "@features/router/router.state";
-import { parseLocalizedPath, normalizePathname, pathWithLang } from "@features/i18n/route-path";
+import { pathWithLang } from "@features/i18n/route-path";
 import { getRouteContext } from "@features/router/route-context";
 
 let boundClick: ((e: Event) => void) | null = null;
 let controlsRoot: HTMLElement | null = null;
-
-function isRecipesCatalogPage(): boolean {
-  const parsed = parseLocalizedPath(normalizePathname(routerState.currentPage));
-  return Boolean(parsed?.segments[0] === "recipes" && parsed.segments.length === 1);
-}
 
 export const cardControlsCtrl: CardControlsCtrl = {
   init() {
@@ -32,12 +25,8 @@ export const cardControlsCtrl: CardControlsCtrl = {
       const nextRecipe = recipeCtrl.pickRandomRecipe();
       currentRecipeStore.recipe = nextRecipe;
       if (!nextRecipe) return;
-      if (isRecipesCatalogPage()) {
-        const { lang } = getRouteContext();
-        navigateInternal(pathWithLang(lang, "recipes", nextRecipe.slug));
-      } else {
-        cardCtrl.updateUI?.();
-      }
+      const { lang } = getRouteContext();
+      navigateInternal(pathWithLang(lang, "recipes", nextRecipe.slug));
       return;
     }
   },

@@ -96,6 +96,48 @@ describe("routes/card card.ctrl", () => {
     expect(cardCtrlInitSpy).toHaveBeenCalled();
   });
 
+  it("remplace l’URL par /:lang/recipes/:slug sur l’accueil pour le partage", async () => {
+    setRouteContext({ lang: "fr" });
+    const r = makeRecipe("partage", "Partage");
+    recipesStore.setRecipes([r]);
+    const replaceSpy = mock(() => {});
+    const origReplace = window.history.replaceState;
+    window.history.replaceState = replaceSpy as typeof window.history.replaceState;
+    recipeCtrl.init = async () => {
+      recipesStore.setLoadError(null);
+      recipesStore.setRecipes([r]);
+      currentRecipeStore.recipe = r;
+    };
+    try {
+      await cardPageCtrl.init();
+      expect(replaceSpy).toHaveBeenCalled();
+      const url = replaceSpy.mock.calls[0]?.[2] as string;
+      expect(url).toContain("/fr/recipes/partage");
+    } finally {
+      window.history.replaceState = origReplace;
+    }
+  });
+
+  it("ne remplace pas l’URL quand la route contient déjà un slug recette", async () => {
+    const replaceSpy = mock(() => {});
+    const origReplace = window.history.replaceState;
+    window.history.replaceState = replaceSpy as typeof window.history.replaceState;
+    const r = makeRecipe("from-slug", "From Slug");
+    setRouteContext({ lang: "fr", recipeSlug: "from-slug" });
+    recipesStore.setRecipes([r]);
+    recipeCtrl.init = async () => {
+      recipesStore.setLoadError(null);
+      recipesStore.setRecipes([r]);
+      currentRecipeStore.recipe = r;
+    };
+    try {
+      await cardPageCtrl.init();
+      expect(replaceSpy).not.toHaveBeenCalled();
+    } finally {
+      window.history.replaceState = origReplace;
+    }
+  });
+
   it("on retry success: hides overlay and shows card", async () => {
     recipeCtrl.init = async () => {
       if (showOverlayErrorCalls === 0) {

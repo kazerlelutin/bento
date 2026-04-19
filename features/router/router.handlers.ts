@@ -1,4 +1,4 @@
-import { routerState } from '@features/router/router.state';
+import { routerState, assignCurrentPageSilent } from '@features/router/router.state';
 import { updateDocumentTitle } from '@features/router/router.history';
 import { renderTemplate, getMainContent } from '@features/router/router.template';
 import type { Route } from '@features/routes/routes.type';
@@ -69,4 +69,18 @@ export function navigateInternal(path: string): void {
   window.history.pushState({}, '', normalized);
   const pathOnly = normalized.split('?')[0];
   routerState.currentPage = pathOnly;
+}
+
+/**
+ * `replaceState` + synchro du contexte route / cache de vue, sans cleanUp ni nouveau rendu du template.
+ * Utile sur l’accueil : URL partageable `/{lang}/recipes/{slug}` tout en gardant la vue courante.
+ */
+export function replacePathSilently(path: string): void {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  const pathOnly = normalized.split('?')[0];
+  if (typeof window !== 'undefined' && window.history?.replaceState) {
+    window.history.replaceState({}, '', pathOnly);
+  }
+  assignCurrentPageSilent(pathOnly);
+  lastRenderedPathname = pathOnly;
 }
