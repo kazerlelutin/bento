@@ -105,7 +105,7 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
 
   const bentoMsg = doc.getElementById(CARD_BENTO_MESSAGE_ID);
   if (bentoMsg) {
-    if (doc === document) {
+    if (typeof document !== "undefined" && doc === document) {
       clearCardBentoMessageAutoHideTimer();
     }
     bentoMsg.hidden = true;
