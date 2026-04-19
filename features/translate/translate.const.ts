@@ -23,6 +23,18 @@ export const UI: UiTranslation = {
     "ko": "커피 사주기",
     "ch": "请我喝杯咖啡"
   },
+  "install-app": {
+    "fr": "Installer l’app",
+    "en": "Install app",
+    "ko": "앱 설치",
+    "ch": "安装应用"
+  },
+  "install-app-dismiss": {
+    "fr": "Plus tard",
+    "en": "Not now",
+    "ko": "나중에",
+    "ch": "稍后"
+  },
   "language-selector-label": {
     "fr": "Choisir la langue",
     "en": "Choose language",

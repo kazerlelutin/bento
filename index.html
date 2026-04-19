@@ -6,8 +6,14 @@
 
   <link rel="stylesheet" href="/public/style.css" />
   <link rel="icon" href="/public/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/icon32-2.png" />
   <link rel="manifest" href="/public/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/public/icons/pwa-192.png" />
   <link rel="alternate" type="application/xml" href="/sitemap.xml" />
+  <meta name="theme-color" content="#22c55e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="Recettes inspirées surtout de Corée, du Japon et de Chine, pensées pour les bentos et repas à emporter : une fiche à la fois, tirage au hasard ou catalogue. Infos pratiques (transport, conservation…), export bentext pour copier ou imprimer." />
@@ -61,7 +67,9 @@
   <header class="flex items-center justify-between p-sm">
     <div class="flex items-center gap-sm">
 
-      <a href="/fr" data-internal data-role="home-link">
+      <a href="/fr" class="app-home-brand flex items-center gap-sm" data-internal data-role="home-link">
+        <img src="/public/icons/icon64-2.png" alt="" width="28" height="28" class="app-logo" aria-hidden="true"
+          decoding="async" />
         <h1 class="app-name">BEN<span class="app-name-accent">TO</span></h1>
       </a>
       <a class="version" href="https://ko-fi.com/kazerlelutin" target="_blank" data-external >
@@ -84,6 +92,13 @@
   <main class="app-main"></main>
 
   <footer class="app-footer">
+    <div id="pwa-install-wrap" class="app-footer-pwa" hidden>
+      <div class="app-footer-pwa-inner">
+        <button type="button" id="pwa-install-btn" class="pwa-install-btn" data-translate="install-app"></button>
+        <button type="button" id="pwa-install-dismiss" class="pwa-install-dismiss"
+          data-translate="install-app-dismiss"></button>
+      </div>
+    </div>
     <nav class="app-footer-nav">
       <a href="/fr" data-internal aria-current="page" data-translate="home"></a>
       <a href="/fr/recipes" data-internal data-translate="all-recipes"></a>

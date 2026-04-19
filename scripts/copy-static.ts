@@ -1,8 +1,11 @@
 import { cp, copyFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
+import { generatePwaIcons } from "./generate-pwa-icons.ts";
 
 async function copyStaticFiles() {
+  await generatePwaIcons();
+
   const staticFiles = ["robots.txt", "sitemap.xml", "favicon.ico"];
 
   for (const file of staticFiles) {

@@ -39,15 +39,22 @@ function mimeFor(path: string): string {
 
 function readPublicOrDist(urlPath: string): string | null {
   const rel = urlPath.replace(/^\//, "");
+
+  // URL /public/... → fichier sous public/ (sans doubler le segment « public »).
   if (rel.startsWith("public/")) {
     const sub = rel.slice("public/".length);
     const pub = join(PUBLIC, sub);
-    if (existsSync(pub)) return pub;
+    if (safeIsFile(pub)) return pub;
+    const distPub = join(DIST, "public", sub);
+    if (safeIsFile(distPub)) return distPub;
+    return null;
   }
+
   const atPublicRoot = join(PUBLIC, rel);
-  if (existsSync(atPublicRoot)) return atPublicRoot;
+  if (safeIsFile(atPublicRoot)) return atPublicRoot;
+
   const d = join(DIST, rel);
-  if (existsSync(d)) return d;
+  if (safeIsFile(d)) return d;
   return null;
 }
 
@@ -112,6 +119,12 @@ Bun.serve({
       return Response.redirect(new URL("/fr", url.origin), 302);
     }
 
+    /** Assets et SW avant les routes HTML (évite toute ambiguïté). */
+    const staticFirst = readPublicOrDist(pathname);
+    if (staticFirst && safeIsFile(staticFirst)) {
+      return new Response(Bun.file(staticFirst), { headers: { "Content-Type": mimeFor(staticFirst) } });
+    }
+
     const htmlPath = htmlFileForPathname(pathname);
     if (htmlPath && existsSync(htmlPath)) {
       return new Response(Bun.file(htmlPath), { headers: { "Content-Type": "text/html; charset=utf-8" } });
@@ -123,11 +136,6 @@ Bun.serve({
         status: 404,
         headers: { "Content-Type": "text/html; charset=utf-8" },
       });
-    }
-
-    const staticTry = readPublicOrDist(pathname);
-    if (staticTry && safeIsFile(staticTry)) {
-      return new Response(Bun.file(staticTry), { headers: { "Content-Type": mimeFor(staticTry) } });
     }
 
     const distTry = join(DIST, pathname.replace(/^\//, ""));

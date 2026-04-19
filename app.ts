@@ -8,6 +8,7 @@ import {
   syncLangCookieFromPath,
   syncTranslateStoreFromUrl,
 } from "@features/i18n/bootstrap-lang";
+import { pwaInstallCtrl } from "@features/pwa/pwa-install.ctrl";
 
 addEventListener("DOMContentLoaded", () => {
   ensureLocalizedPathOrRedirect();
@@ -19,8 +20,23 @@ addEventListener("DOMContentLoaded", () => {
   router.init();
   languageSelectorCtrl.init();
   displayVersion();
+  pwaInstallCtrl.init();
 
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/public/sw.js").catch(() => {});
-  }
+  registerServiceWorkerIfServedAsJs();
 });
+
+/** N’enregistre le SW que si `/sw.js` est bien du JS (évite le HTML du fallback SPA en `bun dev`). */
+function registerServiceWorkerIfServedAsJs(): void {
+  if (!("serviceWorker" in navigator)) return;
+  void (async () => {
+    try {
+      const res = await fetch("/sw.js", { cache: "no-store", credentials: "same-origin" });
+      const ct = (res.headers.get("content-type") ?? "").toLowerCase();
+      const looksLikeJs = res.ok && (ct.includes("javascript") || ct.includes("ecmascript"));
+      if (!looksLikeJs) return;
+      await navigator.serviceWorker.register("/sw.js");
+    } catch {
+      /* réseau ou SW refusé */
+    }
+  })();
+}

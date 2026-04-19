@@ -1,17 +1,58 @@
 {
-  "name": "BENTO",
+  "id": "/",
+  "name": "BENTO — recettes d’Asie de l’Est",
   "short_name": "BENTO",
   "description": "Cuisines coréenne, japonaise, chinoise — bentos et repas emportés",
+  "lang": "fr",
+  "dir": "ltr",
   "start_url": "/fr",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#1a1a1e",
-  "theme_color": "#1a1a1e",
+  "background_color": "#121212",
+  "theme_color": "#22c55e",
+  "categories": ["food", "lifestyle"],
   "icons": [
     {
-      "src": "/public/favicon.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
+      "src": "/public/icons/icon32-2.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/icon64-2.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/icon128-2.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/public/icons/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/public/icons/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

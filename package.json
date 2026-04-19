@@ -42,6 +42,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "bun --hot index.html --spa",
+    "preview": "bun run build && bun run server.ts",
     "start": "bun run server.ts",
     "test": "bun test --max-concurrency 1",
     "coverage": "bun test --coverage",
@@ -64,6 +65,7 @@
     "bun-types": "^1.2.15",
     "happy-dom": "^17.0.0",
     "knip": "^5.86.0",
+    "sharp": "^0.34.5",
     "typescript": "^5.9.3"
   }
 }

@@ -115,7 +115,6 @@ function patchHead(html: string, meta: PageMetaLike, cspContent: string): string
 
   const inject = `
   <link rel="canonical" href="${meta.canonical}" />
-  <link rel="manifest" href="/manifest.webmanifest" />
   <meta property="og:url" content="${meta.canonical}" />
 `;
   out = out.replace("</head>", `${inject}</head>`);

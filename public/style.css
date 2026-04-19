@@ -159,6 +159,7 @@
     color: var(--text-secondary);
     font-size: var(--font-size-xl);
     margin: 0;
+    padding: 0;
   }
 
   h2 {
@@ -346,8 +347,11 @@
     font-weight: bold;
     text-align: center;
     margin: 0;
+    padding: 0;
     color: var(--text-primary);
   }
+
+
 
   .app-name-accent {
     color: var(--color-accent);
@@ -376,6 +380,83 @@
     outline: none;
   }
 
+  .app-home-brand {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .app-home-brand:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: var(--border-radius);
+  }
+
+  .app-logo {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    image-rendering: pixelated;
+  }
+
+  .app-footer-pwa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-footer-pwa-inner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    max-width: min(100%, 28rem);
+    padding: 0.4rem 0.75rem;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+  }
+
+  .pwa-install-btn {
+    font-size: var(--font-size-small);
+    background: var(--color-accent);
+    color: var(--text-on-accent);
+    border: none;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .pwa-install-btn:hover,
+  .pwa-install-btn:focus {
+    filter: brightness(1.08);
+    outline: none;
+  }
+
+  .pwa-install-btn:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+
+  .pwa-install-dismiss {
+    font-size: var(--font-size-small);
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.35rem 0.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .pwa-install-dismiss:hover,
+  .pwa-install-dismiss:focus {
+    color: var(--text-primary);
+  }
 
   .card-overlay {
     position: absolute;
@@ -1036,11 +1117,14 @@
 
 .app-footer {
   grid-area: footer;
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-medium);
+  gap: var(--gap-small);
   padding: var(--padding-small) var(--padding-medium) var(--padding-medium);
   text-align: center;
+  flex-shrink: 0;
 }
 
 .app-footer-nav {
@@ -1094,9 +1178,7 @@
 }
 
 @media (min-width: 768px) {
-  .app-name {
-    margin-bottom: var(--margin-medium);
-  }
+ 
 
   .crafter-page {
     display: grid;
