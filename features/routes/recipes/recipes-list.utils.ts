@@ -3,8 +3,8 @@ import { getBentoFieldValue } from "@features/card/card.bento.utils";
 import { formatBentoAlternativesForDisplay } from "@features/recipes/bento-vocab";
 import { getApiBaseUrl } from "@features/recipes/recipes.utils";
 
-/** Troisième puce : réchauffage plutôt que couvert (moins redondant avec « À table »). */
-export const RECIPE_LIST_BENTO_FIELDS = ["transport", "eating", "reheat"] as const;
+/** Puces catalogue : transport, ustensiles, réchauffage. */
+export const RECIPE_LIST_BENTO_FIELDS = ["transport", "utensils", "reheat"] as const;
 export type RecipeListBentoField = (typeof RECIPE_LIST_BENTO_FIELDS)[number];
 
 export function resolveRecipeListImageSrc(recipe: Recipe): string | null {

@@ -6,12 +6,16 @@ import {
   CARD_STEPS_ID,
   CARD_NOTES_ID,
   CARD_BENTO_RECAP_ID,
-  CARD_BENTO_DL_ID,
+  CARD_BENTO_BLOCK_TITLE_ID,
+  CARD_BENTO_PRIMARY_ID,
+  CARD_BENTO_SECONDARY_WRAP_ID,
+  CARD_BENTO_SECONDARY_DL_ID,
   CARD_BENTO_MESSAGE_ID,
   CARD_BENTO_EXPORT_ID,
+  CARD_BENTO_EXPORT_BOTTOM_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
-import { hasBentoContent, renderCardBentoDl } from "@features/card/card.bento.utils";
+import { hasBentoContent, renderCardBentoRecap } from "@features/card/card.bento.utils";
 import { setCardControlsAriaLabels } from "@features/card-controls/card-controls.aria";
 import { getTranslation } from "@features/translate/translate.utils";
 import { UI } from "@features/translate/translate.const";
@@ -49,22 +53,42 @@ export function applyRecipeToCardDom(doc: Document, recipe: Recipe, lang: Langua
   }
 
   const bentoRecap = doc.getElementById(CARD_BENTO_RECAP_ID);
-  const bentoDl = doc.getElementById(CARD_BENTO_DL_ID) as HTMLDListElement | null;
+  const bentoPrimaryHeading = doc.getElementById(CARD_BENTO_BLOCK_TITLE_ID);
+  const bentoPrimaryGrid = doc.getElementById(CARD_BENTO_PRIMARY_ID);
+  const bentoSecondaryWrap = doc.getElementById(CARD_BENTO_SECONDARY_WRAP_ID) as HTMLDetailsElement | null;
+  const bentoSecondaryDl = doc.getElementById(CARD_BENTO_SECONDARY_DL_ID) as HTMLDListElement | null;
   const bentoExport = doc.getElementById(CARD_BENTO_EXPORT_ID);
-
+  const bentoExportBottom = doc.getElementById(CARD_BENTO_EXPORT_BOTTOM_ID);
+  const bentextActionsAria = getTranslation(UI["bentext-actions-aria"], lang);
   if (bentoExport) {
-    bentoExport.setAttribute("aria-label", getTranslation(UI["bentext-actions-aria"], lang));
+    bentoExport.setAttribute("aria-label", bentextActionsAria);
+  }
+  if (bentoExportBottom) {
+    bentoExportBottom.setAttribute("aria-label", bentextActionsAria);
   }
 
-  if (bentoRecap && bentoDl) {
+  if (bentoRecap && bentoPrimaryGrid && bentoSecondaryDl) {
     if (hasBentoContent(recipe.bento)) {
       bentoRecap.hidden = false;
       bentoRecap.setAttribute("aria-label", getTranslation(UI["bento-recap-aria"], lang));
-      renderCardBentoDl(bentoDl, recipe.bento!, lang);
+      renderCardBentoRecap(
+        {
+          primaryHeading: bentoPrimaryHeading,
+          primaryGrid: bentoPrimaryGrid,
+          secondaryWrap: bentoSecondaryWrap,
+          secondaryDl: bentoSecondaryDl,
+        },
+        recipe.bento!,
+        lang
+      );
     } else {
       bentoRecap.hidden = true;
       bentoRecap.removeAttribute("aria-label");
-      bentoDl.innerHTML = "";
+      bentoPrimaryGrid.innerHTML = "";
+      bentoSecondaryDl.innerHTML = "";
+      if (bentoPrimaryHeading) bentoPrimaryHeading.hidden = true;
+      bentoPrimaryGrid.hidden = true;
+      if (bentoSecondaryWrap) bentoSecondaryWrap.hidden = true;
     }
   }
 

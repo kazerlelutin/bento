@@ -33,16 +33,16 @@ describe("recipes-list.utils", () => {
     expect(u).toMatch(/^https?:\/\//);
   });
 
-  it("recipeListBentoChips collects transport, eating, reheat when present", () => {
+  it("recipeListBentoChips collects transport, utensils, reheat when present", () => {
     const r = baseRecipe({
       bento: {
         transport: "Facile",
-        eating: "À la main",
+        utensils: "À la main",
         reheat: "Non",
       },
     });
     const chips = recipeListBentoChips(r);
-    expect(chips.map((c) => c.field)).toEqual(["transport", "eating", "reheat"]);
+    expect(chips.map((c) => c.field)).toEqual(["transport", "utensils", "reheat"]);
     expect(chips[0]?.display).toContain("Facile");
   });
 });

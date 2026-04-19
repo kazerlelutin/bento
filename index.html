@@ -111,7 +111,14 @@
           <h1 class="text-center m-0" id="card-title" data-role="text"></h1>
           <div class="card-bento-area">
             <section id="card-bento-recap" class="card-bento-recap" hidden>
-              <dl id="card-bento-dl" class="card-bento-dl"></dl>
+              <h2 id="card-bento-block-title" class="card-bento-block-title" data-translate="bento-block-title" hidden>Repas emporté</h2>
+              <div id="card-bento-primary" class="card-bento-primary" hidden></div>
+              <details id="card-bento-secondary-wrap" class="card-bento-secondary-wrap" hidden>
+                <summary class="card-bento-secondary-summary">
+                  <span class="card-bento-secondary-summary__label" data-translate="bento-secondary-summary">Affiner et détails</span>
+                </summary>
+                <dl id="card-bento-secondary-dl" class="card-bento-dl card-bento-dl--secondary"></dl>
+              </details>
             </section>
             <div class="card-bento-export" role="group" id="card-bento-export">
               <div class="card-bento-export__row">
@@ -142,6 +149,13 @@
           <section class="card-notes" aria-labelledby="card-notes-heading">
             <ul id="card-notes" class="card-notes" role="region" aria-labelledby="card-notes-heading"></ul>
           </section>
+
+          <div class="card-bento-export card-bento-export--bottom" role="group" id="card-bento-export-bottom">
+            <div class="card-bento-export__row">
+              <button type="button" id="card-bento-copy-bottom" class="card-bento-export__btn" data-translate="bentext-copy-short">Copier</button>
+              <button type="button" id="card-bento-print-bottom" class="card-bento-export__btn" data-translate="bentext-print-short">Imprimer</button>
+            </div>
+          </div>
         </div>
       </div>
 

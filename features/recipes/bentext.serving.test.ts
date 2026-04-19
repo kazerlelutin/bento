@@ -76,9 +76,9 @@ Bake.`;
 
   it("buildBentextExportFromRecipe appends bento block when present", () => {
     const r = minimalRecipe();
-    r.bento = { transport: "Facile", eating: "À la main" };
+    r.bento = { transport: "Facile", utensils: "À la main" };
     const text = buildBentextExportFromRecipe(r);
     expect(text).toContain("Transport|Facile");
-    expect(text).toContain("Eating|À la main");
+    expect(text).toContain("Utensils|À la main");
   });
 });

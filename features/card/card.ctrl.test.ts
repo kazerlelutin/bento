@@ -13,8 +13,12 @@ import {
   CARD_NOTES_ID,
   MAIN_CARD_ID,
   CARD_BENTO_RECAP_ID,
+  CARD_BENTO_BLOCK_TITLE_ID,
+  CARD_BENTO_PRIMARY_ID,
+  CARD_BENTO_SECONDARY_WRAP_ID,
   CARD_BENTO_DL_ID,
   CARD_BENTO_EXPORT_ID,
+  CARD_BENTO_EXPORT_BOTTOM_ID,
 } from "@features/card/card.const";
 
 function createCardDOM() {
@@ -28,7 +32,12 @@ function createCardDOM() {
         <h1 id="card-title"></h1>
         <div class="card-bento-area">
           <section id="${CARD_BENTO_RECAP_ID}" hidden>
-            <dl id="${CARD_BENTO_DL_ID}"></dl>
+            <h2 id="${CARD_BENTO_BLOCK_TITLE_ID}" hidden></h2>
+            <div id="${CARD_BENTO_PRIMARY_ID}" hidden></div>
+            <details id="${CARD_BENTO_SECONDARY_WRAP_ID}" hidden>
+              <summary class="card-bento-secondary-summary"><span class="card-bento-secondary-summary__label" data-translate="bento-secondary-summary"></span></summary>
+              <dl id="${CARD_BENTO_DL_ID}"></dl>
+            </details>
           </section>
           <div class="card-bento-export" role="group" id="${CARD_BENTO_EXPORT_ID}">
             <div class="card-bento-export__row">
@@ -48,6 +57,12 @@ function createCardDOM() {
         </div>
         <ol id="${CARD_STEPS_ID}"></ol>
         <ul id="${CARD_NOTES_ID}"></ul>
+        <div class="card-bento-export card-bento-export--bottom" role="group" id="${CARD_BENTO_EXPORT_BOTTOM_ID}">
+          <div class="card-bento-export__row">
+            <button type="button" id="card-bento-copy-bottom"></button>
+            <button type="button" id="card-bento-print-bottom"></button>
+          </div>
+        </div>
       </div>
       <div id="card-controls">
         <button data-action="random" type="button"></button>
@@ -145,30 +160,33 @@ describe("card.ctrl", () => {
     it("hides bento recap when recipe has no bento block", () => {
       cardCtrl.updateUI();
       const recap = document.getElementById(CARD_BENTO_RECAP_ID);
+      const primary = document.getElementById(CARD_BENTO_PRIMARY_ID);
       const dl = document.getElementById(CARD_BENTO_DL_ID);
       expect(recap?.hidden).toBe(true);
+      expect(primary?.innerHTML).toBe("");
       expect(dl?.innerHTML).toBe("");
     });
 
-    it("shows bento recap and dl rows when recipe has bento", () => {
+    it("shows bento recap with piliers when recipe has bento", () => {
       currentRecipeStore.recipe = {
         ...makeRecipe(),
         bento: { transport: "Moyen", eating: "À la main" },
       };
       cardCtrl.updateUI();
       const recap = document.getElementById(CARD_BENTO_RECAP_ID);
-      const dl = document.getElementById(CARD_BENTO_DL_ID);
+      const primary = document.getElementById(CARD_BENTO_PRIMARY_ID);
       expect(recap?.hidden).toBe(false);
-      expect(dl?.querySelectorAll("dt").length).toBe(2);
-      expect(dl?.querySelectorAll("dd").length).toBe(2);
-      expect(dl?.textContent).toContain("Moyen");
-      expect(dl?.textContent).toContain("À la main");
+      expect(primary?.querySelectorAll(".card-bento-pillar").length).toBe(2);
+      expect(primary?.textContent).toContain("Moyen");
+      expect(primary?.textContent).toContain("À la main");
     });
 
-    it("sets aria-label on bentext export group", () => {
+    it("sets aria-label on bentext export groups", () => {
       cardCtrl.updateUI();
       const exportEl = document.getElementById(CARD_BENTO_EXPORT_ID);
+      const exportBottom = document.getElementById(CARD_BENTO_EXPORT_BOTTOM_ID);
       expect(exportEl?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
+      expect(exportBottom?.getAttribute("aria-label")?.length).toBeGreaterThan(0);
     });
 
     it("sets aria-label on bento recap when bento is present", () => {

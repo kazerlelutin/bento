@@ -28,6 +28,11 @@ describe("bento-vocab", () => {
     ]);
   });
 
+  it("parseBentoRecipesQuery mappe eating (legacy) vers utensils", () => {
+    expect(parseBentoRecipesQuery("?eating=eating_hand")).toEqual([{ field: "utensils", id: "eating_hand" }]);
+    expect(parseBentoRecipesQuery("?utensils=eating_hand")).toEqual([{ field: "utensils", id: "eating_hand" }]);
+  });
+
   it("formatBentoAlternativesForDisplay replaces tilde with comma", () => {
     expect(formatBentoAlternativesForDisplay("À la main ~ Baguettes")).toBe("À la main, Baguettes");
   });

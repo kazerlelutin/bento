@@ -7,8 +7,16 @@ export const CARD_STEPS_ID = "card-steps";
 export const CARD_NOTES_ID = "card-notes";
 export const MAIN_CARD_ID = "main-card";
 export const CARD_BENTO_RECAP_ID = "card-bento-recap";
+export const CARD_BENTO_BLOCK_TITLE_ID = "card-bento-block-title";
+export const CARD_BENTO_PRIMARY_ID = "card-bento-primary";
+export const CARD_BENTO_SECONDARY_WRAP_ID = "card-bento-secondary-wrap";
+export const CARD_BENTO_SECONDARY_DL_ID = "card-bento-secondary-dl";
 export const CARD_BENTO_EXPORT_ID = "card-bento-export";
-export const CARD_BENTO_DL_ID = "card-bento-dl";
+export const CARD_BENTO_EXPORT_BOTTOM_ID = "card-bento-export-bottom";
+/** @deprecated utiliser `CARD_BENTO_SECONDARY_DL_ID` */
+export const CARD_BENTO_DL_ID = "card-bento-secondary-dl";
 export const CARD_BENTO_COPY_ID = "card-bento-copy";
 export const CARD_BENTO_PRINT_ID = "card-bento-print";
+export const CARD_BENTO_COPY_BOTTOM_ID = "card-bento-copy-bottom";
+export const CARD_BENTO_PRINT_BOTTOM_ID = "card-bento-print-bottom";
 export const CARD_BENTO_MESSAGE_ID = "card-bento-message";

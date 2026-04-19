@@ -6,8 +6,8 @@ export const BENTO_FILTER_FIELDS = [
   "transport",
   "reheat",
   "cold",
+  "utensils",
   "cover",
-  "eating",
   "stains",
   "smell",
   "prep_time",
@@ -104,8 +104,9 @@ const VOCAB_BY_FIELD: Record<BentoFilterField, LabelRow[]> = {
   transport: TRANSPORT,
   reheat: REHEAT,
   cold: COLD,
+  /** Même jeu de valeurs que l’ancien champ `eating` (ids `eating_*`). */
+  utensils: EATING,
   cover: COVER,
-  eating: EATING,
   stains: STAINS,
   smell: SMELL,
   prep_time: PREP_TIME,
@@ -201,7 +202,8 @@ export function parseBentoRecipesQuery(search: string | undefined): BentoFilterE
   const params = new URLSearchParams(q.startsWith("?") ? q.slice(1) : q);
   const out: BentoFilterEntry[] = [];
   for (const f of BENTO_FILTER_FIELDS) {
-    const id = params.get(f)?.trim();
+    let id = params.get(f)?.trim();
+    if (f === "utensils" && !id) id = params.get("eating")?.trim() ?? undefined;
     if (id) out.push({ field: f, id });
   }
   return out;

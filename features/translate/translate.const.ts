@@ -380,10 +380,10 @@ export const UI: UiTranslation = {
     "ch": "重试"
   },
   "bento-recap-aria": {
-    "fr": "Repas emporté : transport, conservation, consommation",
-    "en": "Packed lunch: transport, storage, how to eat",
-    "ko": "도시락: 운반, 보관, 섭취",
-    "ch": "外带餐：携带、保存、食用"
+    "fr": "Repas emporté : transport, réchauffage, conservation au froid, ustensiles",
+    "en": "Packed lunch: transport, reheating, cold storage, utensils",
+    "ko": "도시락: 운반, 데우기, 냉장, 식기",
+    "ch": "外带餐：携带、复热、冷藏、餐具"
   },
   "bento-transport": {
     "fr": "Transport",
@@ -402,6 +402,24 @@ export const UI: UiTranslation = {
     "en": "Cold storage",
     "ko": "냉장 보관",
     "ch": "冷藏"
+  },
+  "bento-utensils": {
+    "fr": "Ustensiles",
+    "en": "Utensils",
+    "ko": "식기",
+    "ch": "餐具"
+  },
+  "bento-block-title": {
+    "fr": "Repas emporté",
+    "en": "Packed lunch",
+    "ko": "도시락",
+    "ch": "外带餐"
+  },
+  "bento-secondary-summary": {
+    "fr": "Affiner et détails",
+    "en": "More detail",
+    "ko": "세부 정보",
+    "ch": "更多细节"
   },
   "bento-cover": {
     "fr": "Couvert",

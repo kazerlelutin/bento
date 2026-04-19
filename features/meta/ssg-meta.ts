@@ -70,7 +70,7 @@ export function buildSsgPageMeta(
       r.identity.description.length > 200 ? `${r.identity.description.slice(0, 197)}…` : r.identity.description;
     if (r.bento && hasBentoContent(r.bento)) {
       const bits: string[] = [];
-      for (const key of ["transport", "cover", "prep_time"] as const) {
+      for (const key of ["transport", "cold", "utensils", "prep_time"] as const) {
         const v = getBentoFieldValue(r.bento, key)?.trim();
         if (v) bits.push(v);
       }
@@ -90,8 +90,8 @@ export function buildSsgPageMeta(
     const alt = r.identity.name;
     const kwExtra =
       r.bento && hasBentoContent(r.bento)
-        ? ["transport", "cover", "eating"]
-            .map((k) => getBentoFieldValue(r.bento!, k as "transport" | "cover" | "eating"))
+        ? ["transport", "cold", "utensils"]
+            .map((k) => getBentoFieldValue(r.bento!, k as "transport" | "cold" | "utensils"))
             .filter((x): x is string => Boolean(x?.trim()))
         : [];
     const keywordsRecipe =

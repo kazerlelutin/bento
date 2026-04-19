@@ -7,6 +7,8 @@ import {
   CARD_SERVING_INCREASE_ID,
   CARD_BENTO_COPY_ID,
   CARD_BENTO_PRINT_ID,
+  CARD_BENTO_COPY_BOTTOM_ID,
+  CARD_BENTO_PRINT_BOTTOM_ID,
   CARD_BENTO_MESSAGE_ID,
 } from "@features/card/card.const";
 import { refreshIngredientsAndServing } from "@features/card/card.utils";
@@ -32,7 +34,11 @@ function handleDocumentClick(e: Event): void {
     return;
   }
 
-  if (target.id !== CARD_BENTO_COPY_ID && target.id !== CARD_BENTO_PRINT_ID) return;
+  const isCopy =
+    target.id === CARD_BENTO_COPY_ID || target.id === CARD_BENTO_COPY_BOTTOM_ID;
+  const isPrint =
+    target.id === CARD_BENTO_PRINT_ID || target.id === CARD_BENTO_PRINT_BOTTOM_ID;
+  if (!isCopy && !isPrint) return;
   if (!displayedRecipe?.slug) return;
 
   const msgEl = document.getElementById(CARD_BENTO_MESSAGE_ID);
@@ -59,7 +65,7 @@ function handleDocumentClick(e: Event): void {
         raw = buildBentextExportFromRecipe(displayedRecipe!);
       }
       const text = applyServingToBentext(raw, displayedRecipe!, displayedServing);
-      if (target.id === CARD_BENTO_COPY_ID) {
+      if (isCopy) {
         await copyTextToClipboard(text);
         showMsg(t(UI["bentext-copied"]), false);
       } else {
