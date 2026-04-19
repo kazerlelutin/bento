@@ -783,6 +783,11 @@
     background: none;
   }
 
+  #card-title {
+    color: var(--color-accent);
+    padding-block: 0.35rem;
+  }
+
   .card-section {
     margin-top: var(--margin-large);
   }
