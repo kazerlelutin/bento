@@ -404,6 +404,17 @@
     justify-content: center;
   }
 
+  /** PWA installée : pas de bandeau d’installation (navigateur + secours si le JS a posé la classe). */
+  @media (display-mode: standalone) {
+    .app-footer-pwa {
+      display: none !important;
+    }
+  }
+
+  html.is-pwa-standalone .app-footer-pwa {
+    display: none !important;
+  }
+
   .app-footer-pwa-inner {
     display: inline-flex;
     align-items: center;

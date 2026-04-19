@@ -3,13 +3,39 @@ type BeforeInstallPromptEvent = Event & {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 };
 
-const LS_DISMISS = "bento_pwa_install_dismissed";
+/** Fin de la période « Plus tard » (timestamp ms). */
+const LS_SNOOZE_UNTIL = "bento_pwa_install_snooze_until";
+/** Ancienne clé « définitif » — migrée pour passer au snooze 7 jours. */
+const LEGACY_DISMISS = "bento_pwa_install_dismissed";
 
-function isStandalone(): boolean {
-  return (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    (window.navigator as Navigator & { standalone?: boolean }).standalone === true
-  );
+const SNOOZE_MS = 7 * 24 * 60 * 60 * 1000;
+
+function migrateLegacyDismiss(): void {
+  if (localStorage.getItem(LEGACY_DISMISS) === "1") {
+    localStorage.removeItem(LEGACY_DISMISS);
+  }
+}
+
+function getSnoozeUntil(): number | null {
+  const raw = localStorage.getItem(LS_SNOOZE_UNTIL);
+  if (!raw) return null;
+  const n = Number(raw);
+  return Number.isFinite(n) ? n : null;
+}
+
+function isSnoozeActive(): boolean {
+  const until = getSnoozeUntil();
+  if (until === null) return false;
+  return Date.now() < until;
+}
+
+/** App ouverte comme PWA installée (fenêtre dédiée / iOS « sur l’écran d’accueil »). */
+function isRunningAsInstalledPwa(): boolean {
+  if (typeof window.matchMedia === "function") {
+    if (window.matchMedia("(display-mode: standalone)").matches) return true;
+  }
+  const nav = window.navigator as Navigator & { standalone?: boolean };
+  return nav.standalone === true;
 }
 
 let deferred: BeforeInstallPromptEvent | null = null;
@@ -51,7 +77,7 @@ function onDocumentClickCapture(e: MouseEvent): void {
 
   if (target.closest("#pwa-install-dismiss")) {
     e.preventDefault();
-    localStorage.setItem(LS_DISMISS, "1");
+    localStorage.setItem(LS_SNOOZE_UNTIL, String(Date.now() + SNOOZE_MS));
     hideInstallUi();
     return;
   }
@@ -70,11 +96,21 @@ function onDocumentClickCapture(e: MouseEvent): void {
 
 export const pwaInstallCtrl = {
   init(): void {
-    if (isStandalone()) return;
+    migrateLegacyDismiss();
+
+    if (isRunningAsInstalledPwa()) {
+      document.documentElement.classList.add("is-pwa-standalone");
+      hideInstallUi();
+      return;
+    }
+    document.documentElement.classList.remove("is-pwa-standalone");
 
     document.addEventListener("click", onDocumentClickCapture, true);
 
-    if (localStorage.getItem(LS_DISMISS) === "1") return;
+    if (isSnoozeActive()) {
+      hideInstallUi();
+      return;
+    }
 
     if (!getWrap() || !getInstallBtn() || !getDismissBtn()) return;
 
@@ -83,6 +119,7 @@ export const pwaInstallCtrl = {
     window.addEventListener("appinstalled", () => {
       deferred = null;
       hideInstallUi();
+      document.documentElement.classList.add("is-pwa-standalone");
     });
   },
 };
