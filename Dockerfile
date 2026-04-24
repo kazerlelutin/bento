@@ -1,4 +1,4 @@
-FROM docker.io/oven/bun:latest AS builder
+FROM docker.io/oven/bun:1.2.23 AS builder
 WORKDIR /app
 
 ARG PUBLIC_BENTEXT_API_URL
@@ -10,7 +10,7 @@ COPY . .
 RUN bun install --frozen-lockfile
 RUN bun run build
 
-FROM docker.io/oven/bun:latest AS runner
+FROM docker.io/oven/bun:1.2.23 AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production

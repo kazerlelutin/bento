@@ -10,6 +10,62 @@ import { Window } from "happy-dom";
 import { applyRecipeToCardDom } from "@features/card/card.view-fill";
 import { applyRecipesCatalogToDom } from "@features/routes/recipes/recipes-catalog.view-fill";
 
+/**
+ * Sous Bun, le contexte VM de happy-dom peut exposer `globalThis.SyntaxError` (etc.) comme
+ * `undefined`, ce qui laisse des intrinsèques dupliqués en `undefined` sur `Window` et casse
+ * le parse HTML (p.ex. sélecteurs sur `<select>`). On recopie depuis le `globalThis` hôte.
+ * Voir `happy-dom` VMGlobalPropertyScript (liste alignée sur ce module).
+ */
+function patchHappyDomWindowVmGlobals(win: InstanceType<typeof Window>): void {
+  const src = globalThis as unknown as Record<string, unknown>;
+  const dst = win as unknown as Record<string, unknown>;
+  const keys = [
+    "ArrayBuffer",
+    "Boolean",
+    "DataView",
+    "Date",
+    "Error",
+    "EvalError",
+    "Float32Array",
+    "Float64Array",
+    "Infinity",
+    "Intl",
+    "JSON",
+    "Map",
+    "Math",
+    "NaN",
+    "Number",
+    "Object",
+    "Promise",
+    "RangeError",
+    "ReferenceError",
+    "RegExp",
+    "Reflect",
+    "Set",
+    "String",
+    "Symbol",
+    "SyntaxError",
+    "TypeError",
+    "URIError",
+    "Uint16Array",
+    "Uint32Array",
+    "Uint8Array",
+    "Uint8ClampedArray",
+    "WeakMap",
+    "WeakSet",
+    "Array",
+    "Function",
+    "AbortController",
+    "AbortSignal",
+  ] as const;
+  for (const key of keys) {
+    const v = src[key];
+    if (v !== undefined && dst[key] === undefined) {
+      dst[key] = v;
+    }
+  }
+}
+
 /** Première recette stable (tri par slug) pour l’accueil SSG. */
 export function pickSsgHomeRecipe(recipes: Recipe[]): Recipe | null {
   if (!recipes.length) return null;
@@ -26,6 +82,7 @@ export function buildSsgMainOuterHtml(
   recipe: Recipe | null
 ): string {
   const browserWindow = new Window({ url: "https://ben-to.fr/" });
+  patchHappyDomWindowVmGlobals(browserWindow);
   const parser = new browserWindow.DOMParser();
   const doc = parser.parseFromString(fullPageHtml, "text/html");
   const main = doc.querySelector("main.app-main");
