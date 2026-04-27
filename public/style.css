@@ -211,6 +211,44 @@
 
 }
 
+/**
+ * Scrollfade (CSS scroll-driven animations + masque) — inspiré de
+ * https://ui.oward.net/docs/tailwind/scrollfade/
+ * Navigateurs : Chrome 115+, Edge 115+, Safari 26+ ; Firefox (flag).
+ */
+@property --t-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --b-fade {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes scrollfade-t {
+  0% {
+    --t-fade: 0;
+  }
+
+  10%,
+  100% {
+    --t-fade: var(--scrollfade-size, calc(4 * var(--scrollfade-spacing, 0.25rem)));
+  }
+}
+
+@keyframes scrollfade-b {
+  0%,
+  90% {
+    --b-fade: var(--scrollfade-size, calc(4 * var(--scrollfade-spacing, 0.25rem)));
+  }
+
+  100% {
+    --b-fade: 0;
+  }
+}
 
 /**
  * Classes utilitaires : à réserver au layout et au spacing (flex, gap, padding, margin, alignement texte).
@@ -301,6 +339,30 @@
 
   .overflow-y-auto {
     overflow-y: auto;
+  }
+
+  /** Fade haut/bas sur zone scrollable (voir @property / keyframes scrollfade-* ci-dessus). */
+  .scrollfade-y {
+    scroll-timeline: --scrollfade-y y;
+    animation: scrollfade-t linear, scrollfade-b linear;
+    animation-timeline: --scrollfade-y, --scrollfade-y;
+    mask: linear-gradient(
+      to bottom,
+      #0000,
+      #ffff var(--t-fade) calc(100% - var(--b-fade)),
+      #0000
+    );
+    -webkit-mask: linear-gradient(
+      to bottom,
+      #0000,
+      #ffff var(--t-fade) calc(100% - var(--b-fade)),
+      #0000
+    );
+  }
+
+  /** Taille du dégradé (~Tailwind spacing × 0.25rem ; scrollfade-6 ≈ 1.5rem). */
+  .scrollfade-6 {
+    --scrollfade-size: calc(6 * var(--scrollfade-spacing, 0.25rem));
   }
 
   .text-center {
